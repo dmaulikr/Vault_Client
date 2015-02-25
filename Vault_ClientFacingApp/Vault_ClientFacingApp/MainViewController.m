@@ -29,7 +29,6 @@
 @property NSString *contactAppDescription;
 
 @property (weak, nonatomic) IBOutlet UIView *overlayView1;
-@property (weak, nonatomic) IBOutlet UIView *overlayView2;
 
 @property CGRect overlay1InitialFrame;
 @property CGRect overlay2InitialFrame;
@@ -61,9 +60,8 @@
     [[self navigationController] setNavigationBarHidden:YES];
     
     self.overlay1InitialFrame = self.overlayView1.frame;
-    self.overlay2InitialFrame = self.overlayView2.frame;
     
-    self.view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 525, 600, 600)];
+    self.view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 600, 600, 600)];
     self.view2.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.view2];
     
