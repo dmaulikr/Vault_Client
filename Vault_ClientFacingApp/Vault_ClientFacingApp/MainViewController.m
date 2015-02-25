@@ -34,6 +34,8 @@
 @property CGRect overlay1InitialFrame;
 @property CGRect overlay2InitialFrame;
 
+@property UIView *view2;
+
 @end
 
 @implementation MainViewController
@@ -60,6 +62,10 @@
     
     self.overlay1InitialFrame = self.overlayView1.frame;
     self.overlay2InitialFrame = self.overlayView2.frame;
+    
+    self.view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 525, 600, 600)];
+    self.view2.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.view2];
     
 //    PFObject *client = [PFObject objectWithClassName:@"Client"];
 //    client[@"productIdea"] = self.productIdea;
@@ -93,7 +99,13 @@
 
 -(IBAction)selectProductNeed:(UIButton *)sender
 {
+    self.productNeed = sender.titleLabel.text;
 
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view2.frame = self.view.frame;
+    }];
+    
+    NSLog(@"%@", self.productNeed);
 }
 
 - (IBAction)resignCurrentOverlay:(UIBarButtonItem *)sender
