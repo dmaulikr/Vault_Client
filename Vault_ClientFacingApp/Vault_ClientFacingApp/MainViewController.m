@@ -29,6 +29,10 @@
 @property NSString *contactAppDescription;
 
 @property (weak, nonatomic) IBOutlet UIView *overlayView1;
+@property (weak, nonatomic) IBOutlet UIView *overlayView2;
+
+@property CGRect overlay1InitialFrame;
+@property CGRect overlay2InitialFrame;
 
 @end
 
@@ -54,6 +58,9 @@
     
     [[self navigationController] setNavigationBarHidden:YES];
     
+    self.overlay1InitialFrame = self.overlayView1.frame;
+    self.overlay2InitialFrame = self.overlayView2.frame;
+    
 //    PFObject *client = [PFObject objectWithClassName:@"Client"];
 //    client[@"productIdea"] = self.productIdea;
 //    client[@"productNeed"] = self.productNeed;
@@ -73,7 +80,7 @@
 -(IBAction)selectProjectPlatform:(UIButton *)sender
 {
     [[self navigationController] setNavigationBarHidden:NO];
-    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
 
     self.productIdea = sender.titleLabel.text;
     
@@ -82,6 +89,18 @@
     }];
     
     NSLog(@"%@", self.productIdea);
+}
+
+-(IBAction)selectProductNeed:(UIButton *)sender
+{
+
+}
+
+- (IBAction)resignCurrentOverlay:(UIBarButtonItem *)sender
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.overlayView1.frame = self.overlay1InitialFrame;
+    }];
 }
 
 @end

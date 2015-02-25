@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--CODER-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
@@ -75,6 +75,9 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectProductNeed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j0i-FE-uPI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMW-XV-GRe">
                                         <rect key="frame" x="8" y="277" width="584" height="30"/>
@@ -82,6 +85,9 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectProductNeed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYQ-v3-4n8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYC-Va-0pd">
                                         <rect key="frame" x="8" y="353" width="584" height="30"/>
@@ -89,6 +95,9 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectProductNeed:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="8sp-oN-AsC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34901960784313724" green="0.75686274509803919" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,12 +135,15 @@
                             <constraint firstItem="DSl-Id-W1b" firstAttribute="top" secondItem="xo2-ZQ-ciI" secondAttribute="bottom" constant="34" id="wzc-5a-e4B"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="CODER" id="nWy-Hy-ed5">
+                    <navigationItem key="navigationItem" id="nWy-Hy-ed5">
                         <barButtonItem key="leftBarButtonItem" title="i" id="RJy-jf-P5d">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="UTD-iS-LfF">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="resignCurrentOverlay:" destination="BYZ-38-t0r" id="U6p-RQ-fQ7"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
