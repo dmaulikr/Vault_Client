@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
     
+    [[self navigationController] setNavigationBarHidden:YES];
 }
 
 -(BOOL)prefersStatusBarHidden

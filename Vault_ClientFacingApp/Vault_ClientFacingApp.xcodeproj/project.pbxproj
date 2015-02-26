@@ -27,7 +27,6 @@
 		4A6F24021A9D3D4100E7D366 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6F24011A9D3D4100E7D366 /* libz.1.1.3.dylib */; };
 		4A6F24041A9D3D4B00E7D366 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6F24031A9D3D4B00E7D366 /* libsqlite3.0.dylib */; };
 		4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */; };
-		4A8CD7BF1A9D5E5300C4E88F /* ScheduleMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7BE1A9D5E5300C4E88F /* ScheduleMeetingViewController.m */; };
 		4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +67,6 @@
 		4A6F24031A9D3D4B00E7D366 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4A8CD7BA1A9D5E2C00C4E88F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		4A8CD7BD1A9D5E5300C4E88F /* ScheduleMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleMeetingViewController.h; sourceTree = "<group>"; };
-		4A8CD7BE1A9D5E5300C4E88F /* ScheduleMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleMeetingViewController.m; sourceTree = "<group>"; };
 		4A8CD7C01A9D5E6D00C4E88F /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,8 +128,6 @@
 				4A6F23C91A9D3B5F00E7D366 /* AppDelegate.m */,
 				4A8CD7BA1A9D5E2C00C4E88F /* MainViewController.h */,
 				4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */,
-				4A8CD7BD1A9D5E5300C4E88F /* ScheduleMeetingViewController.h */,
-				4A8CD7BE1A9D5E5300C4E88F /* ScheduleMeetingViewController.m */,
 				4A8CD7C01A9D5E6D00C4E88F /* FAQViewController.h */,
 				4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */,
 				4A6F23CE1A9D3B5F00E7D366 /* Main.storyboard */,
@@ -294,7 +289,6 @@
 				4A6F23CA1A9D3B5F00E7D366 /* AppDelegate.m in Sources */,
 				4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */,
 				4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */,
-				4A8CD7BF1A9D5E5300C4E88F /* ScheduleMeetingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

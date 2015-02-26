@@ -27,6 +27,7 @@
 @property UIView *view3;
 @property UIView *view4;
 @property UIView *view5;
+@property UIView *view6;
 
 @property UIColor *customGreen;
 @property UIColor *customBlue;
@@ -185,19 +186,44 @@
     self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 325, 315, 30)];
     self.name.layer.borderColor = [UIColor whiteColor].CGColor;
     self.name.layer.borderWidth = 1;
+    self.name.textColor = [UIColor whiteColor];
     
     self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 275, 315, 30)];
     self.email.layer.borderColor = [UIColor whiteColor].CGColor;
     self.email.layer.borderWidth = 1;
+    self.email.textColor = [UIColor whiteColor];
     
     self.appDescription = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 225, 315, 150)];
     self.appDescription.layer.borderColor = [UIColor whiteColor].CGColor;
     self.appDescription.layer.borderWidth = 1;
+    self.appDescription.textColor = [UIColor whiteColor];
+    
+    UIButton *meetingTimes = [UIButton buttonWithType:UIButtonTypeCustom];
+    meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
+    [meetingTimes setTitle:@"Kick Off Meeting" forState:UIControlStateNormal];
+    [meetingTimes addTarget:self action:@selector(pickMeeting:) forControlEvents:UIControlEventTouchUpInside];
+    [meetingTimes setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
+    [meetingTimes.layer setBackgroundColor:self.customGreen.CGColor];
     
     [self.view5 addSubview:contactInfo];
     [self.view5 addSubview:self.name];
     [self.view5 addSubview:self.email];
     [self.view5 addSubview:self.appDescription];
+    [self.view5 addSubview: meetingTimes];
+    
+    //Kick Off Meeting Overlay (#6)
+    self.view6 = [[UIView alloc] initWithFrame:CGRectMake(0, 700, 600, 600)];
+    self.view6.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.view6];
+    
+    UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
+    submit.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
+    [submit setTitle:@"Submit" forState:UIControlStateNormal];
+    [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
+    [submit setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
+    [submit.layer setBackgroundColor:self.customGreen.CGColor];
+    
+    [self.view6 addSubview:submit];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -248,8 +274,21 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.view5.frame = self.view.frame;
     }];
+}
+
+-(IBAction)pickMeeting:(id)sender
+{
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
     
-    NSLog(@"%@, %@, %@, %@", self.productIdea, self.productNeed, self.teamNeed, self.budget);
+    self.contactName = self.name.text;
+    self.contactEmail = self.email.text;
+    self.contactAppDescription = self.appDescription.text;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view6.frame = self.view.frame;
+    }];
+    
+    NSLog(@"%@, %@, %@, %@, %@, %@, %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription);
 }
 
 -(IBAction)submitDetails:(id)sender
@@ -263,6 +302,8 @@
     client[@"contactEmail"] = self.contactEmail;
     client[@"contactAppDescription"] = self.contactAppDescription;
     [client saveInBackground];
+    
+    [self performSegueWithIdentifier:@"faqSegueID" sender:self];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
