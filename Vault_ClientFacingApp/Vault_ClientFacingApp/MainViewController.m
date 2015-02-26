@@ -33,6 +33,10 @@
 @property UIColor *customPink;
 @property UIColor *customDarkGrey;
 
+@property UITextField *name;
+@property UITextField *email;
+@property UITextField *appDescription;
+
 @end
 
 @implementation MainViewController
@@ -60,7 +64,7 @@
     self.view2.backgroundColor = self.customBlue;
     [self.view addSubview:self.view2];
     
-    UILabel *productNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view2.frame.origin.x + 150, self.view2.frame.origin.y - 275, 345, 30)];
+    UILabel *productNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view2.frame.origin.x + 130, self.view2.frame.origin.y - 300, 345, 30)];
     productNeedLabel.text = @"Product Need";
     productNeedLabel.textColor = [UIColor blackColor];
     
@@ -98,12 +102,12 @@
     self.view3.backgroundColor = self.customGreen;
     [self.view addSubview:self.view3];
     
-    UILabel *teamNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view3.frame.origin.x + 135, self.view3.frame.origin.y - 275, 345, 30)];
+    UILabel *teamNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view3.frame.origin.x + 145, self.view3.frame.origin.y - 325, 345, 30)];
     teamNeedLabel.text = @"Team Need";
     teamNeedLabel.textColor = [UIColor blackColor];
     
     UIButton *onePerson = [UIButton buttonWithType:UIButtonTypeCustom];
-    onePerson.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 225, 345, 30);
+    onePerson.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 250, 345, 30);
     [onePerson setTitle:@"One Person" forState:UIControlStateNormal];
     [onePerson addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [onePerson setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -111,7 +115,7 @@
     [onePerson.layer setBorderWidth:1];
     
     UIButton *smallTeam = [UIButton buttonWithType:UIButtonTypeCustom];
-    smallTeam.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 175, 345, 30);
+    smallTeam.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 200, 345, 30);
     [smallTeam setTitle:@"Small Team" forState:UIControlStateNormal];
     [smallTeam addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [smallTeam setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -119,7 +123,7 @@
     [smallTeam.layer setBorderWidth:1];
     
     UIButton *largeTeam = [UIButton buttonWithType:UIButtonTypeCustom];
-    largeTeam.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 125, 345, 30);
+    largeTeam.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 150, 345, 30);
     [largeTeam setTitle:@"Large Team" forState:UIControlStateNormal];
     [largeTeam addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [largeTeam setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -136,12 +140,12 @@
     self.view4.backgroundColor = self.customPink;
     [self.view addSubview:self.view4];
     
-    UILabel *budgetLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view4.frame.origin.x + 135, self.view4.frame.origin.y - 275, 345, 30)];
+    UILabel *budgetLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view4.frame.origin.x + 165, self.view4.frame.origin.y - 350, 345, 30)];
     budgetLabel.text = @"Budget";
     budgetLabel.textColor = [UIColor blackColor];
     
     UIButton *small = [UIButton buttonWithType:UIButtonTypeCustom];
-    small.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 225, 345, 30);
+    small.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 275, 345, 30);
     [small setTitle:@"Small" forState:UIControlStateNormal];
     [small addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [small setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -149,7 +153,7 @@
     [small.layer setBorderWidth:1];
     
     UIButton *medium = [UIButton buttonWithType:UIButtonTypeCustom];
-    medium.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 175, 345, 30);
+    medium.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 225, 345, 30);
     [medium setTitle:@"Medium" forState:UIControlStateNormal];
     [medium addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [medium setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -157,7 +161,7 @@
     [medium.layer setBorderWidth:1];
     
     UIButton *large = [UIButton buttonWithType:UIButtonTypeCustom];
-    large.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 125, 345, 30);
+    large.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 175, 345, 30);
     [large setTitle:@"Large" forState:UIControlStateNormal];
     [large addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [large setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -174,11 +178,26 @@
     self.view5.backgroundColor = self.customDarkGrey;
     [self.view addSubview:self.view5];
     
-    UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 135, self.view5.frame.origin.y - 275, 345, 30)];
+    UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 135, self.view5.frame.origin.y - 400, 345, 30)];
     contactInfo.text = @"Contact Info";
     contactInfo.textColor = [UIColor whiteColor];
     
+    self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 325, 315, 30)];
+    self.name.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.name.layer.borderWidth = 1;
+    
+    self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 275, 315, 30)];
+    self.email.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.email.layer.borderWidth = 1;
+    
+    self.appDescription = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 225, 315, 150)];
+    self.appDescription.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.appDescription.layer.borderWidth = 1;
+    
     [self.view5 addSubview:contactInfo];
+    [self.view5 addSubview:self.name];
+    [self.view5 addSubview:self.email];
+    [self.view5 addSubview:self.appDescription];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -233,11 +252,6 @@
     NSLog(@"%@, %@, %@, %@", self.productIdea, self.productNeed, self.teamNeed, self.budget);
 }
 
--(IBAction)contactInfo:(UIButton *)sender
-{
-    
-}
-
 -(IBAction)submitDetails:(id)sender
 {
     PFObject *client = [PFObject objectWithClassName:@"Client"];
@@ -249,6 +263,13 @@
     client[@"contactEmail"] = self.contactEmail;
     client[@"contactAppDescription"] = self.contactAppDescription;
     [client saveInBackground];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.name resignFirstResponder];
+    [self.email resignFirstResponder];
+    [self.appDescription resignFirstResponder];
 }
 
 //- (IBAction)resignCurrentOverlay:(UIBarButtonItem *)sender
