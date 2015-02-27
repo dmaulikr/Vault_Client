@@ -297,16 +297,6 @@
 
 -(IBAction)submitDetails:(UIButton *)sender
 {
-    PFObject *client = [PFObject objectWithClassName:@"Client"];
-    client[@"productIdea"] = self.productIdea;
-    client[@"productNeed"] = self.productNeed;
-    client[@"teamNeed"] = self.teamNeed;
-    client[@"budget"] = self.budget;
-    client[@"contactName"] = self.contactName;
-    client[@"contactEmail"] = self.contactEmail;
-    client[@"contactAppDescription"] = self.contactAppDescription;
-    [client saveInBackground];
-    
     NSString *alertMessage = [NSString stringWithFormat:@"Is this correct?\n\nPlatform: %@\nProduct Need: %@\nTeam Need: %@\nBudget: %@\nContact Name: %@\nContact Email: %@\nApplication Description: %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription];
     
     UIAlertView *emailAlert = [[UIAlertView alloc] initWithTitle:@"Check Your Order" message:alertMessage delegate:self cancelButtonTitle:@"No, Restart" otherButtonTitles:@"Yes!", nil];
@@ -322,7 +312,6 @@
 
 -(void)cycleTheGlobalMailComposer
 {
-    // we are cycling the damned GlobalMailComposer... due to horrible iOS issue
     self.mailVC = nil;
     self.mailVC = [[MFMailComposeViewController alloc] init];
 }
@@ -335,6 +324,16 @@
     }
     else if (buttonIndex == 1)
     {
+        PFObject *client = [PFObject objectWithClassName:@"Client"];
+        client[@"productIdea"] = self.productIdea;
+        client[@"productNeed"] = self.productNeed;
+        client[@"teamNeed"] = self.teamNeed;
+        client[@"budget"] = self.budget;
+        client[@"contactName"] = self.contactName;
+        client[@"contactEmail"] = self.contactEmail;
+        client[@"contactAppDescription"] = self.contactAppDescription;
+        [client saveInBackground];
+        
         [self cycleTheGlobalMailComposer];
         self.mailVC.mailComposeDelegate = self;
         
