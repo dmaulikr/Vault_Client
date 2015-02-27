@@ -38,6 +38,8 @@
 @property UITextField *email;
 @property UITextField *appDescription;
 
+@property MFMailComposeViewController *mailVC;
+
 @end
 
 @implementation MainViewController
@@ -45,6 +47,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.mailVC = [[MFMailComposeViewController alloc] init];
     
     self.mobileButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.mobileButton.layer.borderWidth = 1;
@@ -199,7 +203,7 @@
     self.appDescription.textColor = [UIColor whiteColor];
     
     UIButton *meetingTimes = [UIButton buttonWithType:UIButtonTypeCustom];
-    meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
+    meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 450, 315, 30);
     [meetingTimes setTitle:@"Kick Off Meeting" forState:UIControlStateNormal];
     [meetingTimes addTarget:self action:@selector(pickMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [meetingTimes setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
@@ -217,7 +221,7 @@
     [self.view addSubview:self.view6];
     
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
-    submit.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
+    submit.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 450, 315, 30);
     [submit setTitle:@"Submit" forState:UIControlStateNormal];
     [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
     [submit setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
@@ -291,7 +295,7 @@
     NSLog(@"%@, %@, %@, %@, %@, %@, %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription);
 }
 
--(IBAction)submitDetails:(id)sender
+-(IBAction)submitDetails:(UIButton *)sender
 {
     PFObject *client = [PFObject objectWithClassName:@"Client"];
     client[@"productIdea"] = self.productIdea;
@@ -303,23 +307,32 @@
     client[@"contactAppDescription"] = self.contactAppDescription;
     [client saveInBackground];
     
-    // Email Subject
-    NSString *emailTitle = @"New Client";
-    // Email Content
-    NSString *messageBody = [NSString stringWithFormat: @"Product Platform: %@\nProduct Need: %@\nTeam Needed: %@\nBudget: %@\nContact: %@\nEmail: %@\nApp Description: %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription];
-    // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"harrison@coderexp.com"];
+    [self cycleTheGlobalMailComposer];
+    self.mailVC.mailComposeDelegate = self;
     
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:emailTitle];
-    [mc setMessageBody:messageBody isHTML:NO];
-    [mc setToRecipients:toRecipents];
+    NSArray *emails = @[@"harrison@coderexp.com"];
+    NSString *subject = @"New Client";
+    NSString *message = @"Test Message!";
     
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
-    
+    [self.mailVC setToRecipients:emails];
+    [self.mailVC setSubject:subject];
+    [self.mailVC setMessageBody:message isHTML:NO];
+    [self presentViewController:self.mailVC animated:YES completion:nil];
+
     //[self performSegueWithIdentifier:@"faqSegueID" sender:self];
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self cycleTheGlobalMailComposer];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)cycleTheGlobalMailComposer
+{
+    // we are cycling the damned GlobalMailComposer... due to horrible iOS issue
+    self.mailVC = nil;
+    self.mailVC = [[MFMailComposeViewController alloc] init];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

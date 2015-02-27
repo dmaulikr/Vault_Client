@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
@@ -24,7 +23,7 @@
     // Initialize Parse.
     [Parse setApplicationId:@"rCoeOEkuNr5yuhSNLyyAnvtjgiFgYkBaxLsoQ2IZ"
                   clientKey:@"cOwJCZEidaN8bEY0NKXYAYy1OLzorTmewwlOrvpU"];
-    
+
     return YES;
 }
 
