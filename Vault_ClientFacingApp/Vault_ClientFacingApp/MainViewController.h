@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
+#import <MessageUI/MessageUI.h>
 
 @interface MainViewController : UIViewController
 

@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController () <MFMailComposeViewControllerDelegate>
 
 //initial view buttons
 @property (weak, nonatomic) IBOutlet UIButton *mobileButton;
@@ -303,7 +303,23 @@
     client[@"contactAppDescription"] = self.contactAppDescription;
     [client saveInBackground];
     
-    [self performSegueWithIdentifier:@"faqSegueID" sender:self];
+    // Email Subject
+    NSString *emailTitle = @"New Client";
+    // Email Content
+    NSString *messageBody = [NSString stringWithFormat: @"Product Platform: %@\nProduct Need: %@\nTeam Needed: %@\nBudget: %@\nContact: %@\nEmail: %@\nApp Description: %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription];
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"harrison@coderexp.com"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+    
+    //[self performSegueWithIdentifier:@"faqSegueID" sender:self];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
