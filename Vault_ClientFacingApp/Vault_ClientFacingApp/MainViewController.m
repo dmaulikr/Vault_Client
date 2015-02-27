@@ -203,7 +203,7 @@
     self.appDescription.textColor = [UIColor whiteColor];
     
     UIButton *meetingTimes = [UIButton buttonWithType:UIButtonTypeCustom];
-    meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 450, 315, 30);
+    meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
     [meetingTimes setTitle:@"Kick Off Meeting" forState:UIControlStateNormal];
     [meetingTimes addTarget:self action:@selector(pickMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [meetingTimes setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
@@ -221,7 +221,7 @@
     [self.view addSubview:self.view6];
     
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
-    submit.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 450, 315, 30);
+    submit.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
     [submit setTitle:@"Submit" forState:UIControlStateNormal];
     [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
     [submit setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
@@ -307,25 +307,17 @@
     client[@"contactAppDescription"] = self.contactAppDescription;
     [client saveInBackground];
     
-    [self cycleTheGlobalMailComposer];
-    self.mailVC.mailComposeDelegate = self;
+    NSString *alertMessage = [NSString stringWithFormat:@"Is this correct?\n\nPlatform: %@\nProduct Need: %@\nTeam Need: %@\nBudget: %@\nContact Name: %@\nContact Email: %@\nApplication Description: %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription];
     
-    NSArray *emails = @[@"harrison@coderexp.com"];
-    NSString *subject = @"New Client";
-    NSString *message = @"Test Message!";
-    
-    [self.mailVC setToRecipients:emails];
-    [self.mailVC setSubject:subject];
-    [self.mailVC setMessageBody:message isHTML:NO];
-    [self presentViewController:self.mailVC animated:YES completion:nil];
-
-    //[self performSegueWithIdentifier:@"faqSegueID" sender:self];
+    UIAlertView *emailAlert = [[UIAlertView alloc] initWithTitle:@"Check Your Order" message:alertMessage delegate:self cancelButtonTitle:@"No, Restart" otherButtonTitles:@"Yes!", nil];
+    [emailAlert show];
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [self cycleTheGlobalMailComposer];
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"faqSegueID" sender:self];
 }
 
 -(void)cycleTheGlobalMailComposer
@@ -333,6 +325,28 @@
     // we are cycling the damned GlobalMailComposer... due to horrible iOS issue
     self.mailVC = nil;
     self.mailVC = [[MFMailComposeViewController alloc] init];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0)
+    {
+        [self performSegueWithIdentifier:@"faqSegueID" sender:self];
+    }
+    else if (buttonIndex == 1)
+    {
+        [self cycleTheGlobalMailComposer];
+        self.mailVC.mailComposeDelegate = self;
+        
+        NSArray *emails = @[@"harrison@coderexp.com"];
+        NSString *subject = @"New Client";
+        NSString *message = [NSString stringWithFormat:@"Platform: %@\nProduct Need: %@\nTeam Need: %@\nBudget: %@\nContact Name: %@\nContact Email: %@\nApplication Description: %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription];
+        
+        [self.mailVC setToRecipients:emails];
+        [self.mailVC setSubject:subject];
+        [self.mailVC setMessageBody:message isHTML:NO];
+        [self presentViewController:self.mailVC animated:YES completion:nil];
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
