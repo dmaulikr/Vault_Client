@@ -32,7 +32,7 @@
 
 @property UITextField *name;
 @property UITextField *email;
-@property UITextField *appDescription;
+@property UITextView *appDescription;
 
 @property MFMailComposeViewController *mailVC;
 
@@ -53,16 +53,13 @@
     self.customPink = [UIColor colorWithRed:(251/255.0) green:(38/255.0) blue:(108/255.0) alpha:1.0];
     self.customDarkGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
     
-    //Product Platform Overlay (#2)
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 465, 600, 600)];
-    self.view.backgroundColor = [UIColor blackColor];
-    
-    UILabel *productIdeaLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 130, self.view.frame.origin.y - 300, 345, 30)];
+    //Product Platform Overlay (#1)
+    UILabel *productIdeaLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
     productIdeaLabel.text = @"Product Idea";
     productIdeaLabel.textColor = [UIColor whiteColor];
     
     UIButton *mobile = [UIButton buttonWithType:UIButtonTypeCustom];
-    mobile.frame = CGRectMake(self.view.frame.origin.x + 15, self.view.frame.origin.y - 225, 345, 30);
+    mobile.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [mobile setTitle:@"Mobile" forState:UIControlStateNormal];
     [mobile addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
     [mobile setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -70,7 +67,7 @@
     [mobile.layer setBorderWidth:1];
     
     UIButton *web = [UIButton buttonWithType:UIButtonTypeCustom];
-    web.frame = CGRectMake(self.view.frame.origin.x + 15, self.view.frame.origin.y - 175, 345, 30);
+    web.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [web setTitle:@"Web" forState:UIControlStateNormal];
     [web addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
     [web setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -78,7 +75,7 @@
     [web.layer setBorderWidth:1];
     
     UIButton *both = [UIButton buttonWithType:UIButtonTypeCustom];
-    both.frame = CGRectMake(self.view.frame.origin.x + 15, self.view.frame.origin.y - 125, 345, 30);
+    both.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [both setTitle:@"Both" forState:UIControlStateNormal];
     [both addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
     [both setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -91,36 +88,36 @@
     [self.view addSubview:both];
     
     //Product Need Overlay (#2)
-    self.view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 465, 600, 600)];
+    self.view2 = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/1.5, 600, 600)];
     self.view2.backgroundColor = self.customBlue;
     [self.view addSubview:self.view2];
     
-    UILabel *productNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(productIdeaLabel.frame.origin.x, productIdeaLabel.frame.origin.y, 345, 30)];
+    UILabel *productNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(productIdeaLabel.frame.origin.x, productIdeaLabel.frame.origin.y, productIdeaLabel.frame.size.width, productIdeaLabel.frame.size.height)];
     productNeedLabel.text = @"Product Need";
-    productNeedLabel.textColor = [UIColor blackColor];
+    productNeedLabel.textColor = [UIColor whiteColor];
     
     UIButton *mvp = [UIButton buttonWithType:UIButtonTypeCustom];
-    mvp.frame = CGRectMake(self.view2.frame.origin.x + 15, self.view2.frame.origin.y - 225, 345, 30);
+    mvp.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [mvp setTitle:@"MVP" forState:UIControlStateNormal];
     [mvp addTarget:self action:@selector(selectProductNeed:) forControlEvents:UIControlEventTouchUpInside];
-    [mvp setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [mvp.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [mvp setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [mvp.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [mvp.layer setBorderWidth:1];
     
     UIButton *basic = [UIButton buttonWithType:UIButtonTypeCustom];
-    basic.frame = CGRectMake(self.view2.frame.origin.x + 15, self.view2.frame.origin.y - 175, 345, 30);
+    basic.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [basic setTitle:@"Basic" forState:UIControlStateNormal];
     [basic addTarget:self action:@selector(selectProductNeed:) forControlEvents:UIControlEventTouchUpInside];
-    [basic setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [basic.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [basic setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [basic.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [basic.layer setBorderWidth:1];
     
     UIButton *complex = [UIButton buttonWithType:UIButtonTypeCustom];
-    complex.frame = CGRectMake(self.view2.frame.origin.x + 15, self.view2.frame.origin.y - 125, 345, 30);
+    complex.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [complex setTitle:@"Complex" forState:UIControlStateNormal];
     [complex addTarget:self action:@selector(selectProductNeed:) forControlEvents:UIControlEventTouchUpInside];
-    [complex setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [complex.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [complex setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [complex.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [complex.layer setBorderWidth:1];
     
     [self.view2 addSubview:productNeedLabel];
@@ -129,16 +126,16 @@
     [self.view2 addSubview:complex];
     
     //Team Need Overlay (#3)
-    self.view3 = [[UIView alloc] initWithFrame:CGRectMake(0, 515, 600, 600)];
+    self.view3 = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/1.35, 600, 600)];
     self.view3.backgroundColor = self.customGreen;
     [self.view addSubview:self.view3];
     
-    UILabel *teamNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view3.frame.origin.x + 145, self.view3.frame.origin.y - 325, 345, 30)];
+    UILabel *teamNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
     teamNeedLabel.text = @"Team Need";
     teamNeedLabel.textColor = [UIColor blackColor];
     
     UIButton *onePerson = [UIButton buttonWithType:UIButtonTypeCustom];
-    onePerson.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 250, 345, 30);
+    onePerson.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [onePerson setTitle:@"One Person" forState:UIControlStateNormal];
     [onePerson addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [onePerson setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -146,7 +143,7 @@
     [onePerson.layer setBorderWidth:1];
     
     UIButton *smallTeam = [UIButton buttonWithType:UIButtonTypeCustom];
-    smallTeam.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 200, 345, 30);
+    smallTeam.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [smallTeam setTitle:@"Small Team" forState:UIControlStateNormal];
     [smallTeam addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [smallTeam setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -154,7 +151,7 @@
     [smallTeam.layer setBorderWidth:1];
     
     UIButton *largeTeam = [UIButton buttonWithType:UIButtonTypeCustom];
-    largeTeam.frame = CGRectMake(self.view3.frame.origin.x + 15, self.view3.frame.origin.y - 150, 345, 30);
+    largeTeam.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [largeTeam setTitle:@"Large Team" forState:UIControlStateNormal];
     [largeTeam addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [largeTeam setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -167,16 +164,16 @@
     [self.view3 addSubview:largeTeam];
     
     //Budget Overlay (#4)
-    self.view4 = [[UIView alloc] initWithFrame:CGRectMake(0, 565, 600, 600)];
+    self.view4 = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/1.21, 600, 600)];
     self.view4.backgroundColor = self.customPink;
     [self.view addSubview:self.view4];
     
-    UILabel *budgetLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view4.frame.origin.x + 165, self.view4.frame.origin.y - 350, 345, 30)];
+    UILabel *budgetLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 25, self.view.frame.size.height/4, 150, 30)];
     budgetLabel.text = @"Budget";
     budgetLabel.textColor = [UIColor blackColor];
     
     UIButton *small = [UIButton buttonWithType:UIButtonTypeCustom];
-    small.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 275, 345, 30);
+    small.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [small setTitle:@"Small" forState:UIControlStateNormal];
     [small addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [small setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -184,7 +181,7 @@
     [small.layer setBorderWidth:1];
     
     UIButton *medium = [UIButton buttonWithType:UIButtonTypeCustom];
-    medium.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 225, 345, 30);
+    medium.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [medium setTitle:@"Medium" forState:UIControlStateNormal];
     [medium addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [medium setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -192,7 +189,7 @@
     [medium.layer setBorderWidth:1];
     
     UIButton *large = [UIButton buttonWithType:UIButtonTypeCustom];
-    large.frame = CGRectMake(self.view4.frame.origin.x + 15, self.view4.frame.origin.y - 175, 345, 30);
+    large.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [large setTitle:@"Large" forState:UIControlStateNormal];
     [large addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [large setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -205,25 +202,26 @@
     [self.view4 addSubview:large];
     
     //Contact Info Overlay (#5)
-    self.view5 = [[UIView alloc] initWithFrame:CGRectMake(0, 615, 600, 600)];
+    self.view5 = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/1.1, 600, 600)];
     self.view5.backgroundColor = self.customDarkGrey;
     [self.view addSubview:self.view5];
     
-    UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 135, self.view5.frame.origin.y - 400, 345, 30)];
+    UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
     contactInfo.text = @"Contact Info";
     contactInfo.textColor = [UIColor whiteColor];
     
-    self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 325, 315, 30)];
+    self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30)];
     self.name.layer.borderColor = [UIColor whiteColor].CGColor;
     self.name.layer.borderWidth = 1;
     self.name.textColor = [UIColor whiteColor];
     
-    self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 275, 315, 30)];
+    self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30)];
     self.email.layer.borderColor = [UIColor whiteColor].CGColor;
     self.email.layer.borderWidth = 1;
     self.email.textColor = [UIColor whiteColor];
     
-    self.appDescription = [[UITextField alloc] initWithFrame:CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 225, 315, 150)];
+    self.appDescription = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 150)];
+    self.appDescription.backgroundColor = [UIColor clearColor];
     self.appDescription.layer.borderColor = [UIColor whiteColor].CGColor;
     self.appDescription.layer.borderWidth = 1;
     self.appDescription.textColor = [UIColor whiteColor];
@@ -247,7 +245,7 @@
     [self.view addSubview:self.view6];
     
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
-    submit.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
+    submit.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [submit setTitle:@"Submit" forState:UIControlStateNormal];
     [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
     [submit setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
@@ -269,6 +267,7 @@
     self.productIdea = sender.titleLabel.text;
     
     [UIView animateWithDuration:0.3 animations:^{
+        self.view2.backgroundColor = self.customDarkGrey;
         self.view2.frame = self.view.frame;
     }];
 }
