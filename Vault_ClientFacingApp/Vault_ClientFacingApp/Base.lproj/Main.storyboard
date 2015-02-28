@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zrq-jQ-czK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -16,62 +15,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Product Idea" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo2-ZQ-ciI">
-                                <rect key="frame" x="251" y="217" width="99" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="6El-HZ-esQ"/>
-                                    <constraint firstAttribute="height" constant="21" id="fXU-YN-Rrc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbU-6E-Sfd">
-                                <rect key="frame" x="16" y="329" width="568" height="30"/>
-                                <state key="normal" title="Web">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectProjectPlatform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uQg-Ys-w9F"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSl-Id-W1b">
-                                <rect key="frame" x="16" y="283" width="568" height="30"/>
-                                <state key="normal" title="Mobile">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectProjectPlatform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n62-6T-iIq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i27-D9-wud">
-                                <rect key="frame" x="16" y="377" width="568" height="30"/>
-                                <state key="normal" title="Both">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectProjectPlatform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kiz-nL-cpx"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DSl-Id-W1b" firstAttribute="centerX" secondItem="xo2-ZQ-ciI" secondAttribute="centerX" id="44q-zc-ZYq"/>
-                            <constraint firstItem="tbU-6E-Sfd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IMO-1F-jaD"/>
-                            <constraint firstItem="DSl-Id-W1b" firstAttribute="top" secondItem="xo2-ZQ-ciI" secondAttribute="bottom" constant="45" id="MOF-88-Lb9"/>
-                            <constraint firstItem="i27-D9-wud" firstAttribute="top" secondItem="tbU-6E-Sfd" secondAttribute="bottom" constant="18" id="PYB-K4-p4K"/>
-                            <constraint firstItem="tbU-6E-Sfd" firstAttribute="trailing" secondItem="DSl-Id-W1b" secondAttribute="trailing" id="ZPB-Ol-Y2j"/>
-                            <constraint firstItem="i27-D9-wud" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eOJ-Hj-HfH"/>
-                            <constraint firstItem="DSl-Id-W1b" firstAttribute="leading" secondItem="tbU-6E-Sfd" secondAttribute="leading" id="lNr-Kt-QtG"/>
-                            <constraint firstItem="i27-D9-wud" firstAttribute="trailing" secondItem="tbU-6E-Sfd" secondAttribute="trailing" id="tEV-Qu-x6t"/>
-                            <constraint firstItem="i27-D9-wud" firstAttribute="leading" secondItem="tbU-6E-Sfd" secondAttribute="leading" id="tWM-fc-FCC"/>
-                            <constraint firstItem="tbU-6E-Sfd" firstAttribute="top" secondItem="DSl-Id-W1b" secondAttribute="bottom" constant="16" id="tdS-Ge-wBh"/>
-                            <constraint firstItem="xo2-ZQ-ciI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="153" id="yeQ-9k-9Vm"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nWy-Hy-ed5">
                         <barButtonItem key="leftBarButtonItem" title="i" id="RJy-jf-P5d">
@@ -82,9 +26,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mobielAndWebButton" destination="i27-D9-wud" id="px8-sO-cX8"/>
-                        <outlet property="mobileButton" destination="DSl-Id-W1b" id="qUN-vW-tyd"/>
-                        <outlet property="webButton" destination="tbU-6E-Sfd" id="606-XF-bwx"/>
                         <segue destination="Jbj-xw-YHa" kind="show" identifier="faqSegueID" id="Se0-92-h2o"/>
                     </connections>
                 </viewController>

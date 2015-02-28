@@ -11,10 +11,6 @@
 @interface MainViewController () <MFMailComposeViewControllerDelegate>
 
 //initial view buttons
-@property (weak, nonatomic) IBOutlet UIButton *mobileButton;
-@property (weak, nonatomic) IBOutlet UIButton *webButton;
-@property (weak, nonatomic) IBOutlet UIButton *mobielAndWebButton;
-
 @property NSString *productIdea;
 @property NSString *productNeed;
 @property NSString *teamNeed;
@@ -49,13 +45,6 @@
     [super viewDidLoad];
     
     self.mailVC = [[MFMailComposeViewController alloc] init];
-    
-    self.mobileButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.mobileButton.layer.borderWidth = 1;
-    self.webButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.webButton.layer.borderWidth = 1;
-    self.mobielAndWebButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.mobielAndWebButton.layer.borderWidth = 1;
 
     [[self navigationController] setNavigationBarHidden:YES];
     
@@ -64,12 +53,49 @@
     self.customPink = [UIColor colorWithRed:(251/255.0) green:(38/255.0) blue:(108/255.0) alpha:1.0];
     self.customDarkGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
     
+    //Product Platform Overlay (#2)
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 465, 600, 600)];
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    UILabel *productIdeaLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 130, self.view.frame.origin.y - 300, 345, 30)];
+    productIdeaLabel.text = @"Product Idea";
+    productIdeaLabel.textColor = [UIColor whiteColor];
+    
+    UIButton *mobile = [UIButton buttonWithType:UIButtonTypeCustom];
+    mobile.frame = CGRectMake(self.view.frame.origin.x + 15, self.view.frame.origin.y - 225, 345, 30);
+    [mobile setTitle:@"Mobile" forState:UIControlStateNormal];
+    [mobile addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
+    [mobile setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [mobile.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [mobile.layer setBorderWidth:1];
+    
+    UIButton *web = [UIButton buttonWithType:UIButtonTypeCustom];
+    web.frame = CGRectMake(self.view.frame.origin.x + 15, self.view.frame.origin.y - 175, 345, 30);
+    [web setTitle:@"Web" forState:UIControlStateNormal];
+    [web addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
+    [web setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [web.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [web.layer setBorderWidth:1];
+    
+    UIButton *both = [UIButton buttonWithType:UIButtonTypeCustom];
+    both.frame = CGRectMake(self.view.frame.origin.x + 15, self.view.frame.origin.y - 125, 345, 30);
+    [both setTitle:@"Both" forState:UIControlStateNormal];
+    [both addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
+    [both setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [both.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [both.layer setBorderWidth:1];
+    
+    [self.view addSubview:productIdeaLabel];
+    [self.view addSubview: mobile];
+    [self.view addSubview:web];
+    [self.view addSubview:both];
+    
     //Product Need Overlay (#2)
     self.view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 465, 600, 600)];
     self.view2.backgroundColor = self.customBlue;
     [self.view addSubview:self.view2];
     
-    UILabel *productNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view2.frame.origin.x + 130, self.view2.frame.origin.y - 300, 345, 30)];
+    UILabel *productNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(productIdeaLabel.frame.origin.x, productIdeaLabel.frame.origin.y, 345, 30)];
     productNeedLabel.text = @"Product Need";
     productNeedLabel.textColor = [UIColor blackColor];
     
@@ -235,11 +261,11 @@
     return YES;
 }
 
--(IBAction)selectProjectPlatform:(UIButton *)sender
+-(IBAction)selectProjectIdea:(UIButton *)sender
 {
     [[self navigationController] setNavigationBarHidden:NO];
     self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-
+    
     self.productIdea = sender.titleLabel.text;
     
     [UIView animateWithDuration:0.3 animations:^{
