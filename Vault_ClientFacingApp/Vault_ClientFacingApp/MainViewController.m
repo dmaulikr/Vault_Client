@@ -376,19 +376,38 @@
 
 -(void)getTime
 {
+    //set up date formatters
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateFormatter *dateAndTimeFormat = [[NSDateFormatter alloc] init];
     [dateAndTimeFormat setDateFormat:@"EEEE MM/dd/YYYY"];
     [dateAndTimeFormat setLocale:[NSLocale currentLocale]];
     
-    NSDate *day1 = [cal dateByAddingUnit:NSCalendarUnitDay value:1 toDate:[NSDate date] options:0];
-    self.day1String = [dateAndTimeFormat stringFromDate:day1];
+    NSDate *today = [cal dateByAddingUnit:NSCalendarUnitDay value:3 toDate:[NSDate date] options:0];
+    NSMutableArray *array = [[NSMutableArray alloc] init];
     
-    NSDate *day2 = [cal dateByAddingUnit:NSCalendarUnitDay value:1 toDate:day1 options:0];
-    self.day2String = [dateAndTimeFormat stringFromDate:day2];
+    //get the next 7 days
+    for (int i = 0; i <7; i++)
+    {
+        NSDateFormatter *weekdayFormat = [[NSDateFormatter alloc] init];
+        [weekdayFormat setDateFormat:@"EEEE"];
+        NSDate *weekday = [cal dateByAddingUnit:NSCalendarUnitDay value:i + 1 toDate:today options:0];
+        NSString *stringDate = [weekdayFormat stringFromDate:weekday];
+        
+        [array addObject:stringDate];
+        
+        //check and remove saturday and sunday
+        if ([stringDate isEqualToString:@"Saturday"] || [stringDate isEqualToString:@"Sunday"])
+        {
+            [array removeObject:stringDate];
+        }
+    }
     
-    NSDate *day3 = [cal dateByAddingUnit:NSCalendarUnitDay value:1 toDate:day2 options:0];
-    self.day3String = [dateAndTimeFormat stringFromDate:day3];
+    //set button strings for selection
+    self.day1String = [array objectAtIndex:0];
+    self.day2String = [array objectAtIndex:1];
+    self.day3String = [array objectAtIndex:2];
+    self.day4String = [array objectAtIndex:3];
+    self.day5String = [array objectAtIndex:4];
 }
 
 -(IBAction)submitDetails:(UIButton *)sender
