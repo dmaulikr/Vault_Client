@@ -19,6 +19,12 @@
 @property NSString *contactEmail;
 @property NSString *contactAppDescription;
 
+@property NSString *day1String;
+@property NSString *day2String;
+@property NSString *day3String;
+@property NSString *day4String;
+@property NSString *day5String;
+
 @property UIView *view2;
 @property UIView *view3;
 @property UIView *view4;
@@ -43,6 +49,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self getTime];
     
     self.mailVC = [[MFMailComposeViewController alloc] init];
 
@@ -132,30 +140,30 @@
     
     UILabel *teamNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
     teamNeedLabel.text = @"Team Need";
-    teamNeedLabel.textColor = [UIColor blackColor];
+    teamNeedLabel.textColor = self.customBlue;
     
     UIButton *onePerson = [UIButton buttonWithType:UIButtonTypeCustom];
     onePerson.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [onePerson setTitle:@"One Person" forState:UIControlStateNormal];
     [onePerson addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
-    [onePerson setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [onePerson.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [onePerson setTitleColor:self.customBlue forState:UIControlStateNormal];
+    [onePerson.layer setBorderColor:[self.customBlue CGColor]];
     [onePerson.layer setBorderWidth:1];
     
     UIButton *smallTeam = [UIButton buttonWithType:UIButtonTypeCustom];
     smallTeam.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [smallTeam setTitle:@"Small Team" forState:UIControlStateNormal];
     [smallTeam addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
-    [smallTeam setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [smallTeam.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [smallTeam setTitleColor:self.customBlue forState:UIControlStateNormal];
+    [smallTeam.layer setBorderColor:[self.customBlue CGColor]];
     [smallTeam.layer setBorderWidth:1];
     
     UIButton *largeTeam = [UIButton buttonWithType:UIButtonTypeCustom];
     largeTeam.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [largeTeam setTitle:@"Large Team" forState:UIControlStateNormal];
     [largeTeam addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
-    [largeTeam setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [largeTeam.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [largeTeam setTitleColor:self.customBlue forState:UIControlStateNormal];
+    [largeTeam.layer setBorderColor:[self.customBlue CGColor]];
     [largeTeam.layer setBorderWidth:1];
     
     [self.view3 addSubview:teamNeedLabel];
@@ -170,30 +178,30 @@
     
     UILabel *budgetLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 25, self.view.frame.size.height/4, 150, 30)];
     budgetLabel.text = @"Budget";
-    budgetLabel.textColor = [UIColor blackColor];
+    budgetLabel.textColor = self.customGreen;
     
     UIButton *small = [UIButton buttonWithType:UIButtonTypeCustom];
     small.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [small setTitle:@"Small" forState:UIControlStateNormal];
     [small addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
-    [small setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [small.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [small setTitleColor:self.customGreen forState:UIControlStateNormal];
+    [small.layer setBorderColor:[self.customGreen CGColor]];
     [small.layer setBorderWidth:1];
     
     UIButton *medium = [UIButton buttonWithType:UIButtonTypeCustom];
     medium.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [medium setTitle:@"Medium" forState:UIControlStateNormal];
     [medium addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
-    [medium setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [medium.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [medium setTitleColor:self.customGreen forState:UIControlStateNormal];
+    [medium.layer setBorderColor:[self.customGreen CGColor]];
     [medium.layer setBorderWidth:1];
     
     UIButton *large = [UIButton buttonWithType:UIButtonTypeCustom];
     large.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [large setTitle:@"Large" forState:UIControlStateNormal];
     [large addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
-    [large setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [large.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [large setTitleColor:self.customGreen forState:UIControlStateNormal];
+    [large.layer setBorderColor:[self.customGreen CGColor]];
     [large.layer setBorderWidth:1];
     
     [self.view4 addSubview:budgetLabel];
@@ -208,27 +216,30 @@
     
     UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
     contactInfo.text = @"Contact Info";
-    contactInfo.textColor = [UIColor whiteColor];
+    contactInfo.textColor = self.customPink;
     
     self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30)];
-    self.name.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.name.layer.borderColor = self.customPink.CGColor;
     self.name.layer.borderWidth = 1;
     self.name.textColor = [UIColor whiteColor];
+    self.name.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"   NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     
     self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30)];
-    self.email.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.email.layer.borderColor = self.customPink.CGColor;
     self.email.layer.borderWidth = 1;
     self.email.textColor = [UIColor whiteColor];
+    self.email.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"   EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     
     self.appDescription = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 150)];
     self.appDescription.backgroundColor = [UIColor clearColor];
-    self.appDescription.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.appDescription.layer.borderColor = self.customPink.CGColor;
     self.appDescription.layer.borderWidth = 1;
-    self.appDescription.textColor = [UIColor whiteColor];
+    self.appDescription.textColor = [UIColor lightGrayColor];
+    self.appDescription.text = @"App Description (Optional)";
     
     UIButton *meetingTimes = [UIButton buttonWithType:UIButtonTypeCustom];
     meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
-    [meetingTimes setTitle:@"Kick Off Meeting" forState:UIControlStateNormal];
+    [meetingTimes setTitle:@"Schedule Meeting" forState:UIControlStateNormal];
     [meetingTimes addTarget:self action:@selector(pickMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [meetingTimes setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
     [meetingTimes.layer setBackgroundColor:self.customGreen.CGColor];
@@ -244,13 +255,52 @@
     self.view6.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.view6];
     
+    UILabel *selectMeetingTime = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
+    selectMeetingTime.text = @"Select Time";
+    selectMeetingTime.textColor = [UIColor whiteColor];
+    
+    UIButton *day1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    day1.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
+    [day1 setTitle:self.day1String forState:UIControlStateNormal];
+    //[day1 addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
+    [day1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [day1.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [day1.layer setBorderWidth:1];
+    
+    UIButton *day2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    day2.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
+    [day2 setTitle:self.day2String forState:UIControlStateNormal];
+    //[day2 addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
+    [day2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [day2.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [day2.layer setBorderWidth:1];
+    
+    UIButton *day3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    day3.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
+    [day3 setTitle:self.day3String forState:UIControlStateNormal];
+    //[day3 addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
+    [day3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [day3.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    [day3.layer setBorderWidth:1];
+    
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
-    submit.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
+    submit.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
     [submit setTitle:@"Submit" forState:UIControlStateNormal];
     [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
     [submit setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
     [submit.layer setBackgroundColor:self.customGreen.CGColor];
     
+    NSArray *timeArray = @[@"10:00AM", @"1:00PM", @"3:00PM"];
+    UISegmentedControl *chooseTime = [[UISegmentedControl alloc] initWithItems:timeArray];
+    chooseTime.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 100, self.view.frame.size.width - 50, 30);
+    chooseTime.segmentedControlStyle = UISegmentedControlStyleBar;
+    chooseTime.tintColor = [UIColor whiteColor];
+    
+    [self.view6 addSubview:selectMeetingTime];
+    [self.view6 addSubview: day1];
+    [self.view6 addSubview:day2];
+    [self.view6 addSubview:day3];
+    [self.view6 addSubview:chooseTime];
     [self.view6 addSubview:submit];
 }
 
@@ -279,6 +329,7 @@
     self.productNeed = sender.titleLabel.text;
 
     [UIView animateWithDuration:0.3 animations:^{
+        self.view3.backgroundColor = self.customDarkGrey;
         self.view3.frame = self.view.frame;
     }];
 }
@@ -290,6 +341,7 @@
     self.teamNeed = sender.titleLabel.text;
     
     [UIView animateWithDuration:0.3 animations:^{
+        self.view4.backgroundColor = self.customDarkGrey;
         self.view4.frame = self.view.frame;
     }];
 }
@@ -301,6 +353,7 @@
     self.budget = sender.titleLabel.text;
     
     [UIView animateWithDuration:0.3 animations:^{
+        self.view5.backgroundColor = self.customDarkGrey;
         self.view5.frame = self.view.frame;
     }];
 }
@@ -314,10 +367,28 @@
     self.contactAppDescription = self.appDescription.text;
     
     [UIView animateWithDuration:0.3 animations:^{
+        self.view6.backgroundColor = self.customDarkGrey;
         self.view6.frame = self.view.frame;
     }];
     
     NSLog(@"%@, %@, %@, %@, %@, %@, %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription);
+}
+
+-(void)getTime
+{
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateFormatter *dateAndTimeFormat = [[NSDateFormatter alloc] init];
+    [dateAndTimeFormat setDateFormat:@"EEEE MM/dd/YYYY"];
+    [dateAndTimeFormat setLocale:[NSLocale currentLocale]];
+    
+    NSDate *day1 = [cal dateByAddingUnit:NSCalendarUnitDay value:1 toDate:[NSDate date] options:0];
+    self.day1String = [dateAndTimeFormat stringFromDate:day1];
+    
+    NSDate *day2 = [cal dateByAddingUnit:NSCalendarUnitDay value:1 toDate:day1 options:0];
+    self.day2String = [dateAndTimeFormat stringFromDate:day2];
+    
+    NSDate *day3 = [cal dateByAddingUnit:NSCalendarUnitDay value:1 toDate:day2 options:0];
+    self.day3String = [dateAndTimeFormat stringFromDate:day3];
 }
 
 -(IBAction)submitDetails:(UIButton *)sender
