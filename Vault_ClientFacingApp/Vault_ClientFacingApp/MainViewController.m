@@ -41,6 +41,7 @@
 @property UIColor *customBlue;
 @property UIColor *customPink;
 @property UIColor *customDarkGrey;
+@property UIColor *customPurple;
 
 @property UIButton *meetingTimes;
 
@@ -70,6 +71,7 @@
     self.customBlue = [UIColor colorWithRed:(96/255.0) green:(213/255.0) blue:(240/255.0) alpha:1.0];
     self.customPink = [UIColor colorWithRed:(251/255.0) green:(38/255.0) blue:(108/255.0) alpha:1.0];
     self.customDarkGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
+    self.customPurple = [UIColor colorWithRed:(112/255.0) green:(87/255.0) blue:(161/255.0) alpha:1.0];
     
     //Product Platform Overlay (#1)
     UIImageView *mainLogo = [[UIImageView alloc] initWithFrame:CGRectMake(25, 25, self.view.frame.size.width - 75, self.view.frame.size.height /7)];
@@ -355,14 +357,15 @@
     [self.view addSubview:self.view6];
     
     UILabel *selectMeetingTime = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
-    selectMeetingTime.text = @"Select Time";
+    selectMeetingTime.text = @"SELECT MEETING TIME";
     selectMeetingTime.textColor = [UIColor whiteColor];
+    selectMeetingTime.font = [UIFont fontWithName:@"Avenir" size:12];
     
     UIButton *day1 = [UIButton buttonWithType:UIButtonTypeCustom];
     day1.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [day1 setTitle:self.day1String forState:UIControlStateNormal];
     [day1 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
-    [day1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [day1 setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
     [day1.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [day1.layer setBorderWidth:1];
     
@@ -370,7 +373,7 @@
     day2.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [day2 setTitle:self.day2String forState:UIControlStateNormal];
     [day2 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
-    [day2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [day2 setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
     [day2.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [day2.layer setBorderWidth:1];
     
@@ -378,23 +381,23 @@
     day3.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
     [day3 setTitle:self.day3String forState:UIControlStateNormal];
     [day3 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
-    [day3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [day3 setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
     [day3.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [day3.layer setBorderWidth:1];
     
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
-    submit.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
+    submit.frame = CGRectMake(self.view5.frame.origin.x + 25, self.email.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [submit setTitle:@"Submit" forState:UIControlStateNormal];
     [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
-    [submit setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
-    [submit.layer setBackgroundColor:self.customGreen.CGColor];
+    [submit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [submit.layer setBackgroundColor:self.customPurple.CGColor];
     
     NSArray *timeArray = @[@"10:00AM", @"1:00PM", @"3:00PM"];
     self.chooseTime = [[UISegmentedControl alloc] initWithItems:timeArray];
     self.chooseTime.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 100, self.view.frame.size.width - 50, 30);
     [self.chooseTime addTarget:self action:@selector(meetingTimeSegmentedController:) forControlEvents:UIControlEventValueChanged];
     self.chooseTime.segmentedControlStyle = UISegmentedControlStyleBar;
-    self.chooseTime.tintColor = [UIColor whiteColor];
+    self.chooseTime.tintColor = self.customPurple;
 
     [self.view6 addSubview:selectMeetingTime];
     [self.view6 addSubview: day1];
@@ -571,7 +574,7 @@
             self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
             
             UIImageView *view6Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.origin.y + 100, 30, 30)];
-            view6Image.image = [UIImage imageNamed:@"Budget"];
+            view6Image.image = [UIImage imageNamed:@"Calendar.png"];
             
             [self.view6 addSubview:topLabel];
             [self.view6 addSubview:view6Image];
