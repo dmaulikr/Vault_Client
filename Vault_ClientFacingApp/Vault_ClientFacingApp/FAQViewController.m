@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     [[self navigationController] setNavigationBarHidden:YES];
+    [self performSegueWithIdentifier:@"faqSegueID" sender:self];
 }
 
 -(BOOL)prefersStatusBarHidden
