@@ -42,6 +42,8 @@
 @property UIColor *customPink;
 @property UIColor *customDarkGrey;
 
+@property UIButton *meetingTimes;
+
 @property UITextField *name;
 @property UITextField *email;
 @property UITextView *appDescription;
@@ -85,7 +87,7 @@
     info1.tag = 1;
     
     UIButton *mobile = [UIButton buttonWithType:UIButtonTypeCustom];
-    mobile.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
+    mobile.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 30);
     [mobile setTitle:@"MOBILE" forState:UIControlStateNormal];
     [mobile addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
     [mobile setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -138,7 +140,7 @@
     info2.tag = 2;
     
     UIButton *mvp = [UIButton buttonWithType:UIButtonTypeCustom];
-    mvp.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 55, self.view.frame.size.width - 50, 30);
+    mvp.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 30);
     [mvp setTitle:@"MVP" forState:UIControlStateNormal];
     [mvp addTarget:self action:@selector(selectProductNeed:) forControlEvents:UIControlEventTouchUpInside];
     [mvp setTitleColor:self.customBlue forState:UIControlStateNormal];
@@ -191,7 +193,7 @@
     info3.tag = 3;
     
     UIButton *onePerson = [UIButton buttonWithType:UIButtonTypeCustom];
-    onePerson.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 55, self.view.frame.size.width - 50, 30);
+    onePerson.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 30);
     [onePerson setTitle:@"One Person" forState:UIControlStateNormal];
     [onePerson addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [onePerson setTitleColor:self.customGreen forState:UIControlStateNormal];
@@ -244,7 +246,7 @@
     budgetLabel.font = [UIFont fontWithName:@"Avenir" size:12];
     
     UIButton *small = [UIButton buttonWithType:UIButtonTypeCustom];
-    small.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 55, self.view.frame.size.width - 50, 30);
+    small.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 30);
     [small setTitle:@"Small" forState:UIControlStateNormal];
     [small addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [small setTitleColor:self.customPink forState:UIControlStateNormal];
@@ -286,43 +288,66 @@
     view5Image.image = [UIImage imageNamed:@"Idea.png"];
     
     UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
-    contactInfo.text = @"Contact Info";
-    contactInfo.textColor = self.customPink;
+    contactInfo.text = @"PRODUCT IDEA";
+    contactInfo.textColor = [UIColor whiteColor];
     contactInfo.font = [UIFont fontWithName:@"Avenir" size:12];
     
-    self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30)];
-    self.name.layer.borderColor = self.customPink.CGColor;
+    UIButton *info5 = [UIButton buttonWithType:UIButtonTypeCustom];
+    info5.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
+    [info5 setImage:[UIImage imageNamed:@"Info@2x-17.png"] forState:UIControlStateNormal];
+    [info5 addTarget:self action:@selector(infoCalloutOnButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    info5.tag = 5;
+    
+    self.appDescription = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 150)];
+    self.appDescription.backgroundColor = [UIColor clearColor];
+    self.appDescription.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.appDescription.layer.borderWidth = 1;
+    self.appDescription.textColor = [UIColor lightGrayColor];
+    [self.appDescription setText:@"BRIEF DESCRIPTION"];
+    self.appDescription.font = [UIFont fontWithName:@"Avenir" size:11];
+    [self.appDescription setTag:1];
+    self.appDescription.delegate = self;
+    
+    UILabel *contactLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.appDescription.frame.origin.y + 175, self.view.frame.size.width - 50, 30)];
+    contactLabel.text = @"CONTACT INFO";
+    contactLabel.textColor = [UIColor whiteColor];
+    contactLabel.font = [UIFont fontWithName:@"Avenir" size:12];
+    
+    self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, contactLabel.frame.origin.y + 50, self.view.frame.size.width - 50, 30)];
+    self.name.layer.borderColor = [UIColor whiteColor].CGColor;
     self.name.layer.borderWidth = 1;
     self.name.font = [UIFont fontWithName:@"Avenir" size:12];
     self.name.textColor = [UIColor whiteColor];
     self.name.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"   NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    self.name.font = [UIFont fontWithName:@"Avenir" size:11];
+    self.name.tag = 1;
+    self.name.delegate = self;
     
-    self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 30)];
-    self.email.layer.borderColor = self.customPink.CGColor;
+    self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, self.name.frame.origin.y + 50, self.view.frame.size.width - 50, 30)];
+    self.email.layer.borderColor = [UIColor whiteColor].CGColor;
     self.email.layer.borderWidth = 1;
     self.email.textColor = [UIColor whiteColor];
     self.email.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"   EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    self.email.font = [UIFont fontWithName:@"Avenir" size:11];
+    self.email.tag = 2;
+    self.email.delegate = self;
     
-    self.appDescription = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 150)];
-    self.appDescription.backgroundColor = [UIColor clearColor];
-    self.appDescription.layer.borderColor = self.customPink.CGColor;
-    self.appDescription.layer.borderWidth = 1;
-    self.appDescription.textColor = [UIColor lightGrayColor];
-    self.appDescription.text = @"App Description (Optional)";
-    
-    UIButton *meetingTimes = [UIButton buttonWithType:UIButtonTypeCustom];
-    meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 30, self.view5.frame.origin.y - 50, 315, 30);
-    [meetingTimes setTitle:@"Schedule Meeting" forState:UIControlStateNormal];
-    [meetingTimes addTarget:self action:@selector(pickMeeting:) forControlEvents:UIControlEventTouchUpInside];
-    [meetingTimes setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
-    [meetingTimes.layer setBackgroundColor:self.customGreen.CGColor];
+    self.meetingTimes = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 25, self.email.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
+    [self.meetingTimes setTitle:@"SCHEDULE MEETING" forState:UIControlStateNormal];
+    [self.meetingTimes addTarget:self action:@selector(pickMeeting:) forControlEvents:UIControlEventTouchUpInside];
+    [self.meetingTimes setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
+    [self.meetingTimes.layer setBackgroundColor:[UIColor whiteColor].CGColor];
+    self.meetingTimes.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
     
     [self.view5 addSubview:view5Image];
     [self.view5 addSubview:contactInfo];
+    [self.view5 addSubview:info5];
+    [self.view5 addSubview:contactLabel];
     [self.view5 addSubview:self.name];
     [self.view5 addSubview:self.email];
     [self.view5 addSubview:self.appDescription];
-    [self.view5 addSubview: meetingTimes];
+    [self.view5 addSubview: self.meetingTimes];
     
     //Kick Off Meeting Overlay (#6)
     self.view6 = [[UIView alloc] initWithFrame:CGRectMake(0, 700, 600, 600)];
@@ -371,7 +396,6 @@
     self.chooseTime.segmentedControlStyle = UISegmentedControlStyleBar;
     self.chooseTime.tintColor = [UIColor whiteColor];
 
-    
     [self.view6 addSubview:selectMeetingTime];
     [self.view6 addSubview: day1];
     [self.view6 addSubview:day2];
@@ -407,6 +431,28 @@
         UIAlertView *budgetCallout = [[UIAlertView alloc] initWithTitle:@"Product Budget" message:@"Testing..." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
         [budgetCallout show];
     }
+    else if(sender.tag == 5)
+    {
+        UIAlertView *infoCallout = [[UIAlertView alloc] initWithTitle:@"Product Idea" message:@"Testing..." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+        [infoCallout show];
+    }
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    textView.text = @"";
+    
+    return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *) textView
+{
+    self.contactAppDescription = textView.text;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
 }
 
 -(IBAction)selectProjectIdea:(UIButton *)sender
@@ -485,21 +531,53 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.view5.backgroundColor = [UIColor blackColor];
         self.view5.frame = self.view.frame;
+        
+        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+        topLabel.backgroundColor = self.customDarkGrey;
+        
+        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, 40)];
+        self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
+        
+        UIImageView *view5Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.origin.y + 100, 30, 30)];
+        view5Image.image = [UIImage imageNamed:@"Idea"];
+        
+        [self.view5 addSubview:topLabel];
+        [self.view5 addSubview:view5Image];
+        [self.view5 addSubview:self.topImage];
     }];
 }
 
 -(IBAction)pickMeeting:(id)sender
 {
-    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-    
     self.contactName = self.name.text;
     self.contactEmail = self.email.text;
     self.contactAppDescription = self.appDescription.text;
     
-    [UIView animateWithDuration:0.3 animations:^{
-        self.view6.backgroundColor = [UIColor blackColor];
-        self.view6.frame = self.view.frame;
-    }];
+    if ([self.appDescription.text isEqualToString:@""] || [self.name.text isEqualToString:@""] || [self.email.text isEqualToString:@""])
+    {
+        UIAlertView *emptyFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Hold it" message:@"All fields must be filled out before we can complete your registration." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [emptyFieldsAlert show];
+    }
+    else
+    {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.view6.backgroundColor = [UIColor blackColor];
+            self.view6.frame = self.view.frame;
+            
+            UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+            topLabel.backgroundColor = self.customDarkGrey;
+            
+            self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, 40)];
+            self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
+            
+            UIImageView *view6Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.origin.y + 100, 30, 30)];
+            view6Image.image = [UIImage imageNamed:@"Budget"];
+            
+            [self.view6 addSubview:topLabel];
+            [self.view6 addSubview:view6Image];
+            [self.view6 addSubview:self.topImage];
+        }];
+    }
 }
 
 -(IBAction)scheduleMeeting:(UIButton *)sender
