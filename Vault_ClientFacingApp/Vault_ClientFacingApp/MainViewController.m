@@ -10,7 +10,6 @@
 
 @interface MainViewController () <MFMailComposeViewControllerDelegate>
 
-//initial view buttons
 @property NSString *productIdea;
 @property NSString *productNeed;
 @property NSString *teamNeed;
@@ -30,6 +29,8 @@
 @property NSString *meetingFinal;
 
 @property UISegmentedControl *chooseTime;
+
+@property NSArray *meetingButtonArry;
 
 @property UIView *view2;
 @property UIView *view3;
@@ -392,6 +393,8 @@
     [submit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [submit.layer setBackgroundColor:self.customPurple.CGColor];
     
+    self.meetingButtonArry = @[day1, day2, day3];
+    
     NSArray *timeArray = @[@"10:00AM", @"1:00PM", @"3:00PM"];
     self.chooseTime = [[UISegmentedControl alloc] initWithItems:timeArray];
     self.chooseTime.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 100, self.view.frame.size.width - 50, 30);
@@ -586,10 +589,24 @@
 -(IBAction)scheduleMeeting:(UIButton *)sender
 {
     self.meetingDay = sender.titleLabel.text;
-    [sender setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-    
-    [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    sender.backgroundColor = [UIColor whiteColor];
+ 
+    for (UIButton *button in self.meetingButtonArry)
+    {
+        UIButton *buttonPressed = (UIButton *)button;
+        
+        if (buttonPressed != sender && button.enabled)
+        {
+            [button setBackgroundColor:[UIColor blackColor]];
+            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+            button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        }
+        else
+        {
+            [button setBackgroundColor:self.customPurple];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            button.layer.borderColor = [UIColor clearColor].CGColor;
+        }
+    }
 }
 
 -(IBAction)meetingTimeSegmentedController:(UISegmentedControl *)sender
