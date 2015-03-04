@@ -48,18 +48,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash-6" translatesAutoresizingMaskIntoConstraints="NO" id="Efq-rr-Zxh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72d-Oh-E6g">
+                                <rect key="frame" x="235" y="285" width="131" height="30"/>
+                                <state key="normal" title="Restart Application">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="0uw-5M-Vty"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="72d-Oh-E6g" firstAttribute="centerY" secondItem="Efq-rr-Zxh" secondAttribute="centerY" id="56z-UF-34D"/>
                             <constraint firstAttribute="trailing" secondItem="Efq-rr-Zxh" secondAttribute="trailing" id="Xtr-2z-33w"/>
                             <constraint firstItem="Efq-rr-Zxh" firstAttribute="top" secondItem="hnd-fg-xTn" secondAttribute="top" id="bS4-X9-JnJ"/>
                             <constraint firstItem="Efq-rr-Zxh" firstAttribute="leading" secondItem="hnd-fg-xTn" secondAttribute="leading" id="dkX-ng-uOZ"/>
                             <constraint firstItem="Efq-rr-Zxh" firstAttribute="bottom" secondItem="gu6-At-zYl" secondAttribute="top" id="nvJ-Rp-P7g"/>
+                            <constraint firstItem="72d-Oh-E6g" firstAttribute="centerX" secondItem="Efq-rr-Zxh" secondAttribute="centerX" id="oy5-DJ-Kid"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="faqSegueID" id="eGO-wE-GEt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhg-d5-rSH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

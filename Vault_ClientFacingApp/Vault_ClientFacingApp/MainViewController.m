@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-@interface MainViewController () <MFMailComposeViewControllerDelegate>
+@interface MainViewController () <MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 @property NSString *productIdea;
 @property NSString *productNeed;
@@ -28,9 +28,8 @@
 @property NSString *meetingTime;
 @property NSString *meetingFinal;
 
-@property UISegmentedControl *chooseTime;
-
 @property NSArray *meetingButtonArry;
+@property NSArray *meetingTimeArray;
 
 @property UIView *view2;
 @property UIView *view3;
@@ -45,6 +44,8 @@
 @property UIColor *customPurple;
 
 @property UIButton *meetingTimes;
+
+@property CGSize keyboardSize;
 
 @property UITextField *name;
 @property UITextField *email;
@@ -287,6 +288,8 @@
     self.view5.backgroundColor = self.customDarkGrey;
     [self.view addSubview:self.view5];
     
+    [self registerForKeyboardNotifications];
+    
     UIImageView *view5Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
     view5Image.image = [UIImage imageNamed:@"Idea.png"];
     
@@ -357,13 +360,19 @@
     self.view6.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.view6];
     
-    UILabel *selectMeetingTime = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
-    selectMeetingTime.text = @"SELECT MEETING TIME";
+    UILabel *selectMeetingTime = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 60, self.view.frame.size.height/4, 150, 30)];
+    selectMeetingTime.text = @"KICKOFF MEETING TIME";
     selectMeetingTime.textColor = [UIColor whiteColor];
     selectMeetingTime.font = [UIFont fontWithName:@"Avenir" size:12];
     
+    UIButton *info6 = [UIButton buttonWithType:UIButtonTypeCustom];
+    info6.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
+    [info6 setImage:[UIImage imageNamed:@"Info@2x-17.png"] forState:UIControlStateNormal];
+    [info6 addTarget:self action:@selector(infoCalloutOnButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    info6.tag = 6;
+    
     UIButton *day1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    day1.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
+    day1.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 30);
     [day1 setTitle:self.day1String forState:UIControlStateNormal];
     [day1 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [day1 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -386,6 +395,46 @@
     [day3.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [day3.layer setBorderWidth:1];
     
+    UIButton *day4 = [UIButton buttonWithType:UIButtonTypeCustom];
+    day4.frame = CGRectMake(self.view.frame.origin.x + 25, day3.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
+    [day4 setTitle:self.day4String forState:UIControlStateNormal];
+    [day4 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
+    [day4 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [day4.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    [day4.layer setBorderWidth:1];
+    
+    UIButton *day5 = [UIButton buttonWithType:UIButtonTypeCustom];
+    day5.frame = CGRectMake(self.view.frame.origin.x + 25, day4.frame.origin.y + 50, self.view.frame.size.width - 50, 30);
+    [day5 setTitle:self.day5String forState:UIControlStateNormal];
+    [day5 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
+    [day5 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [day5.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    [day5.layer setBorderWidth:1];
+    
+    UIButton *time1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    time1.frame = CGRectMake(self.view.frame.origin.x + 25, day5.frame.origin.y + 50, day5.frame.size.width/ 3 - 10, 30);
+    [time1 setTitle:@"10:00AM" forState:UIControlStateNormal];
+    [time1 addTarget:self action:@selector(scheduleTime:) forControlEvents:UIControlEventTouchUpInside];
+    [time1 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [time1.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    [time1.layer setBorderWidth:1];
+    
+    UIButton *time2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    time2.frame = CGRectMake(time1.frame.origin.x + time1.frame.size.width + 15, time1.frame.origin.y, time1.frame.size.width, 30);
+    [time2 setTitle:@"1:00PM" forState:UIControlStateNormal];
+    [time2 addTarget:self action:@selector(scheduleTime:) forControlEvents:UIControlEventTouchUpInside];
+    [time2 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [time2.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    [time2.layer setBorderWidth:1];
+    
+    UIButton *time3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    time3.frame = CGRectMake(time2.frame.origin.x + time1.frame.size.width + 15, time1.frame.origin.y, time1.frame.size.width, 30);
+    [time3 setTitle:@"3:00PM" forState:UIControlStateNormal];
+    [time3 addTarget:self action:@selector(scheduleTime:) forControlEvents:UIControlEventTouchUpInside];
+    [time3 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [time3.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    [time3.layer setBorderWidth:1];
+    
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
     submit.frame = CGRectMake(self.view5.frame.origin.x + 25, self.email.frame.origin.y + 75, self.view.frame.size.width - 50, 30);
     [submit setTitle:@"Submit" forState:UIControlStateNormal];
@@ -393,20 +442,19 @@
     [submit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [submit.layer setBackgroundColor:self.customPurple.CGColor];
     
-    self.meetingButtonArry = @[day1, day2, day3];
-    
-    NSArray *timeArray = @[@"10:00AM", @"1:00PM", @"3:00PM"];
-    self.chooseTime = [[UISegmentedControl alloc] initWithItems:timeArray];
-    self.chooseTime.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 100, self.view.frame.size.width - 50, 30);
-    [self.chooseTime addTarget:self action:@selector(meetingTimeSegmentedController:) forControlEvents:UIControlEventValueChanged];
-    self.chooseTime.segmentedControlStyle = UISegmentedControlStyleBar;
-    self.chooseTime.tintColor = self.customPurple;
+    self.meetingButtonArry = @[day1, day2, day3, day4, day5];
+    self.meetingTimeArray = @[time1, time2, time3];
 
     [self.view6 addSubview:selectMeetingTime];
+    [self.view6 addSubview:info6];
     [self.view6 addSubview: day1];
     [self.view6 addSubview:day2];
     [self.view6 addSubview:day3];
-    [self.view6 addSubview:self.chooseTime];
+    [self.view6 addSubview:day4];
+    [self.view6 addSubview:day5];
+    [self.view6 addSubview:time1];
+    [self.view6 addSubview:time2];
+    [self.view6 addSubview:time3];
     [self.view6 addSubview:submit];
 }
 
@@ -419,28 +467,33 @@
 {
     if (sender.tag == 1)
     {
-        UIAlertView *platformCallout = [[UIAlertView alloc] initWithTitle:@"Product Platform" message:@"Testing..." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+        UIAlertView *platformCallout = [[UIAlertView alloc] initWithTitle:@"Product Platform" message:@"\nMobile: A Mobile App on iOS or Android\n\nWeb: A Ruby on Rails Web Application\n\nBoth: When you need an application integrated across web and mobile platforms." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
         [platformCallout show];
     }
     else if(sender.tag == 2)
     {
-        UIAlertView *scopeCallout = [[UIAlertView alloc] initWithTitle:@"Project Scope" message:@"Testing..." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+        UIAlertView *scopeCallout = [[UIAlertView alloc] initWithTitle:@"Project Scope" message:@"\nMVP: An early first version of your product that fully enables a startup to build more features, measure its impact, revenue model of user generation and learn more about what the target user really wants.\n\nBasic: A full-scale application build that includes extensive API or framework integration and a robust backend database solution. This level of application usually requires moderate software architecture planning up front.\n\nComplex: Heavy cloud resources are required for deployment security and scalability. Also includes cross platform integrations across different operating systems." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
         [scopeCallout show];
     }
     else if(sender.tag == 3)
     {
-        UIAlertView *teamCallout = [[UIAlertView alloc] initWithTitle:@"Team Scale" message:@"Testing..." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+        UIAlertView *teamCallout = [[UIAlertView alloc] initWithTitle:@"Team Scale" message:@"\nOne Person: 1 Developer\nSmall: 2-4 Developers\nLarge: 5+ Developers" delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
         [teamCallout show];
     }
     else if(sender.tag == 4)
     {
-        UIAlertView *budgetCallout = [[UIAlertView alloc] initWithTitle:@"Product Budget" message:@"Testing..." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+        UIAlertView *budgetCallout = [[UIAlertView alloc] initWithTitle:@"Product Budget" message:@"\nSmall: $12,500 - $35,000\n\nMedium: $25,000 - $50,000 (suited for multiple platform builds)\n\nLarge: $50,000+ (suited for game development + complex web & app solutions)" delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
         [budgetCallout show];
     }
     else if(sender.tag == 5)
     {
-        UIAlertView *infoCallout = [[UIAlertView alloc] initWithTitle:@"Product Idea" message:@"Testing..." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+        UIAlertView *infoCallout = [[UIAlertView alloc] initWithTitle:@"Product Idea" message:@"\nDescript your app to us in 400 characters or less. We will go into further detail during our KickOff Meeting." delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
         [infoCallout show];
+    }
+    else if(sender.tag == 6)
+    {
+        UIAlertView *meetingCallout = [[UIAlertView alloc] initWithTitle:@"Kickoff Meeting Time" message:@"\nGive us a time convenient for you to discuss your vision and we'll schedule a KickOff Meeting to get things started!" delegate:self cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+        [meetingCallout show];
     }
 }
 
@@ -456,26 +509,49 @@
     self.contactAppDescription = textView.text;
 }
 
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:)name:UIKeyboardDidShowNotification object:nil];
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    self.keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+}
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        CGRect keyboard = CGRectMake(0, self.view5.frame.origin.y - self.keyboardSize.height, self.view5.frame.size.width, self.view5.frame.size.height);
+        self.view5.frame = keyboard;
+    }];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view5.frame = self.view.frame;
+    }];
 }
 
 -(IBAction)selectProjectIdea:(UIButton *)sender
 {
-    self.productIdea = sender.titleLabel.text;
+    self.productIdea = [sender.titleLabel.text lowercaseString];
     
     [UIView animateWithDuration:0.3 animations:^{
         self.view2.backgroundColor = [UIColor blackColor];
         self.view2.frame = self.view.frame;
         
-        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customBlue;
         
-        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, 40)];
+        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
-        UIImageView *view2Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.origin.y + 100, 30, 30)];
+        UIImageView *view2Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, topLabel.frame.origin.y + 125, 30, 30)];
         view2Image.image = [UIImage imageNamed:@"Product.png"];
         
         [self.view2 addSubview:topLabel];
@@ -486,19 +562,19 @@
 
 -(IBAction)selectProductNeed:(UIButton *)sender
 {
-    self.productNeed = sender.titleLabel.text;
+    self.productNeed = [sender.titleLabel.text lowercaseString];
 
     [UIView animateWithDuration:0.3 animations:^{
         self.view3.backgroundColor = [UIColor blackColor];
         self.view3.frame = self.view.frame;
         
-        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customGreen;
         
-        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, 40)];
+        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
-        UIImageView *view3Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.origin.y + 100, 30, 30)];
+        UIImageView *view3Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, topLabel.frame.origin.y + 125, 30, 30)];
         view3Image.image = [UIImage imageNamed:@"Team.png"];
         
         [self.view3 addSubview:topLabel];
@@ -509,19 +585,19 @@
 
 -(IBAction)selectTeamNeeded:(UIButton *)sender
 {
-    self.teamNeed = sender.titleLabel.text;
+    self.teamNeed = [sender.titleLabel.text lowercaseString];
     
     [UIView animateWithDuration:0.3 animations:^{
         self.view4.backgroundColor = [UIColor blackColor];
         self.view4.frame = self.view.frame;
         
-        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customPink;
         
-        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, 40)];
+        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
-        UIImageView *view4Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.origin.y + 100, 30, 30)];
+        UIImageView *view4Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, topLabel.frame.origin.y + 125, 30, 30)];
         view4Image.image = [UIImage imageNamed:@"Budget"];
         
         [self.view4 addSubview:topLabel];
@@ -532,19 +608,19 @@
 
 -(IBAction)selectBudget:(UIButton *)sender
 {
-    self.budget = sender.titleLabel.text;
+    self.budget = [sender.titleLabel.text lowercaseString];
     
     [UIView animateWithDuration:0.3 animations:^{
         self.view5.backgroundColor = [UIColor blackColor];
         self.view5.frame = self.view.frame;
         
-        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+        UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customDarkGrey;
         
-        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, 40)];
+        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
-        UIImageView *view5Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.origin.y + 100, 30, 30)];
+        UIImageView *view5Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, topLabel.frame.origin.y + 125, 30, 30)];
         view5Image.image = [UIImage imageNamed:@"Idea"];
         
         [self.view5 addSubview:topLabel];
@@ -567,16 +643,21 @@
     else
     {
         [UIView animateWithDuration:0.3 animations:^{
+            
+            [self.name resignFirstResponder];
+            [self.email resignFirstResponder];
+            [self.appDescription resignFirstResponder];
+            
             self.view6.backgroundColor = [UIColor blackColor];
             self.view6.frame = self.view.frame;
             
-            UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+            UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
             topLabel.backgroundColor = self.customDarkGrey;
             
-            self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, 40)];
+            self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.5, self.view.frame.size.height / 13.5)];
             self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
             
-            UIImageView *view6Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.origin.y + 100, 30, 30)];
+            UIImageView *view6Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, topLabel.frame.origin.y + 125, 30, 30)];
             view6Image.image = [UIImage imageNamed:@"Calendar.png"];
             
             [self.view6 addSubview:topLabel];
@@ -609,22 +690,27 @@
     }
 }
 
--(IBAction)meetingTimeSegmentedController:(UISegmentedControl *)sender
+-(IBAction)scheduleTime:(UIButton *)sender
 {
-    if (self.chooseTime.selectedSegmentIndex == 0)
-    {
-        self.meetingTime = @"10:00AM";
-    }
-    else if(self.chooseTime.selectedSegmentIndex == 1)
-    {
-        self.meetingTime = @"1:00PM";
-    }
-    else if(self.chooseTime.selectedSegmentIndex == 2)
-    {
-        self.meetingTime = @"3:00PM";
-    }
+    self.meetingTime = sender.titleLabel.text;
     
-    NSLog(@"%@", self.meetingTime);
+    for (UIButton *button in self.meetingTimeArray)
+    {
+        UIButton *buttonPressed = (UIButton *)button;
+        
+        if (buttonPressed != sender && button.enabled)
+        {
+            [button setBackgroundColor:[UIColor blackColor]];
+            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+            button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        }
+        else
+        {
+            [button setBackgroundColor:self.customPurple];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            button.layer.borderColor = [UIColor clearColor].CGColor;
+        }
+    }
 }
 
 -(void)getTime
@@ -635,43 +721,57 @@
     [dateAndTimeFormat setDateFormat:@"EEEE MM/dd/YYYY"];
     [dateAndTimeFormat setLocale:[NSLocale currentLocale]];
     
-    NSDate *today = [cal dateByAddingUnit:NSCalendarUnitDay value:3 toDate:[NSDate date] options:0];
-    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSDate *today = [cal dateByAddingUnit:NSCalendarUnitDay value:1 toDate:[NSDate date] options:0];
+    NSMutableArray *dateArray = [[NSMutableArray alloc] init];
     
     //get the next 7 days
     for (int i = 0; i <7; i++)
     {
         NSDateFormatter *weekdayFormat = [[NSDateFormatter alloc] init];
         [weekdayFormat setDateFormat:@"EEEE"];
-        NSDate *weekday = [cal dateByAddingUnit:NSCalendarUnitDay value:i + 1 toDate:today options:0];
+        NSDate *weekday = [cal dateByAddingUnit:NSCalendarUnitDay value:i toDate:today options:0];
         NSString *stringDate = [weekdayFormat stringFromDate:weekday];
-        
-        [array addObject:stringDate];
+        NSString *stringDateFinal = [dateAndTimeFormat stringFromDate:weekday];
         
         //check and remove saturday and sunday
         if ([stringDate isEqualToString:@"Saturday"] || [stringDate isEqualToString:@"Sunday"])
         {
-            [array removeObject:stringDate];
+            
+        }
+        else
+        {
+            [dateArray addObject:stringDateFinal];
         }
     }
     
     //set button strings for selection
-    self.day1String = [array objectAtIndex:0];
-    self.day2String = [array objectAtIndex:1];
-    self.day3String = [array objectAtIndex:2];
-    self.day4String = [array objectAtIndex:3];
-    self.day5String = [array objectAtIndex:4];
+    self.day1String = [dateArray objectAtIndex:0];
+    self.day2String = [dateArray objectAtIndex:1];
+    self.day3String = [dateArray objectAtIndex:2];
+    self.day4String = [dateArray objectAtIndex:3];
+    self.day5String = [dateArray objectAtIndex:4];
+    
+    self.meetingTime = @"";
+    self.meetingDay = @"";
 }
 
 -(IBAction)submitDetails:(UIButton *)sender
 {
     self.meetingFinal = [NSString stringWithFormat:@"%@ %@", self.meetingDay, self.meetingTime];
-
-    NSString *alertMessage = [NSString stringWithFormat:@"Is this correct?\n\nPlatform: %@\nProduct Need: %@\nTeam Need: %@\nBudget: %@\nContact Name: %@\nContact Email: %@\nApplication Description: %@\nMeeting Time: %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription, self.meetingFinal];
     
-    UIAlertView *emailAlert = [[UIAlertView alloc] initWithTitle:@"Check Your Order" message:alertMessage delegate:self cancelButtonTitle:@"No, Restart" otherButtonTitles:@"Yes!", nil];
-    emailAlert.tag = 2;
-    [emailAlert show];
+    if ([self.meetingDay isEqualToString:@""] || [self.meetingTime isEqualToString:@""])
+    {
+        UIAlertView *emptyFieldsAlert = [[UIAlertView alloc] initWithTitle:@"Hold it" message:@"Please select a day and time for the project kickoff meeting." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [emptyFieldsAlert show];
+    }
+    else
+    {
+        NSString *alertMessage = [NSString stringWithFormat:@"Is this correct?\n\nPlatform: %@\nProduct Need: %@\nTeam Need: %@\nBudget: %@\nContact Name: %@\nContact Email: %@\nApplication Description: %@\nMeeting Time: %@", self.productIdea, self.productNeed, self.teamNeed, self.budget, self.contactName, self.contactEmail, self.contactAppDescription, self.meetingFinal];
+        
+        UIAlertView *emailAlert = [[UIAlertView alloc] initWithTitle:@"Check Your Order" message:alertMessage delegate:self cancelButtonTitle:@"No, Restart" otherButtonTitles:@"Yes!", nil];
+        emailAlert.tag = 2;
+        [emailAlert show];
+    }
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -725,6 +825,10 @@
     [self.name resignFirstResponder];
     [self.email resignFirstResponder];
     [self.appDescription resignFirstResponder];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view5.frame = self.view.frame;
+    }];
 }
 
 @end
