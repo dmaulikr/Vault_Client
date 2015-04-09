@@ -29,8 +29,12 @@
 		4A6F24001A9D3D3100E7D366 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6F23FF1A9D3D3100E7D366 /* SystemConfiguration.framework */; };
 		4A6F24021A9D3D4100E7D366 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6F24011A9D3D4100E7D366 /* libz.1.1.3.dylib */; };
 		4A6F24041A9D3D4B00E7D366 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6F24031A9D3D4B00E7D366 /* libsqlite3.0.dylib */; };
+		4A8454341AD467DA00E5AB02 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8454331AD467DA00E5AB02 /* LoginViewController.m */; };
+		4A84543A1AD4691700E5AB02 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8454391AD4691700E5AB02 /* RegistrationViewController.m */; };
 		4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */; };
 		4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */; };
+		4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E482D1AD7185100A17762 /* ProfileViewController.m */; };
+		4AE8D1521AD72221009C3DEB /* SkillTreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8D1511AD72221009C3DEB /* SkillTreeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,10 +75,18 @@
 		4A6F23FF1A9D3D3100E7D366 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A6F24011A9D3D4100E7D366 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		4A6F24031A9D3D4B00E7D366 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		4A8454321AD467DA00E5AB02 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4A8454331AD467DA00E5AB02 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4A8454381AD4691700E5AB02 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		4A8454391AD4691700E5AB02 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		4A8CD7BA1A9D5E2C00C4E88F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		4A8CD7C01A9D5E6D00C4E88F /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
 		4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
+		4A9E482C1AD7185100A17762 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		4A9E482D1AD7185100A17762 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		4AE8D1501AD72221009C3DEB /* SkillTreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTreeViewController.h; sourceTree = "<group>"; };
+		4AE8D1511AD72221009C3DEB /* SkillTreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTreeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,16 +145,12 @@
 		4A6F23C31A9D3B5F00E7D366 /* Vault_ClientFacingApp */ = {
 			isa = PBXGroup;
 			children = (
-				4A6F23C81A9D3B5F00E7D366 /* AppDelegate.h */,
-				4A6F23C91A9D3B5F00E7D366 /* AppDelegate.m */,
-				4A8CD7BA1A9D5E2C00C4E88F /* MainViewController.h */,
-				4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */,
-				4A8CD7C01A9D5E6D00C4E88F /* FAQViewController.h */,
-				4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */,
-				4A6F23CE1A9D3B5F00E7D366 /* Main.storyboard */,
+				4A8454311AD467B500E5AB02 /* Models */,
+				4A8454301AD467A700E5AB02 /* Views */,
+				4A84542D1AD4672A00E5AB02 /* Controllers */,
 				4A6F23D11A9D3B5F00E7D366 /* Images.xcassets */,
-				4A6F23D31A9D3B5F00E7D366 /* LaunchScreen.xib */,
 				4A6F23C41A9D3B5F00E7D366 /* Supporting Files */,
+				4A84542F1AD4674200E5AB02 /* Aux */,
 			);
 			path = Vault_ClientFacingApp;
 			sourceTree = "<group>";
@@ -194,6 +202,66 @@
 				4A6F23EC1A9D3CDC00E7D366 /* Parse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A84542C1AD4671600E5AB02 /* Client Facing Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A8CD7BA1A9D5E2C00C4E88F /* MainViewController.h */,
+				4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */,
+				4A8CD7C01A9D5E6D00C4E88F /* FAQViewController.h */,
+				4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */,
+			);
+			name = "Client Facing Controllers";
+			sourceTree = "<group>";
+		};
+		4A84542D1AD4672A00E5AB02 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A84542E1AD4673300E5AB02 /* EXP Controllers */,
+				4A84542C1AD4671600E5AB02 /* Client Facing Controllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4A84542E1AD4673300E5AB02 /* EXP Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A8454321AD467DA00E5AB02 /* LoginViewController.h */,
+				4A8454331AD467DA00E5AB02 /* LoginViewController.m */,
+				4A8454381AD4691700E5AB02 /* RegistrationViewController.h */,
+				4A8454391AD4691700E5AB02 /* RegistrationViewController.m */,
+				4A9E482C1AD7185100A17762 /* ProfileViewController.h */,
+				4A9E482D1AD7185100A17762 /* ProfileViewController.m */,
+				4AE8D1501AD72221009C3DEB /* SkillTreeViewController.h */,
+				4AE8D1511AD72221009C3DEB /* SkillTreeViewController.m */,
+			);
+			name = "EXP Controllers";
+			sourceTree = "<group>";
+		};
+		4A84542F1AD4674200E5AB02 /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				4A6F23C81A9D3B5F00E7D366 /* AppDelegate.h */,
+				4A6F23C91A9D3B5F00E7D366 /* AppDelegate.m */,
+			);
+			name = Aux;
+			sourceTree = "<group>";
+		};
+		4A8454301AD467A700E5AB02 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A6F23CE1A9D3B5F00E7D366 /* Main.storyboard */,
+				4A6F23D31A9D3B5F00E7D366 /* LaunchScreen.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4A8454311AD467B500E5AB02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +367,12 @@
 			files = (
 				4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */,
 				4A6F23CA1A9D3B5F00E7D366 /* AppDelegate.m in Sources */,
+				4AE8D1521AD72221009C3DEB /* SkillTreeViewController.m in Sources */,
 				4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */,
 				4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */,
+				4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */,
+				4A8454341AD467DA00E5AB02 /* LoginViewController.m in Sources */,
+				4A84543A1AD4691700E5AB02 /* RegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -451,6 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
