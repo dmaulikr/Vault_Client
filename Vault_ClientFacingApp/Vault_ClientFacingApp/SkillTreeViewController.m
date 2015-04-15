@@ -22,10 +22,18 @@
 {
     [super viewDidLoad];
     
-#pragma mark - Convenience Stuff
-    self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSData *imageData = [defaults dataForKey:@"profilePic"];
+//    UIImage *profilePic = [UIImage imageWithData:imageData];
+//    
+//    if (!profilePic)
+//    {
+//        [self.startingPointLabel setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+//    }else{
+//        [self.profileImageButton setBackgroundImage:profilePic forState:UIControlStateNormal];
+//    }
     
-#pragma mark - UI
+    self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
     self.view.backgroundColor = self.customGrey;
 }
 

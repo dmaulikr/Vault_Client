@@ -8,7 +8,7 @@
 
 #import "ProfileViewController.h"
 
-@interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>
+@interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileHeader;
 
@@ -26,6 +26,10 @@
 @property UIImagePickerController *imagePickerController;
 @property UIImage *profileImage;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *achievementsCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *userTrackingCollectionView;
+@property (weak, nonatomic) IBOutlet UIProgressView *toNextLevelProgressView;
+
 @end
 
 @implementation ProfileViewController
@@ -36,6 +40,8 @@
     
     self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
     self.view.backgroundColor = self.customGrey;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self setDeveloperInfo];
     [self setDeveloperPhoto];
@@ -53,6 +59,8 @@
     self.levelLabel.text = @"1";
     self.missionLabel.text = @"CODER";
     self.currentExpLabel.text = @"720";
+    
+    self.toNextLevelProgressView.progress = (float)720/1000;
 }
 
 -(void)setDeveloperPhoto
@@ -125,5 +133,49 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UICollectionView Delegate Methods
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    NSInteger items = 0;
+    
+    if (collectionView == self.achievementsCollectionView)
+    {
+        items = 5;
+    }
+    
+    if(collectionView == self.userTrackingCollectionView)
+    {
+        items = 3;
+    }
+    
+    return items;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [UICollectionViewCell new];
+    
+    if (collectionView == self.achievementsCollectionView)
+    {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"achievementsCellID" forIndexPath:indexPath];
+    }
+    
+    if(collectionView == self.userTrackingCollectionView)
+    {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"userMetricsCellID" forIndexPath:indexPath];
+    }
+    
+    return cell;
+}
+
+//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//
+//}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // TODO: Select Item
+}
 
 @end
