@@ -83,6 +83,7 @@
         {
             UIAlertView *loginFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Your username and/or password is incorrect, please re-enter." delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
             [loginFailed show];
+            NSLog(connectionError);
         }
     }];
 }

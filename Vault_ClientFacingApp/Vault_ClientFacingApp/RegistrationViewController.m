@@ -11,7 +11,6 @@
 @interface RegistrationViewController () <UIImagePickerControllerDelegate, UINavigationBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *registrationLogoHeader;
-@property (weak, nonatomic) IBOutlet UIButton *registrationCameraButton;
 @property (weak, nonatomic) IBOutlet UITextField *registrationFullnameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *registrationUsernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *registrationPasswordTextField;
@@ -58,8 +57,6 @@
     [self.view removeConstraints:self.view.constraints];
     
     UIImageView *header = self.registrationLogoHeader;
-    UIButton *camera = self.registrationCameraButton;
-    //UIImageView *profilePic = self.profileImageView;
     UITextField *fullName = self.registrationFullnameTextField;
     UITextField *username = self.registrationUsernameTextField;
     UITextField *password = self.registrationPasswordTextField;
@@ -74,7 +71,7 @@
     self.registrationPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     self.registrationEmailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     
-    NSDictionary *layoutViews = NSDictionaryOfVariableBindings(header, camera, fullName, username, password, email, track, submit, back, moto);
+    NSDictionary *layoutViews = NSDictionaryOfVariableBindings(header, fullName, username, password, email, track, submit, back, moto);
     NSDictionary *layoutMetrics = @{@"textfieldWidth":[NSNumber numberWithInt:self.view.frame.size.width/2],
                                     @"assetHeight":@30,
                                     @"assetWidth":[NSNumber numberWithInt:self.view.frame.size.width/2.5],
@@ -88,8 +85,6 @@
                                     };
     
     NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-imagePadding-[header(imageWidth)]-imagePadding-|" options:0 metrics:layoutMetrics views:layoutViews];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[camera(assetHeight)]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
     
     horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[fullName]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
     
@@ -107,7 +102,7 @@
     
     horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[moto]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
     
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-smallPadding-[header(<=imageHeight)]-largePadding-[camera(assetHeight)]-smallPadding-[fullName(assetHeight)]-smallPadding-[username(assetHeight)]-smallPadding-[password(assetHeight)]-smallPadding-[email(assetHeight)]-smallPadding-[track(assetHeight)]-largePadding-[submit(assetHeight)]-smallPadding-[back(assetHeight)]-smallPadding-[moto]-smallPadding-|" options:NSLayoutFormatAlignAllCenterX metrics:layoutMetrics views:layoutViews];
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[header(<=imageHeight)]-largePadding-[fullName(assetHeight)]-smallPadding-[username(assetHeight)]-smallPadding-[password(assetHeight)]-smallPadding-[email(assetHeight)]-smallPadding-[track(assetHeight)]-largePadding-[submit(assetHeight)]-smallPadding-[back(assetHeight)]-smallPadding-[moto]-smallPadding-|" options:NSLayoutFormatAlignAllCenterX metrics:layoutMetrics views:layoutViews];
     
     [self.view addConstraints:horizontalConstraints];
     [self.view addConstraints:verticalConstraints];
