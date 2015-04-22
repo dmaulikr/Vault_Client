@@ -22,19 +22,8 @@
 {
     [super viewDidLoad];
     
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *imageData = [defaults dataForKey:@"profilePic"];
-//    UIImage *profilePic = [UIImage imageWithData:imageData];
-//    
-//    if (!profilePic)
-//    {
-//        [self.startingPointLabel setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-//    }else{
-//        [self.profileImageButton setBackgroundImage:profilePic forState:UIControlStateNormal];
-//    }
-    
     self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
-    self.view.backgroundColor = self.customGrey;
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 -(BOOL)prefersStatusBarHidden

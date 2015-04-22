@@ -7,6 +7,9 @@
 //
 
 #import "ProfileViewController.h"
+#import "CustomColors.h"
+#import "SettingsViewController.h"
+#import "Helpers.h"
 
 @interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -30,6 +33,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *userTrackingCollectionView;
 @property (weak, nonatomic) IBOutlet UIProgressView *toNextLevelProgressView;
 
+@property int expToNextLevel;
+
 @end
 
 @implementation ProfileViewController
@@ -37,14 +42,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+            
     self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
-    self.view.backgroundColor = self.customGrey;
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"exp_headerlogo"]];
+    //self.navigationController.navigationBar.barTintColor = UIColorFromRGB(DARK_GREY_HEX);
+    //self.tabBarController.tabBar.barTintColor = UIColorFromRGB(DARK_GREY_HEX);
     
     [self setDeveloperInfo];
     [self setDeveloperPhoto];
+    [self configureExpToNextLevel:1 exp:720];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -52,6 +59,7 @@
     return YES;
 }
 
+#pragma mark - Get/Set Developer Info
 -(void)setDeveloperInfo
 {
     self.nameLabel.text = [NSString stringWithFormat:@"HARRISON"];
@@ -59,22 +67,33 @@
     self.levelLabel.text = @"1";
     self.missionLabel.text = @"CODER";
     self.currentExpLabel.text = @"720";
-    
-    self.toNextLevelProgressView.progress = (float)720/1000;
 }
 
 -(void)setDeveloperPhoto
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *imageData = [defaults dataForKey:@"profilePic"];
-    UIImage *profilePic = [UIImage imageWithData:imageData];
+    UIImage *profilePic = [Helpers getProfilePicFromDefault];
     
-    if (!profilePic)
-    {
-        [self.profileImageButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    }else{
+    if (!profilePic){
+        [self.profileImageButton setBackgroundImage:[UIImage imageNamed:@"Icon-180.png"] forState:UIControlStateNormal];
+    }
+    else{
         [self.profileImageButton setBackgroundImage:profilePic forState:UIControlStateNormal];
     }
+}
+
+-(void)configureExpToNextLevel:(int)currentLevel exp:(int)exp
+{
+    if (currentLevel != 1)
+    {
+        int expBase = exp - (currentLevel * 1000);
+        self.expToNextLevel = expBase;
+    }
+    else
+    {
+        self.expToNextLevel = exp;
+    }
+    
+    self.toNextLevelProgressView.progress = (float)self.expToNextLevel/1000;
 }
 
 - (IBAction)takeProfilePicture:(UIButton *)sender
@@ -120,10 +139,7 @@
     self.profileImage = info[UIImagePickerControllerOriginalImage];
     [self.profileImageButton setBackgroundImage:self.profileImage forState:UIControlStateNormal];
     
-    NSData *savedProfilePicture = UIImageJPEGRepresentation(self.profileImage, 10);
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:savedProfilePicture forKey:@"profilePic"];
-    [defaults synchronize];
+    [Helpers setProfilePicFromDefault:self.profileImage];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -136,46 +152,34 @@
 #pragma mark - UICollectionView Delegate Methods
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger items = 0;
-    
-    if (collectionView == self.achievementsCollectionView)
-    {
-        items = 5;
-    }
-    
-    if(collectionView == self.userTrackingCollectionView)
-    {
-        items = 3;
-    }
-    
-    return items;
+    return 10;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [UICollectionViewCell new];
-    
-    if (collectionView == self.achievementsCollectionView)
-    {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"achievementsCellID" forIndexPath:indexPath];
-    }
-    
-    if(collectionView == self.userTrackingCollectionView)
-    {
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"userMetricsCellID" forIndexPath:indexPath];
-    }
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"achievementsCellID" forIndexPath:indexPath];
     
     return cell;
 }
 
-//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//
-//}
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(collectionView.bounds.size.width/5, collectionView.bounds.size.width/5);
+    
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: Select Item
+    [self performSegueWithIdentifier:@"achievementsSegueID" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"settingSegueID"])
+    {
+        SettingsViewController *settingsVC = segue.destinationViewController;
+        settingsVC.hidesBottomBarWhenPushed = YES;
+    }
 }
 
 @end

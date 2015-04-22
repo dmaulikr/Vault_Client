@@ -10,7 +10,11 @@
 
 @interface SettingsViewController ()
 
-@property UIColor *customGrey;
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPassword;
 
 @end
 
@@ -19,14 +23,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
-    self.view.backgroundColor = self.customGrey;
+    [self initializeUI];
 }
 
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+-(void)initializeUI
+{
+    NSArray *textFields = @[self.name, self.username, self.email, self.password, self.confirmPassword];
+    
+    for (UITextField *field in textFields) {
+           field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", field.placeholder] attributes:@{NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
+        field.tintColor = [UIColor whiteColor];
+    }
 }
 
 @end

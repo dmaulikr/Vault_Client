@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <Devise/Devise.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +24,8 @@
     // Initialize Parse.
     [Parse setApplicationId:@"rCoeOEkuNr5yuhSNLyyAnvtjgiFgYkBaxLsoQ2IZ"
                   clientKey:@"cOwJCZEidaN8bEY0NKXYAYy1OLzorTmewwlOrvpU"];
+    
+    [[DVSConfiguration sharedConfiguration] setServerURL: [NSURL URLWithString:@"https://coderexp.herokuapp.com/users"]];
 
     return YES;
 }

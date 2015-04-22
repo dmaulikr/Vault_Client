@@ -1,0 +1,1881 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01CBDA4EEB4C2BD75B715B2B /* XLFormRegexValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7B944A92D048474C58C39C /* XLFormRegexValidator.h */; };
+		03081B8F2A5006D385C37570 /* XLFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 134685BA093D2DCFA9329046 /* XLFormViewController.m */; };
+		0360C6B965A59D376AB02C3A /* XLFormRowDescriptor+Devise+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9218D16FBF66BBDC117AA6 /* XLFormRowDescriptor+Devise+Private.h */; };
+		037085E3DBB0A75EB6E6E17B /* DVSFieldsUtils+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 83882B5F88E4E929D6017577 /* DVSFieldsUtils+Private.h */; };
+		05217BB5816DA1379413FA1A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D1D3D9B1A586CC9A3B609D /* CoreLocation.framework */; };
+		06C453FED8EB1164C6B10E9A /* DVSLoginSignUpFormViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = EACBA8CA824DC9CED6F5A5DC /* DVSLoginSignUpFormViewController+Private.m */; };
+		08C0E48ED592001E17CC6BA1 /* XLFormDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9834A4E3EC831A2B821C875 /* XLFormDatePickerCell.m */; };
+		091A65252351470ECA5CC62C /* XLFormTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485D6D1DBA9AF96286543CC /* XLFormTextView.m */; };
+		09D0BA233CD6A39F4A497C08 /* XLFormSelectorCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 04C7C45BB00B613D32F9DC5B /* XLFormSelectorCell.h */; };
+		09D69448E223BE03E4C2EF03 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B510E178D05AC5EFE8BA3AF /* UIImageView+AFNetworking.h */; };
+		0B42E3B2DB9E195522974AB5 /* XLFormLeftRightSelectorCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FB6ED5CA1FEA03EA525F208 /* XLFormLeftRightSelectorCell.h */; };
+		0F89D4F250EF53BD493935FD /* XLFormButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1ED0AD3B7234385B7303F6 /* XLFormButtonCell.m */; };
+		0FDF8B40482ACCC1905542B8 /* XLFormRegexValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = F41AC5C587F9E10C39D47963 /* XLFormRegexValidator.m */; };
+		1001F91C73E714256C8467CE /* XLFormSegmentedCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA74BCCB24B651FA577DA68 /* XLFormSegmentedCell.h */; };
+		10D8DBC83FA9D75A179D1CBA /* XLFormTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9737A9EDDD18BAEB1184E8 /* XLFormTextViewCell.m */; };
+		12B19DB9C3370EA9DCDF1A67 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 806E6A43987B44D5D9B82C2A /* UICKeyChainStore.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1325547678FBC37E0584DFDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CACD18A0D5C2AEE85DB614 /* Foundation.framework */; };
+		15E0140130E78C3E15C5FAF7 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F80AB19BB6EE1C5EBB010BA /* AFHTTPSessionManager.m */; };
+		1772EEA3176D545978383070 /* NSError+Devise+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = D567BA44B8AA88B83DB8FF8B /* NSError+Devise+Private.m */; };
+		1912570A5FD513F26C0660DE /* NGRPropertyValidator+NSString.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E6E5FC1108469AF24E3174 /* NGRPropertyValidator+NSString.h */; };
+		1930201DC0CD466E62F88B95 /* Pods-Vault_ClientFacingApp-ngrvalidator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F718A62D87D783A396D96329 /* Pods-Vault_ClientFacingApp-ngrvalidator-dummy.m */; };
+		19F24DFD0298550DEC9DF1D1 /* XLFormTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 469427D697EC7EB20C992CFA /* XLFormTextFieldCell.h */; };
+		1A4652C2FDB082C4015537F1 /* NSObject+XLFormAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A4B8B6FC9D6271CE5139A /* NSObject+XLFormAdditions.m */; };
+		1C415F45ECB524514DA4A1E8 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C1D4D9547B45D524E4897069 /* UIButton+AFNetworking.h */; };
+		1D1C21736059D0100EB8F4E7 /* DVSAccountRetrieverViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C133C6846C5DE3C7DFA75985 /* DVSAccountRetrieverViewController.h */; };
+		2195462CC250475BC6D51576 /* UIViewController+Devise.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CC74453F6D89B0F293FC5 /* UIViewController+Devise.m */; };
+		21FAF9FC01D0B46772B9B11E /* XLFormRowDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6320950DEE90CDAD00BD97CD /* XLFormRowDescriptor.h */; };
+		2299CBCC2D22DE96B3AAAAC3 /* DVSPasswordReminderFormViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CC5C001F948CF79C33421DDF /* DVSPasswordReminderFormViewController+Private.h */; };
+		2305101E0192804AD8E25176 /* XLFormRowNavigationAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AE8AB6EA1754BBFC0CEBBF /* XLFormRowNavigationAccessoryView.m */; };
+		23A65C26E9C56A1A8FC5DC94 /* DVSAccessibilityLabels.h in Headers */ = {isa = PBXBuildFile; fileRef = 09AF9AF1023A7EF2061DC071 /* DVSAccessibilityLabels.h */; };
+		260FD2003B036DBEA9D13118 /* NSObject+NGRRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D1E660112FBEF3DCDA999 /* NSObject+NGRRuntime.m */; };
+		261765B3FBA24871D4D0BE62 /* XLFormValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F3F1B6B267F57ED1DE1BDF /* XLFormValidator.h */; };
+		29F57634CF007A06B927FC51 /* NSDictionary+Devise+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 66BFB0E1837B15C5A1ECED5F /* NSDictionary+Devise+Private.h */; };
+		2A5C5EBD3883D54F5B1904A8 /* XLFormDatePickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B9ECFD1E5E78F9E4F2AF305 /* XLFormDatePickerCell.h */; };
+		2BBD4EF4DA8B2DC2DC282E4A /* XLFormOptionsObject.h in Headers */ = {isa = PBXBuildFile; fileRef = EB2FB03415DC879EA8BEC541 /* XLFormOptionsObject.h */; };
+		2C7494185BABFF3132176E59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26EE1A08CA5630FF57DEACBF /* CoreGraphics.framework */; };
+		2E082F463D3F2D8571C89FD9 /* XLFormSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A15B473AE80FD74B030619 /* XLFormSwitchCell.m */; };
+		2EB202A24A7A6FAAC1262BEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CACD18A0D5C2AEE85DB614 /* Foundation.framework */; };
+		2F3B14682498D6228D7038E6 /* XLFormSectionDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4DDE3A97CE715720D50C2 /* XLFormSectionDescriptor.m */; };
+		3025BA0781E4901C8092C903 /* NSArray+NGRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DE60965F2F2C30521D5CA2 /* NSArray+NGRValidator.m */; };
+		31465887517E4FB031F764B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8E31332AF220B837C32D47 /* UIKit.framework */; };
+		316C7F379F0E4BE92DF09DDA /* DVSFacebookAuthenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = E0BF9FF0DF619BDEDF1A144B /* DVSFacebookAuthenticator.h */; };
+		317950B72A95ED54DBE3D79B /* XLFormSwitchCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BF6D582EB2E3BFAF56FC3E5 /* XLFormSwitchCell.h */; };
+		3309449512E5026D6911557C /* XLFormCheckCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C6B3B6530BF18B93E4443D /* XLFormCheckCell.h */; };
+		34CD73E9FBFBDB4DE6D7FC83 /* NSDate+NGRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD162D33D4E2C2B584B4A1 /* NSDate+NGRValidator.m */; };
+		34DD8D996062DDE3D88D95A2 /* DVSUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 83ED5F77930362EA4B6D08D1 /* DVSUser.h */; };
+		34E5D4C80C9471C43D42708B /* NSArray+NGRValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECE289D11A68C1B4A696321 /* NSArray+NGRValidator.h */; };
+		380A747FAA1908F3835D7F52 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822FB1AC382ADB5C046A74AB /* SystemConfiguration.framework */; };
+		3AD9CD4D305AF75257F76706 /* DVSFacebookAccountStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BAAD69F67771AF9C0CCB1F /* DVSFacebookAccountStore.m */; };
+		3AEDD74156B30D9D43C63598 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B3153EC08922DF4C330ECA65 /* UIImageView+AFNetworking.m */; };
+		3B3819248132A4C49EE7E3C0 /* DVSHTTPClient+User.h in Headers */ = {isa = PBXBuildFile; fileRef = 41BA7F7962C0202A2863BD09 /* DVSHTTPClient+User.h */; };
+		3D52C9E80B1F3F2406871249 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DCEF8F3192C460FA826DED0 /* AFURLSessionManager.h */; };
+		3E5ADC9CBB3D5FA224F0BFBB /* XLFormRowDescriptor+Devise+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0EFF78838A7FFBB7A0E70 /* XLFormRowDescriptor+Devise+Private.m */; };
+		3FD634B0BC576E4E561BE89D /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FD083E8790DD7444BB19820F /* AFNetworking.h */; };
+		4051426AF680575B4C62BF46 /* XLFormCheckCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 852A3230824839FFF3091D40 /* XLFormCheckCell.m */; };
+		40C56C48C8455C9EA8BC9E13 /* NSObject+Devise+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 7328DF12E9D00F92F1A7CF51 /* NSObject+Devise+Private.m */; };
+		42D8ED15D2805CCFE642D5F2 /* DVSUserPersistenceStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 36569EA4B4D1AB49F0466F30 /* DVSUserPersistenceStore.m */; };
+		46FBA026DE65EC17232B0951 /* DVSLoginSignUpFormViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FA84CA756402422D976464E /* DVSLoginSignUpFormViewController+Private.h */; };
+		47B8295092DAB9F3BE0FA4A6 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3CC1CB46841BE9654BD362 /* UIButton+AFNetworking.m */; };
+		47BB96BA49175626AE4C2960 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08301D85EED91DD106CC5EFF /* AFURLSessionManager.m */; };
+		483819F9838E50E760D826F6 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE893346485910853CA1DAB /* AFURLResponseSerialization.h */; };
+		495C5204CEB0F09226CC7CC3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CD85E591C2E02156302103 /* AFNetworkReachabilityManager.m */; };
+		496318E35ED03362E6E1F167 /* NGRMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8FEBF3AE7DF1EC774C731E /* NGRMessages.m */; };
+		4A83BDBC7626012067E3FAC6 /* DVSBarButtonItem+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 528CE572256055AF9E38D07C /* DVSBarButtonItem+Private.h */; };
+		4B4248759BFDD781B66901B7 /* NGRPropertyValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 55B05A2C9185B73B837C06D9 /* NGRPropertyValidator.h */; };
+		4BD75947E4567264239CFFC2 /* Pods-Vault_ClientFacingApp-Devise-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C096479D15C537C00C5BCA /* Pods-Vault_ClientFacingApp-Devise-dummy.m */; };
+		4DB1CC468FCBF785EF1D3993 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CACD18A0D5C2AEE85DB614 /* Foundation.framework */; };
+		4EE6D8A78B85A80A0CDD4F25 /* NSObject+NGRValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B56C097421F2DC3E3A2B9E5 /* NSObject+NGRValidator.h */; };
+		4FDCF5E055CC68491346C668 /* XLFormRightImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7259E21AFEB93B3A1BA4F4 /* XLFormRightImageButton.m */; };
+		4FF8270C050E46984C5E303F /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 310BB994FFD2A83450E375B1 /* UIActivityIndicatorView+AFNetworking.h */; };
+		568FDB4B6EEA6901F46CA1C2 /* NSObject+Devise+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 734B6FD5B2FD59FFB1B8CAAE /* NSObject+Devise+Private.h */; };
+		56AB11F63887C661C31C4376 /* NSDictionary+Devise+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F7DF308315A5CAA7BD260D /* NSDictionary+Devise+Private.m */; };
+		56F328D376A3E7547DF89EC9 /* XLFormOptionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A3DFF4B50D56DDD110D2E12 /* XLFormOptionsViewController.h */; };
+		5768F09EA482656F1B8AEA48 /* XLFormBaseCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D5697CDFAD4E3BE6A82242 /* XLFormBaseCell.h */; };
+		5A4246A367B5E8FE353BAEF0 /* XLFormStepCounterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4ED404D23E08E8900B8E531 /* XLFormStepCounterCell.m */; };
+		5B1AEBF1C1882FB1E489969C /* XLFormTextViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF4A53739BDF388B244F871 /* XLFormTextViewCell.h */; };
+		5BCE63596FD3245ABDE054B0 /* DVSUserManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F9B2F1F0B1963E6BE7BFC3E /* DVSUserManager.h */; };
+		5C1E892D75372A7E75E1CEA7 /* DVSFacebookAccountStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC723DC8D485764096CAB2B /* DVSFacebookAccountStore.h */; };
+		5FD7AD90716F6C939EA70143 /* XLFormSliderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 03838FB2ADE446E17F0C2F56 /* XLFormSliderCell.h */; };
+		626F3929E4DB4CC758AC011C /* DVSBarButtonItem+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 954396CEF22024129597F47B /* DVSBarButtonItem+Private.m */; };
+		6362830B512C274BA6DAA696 /* DVSLoginSignUpFields.h in Headers */ = {isa = PBXBuildFile; fileRef = 8432520C2AE3F09FC9E3E495 /* DVSLoginSignUpFields.h */; };
+		6475F3472F395E029520E3EF /* DVSPasswordReminderFormViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBCB0E136EDD962667F1A2A /* DVSPasswordReminderFormViewController+Private.m */; };
+		65D22CC0A73513F2B81A061C /* DVSHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE6180705F828B34302B52D /* DVSHTTPClient.m */; };
+		67098B1E670EF424EFEC9C0D /* NSArray+XLFormAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EC62A78E9A890D2721DEEB50 /* NSArray+XLFormAdditions.h */; };
+		67D48AAD57544DE243EA7758 /* DVSOAuthJSONParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = D80E951635CF8402AA9CB13D /* DVSOAuthJSONParameters.m */; };
+		68BF6533AB3037CD6934BF58 /* NGRPropertyValidator+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD8C4968A6151D00D9A5F22 /* NGRPropertyValidator+NSString.m */; };
+		69603805D6ED7072DD14ECAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460A019AAF796A9ED24B0B7E /* MobileCoreServices.framework */; };
+		69C10493DE03365A6A271C59 /* NGRMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 8314E80978BB006D5604DCFE /* NGRMessages.h */; };
+		6A1800A8FE4AC7EC1B4B4E69 /* DVSTemplatesViewsUserDelegate+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 1493BCE298B6AE13DFE983FD /* DVSTemplatesViewsUserDelegate+Private.m */; };
+		6B06C7CE55631F614B7FFE1F /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 92CEC78B7058D9636D9458C6 /* AFURLConnectionOperation.h */; };
+		6C3F6D740D9B0BA07AB4B542 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86569D002F054DE9AEF19C /* Security.framework */; };
+		6D5E4D67952E3DB7EFD62FDA /* DVSUser+Persistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F61EF257C94CC326EA2BC3 /* DVSUser+Persistence.m */; };
+		6D9959E1E22DD7AF293A9037 /* XLFormDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F421FF64AA2AF64294CD2EDB /* XLFormDescriptor.m */; };
+		6E0146A0DFB9AF96FC0E57DE /* XLFormOptionsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A29165C6B1542DD1C00ED46C /* XLFormOptionsObject.m */; };
+		708A220D89ADD7F6DAC28DA8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86569D002F054DE9AEF19C /* Security.framework */; };
+		714FFC1076F0B077868672BC /* XLFormDateCell.h in Headers */ = {isa = PBXBuildFile; fileRef = EB33CC83BB727208EA8173D0 /* XLFormDateCell.h */; };
+		7248E080BA2ECF8DE814A982 /* XLFormRightDetailCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D2C6EB88D1DFCFD926DD79E8 /* XLFormRightDetailCell.h */; };
+		731357C33CD23CA8F527E8B8 /* DVSUserJSONSerializer+Serialize.h in Headers */ = {isa = PBXBuildFile; fileRef = 975229FB88D0E1F8DEB74F7C /* DVSUserJSONSerializer+Serialize.h */; };
+		74E2843C4D557EFEB4AA8883 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD86569D002F054DE9AEF19C /* Security.framework */; };
+		75102621B795D5CB6CCE524F /* XLFormValidatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = D42DE427143E406CFD2EFFEE /* XLFormValidatorProtocol.h */; };
+		7543AC93A4E1BF6BCBF42F46 /* Pods-Vault_ClientFacingApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F90B8584EAE9881B01FC4A /* Pods-Vault_ClientFacingApp-dummy.m */; };
+		7564004E3520B9F6940A1D65 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F914537ACE591FD39F34D745 /* UIWebView+AFNetworking.m */; };
+		757C2E1B3DBD8339EC048041 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BFA9A68A1F1DCBE94A1B5A /* UIRefreshControl+AFNetworking.m */; };
+		75E7857E9A59EA1AFC545BE4 /* DVSAccessibilityLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FB4FC80C374A6237289E9F /* DVSAccessibilityLabels.m */; };
+		7761201D75AF60F4AC8862E3 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C208CC17281998232ED8E3 /* AFHTTPRequestOperationManager.m */; };
+		789AB03EEC73B474A4C3D379 /* NGRPropertyValidator+NSDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 56A313FA523FCFBFE8CFD01D /* NGRPropertyValidator+NSDate.h */; };
+		7A3B871BF65A1637C7C224C7 /* NGRTypedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 2148F5FC6F5388F8324D3A20 /* NGRTypedefs.h */; };
+		7A8B1D61F79DB969D4940BE0 /* Pods-Vault_ClientFacingApp-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C60A53C1868B5DCA7F7505 /* Pods-Vault_ClientFacingApp-AFNetworking-dummy.m */; };
+		7AF79025E4B43301765AE8F9 /* XLFormRowNavigationAccessoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B2529414FED270D36AF3565 /* XLFormRowNavigationAccessoryView.h */; };
+		7C2754643D4B4A41A6770933 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26EE1A08CA5630FF57DEACBF /* CoreGraphics.framework */; };
+		7E961756CD8AD23BEDDCD5BC /* Devise.h in Headers */ = {isa = PBXBuildFile; fileRef = DF66C7C6D8FC80F1D4C75009 /* Devise.h */; };
+		7F60867A8EBCE41F9656F7FA /* XLFormBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CD74CF7BCB287170736BBC /* XLFormBaseCell.m */; };
+		7F8C0F69D1F858138BD806B2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822FB1AC382ADB5C046A74AB /* SystemConfiguration.framework */; };
+		7FCCBD9E010538F6B5BF449A /* UIView+XLFormAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ACDCE8DE47501B98C2201E5 /* UIView+XLFormAdditions.h */; };
+		7FD30666A277D32392F59B2E /* XLFormDescriptorCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E5D03874B6B8BF40E53FB625 /* XLFormDescriptorCell.h */; };
+		83EB306B2679611D3BD80C61 /* NGRPropertyValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E4A8FA9FFBA9EE163CD650 /* NGRPropertyValidator.m */; };
+		84153D9E414BE31ACF70D5A5 /* XLFormRightDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551FA8B717C5F998D0DA11C /* XLFormRightDetailCell.m */; };
+		873239312852F29B4ECCB557 /* DVSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5C52D050D4E5782F608953 /* DVSConfiguration.m */; };
+		88257BAFF6B0632E7207D4E9 /* XLFormRightImageButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9754E56B2D524B63867F47A5 /* XLFormRightImageButton.h */; };
+		8A06318F974CF2974FAC6B5E /* NSArray+XLFormAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB4DD5536BBBCC97AC419D /* NSArray+XLFormAdditions.m */; };
+		8A3EA1B4E27F7D89681A7DCF /* DVSMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = EEA4437257FB2B97EC934914 /* DVSMacros.h */; };
+		8A826094597A3E170D83A957 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D73B8F663E1F656558850D /* UIAlertView+AFNetworking.m */; };
+		8AF9734E45C2DE5135A550EA /* NGRValidationRule.m in Sources */ = {isa = PBXBuildFile; fileRef = DC64491F73A33990813CD803 /* NGRValidationRule.m */; };
+		8C9C3299A604B844FBAF84B0 /* DVSTemplatesViewsUserDelegate+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EE5E25B63AD632570FF6D920 /* DVSTemplatesViewsUserDelegate+Private.h */; };
+		8CCFE584AFFAA9E23091727C /* XLFormValidationStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = E16CBDB14798B8D201AC9213 /* XLFormValidationStatus.h */; };
+		8DE223602DDF4FE52E6DD8D2 /* XLFormButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D911318271EA9DB543184A2 /* XLFormButtonCell.h */; };
+		8E5F416CCD18396E367D42CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CACD18A0D5C2AEE85DB614 /* Foundation.framework */; };
+		909BFC703C47A55699D84D30 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2B54FDF1B077DA2C14F3F9 /* AddressBook.framework */; };
+		93C59554EA6A9EBFD9EB0DB7 /* DVSUserJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E311B42ACE6C9921FD99 /* DVSUserJSONSerializer.m */; };
+		95086F75A2F57902DC5597FE /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 696694B5A0C5A26E984DEBED /* UIWebView+AFNetworking.h */; };
+		95407692B09D3DA4D30AD03D /* NSError+Devise+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F1797C13967666E8AE143B2 /* NSError+Devise+Private.h */; };
+		95F13506AB53303CBE89B31F /* XLFormValidationStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A094F2CC7E7BF7F6A168E0 /* XLFormValidationStatus.m */; };
+		973A35963ABC36CB2F90E3E3 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 653F9B7AA1BDD9CDFC280F78 /* AFNetworkReachabilityManager.h */; };
+		98EAE06125B7961D234DDB23 /* XLFormViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC610BF67F1A087FCEB6985 /* XLFormViewController.h */; };
+		9A34B4284760CDEB0AA7EE58 /* XLFormSectionDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B12D2B4D954435E8800D8DC /* XLFormSectionDescriptor.h */; };
+		9A698401544F48B1C2E85D9D /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B77C60B59F527EBC87DA561F /* UIProgressView+AFNetworking.m */; };
+		9B295BA268D426EA038A0D3C /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB95DB9B144E4332E6D67C9 /* UIRefreshControl+AFNetworking.h */; };
+		9B76357D26BB80A2C01FDE34 /* NSString+NGRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9F67EA295DE0974F08B438 /* NSString+NGRValidator.m */; };
+		9C458F8E254F345C6568E132 /* NSURL+Devise+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD4BEDA5103A456FC8E8692 /* NSURL+Devise+Private.m */; };
+		9FE814445A396FEAAA2AEC9A /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = B6E6D65C3BD9217CC7BED05E /* AFSecurityPolicy.h */; };
+		A0F320D10F0477365DFC0B51 /* NGRPropertyValidator+Syntax.m in Sources */ = {isa = PBXBuildFile; fileRef = 51CF2CAFAC020B1225D53DE2 /* NGRPropertyValidator+Syntax.m */; };
+		A11963390951A53A8C2BBB84 /* DVSHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9B4E9C012DBCF7DAAAF3CA /* DVSHTTPClient.h */; };
+		A367668BE3EE4A93D78BFCA1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289AA1DB4A4E1364D4C9B798 /* CoreText.framework */; };
+		A4F37F8B046E5860D1D112C0 /* DVSUserJSONSerializer+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = C48630111D269AFE2DD56AD4 /* DVSUserJSONSerializer+Serialize.m */; };
+		A5B9C8ACC7F7DBA89311A2C1 /* DVSUser+Persistence.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A7677C1A4C97C31FF0291D /* DVSUser+Persistence.h */; };
+		A6DC49C779B426DB46FC28F8 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BCE6E7691DDAB0F870982EAD /* AFHTTPRequestOperation.h */; };
+		A8B7A5477ECC9617A1F2A416 /* XLFormOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A35512BDC8011786E451AC98 /* XLFormOptionsViewController.m */; };
+		ACBA036497EFFB8CB5E52E85 /* XLFormDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D051830970066FFEF8E2CFD /* XLFormDescriptor.h */; };
+		AD1A59F5C14D0C1553E90EB4 /* XLFormSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE34C3B698C563404E4162 /* XLFormSelectorCell.m */; };
+		AEDAEE92A679E57814120925 /* NGRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FAA3AD5A0090E68FCF92DEF /* NGRValidator.m */; };
+		B02674389D95A3ADDDAFD9F8 /* Pods-Vault_ClientFacingApp-XLForm-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C39FED37AC6397E06451B835 /* Pods-Vault_ClientFacingApp-XLForm-dummy.m */; };
+		B38CEF66EBCD0377CF5AF8FC /* NGRValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 935871A0930880DCE36DC892 /* NGRValidator.h */; };
+		B3E8AD48B5C4E89AE73637B3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507BDFF2B73572B5E8F91230 /* AFHTTPRequestOperation.m */; };
+		B455983C5672E5D1BD82A479 /* NGRPropertyValidator+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F31524299A5AEA1AB10D018 /* NGRPropertyValidator+NSObject.m */; };
+		B55B4BA4D122663BD28B771C /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EC0D52B27D1A9C20D14FA56F /* AFHTTPSessionManager.h */; };
+		B58EA8B73B1822A3F94BA279 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71362CA908841E6EC402B2C5 /* AFNetworkActivityIndicatorManager.m */; };
+		B6547861908429B6B4553769 /* NGRPropertyValidator+NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 7230A2677CF8E54330D932BA /* NGRPropertyValidator+NSNumber.m */; };
+		B8B6BF041A94141509660F77 /* XLFormSectionDescriptor+Devise+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = B0547215EA8000AC68E40B80 /* XLFormSectionDescriptor+Devise+Private.h */; };
+		B8C0ABFD30DD00C9294CD00F /* NGRPropertyValidator+NSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DFB503D923F67636541F8F /* NGRPropertyValidator+NSDate.m */; };
+		B990EBDF13D3A40DD0C21E1E /* XLForm.h in Headers */ = {isa = PBXBuildFile; fileRef = B45629C9B8E8B6122D71BA8E /* XLForm.h */; };
+		B9DBC09D8D3A9714B4770831 /* DVSAccountRetrieverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C811D5939E1A093176203D67 /* DVSAccountRetrieverViewController.m */; };
+		BA0FD1DA277BEAB2ECA08A51 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5503FB9835876F34B591B60A /* MediaPlayer.framework */; };
+		BABF1B412DE7DCAF37647438 /* XLFormDescriptorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D342A24542AE5C9A18192A /* XLFormDescriptorDelegate.h */; };
+		BBA0614A3CE1884212ADDB2D /* XLFormLeftRightSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229CB73FC826D340970EE8AD /* XLFormLeftRightSelectorCell.m */; };
+		BCB58ADC8F8E0608DC181CF4 /* DVSTypedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = F518A46D299298CFA4705BB7 /* DVSTypedefs.h */; };
+		BD0BAEA314EA42EDF785805F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8E31332AF220B837C32D47 /* UIKit.framework */; };
+		BF986DA43AE2EA286E5785C4 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E554860BC329E8809089CCC9 /* UIActivityIndicatorView+AFNetworking.m */; };
+		C05F986981AD76DEF981677D /* XLFormInlineSelectorCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F79F487699A214B7F7FC9CA2 /* XLFormInlineSelectorCell.h */; };
+		C1B949C3E3F19FEC3D0B8D6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CACD18A0D5C2AEE85DB614 /* Foundation.framework */; };
+		C4D473CDCFDC652240BA9541 /* XLFormSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E131ABA9A6BC42A86316D03F /* XLFormSliderCell.m */; };
+		C5481AE7CB457D7F8DC9FFF9 /* UIView+XLFormAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A8154A07974C9E902EFD1C81 /* UIView+XLFormAdditions.m */; };
+		C574B8BB08FAF7DB73CE97BF /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = F5923F10730D99496302CC12 /* AFURLRequestSerialization.h */; };
+		C57F628167422BC999462FB7 /* DVSUserPersistenceStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 1519498DCDB319C6A322874E /* DVSUserPersistenceStore.h */; };
+		C623C9AECE91701E10DDE5D7 /* UICKeyChainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB57079C02FB9B9FCF13B4D /* UICKeyChainStore.h */; };
+		C650E6EDA4CD380FAEBDE92A /* DVSHTTPClient+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4682A729D61496B114EC51CF /* DVSHTTPClient+User.m */; };
+		C7288CF51CC8D9C9BE2A9ADE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBB3E8B288D20941D665E8 /* AFURLResponseSerialization.m */; };
+		CBED41F9BB3B995D981EEF57 /* NGRValidationRule.h in Headers */ = {isa = PBXBuildFile; fileRef = 62A5F669D872214E38237736 /* NGRValidationRule.h */; };
+		CCBA2238BB393B4881343AC4 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B2B4FDFE537C31D713FD36C /* AFHTTPRequestOperationManager.h */; };
+		CD06E326539E6888DC92BF45 /* NSObject+NGRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = BA805553A3EDE18ACD9E8E0B /* NSObject+NGRValidator.m */; };
+		CD637C0D6BEFEEE65D00BC79 /* XLFormSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5670419991EF89A44959AAF /* XLFormSegmentedCell.m */; };
+		CD6B3A1325221598997BB33B /* NSObject+XLFormAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2191FD83BEF6B14EFF1B30BE /* NSObject+XLFormAdditions.h */; };
+		CD86B673152588549C4ABE29 /* XLFormDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9158E27D600BFE2DAA21D6 /* XLFormDateCell.m */; };
+		CF0A4B5EE16692319FF46EDD /* XLFormInlineSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D32B6BB6F4A2CF7BB2823686 /* XLFormInlineSelectorCell.m */; };
+		CFF067C1BE5D20FF456513F2 /* DVSUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9997B1FBE67B3D952E77A16A /* DVSUserManager.m */; };
+		D053B58E95BE47B6D1E5AEB3 /* DVSFacebookAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E93AAF639D6F89BF1C4D86 /* DVSFacebookAuthenticator.m */; };
+		D20D5F75E8DF46DEDF7F32FA /* XLFormInlineRowDescriptorCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D2008B19914CD6CCB24507C /* XLFormInlineRowDescriptorCell.h */; };
+		D2FAE207C00BD33169E418D0 /* XLFormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 482B4CF4B5058E9ADADEBA21 /* XLFormValidator.m */; };
+		D42A9717C7CC7A2059985B23 /* XLFormSectionDescriptor+Devise+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC3D1DCCE336B7FDE6AF5C6 /* XLFormSectionDescriptor+Devise+Private.m */; };
+		D4B3119CD66D3C3E73C66DFD /* NGRPropertyValidator+NSObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D71169E9E4698F58E47B618 /* NGRPropertyValidator+NSObject.h */; };
+		D4BFD147A8AFA8720A0393B0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E4FE66008151496AD5F8FF4 /* CoreMotion.framework */; };
+		D61F78960A3D2FB06E4BE148 /* XLFormStepCounterCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C3BF91C01CFF99D2D5E8E0AC /* XLFormStepCounterCell.h */; };
+		D78621FBF3D7DFCE61AA1A47 /* DVSOAuthJSONParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = E6D827FC2CE550047D7A2235 /* DVSOAuthJSONParameters.h */; };
+		D92632A8F1841276E50F9788 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E74311380F42EF7F058EDC /* UIProgressView+AFNetworking.h */; };
+		D9C263BA7F401D2027316AED /* XLFormPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D07298B1B6A1C4AAAEC227 /* XLFormPickerCell.h */; };
+		DA3D26315C3A8DC37FA45AAD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26EE1A08CA5630FF57DEACBF /* CoreGraphics.framework */; };
+		DACFA51606A7B91E6BA7C6ED /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F23D0FFBD95A3DEE979ABEE /* AFNetworkActivityIndicatorManager.h */; };
+		DB0F4E0366D15BE6A940D9C8 /* NSDate+NGRValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F9C6E7210AC95E66C3E5E54 /* NSDate+NGRValidator.h */; };
+		E030F14E695D5C111152D032 /* NSObject+NGRRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 87221E11769E28EC31D45F88 /* NSObject+NGRRuntime.h */; };
+		E10FF00F4FAE2088F7EB951B /* XLFormRowDescriptorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C44E7A762C8DE621651174B2 /* XLFormRowDescriptorViewController.h */; };
+		E1A2CAE5B5588AB3C491AAAA /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = DD8CF377F1E5BDD7DAC21FFC /* UIKit+AFNetworking.h */; };
+		E22F4004A67F5C564A585F42 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC61F39BECECE112A24E45A /* AFURLRequestSerialization.m */; };
+		E352060EF8D6FB8EE547F466 /* NGRPropertyValidator+NSNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = BB168B3DC5FCE2DDFF80F4A4 /* NGRPropertyValidator+NSNumber.h */; };
+		E3639361802729BB7C9375E8 /* XLFormPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A747BD07690A18D8A50C35DC /* XLFormPickerCell.m */; };
+		E3EA2F225A3168A7595F03AA /* DVSGooglePlusAuthenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB85E0C1E291CC0A1AB3C05 /* DVSGooglePlusAuthenticator.h */; };
+		E67DED0DCF4F60F77CC440AE /* Pods-Vault_ClientFacingApp-UICKeyChainStore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E85D509501DB7A4DC09A28D /* Pods-Vault_ClientFacingApp-UICKeyChainStore-dummy.m */; };
+		E6EAFB17883ABB0B3A81C06F /* XLFormRowDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC928D4C2688EE91C33BD10 /* XLFormRowDescriptor.m */; };
+		E703F13FF0C57C0364D74BCE /* DVSFieldsUtils+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F573A4A2806B9B0478FBECF /* DVSFieldsUtils+Private.m */; };
+		E708E0E33D126CCFFBA8E3EE /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA372EC94827EA153A45E3B /* UIAlertView+AFNetworking.h */; };
+		E8B9A4D797F202D14D27AFDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CACD18A0D5C2AEE85DB614 /* Foundation.framework */; };
+		EABF3B53391E8F3FEF7D937C /* XLFormTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A193EF41187D853197D5CD87 /* XLFormTextFieldCell.m */; };
+		ECB4EC476863DDC5244E0A60 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57540FB9BB8D2527241F7FC7 /* AFURLConnectionOperation.m */; };
+		EE9C0C7C628441C0DDC95077 /* XLForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5194EE4A0C27C70578FD7628 /* XLForm.m */; };
+		F0B6A36D2EF67057060D0E47 /* XLFormTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E89CFFB069ACFDFC5BD1484 /* XLFormTextView.h */; };
+		F5398D815C574A626057AD54 /* NGRPropertyValidator+Syntax.h in Headers */ = {isa = PBXBuildFile; fileRef = BD55EF63D40140D79825B383 /* NGRPropertyValidator+Syntax.h */; };
+		F61A0C75FD1A08F36393DCBD /* DVSGooglePlusAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DD85A37A3E12B3A353F19C /* DVSGooglePlusAuthenticator.m */; };
+		F62B9DC8FE2589FD47324F4D /* DVSUserJSONSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CE435A8566B7BE4D40345E9 /* DVSUserJSONSerializer.h */; };
+		F71A3D2154C4C31BED4E0D11 /* DVSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8214A209F943BC3888989C49 /* DVSUser.m */; };
+		F72198666DC14F1B3FDB0671 /* UIViewController+Devise.h in Headers */ = {isa = PBXBuildFile; fileRef = F0D31414F431B37B33B56937 /* UIViewController+Devise.h */; };
+		F9DC9CE86521B7361901468C /* DVSConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D4116EBD7376095D2EDD99 /* DVSConfiguration.h */; };
+		F9F882A1FEE2EA4FDA8C07F1 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D56031478CDE520A9B9FA /* AFSecurityPolicy.m */; };
+		FB96CC90D4DA3575E51682D3 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB167BACB1ED3BF91CC262E /* AssetsLibrary.framework */; };
+		FBF8F2B08E1D77208B8CF4B7 /* NSString+NGRValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CB08DDA0795F9C719C19AD3 /* NSString+NGRValidator.h */; };
+		FE5FC5E497EAAFE617EDD9BF /* NSURL+Devise+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ECD0E7F42EC8C8C1AFACBAD /* NSURL+Devise+Private.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22ACDC87B92FD4F152B9F4AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74F9946860078C48D7D00A2A;
+			remoteInfo = "Pods-Vault_ClientFacingApp-AFNetworking";
+		};
+		4CA9B79A3E0684C87E5761F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEF69BE9C974617A7D71FAF9;
+			remoteInfo = "Pods-Vault_ClientFacingApp-XLForm";
+		};
+		52F48762D91F73CCB03863AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B90A5325D8E83A07CCC573FC;
+			remoteInfo = "Pods-Vault_ClientFacingApp-UICKeyChainStore";
+		};
+		A8C6A5C636052137058EF3C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 011F01245D520B79FC24DE5A;
+			remoteInfo = "Pods-Vault_ClientFacingApp-Devise";
+		};
+		BB909D0A8506EFCE5555DE6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74F9946860078C48D7D00A2A;
+			remoteInfo = "Pods-Vault_ClientFacingApp-AFNetworking";
+		};
+		D38148AA4C16594016781879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB9770FFEAE0B0F3E3911812;
+			remoteInfo = "Pods-Vault_ClientFacingApp-ngrvalidator";
+		};
+		D45F77343EB380F7091B4F92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB9770FFEAE0B0F3E3911812;
+			remoteInfo = "Pods-Vault_ClientFacingApp-ngrvalidator";
+		};
+		DD7503137CB93D6BF3221DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B90A5325D8E83A07CCC573FC;
+			remoteInfo = "Pods-Vault_ClientFacingApp-UICKeyChainStore";
+		};
+		FFD12157C3C1159A1D53736F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEF69BE9C974617A7D71FAF9;
+			remoteInfo = "Pods-Vault_ClientFacingApp-XLForm";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01F3F1B6B267F57ED1DE1BDF /* XLFormValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormValidator.h; path = XLForm/XL/Validation/XLFormValidator.h; sourceTree = "<group>"; };
+		03838FB2ADE446E17F0C2F56 /* XLFormSliderCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormSliderCell.h; path = XLForm/XL/Cell/XLFormSliderCell.h; sourceTree = "<group>"; };
+		0401E311B42ACE6C9921FD99 /* DVSUserJSONSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSUserJSONSerializer.m; path = Devise/DVSUserJSONSerializer.m; sourceTree = "<group>"; };
+		04C7C45BB00B613D32F9DC5B /* XLFormSelectorCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormSelectorCell.h; path = XLForm/XL/Cell/XLFormSelectorCell.h; sourceTree = "<group>"; };
+		08301D85EED91DD106CC5EFF /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		08F7DF308315A5CAA7BD260D /* NSDictionary+Devise+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Devise+Private.m"; path = "Devise/NSDictionary+Devise+Private.m"; sourceTree = "<group>"; };
+		09AF9AF1023A7EF2061DC071 /* DVSAccessibilityLabels.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSAccessibilityLabels.h; path = Devise/DVSAccessibilityLabels.h; sourceTree = "<group>"; };
+		0AA372EC94827EA153A45E3B /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		0B56C097421F2DC3E3A2B9E5 /* NSObject+NGRValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+NGRValidator.h"; path = "NGRValidator/NGRValidator/Categories/NSObject+NGRValidator.h"; sourceTree = "<group>"; };
+		0DCB4DD5536BBBCC97AC419D /* NSArray+XLFormAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+XLFormAdditions.m"; path = "XLForm/XL/Helpers/NSArray+XLFormAdditions.m"; sourceTree = "<group>"; };
+		0DCEF8F3192C460FA826DED0 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		1152F41D760AF8C823E74A37 /* libPods-Vault_ClientFacingApp-UICKeyChainStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vault_ClientFacingApp-UICKeyChainStore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		134685BA093D2DCFA9329046 /* XLFormViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormViewController.m; path = XLForm/XL/Controllers/XLFormViewController.m; sourceTree = "<group>"; };
+		13F61EF257C94CC326EA2BC3 /* DVSUser+Persistence.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DVSUser+Persistence.m"; path = "Devise/DVSUser+Persistence.m"; sourceTree = "<group>"; };
+		1493BCE298B6AE13DFE983FD /* DVSTemplatesViewsUserDelegate+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DVSTemplatesViewsUserDelegate+Private.m"; path = "Devise/DVSTemplatesViewsUserDelegate+Private.m"; sourceTree = "<group>"; };
+		1519498DCDB319C6A322874E /* DVSUserPersistenceStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSUserPersistenceStore.h; path = Devise/DVSUserPersistenceStore.h; sourceTree = "<group>"; };
+		15AE8AB6EA1754BBFC0CEBBF /* XLFormRowNavigationAccessoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormRowNavigationAccessoryView.m; path = XLForm/XL/Helpers/Views/XLFormRowNavigationAccessoryView.m; sourceTree = "<group>"; };
+		15CD74CF7BCB287170736BBC /* XLFormBaseCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormBaseCell.m; path = XLForm/XL/Cell/XLFormBaseCell.m; sourceTree = "<group>"; };
+		15D07298B1B6A1C4AAAEC227 /* XLFormPickerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormPickerCell.h; path = XLForm/XL/Cell/XLFormPickerCell.h; sourceTree = "<group>"; };
+		1AE6180705F828B34302B52D /* DVSHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSHTTPClient.m; path = Devise/DVSHTTPClient.m; sourceTree = "<group>"; };
+		1AE893346485910853CA1DAB /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		1C3CC74453F6D89B0F293FC5 /* UIViewController+Devise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Devise.m"; path = "Devise/UIViewController+Devise.m"; sourceTree = "<group>"; };
+		1D8E31332AF220B837C32D47 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1E367077BC07D5DCE4F484A8 /* Pods-Vault_ClientFacingApp-Devise.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-Devise.xcconfig"; sourceTree = "<group>"; };
+		1EBCB0E136EDD962667F1A2A /* DVSPasswordReminderFormViewController+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DVSPasswordReminderFormViewController+Private.m"; path = "Devise/DVSPasswordReminderFormViewController+Private.m"; sourceTree = "<group>"; };
+		1F80AB19BB6EE1C5EBB010BA /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		2148F5FC6F5388F8324D3A20 /* NGRTypedefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NGRTypedefs.h; path = NGRValidator/NGRValidator/NGRTypedefs.h; sourceTree = "<group>"; };
+		2191FD83BEF6B14EFF1B30BE /* NSObject+XLFormAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+XLFormAdditions.h"; path = "XLForm/XL/Helpers/NSObject+XLFormAdditions.h"; sourceTree = "<group>"; };
+		229CB73FC826D340970EE8AD /* XLFormLeftRightSelectorCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormLeftRightSelectorCell.m; path = XLForm/XL/Cell/XLFormLeftRightSelectorCell.m; sourceTree = "<group>"; };
+		2485D6D1DBA9AF96286543CC /* XLFormTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormTextView.m; path = XLForm/XL/Helpers/Views/XLFormTextView.m; sourceTree = "<group>"; };
+		25DFB503D923F67636541F8F /* NGRPropertyValidator+NSDate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NGRPropertyValidator+NSDate.m"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+NSDate.m"; sourceTree = "<group>"; };
+		26EE1A08CA5630FF57DEACBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		27E4A8FA9FFBA9EE163CD650 /* NGRPropertyValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NGRPropertyValidator.m; path = NGRValidator/NGRValidator/NGRPropertyValidator.m; sourceTree = "<group>"; };
+		289AA1DB4A4E1364D4C9B798 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		28EE34C3B698C563404E4162 /* XLFormSelectorCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormSelectorCell.m; path = XLForm/XL/Cell/XLFormSelectorCell.m; sourceTree = "<group>"; };
+		2A3DFF4B50D56DDD110D2E12 /* XLFormOptionsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormOptionsViewController.h; path = XLForm/XL/Controllers/XLFormOptionsViewController.h; sourceTree = "<group>"; };
+		2E2B54FDF1B077DA2C14F3F9 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
+		2E85D509501DB7A4DC09A28D /* Pods-Vault_ClientFacingApp-UICKeyChainStore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vault_ClientFacingApp-UICKeyChainStore-dummy.m"; sourceTree = "<group>"; };
+		2F1ED0AD3B7234385B7303F6 /* XLFormButtonCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormButtonCell.m; path = XLForm/XL/Cell/XLFormButtonCell.m; sourceTree = "<group>"; };
+		2FB6ED5CA1FEA03EA525F208 /* XLFormLeftRightSelectorCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormLeftRightSelectorCell.h; path = XLForm/XL/Cell/XLFormLeftRightSelectorCell.h; sourceTree = "<group>"; };
+		2FBBB3E8B288D20941D665E8 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		308700CA5C4CCA9E50F506E8 /* Pods-Vault_ClientFacingApp-UICKeyChainStore-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-UICKeyChainStore-Private.xcconfig"; sourceTree = "<group>"; };
+		310BB994FFD2A83450E375B1 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		36569EA4B4D1AB49F0466F30 /* DVSUserPersistenceStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSUserPersistenceStore.m; path = Devise/DVSUserPersistenceStore.m; sourceTree = "<group>"; };
+		37BAAD69F67771AF9C0CCB1F /* DVSFacebookAccountStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSFacebookAccountStore.m; path = Devise/DVSFacebookAccountStore.m; sourceTree = "<group>"; };
+		38D4116EBD7376095D2EDD99 /* DVSConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSConfiguration.h; path = Devise/DVSConfiguration.h; sourceTree = "<group>"; };
+		3A88860D372013BC5FF5A0A0 /* XLForm.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = XLForm.bundle; path = XLForm/XLForm.bundle; sourceTree = "<group>"; };
+		3B9ECFD1E5E78F9E4F2AF305 /* XLFormDatePickerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormDatePickerCell.h; path = XLForm/XL/Cell/XLFormDatePickerCell.h; sourceTree = "<group>"; };
+		3CE435A8566B7BE4D40345E9 /* DVSUserJSONSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSUserJSONSerializer.h; path = Devise/DVSUserJSONSerializer.h; sourceTree = "<group>"; };
+		3D2008B19914CD6CCB24507C /* XLFormInlineRowDescriptorCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormInlineRowDescriptorCell.h; path = XLForm/XL/Cell/XLFormInlineRowDescriptorCell.h; sourceTree = "<group>"; };
+		3DC928D4C2688EE91C33BD10 /* XLFormRowDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormRowDescriptor.m; path = XLForm/XL/Descriptors/XLFormRowDescriptor.m; sourceTree = "<group>"; };
+		3ECD0E7F42EC8C8C1AFACBAD /* NSURL+Devise+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURL+Devise+Private.h"; path = "Devise/NSURL+Devise+Private.h"; sourceTree = "<group>"; };
+		3F23D0FFBD95A3DEE979ABEE /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		3F9B2F1F0B1963E6BE7BFC3E /* DVSUserManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSUserManager.h; path = Devise/DVSUserManager.h; sourceTree = "<group>"; };
+		3F9C6E7210AC95E66C3E5E54 /* NSDate+NGRValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+NGRValidator.h"; path = "NGRValidator/NGRValidator/Categories/NSDate+NGRValidator.h"; sourceTree = "<group>"; };
+		40D342A24542AE5C9A18192A /* XLFormDescriptorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormDescriptorDelegate.h; path = XLForm/XL/Descriptors/XLFormDescriptorDelegate.h; sourceTree = "<group>"; };
+		41BA7F7962C0202A2863BD09 /* DVSHTTPClient+User.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DVSHTTPClient+User.h"; path = "Devise/DVSHTTPClient+User.h"; sourceTree = "<group>"; };
+		432AE84BBB45BD6A90602255 /* Pods-Vault_ClientFacingApp-XLForm-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-XLForm-Private.xcconfig"; sourceTree = "<group>"; };
+		460A019AAF796A9ED24B0B7E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		4682A729D61496B114EC51CF /* DVSHTTPClient+User.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DVSHTTPClient+User.m"; path = "Devise/DVSHTTPClient+User.m"; sourceTree = "<group>"; };
+		469427D697EC7EB20C992CFA /* XLFormTextFieldCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormTextFieldCell.h; path = XLForm/XL/Cell/XLFormTextFieldCell.h; sourceTree = "<group>"; };
+		482B4CF4B5058E9ADADEBA21 /* XLFormValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormValidator.m; path = XLForm/XL/Validation/XLFormValidator.m; sourceTree = "<group>"; };
+		49CACD18A0D5C2AEE85DB614 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4A57653C7D132DA1C39183CA /* libPods-Vault_ClientFacingApp-AFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vault_ClientFacingApp-AFNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B12D2B4D954435E8800D8DC /* XLFormSectionDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormSectionDescriptor.h; path = XLForm/XL/Descriptors/XLFormSectionDescriptor.h; sourceTree = "<group>"; };
+		4B2529414FED270D36AF3565 /* XLFormRowNavigationAccessoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormRowNavigationAccessoryView.h; path = XLForm/XL/Helpers/Views/XLFormRowNavigationAccessoryView.h; sourceTree = "<group>"; };
+		4CB08DDA0795F9C719C19AD3 /* NSString+NGRValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+NGRValidator.h"; path = "NGRValidator/NGRValidator/Categories/NSString+NGRValidator.h"; sourceTree = "<group>"; };
+		4DC9D15A76C36C3F5FEB16DB /* Pods-Vault_ClientFacingApp-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
+		4E4FE66008151496AD5F8FF4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		4ECE289D11A68C1B4A696321 /* NSArray+NGRValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+NGRValidator.h"; path = "NGRValidator/NGRValidator/Categories/NSArray+NGRValidator.h"; sourceTree = "<group>"; };
+		4F7259E21AFEB93B3A1BA4F4 /* XLFormRightImageButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormRightImageButton.m; path = XLForm/XL/Helpers/Views/XLFormRightImageButton.m; sourceTree = "<group>"; };
+		507BDFF2B73572B5E8F91230 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		5194EE4A0C27C70578FD7628 /* XLForm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLForm.m; path = XLForm/XL/XLForm.m; sourceTree = "<group>"; };
+		51CF2CAFAC020B1225D53DE2 /* NGRPropertyValidator+Syntax.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NGRPropertyValidator+Syntax.m"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+Syntax.m"; sourceTree = "<group>"; };
+		52116327C584B99DFC2580B9 /* libPods-Vault_ClientFacingApp-XLForm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vault_ClientFacingApp-XLForm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		528CE572256055AF9E38D07C /* DVSBarButtonItem+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DVSBarButtonItem+Private.h"; path = "Devise/DVSBarButtonItem+Private.h"; sourceTree = "<group>"; };
+		53D5697CDFAD4E3BE6A82242 /* XLFormBaseCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormBaseCell.h; path = XLForm/XL/Cell/XLFormBaseCell.h; sourceTree = "<group>"; };
+		5503FB9835876F34B591B60A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		55B05A2C9185B73B837C06D9 /* NGRPropertyValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NGRPropertyValidator.h; path = NGRValidator/NGRValidator/NGRPropertyValidator.h; sourceTree = "<group>"; };
+		56A313FA523FCFBFE8CFD01D /* NGRPropertyValidator+NSDate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NGRPropertyValidator+NSDate.h"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+NSDate.h"; sourceTree = "<group>"; };
+		57540FB9BB8D2527241F7FC7 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		5A5D1E660112FBEF3DCDA999 /* NSObject+NGRRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+NGRRuntime.m"; path = "NGRValidator/NGRValidator/Categories/NSObject+NGRRuntime.m"; sourceTree = "<group>"; };
+		5B72BCE19D69B76368FAB385 /* Pods-Vault_ClientFacingApp-UICKeyChainStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-UICKeyChainStore.xcconfig"; sourceTree = "<group>"; };
+		5B8FEBF3AE7DF1EC774C731E /* NGRMessages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NGRMessages.m; path = NGRValidator/NGRValidator/NGRMessages.m; sourceTree = "<group>"; };
+		5B9B4E9C012DBCF7DAAAF3CA /* DVSHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSHTTPClient.h; path = Devise/DVSHTTPClient.h; sourceTree = "<group>"; };
+		5CD4BEDA5103A456FC8E8692 /* NSURL+Devise+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Devise+Private.m"; path = "Devise/NSURL+Devise+Private.m"; sourceTree = "<group>"; };
+		5D911318271EA9DB543184A2 /* XLFormButtonCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormButtonCell.h; path = XLForm/XL/Cell/XLFormButtonCell.h; sourceTree = "<group>"; };
+		5DC723DC8D485764096CAB2B /* DVSFacebookAccountStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSFacebookAccountStore.h; path = Devise/DVSFacebookAccountStore.h; sourceTree = "<group>"; };
+		62A5F669D872214E38237736 /* NGRValidationRule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NGRValidationRule.h; path = NGRValidator/NGRValidator/NGRValidationRule.h; sourceTree = "<group>"; };
+		6320950DEE90CDAD00BD97CD /* XLFormRowDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormRowDescriptor.h; path = XLForm/XL/Descriptors/XLFormRowDescriptor.h; sourceTree = "<group>"; };
+		6336E553EDBBCAF2A00B8801 /* Pods-Vault_ClientFacingApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Vault_ClientFacingApp-resources.sh"; sourceTree = "<group>"; };
+		645307CD3A2E312868AC4026 /* Pods-Vault_ClientFacingApp-XLForm-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vault_ClientFacingApp-XLForm-prefix.pch"; sourceTree = "<group>"; };
+		653F9B7AA1BDD9CDFC280F78 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		657EC9EE6FFBEAA3DD06A1A9 /* Pods-Vault_ClientFacingApp-Devise-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vault_ClientFacingApp-Devise-prefix.pch"; sourceTree = "<group>"; };
+		66BFB0E1837B15C5A1ECED5F /* NSDictionary+Devise+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Devise+Private.h"; path = "Devise/NSDictionary+Devise+Private.h"; sourceTree = "<group>"; };
+		696694B5A0C5A26E984DEBED /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		6A9737A9EDDD18BAEB1184E8 /* XLFormTextViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormTextViewCell.m; path = XLForm/XL/Cell/XLFormTextViewCell.m; sourceTree = "<group>"; };
+		6B2B4FDFE537C31D713FD36C /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		6B510E178D05AC5EFE8BA3AF /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		6CDD162D33D4E2C2B584B4A1 /* NSDate+NGRValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+NGRValidator.m"; path = "NGRValidator/NGRValidator/Categories/NSDate+NGRValidator.m"; sourceTree = "<group>"; };
+		6DE0B47BE5D6000014CE68D0 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = Frameworks/GooglePlus.framework; sourceTree = "<group>"; };
+		6E89CFFB069ACFDFC5BD1484 /* XLFormTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormTextView.h; path = XLForm/XL/Helpers/Views/XLFormTextView.h; sourceTree = "<group>"; };
+		6EC61F39BECECE112A24E45A /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		71362CA908841E6EC402B2C5 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		7230A2677CF8E54330D932BA /* NGRPropertyValidator+NSNumber.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NGRPropertyValidator+NSNumber.m"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+NSNumber.m"; sourceTree = "<group>"; };
+		72FB4FC80C374A6237289E9F /* DVSAccessibilityLabels.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSAccessibilityLabels.m; path = Devise/DVSAccessibilityLabels.m; sourceTree = "<group>"; };
+		7328DF12E9D00F92F1A7CF51 /* NSObject+Devise+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Devise+Private.m"; path = "Devise/NSObject+Devise+Private.m"; sourceTree = "<group>"; };
+		734B6FD5B2FD59FFB1B8CAAE /* NSObject+Devise+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Devise+Private.h"; path = "Devise/NSObject+Devise+Private.h"; sourceTree = "<group>"; };
+		74E93AAF639D6F89BF1C4D86 /* DVSFacebookAuthenticator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSFacebookAuthenticator.m; path = Devise/DVSFacebookAuthenticator.m; sourceTree = "<group>"; };
+		7551FA8B717C5F998D0DA11C /* XLFormRightDetailCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormRightDetailCell.m; path = XLForm/XL/Helpers/Views/XLFormRightDetailCell.m; sourceTree = "<group>"; };
+		7A7B944A92D048474C58C39C /* XLFormRegexValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormRegexValidator.h; path = XLForm/XL/Validation/XLFormRegexValidator.h; sourceTree = "<group>"; };
+		7D051830970066FFEF8E2CFD /* XLFormDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormDescriptor.h; path = XLForm/XL/Descriptors/XLFormDescriptor.h; sourceTree = "<group>"; };
+		7EF4A53739BDF388B244F871 /* XLFormTextViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormTextViewCell.h; path = XLForm/XL/Cell/XLFormTextViewCell.h; sourceTree = "<group>"; };
+		7EFA91D12A64D35AECE59420 /* Pods-Vault_ClientFacingApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Vault_ClientFacingApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7F31524299A5AEA1AB10D018 /* NGRPropertyValidator+NSObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NGRPropertyValidator+NSObject.m"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+NSObject.m"; sourceTree = "<group>"; };
+		7F573A4A2806B9B0478FBECF /* DVSFieldsUtils+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DVSFieldsUtils+Private.m"; path = "Devise/DVSFieldsUtils+Private.m"; sourceTree = "<group>"; };
+		7FAA3AD5A0090E68FCF92DEF /* NGRValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NGRValidator.m; path = NGRValidator/NGRValidator/NGRValidator.m; sourceTree = "<group>"; };
+		806E6A43987B44D5D9B82C2A /* UICKeyChainStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UICKeyChainStore.m; path = Lib/UICKeyChainStore.m; sourceTree = "<group>"; };
+		81DD85A37A3E12B3A353F19C /* DVSGooglePlusAuthenticator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSGooglePlusAuthenticator.m; path = Devise/DVSGooglePlusAuthenticator.m; sourceTree = "<group>"; };
+		8214A209F943BC3888989C49 /* DVSUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSUser.m; path = Devise/DVSUser.m; sourceTree = "<group>"; };
+		822FB1AC382ADB5C046A74AB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		8314E80978BB006D5604DCFE /* NGRMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NGRMessages.h; path = NGRValidator/NGRValidator/NGRMessages.h; sourceTree = "<group>"; };
+		83882B5F88E4E929D6017577 /* DVSFieldsUtils+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DVSFieldsUtils+Private.h"; path = "Devise/DVSFieldsUtils+Private.h"; sourceTree = "<group>"; };
+		83ED5F77930362EA4B6D08D1 /* DVSUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSUser.h; path = Devise/DVSUser.h; sourceTree = "<group>"; };
+		8432520C2AE3F09FC9E3E495 /* DVSLoginSignUpFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSLoginSignUpFields.h; path = Devise/DVSLoginSignUpFields.h; sourceTree = "<group>"; };
+		852A3230824839FFF3091D40 /* XLFormCheckCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormCheckCell.m; path = XLForm/XL/Cell/XLFormCheckCell.m; sourceTree = "<group>"; };
+		87221E11769E28EC31D45F88 /* NSObject+NGRRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+NGRRuntime.h"; path = "NGRValidator/NGRValidator/Categories/NSObject+NGRRuntime.h"; sourceTree = "<group>"; };
+		892C3A03F2A3747AAC192B04 /* Pods-Vault_ClientFacingApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Vault_ClientFacingApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		8B3CC1CB46841BE9654BD362 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		8BA77F86537E07FED4BE6DE8 /* Pods-Vault_ClientFacingApp-ngrvalidator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-ngrvalidator.xcconfig"; sourceTree = "<group>"; };
+		8BF6D582EB2E3BFAF56FC3E5 /* XLFormSwitchCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormSwitchCell.h; path = XLForm/XL/Cell/XLFormSwitchCell.h; sourceTree = "<group>"; };
+		8D71169E9E4698F58E47B618 /* NGRPropertyValidator+NSObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NGRPropertyValidator+NSObject.h"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+NSObject.h"; sourceTree = "<group>"; };
+		8F1797C13967666E8AE143B2 /* NSError+Devise+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+Devise+Private.h"; path = "Devise/NSError+Devise+Private.h"; sourceTree = "<group>"; };
+		92CEC78B7058D9636D9458C6 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		92D73B8F663E1F656558850D /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		935871A0930880DCE36DC892 /* NGRValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NGRValidator.h; path = NGRValidator/NGRValidator/NGRValidator.h; sourceTree = "<group>"; };
+		945A0AE710E0402731661452 /* Pods-Vault_ClientFacingApp-Devise-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-Devise-Private.xcconfig"; sourceTree = "<group>"; };
+		954396CEF22024129597F47B /* DVSBarButtonItem+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DVSBarButtonItem+Private.m"; path = "Devise/DVSBarButtonItem+Private.m"; sourceTree = "<group>"; };
+		96A094F2CC7E7BF7F6A168E0 /* XLFormValidationStatus.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormValidationStatus.m; path = XLForm/XL/Validation/XLFormValidationStatus.m; sourceTree = "<group>"; };
+		96BEAB8954EC275F1D368A8C /* libPods-Vault_ClientFacingApp-Devise.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vault_ClientFacingApp-Devise.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		975229FB88D0E1F8DEB74F7C /* DVSUserJSONSerializer+Serialize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DVSUserJSONSerializer+Serialize.h"; path = "Devise/DVSUserJSONSerializer+Serialize.h"; sourceTree = "<group>"; };
+		9754E56B2D524B63867F47A5 /* XLFormRightImageButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormRightImageButton.h; path = XLForm/XL/Helpers/Views/XLFormRightImageButton.h; sourceTree = "<group>"; };
+		9997B1FBE67B3D952E77A16A /* DVSUserManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSUserManager.m; path = Devise/DVSUserManager.m; sourceTree = "<group>"; };
+		9ACDCE8DE47501B98C2201E5 /* UIView+XLFormAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+XLFormAdditions.h"; path = "XLForm/XL/Helpers/UIView+XLFormAdditions.h"; sourceTree = "<group>"; };
+		9B9A4B8B6FC9D6271CE5139A /* NSObject+XLFormAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+XLFormAdditions.m"; path = "XLForm/XL/Helpers/NSObject+XLFormAdditions.m"; sourceTree = "<group>"; };
+		9CB167BACB1ED3BF91CC262E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		9FA84CA756402422D976464E /* DVSLoginSignUpFormViewController+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DVSLoginSignUpFormViewController+Private.h"; path = "Devise/DVSLoginSignUpFormViewController+Private.h"; sourceTree = "<group>"; };
+		A0EFC7F32D4D48BE8494E657 /* Pods-Vault_ClientFacingApp-ngrvalidator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vault_ClientFacingApp-ngrvalidator-prefix.pch"; sourceTree = "<group>"; };
+		A193EF41187D853197D5CD87 /* XLFormTextFieldCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormTextFieldCell.m; path = XLForm/XL/Cell/XLFormTextFieldCell.m; sourceTree = "<group>"; };
+		A29165C6B1542DD1C00ED46C /* XLFormOptionsObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormOptionsObject.m; path = XLForm/XL/Controllers/XLFormOptionsObject.m; sourceTree = "<group>"; };
+		A35512BDC8011786E451AC98 /* XLFormOptionsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormOptionsViewController.m; path = XLForm/XL/Controllers/XLFormOptionsViewController.m; sourceTree = "<group>"; };
+		A46CD191BD78FE71B777FBAC /* Pods-Vault_ClientFacingApp-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vault_ClientFacingApp-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		A56D56031478CDE520A9B9FA /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		A747BD07690A18D8A50C35DC /* XLFormPickerCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormPickerCell.m; path = XLForm/XL/Cell/XLFormPickerCell.m; sourceTree = "<group>"; };
+		A794A3C37DF8252F81F0641D /* libPods-Vault_ClientFacingApp-ngrvalidator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vault_ClientFacingApp-ngrvalidator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8154A07974C9E902EFD1C81 /* UIView+XLFormAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+XLFormAdditions.m"; path = "XLForm/XL/Helpers/UIView+XLFormAdditions.m"; sourceTree = "<group>"; };
+		A9834A4E3EC831A2B821C875 /* XLFormDatePickerCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormDatePickerCell.m; path = XLForm/XL/Cell/XLFormDatePickerCell.m; sourceTree = "<group>"; };
+		A9C6B3B6530BF18B93E4443D /* XLFormCheckCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormCheckCell.h; path = XLForm/XL/Cell/XLFormCheckCell.h; sourceTree = "<group>"; };
+		AB9F67EA295DE0974F08B438 /* NSString+NGRValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+NGRValidator.m"; path = "NGRValidator/NGRValidator/Categories/NSString+NGRValidator.m"; sourceTree = "<group>"; };
+		ABB57079C02FB9B9FCF13B4D /* UICKeyChainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UICKeyChainStore.h; path = Lib/UICKeyChainStore.h; sourceTree = "<group>"; };
+		ABB95DB9B144E4332E6D67C9 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		AD9218D16FBF66BBDC117AA6 /* XLFormRowDescriptor+Devise+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XLFormRowDescriptor+Devise+Private.h"; path = "Devise/XLFormRowDescriptor+Devise+Private.h"; sourceTree = "<group>"; };
+		AF471F0575847B2BBA674B08 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = Frameworks/GoogleOpenSource.framework; sourceTree = "<group>"; };
+		B0547215EA8000AC68E40B80 /* XLFormSectionDescriptor+Devise+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XLFormSectionDescriptor+Devise+Private.h"; path = "Devise/XLFormSectionDescriptor+Devise+Private.h"; sourceTree = "<group>"; };
+		B0A0EFF78838A7FFBB7A0E70 /* XLFormRowDescriptor+Devise+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XLFormRowDescriptor+Devise+Private.m"; path = "Devise/XLFormRowDescriptor+Devise+Private.m"; sourceTree = "<group>"; };
+		B26520F8BF8321F9459FFA70 /* Pods-Vault_ClientFacingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B3153EC08922DF4C330ECA65 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		B45629C9B8E8B6122D71BA8E /* XLForm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLForm.h; path = XLForm/XL/XLForm.h; sourceTree = "<group>"; };
+		B5E74311380F42EF7F058EDC /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		B6E6D65C3BD9217CC7BED05E /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		B77C60B59F527EBC87DA561F /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		B8C096479D15C537C00C5BCA /* Pods-Vault_ClientFacingApp-Devise-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vault_ClientFacingApp-Devise-dummy.m"; sourceTree = "<group>"; };
+		BA805553A3EDE18ACD9E8E0B /* NSObject+NGRValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+NGRValidator.m"; path = "NGRValidator/NGRValidator/Categories/NSObject+NGRValidator.m"; sourceTree = "<group>"; };
+		BAC610BF67F1A087FCEB6985 /* XLFormViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormViewController.h; path = XLForm/XL/Controllers/XLFormViewController.h; sourceTree = "<group>"; };
+		BB168B3DC5FCE2DDFF80F4A4 /* NGRPropertyValidator+NSNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NGRPropertyValidator+NSNumber.h"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+NSNumber.h"; sourceTree = "<group>"; };
+		BBA2AB048B319206F8ABFD83 /* Pods-Vault_ClientFacingApp-XLForm.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-XLForm.xcconfig"; sourceTree = "<group>"; };
+		BC5C52D050D4E5782F608953 /* DVSConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSConfiguration.m; path = Devise/DVSConfiguration.m; sourceTree = "<group>"; };
+		BCE6E7691DDAB0F870982EAD /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		BD12EACDBE4FD157B1F819FA /* libPods-Vault_ClientFacingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vault_ClientFacingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD55EF63D40140D79825B383 /* NGRPropertyValidator+Syntax.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NGRPropertyValidator+Syntax.h"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+Syntax.h"; sourceTree = "<group>"; };
+		BEA74BCCB24B651FA577DA68 /* XLFormSegmentedCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormSegmentedCell.h; path = XLForm/XL/Cell/XLFormSegmentedCell.h; sourceTree = "<group>"; };
+		BF73CE254068FF030830CBBC /* Pods-Vault_ClientFacingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp.release.xcconfig"; sourceTree = "<group>"; };
+		C0C208CC17281998232ED8E3 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		C133C6846C5DE3C7DFA75985 /* DVSAccountRetrieverViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSAccountRetrieverViewController.h; path = Devise/DVSAccountRetrieverViewController.h; sourceTree = "<group>"; };
+		C1D4D9547B45D524E4897069 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		C39FED37AC6397E06451B835 /* Pods-Vault_ClientFacingApp-XLForm-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vault_ClientFacingApp-XLForm-dummy.m"; sourceTree = "<group>"; };
+		C3BF91C01CFF99D2D5E8E0AC /* XLFormStepCounterCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormStepCounterCell.h; path = XLForm/XL/Cell/XLFormStepCounterCell.h; sourceTree = "<group>"; };
+		C44E7A762C8DE621651174B2 /* XLFormRowDescriptorViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormRowDescriptorViewController.h; path = XLForm/XL/Controllers/XLFormRowDescriptorViewController.h; sourceTree = "<group>"; };
+		C48630111D269AFE2DD56AD4 /* DVSUserJSONSerializer+Serialize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DVSUserJSONSerializer+Serialize.m"; path = "Devise/DVSUserJSONSerializer+Serialize.m"; sourceTree = "<group>"; };
+		C4A7677C1A4C97C31FF0291D /* DVSUser+Persistence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DVSUser+Persistence.h"; path = "Devise/DVSUser+Persistence.h"; sourceTree = "<group>"; };
+		C4ED404D23E08E8900B8E531 /* XLFormStepCounterCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormStepCounterCell.m; path = XLForm/XL/Cell/XLFormStepCounterCell.m; sourceTree = "<group>"; };
+		C5670419991EF89A44959AAF /* XLFormSegmentedCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormSegmentedCell.m; path = XLForm/XL/Cell/XLFormSegmentedCell.m; sourceTree = "<group>"; };
+		C6BFA9A68A1F1DCBE94A1B5A /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		C811D5939E1A093176203D67 /* DVSAccountRetrieverViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSAccountRetrieverViewController.m; path = Devise/DVSAccountRetrieverViewController.m; sourceTree = "<group>"; };
+		C97707CEA7FEA392A6805EDA /* Pods-Vault_ClientFacingApp-ngrvalidator-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-ngrvalidator-Private.xcconfig"; sourceTree = "<group>"; };
+		CC5C001F948CF79C33421DDF /* DVSPasswordReminderFormViewController+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DVSPasswordReminderFormViewController+Private.h"; path = "Devise/DVSPasswordReminderFormViewController+Private.h"; sourceTree = "<group>"; };
+		CEB85E0C1E291CC0A1AB3C05 /* DVSGooglePlusAuthenticator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSGooglePlusAuthenticator.h; path = Devise/DVSGooglePlusAuthenticator.h; sourceTree = "<group>"; };
+		D2368CC5697C8822A0C3B121 /* Pods-Vault_ClientFacingApp-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vault_ClientFacingApp-AFNetworking.xcconfig"; sourceTree = "<group>"; };
+		D2C6EB88D1DFCFD926DD79E8 /* XLFormRightDetailCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormRightDetailCell.h; path = XLForm/XL/Helpers/Views/XLFormRightDetailCell.h; sourceTree = "<group>"; };
+		D32B6BB6F4A2CF7BB2823686 /* XLFormInlineSelectorCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormInlineSelectorCell.m; path = XLForm/XL/Cell/XLFormInlineSelectorCell.m; sourceTree = "<group>"; };
+		D3A15B473AE80FD74B030619 /* XLFormSwitchCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormSwitchCell.m; path = XLForm/XL/Cell/XLFormSwitchCell.m; sourceTree = "<group>"; };
+		D42DE427143E406CFD2EFFEE /* XLFormValidatorProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormValidatorProtocol.h; path = XLForm/XL/Validation/XLFormValidatorProtocol.h; sourceTree = "<group>"; };
+		D567BA44B8AA88B83DB8FF8B /* NSError+Devise+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+Devise+Private.m"; path = "Devise/NSError+Devise+Private.m"; sourceTree = "<group>"; };
+		D7CD85E591C2E02156302103 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		D80E951635CF8402AA9CB13D /* DVSOAuthJSONParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DVSOAuthJSONParameters.m; path = Devise/DVSOAuthJSONParameters.m; sourceTree = "<group>"; };
+		DC64491F73A33990813CD803 /* NGRValidationRule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NGRValidationRule.m; path = NGRValidator/NGRValidator/NGRValidationRule.m; sourceTree = "<group>"; };
+		DCC3D1DCCE336B7FDE6AF5C6 /* XLFormSectionDescriptor+Devise+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XLFormSectionDescriptor+Devise+Private.m"; path = "Devise/XLFormSectionDescriptor+Devise+Private.m"; sourceTree = "<group>"; };
+		DD8CF377F1E5BDD7DAC21FFC /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		DF66C7C6D8FC80F1D4C75009 /* Devise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Devise.h; path = Devise/Devise.h; sourceTree = "<group>"; };
+		E0BF9FF0DF619BDEDF1A144B /* DVSFacebookAuthenticator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSFacebookAuthenticator.h; path = Devise/DVSFacebookAuthenticator.h; sourceTree = "<group>"; };
+		E131ABA9A6BC42A86316D03F /* XLFormSliderCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormSliderCell.m; path = XLForm/XL/Cell/XLFormSliderCell.m; sourceTree = "<group>"; };
+		E16CBDB14798B8D201AC9213 /* XLFormValidationStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormValidationStatus.h; path = XLForm/XL/Validation/XLFormValidationStatus.h; sourceTree = "<group>"; };
+		E1E4DDE3A97CE715720D50C2 /* XLFormSectionDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormSectionDescriptor.m; path = XLForm/XL/Descriptors/XLFormSectionDescriptor.m; sourceTree = "<group>"; };
+		E554860BC329E8809089CCC9 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		E5D03874B6B8BF40E53FB625 /* XLFormDescriptorCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormDescriptorCell.h; path = XLForm/XL/Cell/XLFormDescriptorCell.h; sourceTree = "<group>"; };
+		E6D827FC2CE550047D7A2235 /* DVSOAuthJSONParameters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSOAuthJSONParameters.h; path = Devise/DVSOAuthJSONParameters.h; sourceTree = "<group>"; };
+		E7E6E5FC1108469AF24E3174 /* NGRPropertyValidator+NSString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NGRPropertyValidator+NSString.h"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+NSString.h"; sourceTree = "<group>"; };
+		EACBA8CA824DC9CED6F5A5DC /* DVSLoginSignUpFormViewController+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DVSLoginSignUpFormViewController+Private.m"; path = "Devise/DVSLoginSignUpFormViewController+Private.m"; sourceTree = "<group>"; };
+		EB2FB03415DC879EA8BEC541 /* XLFormOptionsObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormOptionsObject.h; path = XLForm/XL/Controllers/XLFormOptionsObject.h; sourceTree = "<group>"; };
+		EB33CC83BB727208EA8173D0 /* XLFormDateCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormDateCell.h; path = XLForm/XL/Cell/XLFormDateCell.h; sourceTree = "<group>"; };
+		EC0D52B27D1A9C20D14FA56F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		EC62A78E9A890D2721DEEB50 /* NSArray+XLFormAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+XLFormAdditions.h"; path = "XLForm/XL/Helpers/NSArray+XLFormAdditions.h"; sourceTree = "<group>"; };
+		EE5E25B63AD632570FF6D920 /* DVSTemplatesViewsUserDelegate+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DVSTemplatesViewsUserDelegate+Private.h"; path = "Devise/DVSTemplatesViewsUserDelegate+Private.h"; sourceTree = "<group>"; };
+		EEA4437257FB2B97EC934914 /* DVSMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSMacros.h; path = Devise/DVSMacros.h; sourceTree = "<group>"; };
+		EFD8C4968A6151D00D9A5F22 /* NGRPropertyValidator+NSString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NGRPropertyValidator+NSString.m"; path = "NGRValidator/NGRValidator/Extensions/NGRPropertyValidator+NSString.m"; sourceTree = "<group>"; };
+		F0D31414F431B37B33B56937 /* UIViewController+Devise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Devise.h"; path = "Devise/UIViewController+Devise.h"; sourceTree = "<group>"; };
+		F19EF7CAB21DE36F69B36890 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F26C88B99AA7A84CB5E5CE71 /* Pods-Vault_ClientFacingApp-UICKeyChainStore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vault_ClientFacingApp-UICKeyChainStore-prefix.pch"; sourceTree = "<group>"; };
+		F41AC5C587F9E10C39D47963 /* XLFormRegexValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormRegexValidator.m; path = XLForm/XL/Validation/XLFormRegexValidator.m; sourceTree = "<group>"; };
+		F421FF64AA2AF64294CD2EDB /* XLFormDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormDescriptor.m; path = XLForm/XL/Descriptors/XLFormDescriptor.m; sourceTree = "<group>"; };
+		F4F90B8584EAE9881B01FC4A /* Pods-Vault_ClientFacingApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vault_ClientFacingApp-dummy.m"; sourceTree = "<group>"; };
+		F518A46D299298CFA4705BB7 /* DVSTypedefs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DVSTypedefs.h; path = Devise/DVSTypedefs.h; sourceTree = "<group>"; };
+		F5923F10730D99496302CC12 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		F5D1D3D9B1A586CC9A3B609D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		F5DE60965F2F2C30521D5CA2 /* NSArray+NGRValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+NGRValidator.m"; path = "NGRValidator/NGRValidator/Categories/NSArray+NGRValidator.m"; sourceTree = "<group>"; };
+		F718A62D87D783A396D96329 /* Pods-Vault_ClientFacingApp-ngrvalidator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vault_ClientFacingApp-ngrvalidator-dummy.m"; sourceTree = "<group>"; };
+		F79F487699A214B7F7FC9CA2 /* XLFormInlineSelectorCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XLFormInlineSelectorCell.h; path = XLForm/XL/Cell/XLFormInlineSelectorCell.h; sourceTree = "<group>"; };
+		F8C60A53C1868B5DCA7F7505 /* Pods-Vault_ClientFacingApp-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vault_ClientFacingApp-AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		F914537ACE591FD39F34D745 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		F9E55F50C05AFEC10BC1778E /* Pods-Vault_ClientFacingApp-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vault_ClientFacingApp-environment.h"; sourceTree = "<group>"; };
+		FD083E8790DD7444BB19820F /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		FD86569D002F054DE9AEF19C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		FE9158E27D600BFE2DAA21D6 /* XLFormDateCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XLFormDateCell.m; path = XLForm/XL/Cell/XLFormDateCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0340F38886371BF086B25F3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1B949C3E3F19FEC3D0B8D6E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57E28F01D4985B13E30190A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DB1CC468FCBF785EF1D3993 /* Foundation.framework in Frameworks */,
+				708A220D89ADD7F6DAC28DA8 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		626FFC2E7CA35F321CABDFB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				909BFC703C47A55699D84D30 /* AddressBook.framework in Frameworks */,
+				FB96CC90D4DA3575E51682D3 /* AssetsLibrary.framework in Frameworks */,
+				DA3D26315C3A8DC37FA45AAD /* CoreGraphics.framework in Frameworks */,
+				05217BB5816DA1379413FA1A /* CoreLocation.framework in Frameworks */,
+				D4BFD147A8AFA8720A0393B0 /* CoreMotion.framework in Frameworks */,
+				A367668BE3EE4A93D78BFCA1 /* CoreText.framework in Frameworks */,
+				E8B9A4D797F202D14D27AFDB /* Foundation.framework in Frameworks */,
+				BA0FD1DA277BEAB2ECA08A51 /* MediaPlayer.framework in Frameworks */,
+				74E2843C4D557EFEB4AA8883 /* Security.framework in Frameworks */,
+				380A747FAA1908F3835D7F52 /* SystemConfiguration.framework in Frameworks */,
+				31465887517E4FB031F764B2 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB9CB115884E4F27381BCA1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EB202A24A7A6FAAC1262BEE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D40A3085FAECA0913087B601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C7494185BABFF3132176E59 /* CoreGraphics.framework in Frameworks */,
+				8E5F416CCD18396E367D42CE /* Foundation.framework in Frameworks */,
+				BD0BAEA314EA42EDF785805F /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE507C9F6CA233ACF8CA6A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C2754643D4B4A41A6770933 /* CoreGraphics.framework in Frameworks */,
+				1325547678FBC37E0584DFDF /* Foundation.framework in Frameworks */,
+				69603805D6ED7072DD14ECAC /* MobileCoreServices.framework in Frameworks */,
+				6C3F6D740D9B0BA07AB4B542 /* Security.framework in Frameworks */,
+				7F8C0F69D1F858138BD806B2 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05EF269A05F1CCAFCE0852AA /* NSURLConnection */ = {
+			isa = PBXGroup;
+			children = (
+				BCE6E7691DDAB0F870982EAD /* AFHTTPRequestOperation.h */,
+				507BDFF2B73572B5E8F91230 /* AFHTTPRequestOperation.m */,
+				6B2B4FDFE537C31D713FD36C /* AFHTTPRequestOperationManager.h */,
+				C0C208CC17281998232ED8E3 /* AFHTTPRequestOperationManager.m */,
+				92CEC78B7058D9636D9458C6 /* AFURLConnectionOperation.h */,
+				57540FB9BB8D2527241F7FC7 /* AFURLConnectionOperation.m */,
+			);
+			name = NSURLConnection;
+			sourceTree = "<group>";
+		};
+		06797591B3158F65B1BDC15F /* Devise */ = {
+			isa = PBXGroup;
+			children = (
+				09AF9AF1023A7EF2061DC071 /* DVSAccessibilityLabels.h */,
+				72FB4FC80C374A6237289E9F /* DVSAccessibilityLabels.m */,
+				C133C6846C5DE3C7DFA75985 /* DVSAccountRetrieverViewController.h */,
+				C811D5939E1A093176203D67 /* DVSAccountRetrieverViewController.m */,
+				528CE572256055AF9E38D07C /* DVSBarButtonItem+Private.h */,
+				954396CEF22024129597F47B /* DVSBarButtonItem+Private.m */,
+				38D4116EBD7376095D2EDD99 /* DVSConfiguration.h */,
+				BC5C52D050D4E5782F608953 /* DVSConfiguration.m */,
+				5DC723DC8D485764096CAB2B /* DVSFacebookAccountStore.h */,
+				37BAAD69F67771AF9C0CCB1F /* DVSFacebookAccountStore.m */,
+				E0BF9FF0DF619BDEDF1A144B /* DVSFacebookAuthenticator.h */,
+				74E93AAF639D6F89BF1C4D86 /* DVSFacebookAuthenticator.m */,
+				83882B5F88E4E929D6017577 /* DVSFieldsUtils+Private.h */,
+				7F573A4A2806B9B0478FBECF /* DVSFieldsUtils+Private.m */,
+				CEB85E0C1E291CC0A1AB3C05 /* DVSGooglePlusAuthenticator.h */,
+				81DD85A37A3E12B3A353F19C /* DVSGooglePlusAuthenticator.m */,
+				5B9B4E9C012DBCF7DAAAF3CA /* DVSHTTPClient.h */,
+				1AE6180705F828B34302B52D /* DVSHTTPClient.m */,
+				41BA7F7962C0202A2863BD09 /* DVSHTTPClient+User.h */,
+				4682A729D61496B114EC51CF /* DVSHTTPClient+User.m */,
+				8432520C2AE3F09FC9E3E495 /* DVSLoginSignUpFields.h */,
+				9FA84CA756402422D976464E /* DVSLoginSignUpFormViewController+Private.h */,
+				EACBA8CA824DC9CED6F5A5DC /* DVSLoginSignUpFormViewController+Private.m */,
+				EEA4437257FB2B97EC934914 /* DVSMacros.h */,
+				E6D827FC2CE550047D7A2235 /* DVSOAuthJSONParameters.h */,
+				D80E951635CF8402AA9CB13D /* DVSOAuthJSONParameters.m */,
+				CC5C001F948CF79C33421DDF /* DVSPasswordReminderFormViewController+Private.h */,
+				1EBCB0E136EDD962667F1A2A /* DVSPasswordReminderFormViewController+Private.m */,
+				EE5E25B63AD632570FF6D920 /* DVSTemplatesViewsUserDelegate+Private.h */,
+				1493BCE298B6AE13DFE983FD /* DVSTemplatesViewsUserDelegate+Private.m */,
+				F518A46D299298CFA4705BB7 /* DVSTypedefs.h */,
+				83ED5F77930362EA4B6D08D1 /* DVSUser.h */,
+				8214A209F943BC3888989C49 /* DVSUser.m */,
+				C4A7677C1A4C97C31FF0291D /* DVSUser+Persistence.h */,
+				13F61EF257C94CC326EA2BC3 /* DVSUser+Persistence.m */,
+				3CE435A8566B7BE4D40345E9 /* DVSUserJSONSerializer.h */,
+				0401E311B42ACE6C9921FD99 /* DVSUserJSONSerializer.m */,
+				975229FB88D0E1F8DEB74F7C /* DVSUserJSONSerializer+Serialize.h */,
+				C48630111D269AFE2DD56AD4 /* DVSUserJSONSerializer+Serialize.m */,
+				3F9B2F1F0B1963E6BE7BFC3E /* DVSUserManager.h */,
+				9997B1FBE67B3D952E77A16A /* DVSUserManager.m */,
+				1519498DCDB319C6A322874E /* DVSUserPersistenceStore.h */,
+				36569EA4B4D1AB49F0466F30 /* DVSUserPersistenceStore.m */,
+				DF66C7C6D8FC80F1D4C75009 /* Devise.h */,
+				66BFB0E1837B15C5A1ECED5F /* NSDictionary+Devise+Private.h */,
+				08F7DF308315A5CAA7BD260D /* NSDictionary+Devise+Private.m */,
+				8F1797C13967666E8AE143B2 /* NSError+Devise+Private.h */,
+				D567BA44B8AA88B83DB8FF8B /* NSError+Devise+Private.m */,
+				734B6FD5B2FD59FFB1B8CAAE /* NSObject+Devise+Private.h */,
+				7328DF12E9D00F92F1A7CF51 /* NSObject+Devise+Private.m */,
+				3ECD0E7F42EC8C8C1AFACBAD /* NSURL+Devise+Private.h */,
+				5CD4BEDA5103A456FC8E8692 /* NSURL+Devise+Private.m */,
+				F0D31414F431B37B33B56937 /* UIViewController+Devise.h */,
+				1C3CC74453F6D89B0F293FC5 /* UIViewController+Devise.m */,
+				AD9218D16FBF66BBDC117AA6 /* XLFormRowDescriptor+Devise+Private.h */,
+				B0A0EFF78838A7FFBB7A0E70 /* XLFormRowDescriptor+Devise+Private.m */,
+				B0547215EA8000AC68E40B80 /* XLFormSectionDescriptor+Devise+Private.h */,
+				DCC3D1DCCE336B7FDE6AF5C6 /* XLFormSectionDescriptor+Devise+Private.m */,
+				1EC753A7D329D39713783922 /* Frameworks */,
+				F1E1D9667931BD428293C80C /* Support Files */,
+			);
+			path = Devise;
+			sourceTree = "<group>";
+		};
+		07706585199115C84B3395FC /* UICKeyChainStore */ = {
+			isa = PBXGroup;
+			children = (
+				ABB57079C02FB9B9FCF13B4D /* UICKeyChainStore.h */,
+				806E6A43987B44D5D9B82C2A /* UICKeyChainStore.m */,
+				7018C2D234E3BFFBEFFC490C /* Support Files */,
+			);
+			path = UICKeyChainStore;
+			sourceTree = "<group>";
+		};
+		0F7FF35E8712787B1820190C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BA77F86537E07FED4BE6DE8 /* Pods-Vault_ClientFacingApp-ngrvalidator.xcconfig */,
+				C97707CEA7FEA392A6805EDA /* Pods-Vault_ClientFacingApp-ngrvalidator-Private.xcconfig */,
+				F718A62D87D783A396D96329 /* Pods-Vault_ClientFacingApp-ngrvalidator-dummy.m */,
+				A0EFC7F32D4D48BE8494E657 /* Pods-Vault_ClientFacingApp-ngrvalidator-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Vault_ClientFacingApp-ngrvalidator";
+			sourceTree = "<group>";
+		};
+		15203E32FE67036E8D5394DE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3F23D0FFBD95A3DEE979ABEE /* AFNetworkActivityIndicatorManager.h */,
+				71362CA908841E6EC402B2C5 /* AFNetworkActivityIndicatorManager.m */,
+				310BB994FFD2A83450E375B1 /* UIActivityIndicatorView+AFNetworking.h */,
+				E554860BC329E8809089CCC9 /* UIActivityIndicatorView+AFNetworking.m */,
+				0AA372EC94827EA153A45E3B /* UIAlertView+AFNetworking.h */,
+				92D73B8F663E1F656558850D /* UIAlertView+AFNetworking.m */,
+				C1D4D9547B45D524E4897069 /* UIButton+AFNetworking.h */,
+				8B3CC1CB46841BE9654BD362 /* UIButton+AFNetworking.m */,
+				6B510E178D05AC5EFE8BA3AF /* UIImageView+AFNetworking.h */,
+				B3153EC08922DF4C330ECA65 /* UIImageView+AFNetworking.m */,
+				DD8CF377F1E5BDD7DAC21FFC /* UIKit+AFNetworking.h */,
+				B5E74311380F42EF7F058EDC /* UIProgressView+AFNetworking.h */,
+				B77C60B59F527EBC87DA561F /* UIProgressView+AFNetworking.m */,
+				ABB95DB9B144E4332E6D67C9 /* UIRefreshControl+AFNetworking.h */,
+				C6BFA9A68A1F1DCBE94A1B5A /* UIRefreshControl+AFNetworking.m */,
+				696694B5A0C5A26E984DEBED /* UIWebView+AFNetworking.h */,
+				F914537ACE591FD39F34D745 /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		1EC753A7D329D39713783922 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF471F0575847B2BBA674B08 /* GoogleOpenSource.framework */,
+				6DE0B47BE5D6000014CE68D0 /* GooglePlus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		255832D526FD1CC884C0144B /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				B6E6D65C3BD9217CC7BED05E /* AFSecurityPolicy.h */,
+				A56D56031478CDE520A9B9FA /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		25BF843701B9A38AB91C2B7F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9DF64FF07FDF61A7EA0738E7 /* Pods-Vault_ClientFacingApp */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		29879AE392E67F18C13C3196 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A88860D372013BC5FF5A0A0 /* XLForm.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		43FBDA31E9B00E833C9775CF /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				EC0D52B27D1A9C20D14FA56F /* AFHTTPSessionManager.h */,
+				1F80AB19BB6EE1C5EBB010BA /* AFHTTPSessionManager.m */,
+				0DCEF8F3192C460FA826DED0 /* AFURLSessionManager.h */,
+				08301D85EED91DD106CC5EFF /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		4F82BA7F1D8EAADD92528687 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				F5923F10730D99496302CC12 /* AFURLRequestSerialization.h */,
+				6EC61F39BECECE112A24E45A /* AFURLRequestSerialization.m */,
+				1AE893346485910853CA1DAB /* AFURLResponseSerialization.h */,
+				2FBBB3E8B288D20941D665E8 /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+		50D5F2E2765207A8C4B97CC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9A7B323FC513D877A157C49 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		510FEEDD50E31570F530BE87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F5466CFF5217361C0D95E /* AFNetworking */,
+				06797591B3158F65B1BDC15F /* Devise */,
+				07706585199115C84B3395FC /* UICKeyChainStore */,
+				F7D9410F5FBA8615142EC7FD /* XLForm */,
+				934031A32A648F66A716E7B6 /* ngrvalidator */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7018C2D234E3BFFBEFFC490C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B72BCE19D69B76368FAB385 /* Pods-Vault_ClientFacingApp-UICKeyChainStore.xcconfig */,
+				308700CA5C4CCA9E50F506E8 /* Pods-Vault_ClientFacingApp-UICKeyChainStore-Private.xcconfig */,
+				2E85D509501DB7A4DC09A28D /* Pods-Vault_ClientFacingApp-UICKeyChainStore-dummy.m */,
+				F26C88B99AA7A84CB5E5CE71 /* Pods-Vault_ClientFacingApp-UICKeyChainStore-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Vault_ClientFacingApp-UICKeyChainStore";
+			sourceTree = "<group>";
+		};
+		84F8022700D1239DC9D49A9F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2368CC5697C8822A0C3B121 /* Pods-Vault_ClientFacingApp-AFNetworking.xcconfig */,
+				4DC9D15A76C36C3F5FEB16DB /* Pods-Vault_ClientFacingApp-AFNetworking-Private.xcconfig */,
+				F8C60A53C1868B5DCA7F7505 /* Pods-Vault_ClientFacingApp-AFNetworking-dummy.m */,
+				A46CD191BD78FE71B777FBAC /* Pods-Vault_ClientFacingApp-AFNetworking-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Vault_ClientFacingApp-AFNetworking";
+			sourceTree = "<group>";
+		};
+		8870D9818D433AE8D9B3BFED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD12EACDBE4FD157B1F819FA /* libPods-Vault_ClientFacingApp.a */,
+				4A57653C7D132DA1C39183CA /* libPods-Vault_ClientFacingApp-AFNetworking.a */,
+				96BEAB8954EC275F1D368A8C /* libPods-Vault_ClientFacingApp-Devise.a */,
+				1152F41D760AF8C823E74A37 /* libPods-Vault_ClientFacingApp-UICKeyChainStore.a */,
+				52116327C584B99DFC2580B9 /* libPods-Vault_ClientFacingApp-XLForm.a */,
+				A794A3C37DF8252F81F0641D /* libPods-Vault_ClientFacingApp-ngrvalidator.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		934031A32A648F66A716E7B6 /* ngrvalidator */ = {
+			isa = PBXGroup;
+			children = (
+				8314E80978BB006D5604DCFE /* NGRMessages.h */,
+				5B8FEBF3AE7DF1EC774C731E /* NGRMessages.m */,
+				55B05A2C9185B73B837C06D9 /* NGRPropertyValidator.h */,
+				27E4A8FA9FFBA9EE163CD650 /* NGRPropertyValidator.m */,
+				56A313FA523FCFBFE8CFD01D /* NGRPropertyValidator+NSDate.h */,
+				25DFB503D923F67636541F8F /* NGRPropertyValidator+NSDate.m */,
+				BB168B3DC5FCE2DDFF80F4A4 /* NGRPropertyValidator+NSNumber.h */,
+				7230A2677CF8E54330D932BA /* NGRPropertyValidator+NSNumber.m */,
+				8D71169E9E4698F58E47B618 /* NGRPropertyValidator+NSObject.h */,
+				7F31524299A5AEA1AB10D018 /* NGRPropertyValidator+NSObject.m */,
+				E7E6E5FC1108469AF24E3174 /* NGRPropertyValidator+NSString.h */,
+				EFD8C4968A6151D00D9A5F22 /* NGRPropertyValidator+NSString.m */,
+				BD55EF63D40140D79825B383 /* NGRPropertyValidator+Syntax.h */,
+				51CF2CAFAC020B1225D53DE2 /* NGRPropertyValidator+Syntax.m */,
+				2148F5FC6F5388F8324D3A20 /* NGRTypedefs.h */,
+				62A5F669D872214E38237736 /* NGRValidationRule.h */,
+				DC64491F73A33990813CD803 /* NGRValidationRule.m */,
+				935871A0930880DCE36DC892 /* NGRValidator.h */,
+				7FAA3AD5A0090E68FCF92DEF /* NGRValidator.m */,
+				4ECE289D11A68C1B4A696321 /* NSArray+NGRValidator.h */,
+				F5DE60965F2F2C30521D5CA2 /* NSArray+NGRValidator.m */,
+				3F9C6E7210AC95E66C3E5E54 /* NSDate+NGRValidator.h */,
+				6CDD162D33D4E2C2B584B4A1 /* NSDate+NGRValidator.m */,
+				87221E11769E28EC31D45F88 /* NSObject+NGRRuntime.h */,
+				5A5D1E660112FBEF3DCDA999 /* NSObject+NGRRuntime.m */,
+				0B56C097421F2DC3E3A2B9E5 /* NSObject+NGRValidator.h */,
+				BA805553A3EDE18ACD9E8E0B /* NSObject+NGRValidator.m */,
+				4CB08DDA0795F9C719C19AD3 /* NSString+NGRValidator.h */,
+				AB9F67EA295DE0974F08B438 /* NSString+NGRValidator.m */,
+				0F7FF35E8712787B1820190C /* Support Files */,
+			);
+			path = ngrvalidator;
+			sourceTree = "<group>";
+		};
+		9DF64FF07FDF61A7EA0738E7 /* Pods-Vault_ClientFacingApp */ = {
+			isa = PBXGroup;
+			children = (
+				7EFA91D12A64D35AECE59420 /* Pods-Vault_ClientFacingApp-acknowledgements.markdown */,
+				892C3A03F2A3747AAC192B04 /* Pods-Vault_ClientFacingApp-acknowledgements.plist */,
+				F4F90B8584EAE9881B01FC4A /* Pods-Vault_ClientFacingApp-dummy.m */,
+				F9E55F50C05AFEC10BC1778E /* Pods-Vault_ClientFacingApp-environment.h */,
+				6336E553EDBBCAF2A00B8801 /* Pods-Vault_ClientFacingApp-resources.sh */,
+				B26520F8BF8321F9459FFA70 /* Pods-Vault_ClientFacingApp.debug.xcconfig */,
+				BF73CE254068FF030830CBBC /* Pods-Vault_ClientFacingApp.release.xcconfig */,
+			);
+			name = "Pods-Vault_ClientFacingApp";
+			path = "Target Support Files/Pods-Vault_ClientFacingApp";
+			sourceTree = "<group>";
+		};
+		9EFD821DA24CB1AC652651DE /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				653F9B7AA1BDD9CDFC280F78 /* AFNetworkReachabilityManager.h */,
+				D7CD85E591C2E02156302103 /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		B36B3A03C13A72BB85B7D3B1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBA2AB048B319206F8ABFD83 /* Pods-Vault_ClientFacingApp-XLForm.xcconfig */,
+				432AE84BBB45BD6A90602255 /* Pods-Vault_ClientFacingApp-XLForm-Private.xcconfig */,
+				C39FED37AC6397E06451B835 /* Pods-Vault_ClientFacingApp-XLForm-dummy.m */,
+				645307CD3A2E312868AC4026 /* Pods-Vault_ClientFacingApp-XLForm-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Vault_ClientFacingApp-XLForm";
+			sourceTree = "<group>";
+		};
+		CF0F5466CFF5217361C0D95E /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				FD083E8790DD7444BB19820F /* AFNetworking.h */,
+				05EF269A05F1CCAFCE0852AA /* NSURLConnection */,
+				43FBDA31E9B00E833C9775CF /* NSURLSession */,
+				9EFD821DA24CB1AC652651DE /* Reachability */,
+				255832D526FD1CC884C0144B /* Security */,
+				4F82BA7F1D8EAADD92528687 /* Serialization */,
+				84F8022700D1239DC9D49A9F /* Support Files */,
+				15203E32FE67036E8D5394DE /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		D19CAC61BF8052E0B1D0EB96 = {
+			isa = PBXGroup;
+			children = (
+				F19EF7CAB21DE36F69B36890 /* Podfile */,
+				50D5F2E2765207A8C4B97CC7 /* Frameworks */,
+				510FEEDD50E31570F530BE87 /* Pods */,
+				8870D9818D433AE8D9B3BFED /* Products */,
+				25BF843701B9A38AB91C2B7F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E9A7B323FC513D877A157C49 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2E2B54FDF1B077DA2C14F3F9 /* AddressBook.framework */,
+				9CB167BACB1ED3BF91CC262E /* AssetsLibrary.framework */,
+				26EE1A08CA5630FF57DEACBF /* CoreGraphics.framework */,
+				F5D1D3D9B1A586CC9A3B609D /* CoreLocation.framework */,
+				4E4FE66008151496AD5F8FF4 /* CoreMotion.framework */,
+				289AA1DB4A4E1364D4C9B798 /* CoreText.framework */,
+				49CACD18A0D5C2AEE85DB614 /* Foundation.framework */,
+				5503FB9835876F34B591B60A /* MediaPlayer.framework */,
+				460A019AAF796A9ED24B0B7E /* MobileCoreServices.framework */,
+				FD86569D002F054DE9AEF19C /* Security.framework */,
+				822FB1AC382ADB5C046A74AB /* SystemConfiguration.framework */,
+				1D8E31332AF220B837C32D47 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F1E1D9667931BD428293C80C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E367077BC07D5DCE4F484A8 /* Pods-Vault_ClientFacingApp-Devise.xcconfig */,
+				945A0AE710E0402731661452 /* Pods-Vault_ClientFacingApp-Devise-Private.xcconfig */,
+				B8C096479D15C537C00C5BCA /* Pods-Vault_ClientFacingApp-Devise-dummy.m */,
+				657EC9EE6FFBEAA3DD06A1A9 /* Pods-Vault_ClientFacingApp-Devise-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Vault_ClientFacingApp-Devise";
+			sourceTree = "<group>";
+		};
+		F7D9410F5FBA8615142EC7FD /* XLForm */ = {
+			isa = PBXGroup;
+			children = (
+				EC62A78E9A890D2721DEEB50 /* NSArray+XLFormAdditions.h */,
+				0DCB4DD5536BBBCC97AC419D /* NSArray+XLFormAdditions.m */,
+				2191FD83BEF6B14EFF1B30BE /* NSObject+XLFormAdditions.h */,
+				9B9A4B8B6FC9D6271CE5139A /* NSObject+XLFormAdditions.m */,
+				9ACDCE8DE47501B98C2201E5 /* UIView+XLFormAdditions.h */,
+				A8154A07974C9E902EFD1C81 /* UIView+XLFormAdditions.m */,
+				B45629C9B8E8B6122D71BA8E /* XLForm.h */,
+				5194EE4A0C27C70578FD7628 /* XLForm.m */,
+				53D5697CDFAD4E3BE6A82242 /* XLFormBaseCell.h */,
+				15CD74CF7BCB287170736BBC /* XLFormBaseCell.m */,
+				5D911318271EA9DB543184A2 /* XLFormButtonCell.h */,
+				2F1ED0AD3B7234385B7303F6 /* XLFormButtonCell.m */,
+				A9C6B3B6530BF18B93E4443D /* XLFormCheckCell.h */,
+				852A3230824839FFF3091D40 /* XLFormCheckCell.m */,
+				EB33CC83BB727208EA8173D0 /* XLFormDateCell.h */,
+				FE9158E27D600BFE2DAA21D6 /* XLFormDateCell.m */,
+				3B9ECFD1E5E78F9E4F2AF305 /* XLFormDatePickerCell.h */,
+				A9834A4E3EC831A2B821C875 /* XLFormDatePickerCell.m */,
+				7D051830970066FFEF8E2CFD /* XLFormDescriptor.h */,
+				F421FF64AA2AF64294CD2EDB /* XLFormDescriptor.m */,
+				E5D03874B6B8BF40E53FB625 /* XLFormDescriptorCell.h */,
+				40D342A24542AE5C9A18192A /* XLFormDescriptorDelegate.h */,
+				3D2008B19914CD6CCB24507C /* XLFormInlineRowDescriptorCell.h */,
+				F79F487699A214B7F7FC9CA2 /* XLFormInlineSelectorCell.h */,
+				D32B6BB6F4A2CF7BB2823686 /* XLFormInlineSelectorCell.m */,
+				2FB6ED5CA1FEA03EA525F208 /* XLFormLeftRightSelectorCell.h */,
+				229CB73FC826D340970EE8AD /* XLFormLeftRightSelectorCell.m */,
+				EB2FB03415DC879EA8BEC541 /* XLFormOptionsObject.h */,
+				A29165C6B1542DD1C00ED46C /* XLFormOptionsObject.m */,
+				2A3DFF4B50D56DDD110D2E12 /* XLFormOptionsViewController.h */,
+				A35512BDC8011786E451AC98 /* XLFormOptionsViewController.m */,
+				15D07298B1B6A1C4AAAEC227 /* XLFormPickerCell.h */,
+				A747BD07690A18D8A50C35DC /* XLFormPickerCell.m */,
+				7A7B944A92D048474C58C39C /* XLFormRegexValidator.h */,
+				F41AC5C587F9E10C39D47963 /* XLFormRegexValidator.m */,
+				D2C6EB88D1DFCFD926DD79E8 /* XLFormRightDetailCell.h */,
+				7551FA8B717C5F998D0DA11C /* XLFormRightDetailCell.m */,
+				9754E56B2D524B63867F47A5 /* XLFormRightImageButton.h */,
+				4F7259E21AFEB93B3A1BA4F4 /* XLFormRightImageButton.m */,
+				6320950DEE90CDAD00BD97CD /* XLFormRowDescriptor.h */,
+				3DC928D4C2688EE91C33BD10 /* XLFormRowDescriptor.m */,
+				C44E7A762C8DE621651174B2 /* XLFormRowDescriptorViewController.h */,
+				4B2529414FED270D36AF3565 /* XLFormRowNavigationAccessoryView.h */,
+				15AE8AB6EA1754BBFC0CEBBF /* XLFormRowNavigationAccessoryView.m */,
+				4B12D2B4D954435E8800D8DC /* XLFormSectionDescriptor.h */,
+				E1E4DDE3A97CE715720D50C2 /* XLFormSectionDescriptor.m */,
+				BEA74BCCB24B651FA577DA68 /* XLFormSegmentedCell.h */,
+				C5670419991EF89A44959AAF /* XLFormSegmentedCell.m */,
+				04C7C45BB00B613D32F9DC5B /* XLFormSelectorCell.h */,
+				28EE34C3B698C563404E4162 /* XLFormSelectorCell.m */,
+				03838FB2ADE446E17F0C2F56 /* XLFormSliderCell.h */,
+				E131ABA9A6BC42A86316D03F /* XLFormSliderCell.m */,
+				C3BF91C01CFF99D2D5E8E0AC /* XLFormStepCounterCell.h */,
+				C4ED404D23E08E8900B8E531 /* XLFormStepCounterCell.m */,
+				8BF6D582EB2E3BFAF56FC3E5 /* XLFormSwitchCell.h */,
+				D3A15B473AE80FD74B030619 /* XLFormSwitchCell.m */,
+				469427D697EC7EB20C992CFA /* XLFormTextFieldCell.h */,
+				A193EF41187D853197D5CD87 /* XLFormTextFieldCell.m */,
+				6E89CFFB069ACFDFC5BD1484 /* XLFormTextView.h */,
+				2485D6D1DBA9AF96286543CC /* XLFormTextView.m */,
+				7EF4A53739BDF388B244F871 /* XLFormTextViewCell.h */,
+				6A9737A9EDDD18BAEB1184E8 /* XLFormTextViewCell.m */,
+				E16CBDB14798B8D201AC9213 /* XLFormValidationStatus.h */,
+				96A094F2CC7E7BF7F6A168E0 /* XLFormValidationStatus.m */,
+				01F3F1B6B267F57ED1DE1BDF /* XLFormValidator.h */,
+				482B4CF4B5058E9ADADEBA21 /* XLFormValidator.m */,
+				D42DE427143E406CFD2EFFEE /* XLFormValidatorProtocol.h */,
+				BAC610BF67F1A087FCEB6985 /* XLFormViewController.h */,
+				134685BA093D2DCFA9329046 /* XLFormViewController.m */,
+				29879AE392E67F18C13C3196 /* Resources */,
+				B36B3A03C13A72BB85B7D3B1 /* Support Files */,
+			);
+			path = XLForm;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1D05286934084D6F06D83A56 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6DC49C779B426DB46FC28F8 /* AFHTTPRequestOperation.h in Headers */,
+				CCBA2238BB393B4881343AC4 /* AFHTTPRequestOperationManager.h in Headers */,
+				B55B4BA4D122663BD28B771C /* AFHTTPSessionManager.h in Headers */,
+				DACFA51606A7B91E6BA7C6ED /* AFNetworkActivityIndicatorManager.h in Headers */,
+				973A35963ABC36CB2F90E3E3 /* AFNetworkReachabilityManager.h in Headers */,
+				3FD634B0BC576E4E561BE89D /* AFNetworking.h in Headers */,
+				9FE814445A396FEAAA2AEC9A /* AFSecurityPolicy.h in Headers */,
+				6B06C7CE55631F614B7FFE1F /* AFURLConnectionOperation.h in Headers */,
+				C574B8BB08FAF7DB73CE97BF /* AFURLRequestSerialization.h in Headers */,
+				483819F9838E50E760D826F6 /* AFURLResponseSerialization.h in Headers */,
+				3D52C9E80B1F3F2406871249 /* AFURLSessionManager.h in Headers */,
+				4FF8270C050E46984C5E303F /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				E708E0E33D126CCFFBA8E3EE /* UIAlertView+AFNetworking.h in Headers */,
+				1C415F45ECB524514DA4A1E8 /* UIButton+AFNetworking.h in Headers */,
+				09D69448E223BE03E4C2EF03 /* UIImageView+AFNetworking.h in Headers */,
+				E1A2CAE5B5588AB3C491AAAA /* UIKit+AFNetworking.h in Headers */,
+				D92632A8F1841276E50F9788 /* UIProgressView+AFNetworking.h in Headers */,
+				9B295BA268D426EA038A0D3C /* UIRefreshControl+AFNetworking.h in Headers */,
+				95086F75A2F57902DC5597FE /* UIWebView+AFNetworking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CFCB6D08B4200632DD595AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69C10493DE03365A6A271C59 /* NGRMessages.h in Headers */,
+				789AB03EEC73B474A4C3D379 /* NGRPropertyValidator+NSDate.h in Headers */,
+				E352060EF8D6FB8EE547F466 /* NGRPropertyValidator+NSNumber.h in Headers */,
+				D4B3119CD66D3C3E73C66DFD /* NGRPropertyValidator+NSObject.h in Headers */,
+				1912570A5FD513F26C0660DE /* NGRPropertyValidator+NSString.h in Headers */,
+				F5398D815C574A626057AD54 /* NGRPropertyValidator+Syntax.h in Headers */,
+				4B4248759BFDD781B66901B7 /* NGRPropertyValidator.h in Headers */,
+				7A3B871BF65A1637C7C224C7 /* NGRTypedefs.h in Headers */,
+				CBED41F9BB3B995D981EEF57 /* NGRValidationRule.h in Headers */,
+				B38CEF66EBCD0377CF5AF8FC /* NGRValidator.h in Headers */,
+				34E5D4C80C9471C43D42708B /* NSArray+NGRValidator.h in Headers */,
+				DB0F4E0366D15BE6A940D9C8 /* NSDate+NGRValidator.h in Headers */,
+				E030F14E695D5C111152D032 /* NSObject+NGRRuntime.h in Headers */,
+				4EE6D8A78B85A80A0CDD4F25 /* NSObject+NGRValidator.h in Headers */,
+				FBF8F2B08E1D77208B8CF4B7 /* NSString+NGRValidator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63946BD6744877DEAF2D2E8A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C623C9AECE91701E10DDE5D7 /* UICKeyChainStore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97DB635CAC89533C084BDF33 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67098B1E670EF424EFEC9C0D /* NSArray+XLFormAdditions.h in Headers */,
+				CD6B3A1325221598997BB33B /* NSObject+XLFormAdditions.h in Headers */,
+				7FCCBD9E010538F6B5BF449A /* UIView+XLFormAdditions.h in Headers */,
+				B990EBDF13D3A40DD0C21E1E /* XLForm.h in Headers */,
+				5768F09EA482656F1B8AEA48 /* XLFormBaseCell.h in Headers */,
+				8DE223602DDF4FE52E6DD8D2 /* XLFormButtonCell.h in Headers */,
+				3309449512E5026D6911557C /* XLFormCheckCell.h in Headers */,
+				714FFC1076F0B077868672BC /* XLFormDateCell.h in Headers */,
+				2A5C5EBD3883D54F5B1904A8 /* XLFormDatePickerCell.h in Headers */,
+				ACBA036497EFFB8CB5E52E85 /* XLFormDescriptor.h in Headers */,
+				7FD30666A277D32392F59B2E /* XLFormDescriptorCell.h in Headers */,
+				BABF1B412DE7DCAF37647438 /* XLFormDescriptorDelegate.h in Headers */,
+				D20D5F75E8DF46DEDF7F32FA /* XLFormInlineRowDescriptorCell.h in Headers */,
+				C05F986981AD76DEF981677D /* XLFormInlineSelectorCell.h in Headers */,
+				0B42E3B2DB9E195522974AB5 /* XLFormLeftRightSelectorCell.h in Headers */,
+				2BBD4EF4DA8B2DC2DC282E4A /* XLFormOptionsObject.h in Headers */,
+				56F328D376A3E7547DF89EC9 /* XLFormOptionsViewController.h in Headers */,
+				D9C263BA7F401D2027316AED /* XLFormPickerCell.h in Headers */,
+				01CBDA4EEB4C2BD75B715B2B /* XLFormRegexValidator.h in Headers */,
+				7248E080BA2ECF8DE814A982 /* XLFormRightDetailCell.h in Headers */,
+				88257BAFF6B0632E7207D4E9 /* XLFormRightImageButton.h in Headers */,
+				21FAF9FC01D0B46772B9B11E /* XLFormRowDescriptor.h in Headers */,
+				E10FF00F4FAE2088F7EB951B /* XLFormRowDescriptorViewController.h in Headers */,
+				7AF79025E4B43301765AE8F9 /* XLFormRowNavigationAccessoryView.h in Headers */,
+				9A34B4284760CDEB0AA7EE58 /* XLFormSectionDescriptor.h in Headers */,
+				1001F91C73E714256C8467CE /* XLFormSegmentedCell.h in Headers */,
+				09D0BA233CD6A39F4A497C08 /* XLFormSelectorCell.h in Headers */,
+				5FD7AD90716F6C939EA70143 /* XLFormSliderCell.h in Headers */,
+				D61F78960A3D2FB06E4BE148 /* XLFormStepCounterCell.h in Headers */,
+				317950B72A95ED54DBE3D79B /* XLFormSwitchCell.h in Headers */,
+				19F24DFD0298550DEC9DF1D1 /* XLFormTextFieldCell.h in Headers */,
+				F0B6A36D2EF67057060D0E47 /* XLFormTextView.h in Headers */,
+				5B1AEBF1C1882FB1E489969C /* XLFormTextViewCell.h in Headers */,
+				8CCFE584AFFAA9E23091727C /* XLFormValidationStatus.h in Headers */,
+				261765B3FBA24871D4D0BE62 /* XLFormValidator.h in Headers */,
+				75102621B795D5CB6CCE524F /* XLFormValidatorProtocol.h in Headers */,
+				98EAE06125B7961D234DDB23 /* XLFormViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBC1439474BD89CCCC0D8E99 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23A65C26E9C56A1A8FC5DC94 /* DVSAccessibilityLabels.h in Headers */,
+				1D1C21736059D0100EB8F4E7 /* DVSAccountRetrieverViewController.h in Headers */,
+				4A83BDBC7626012067E3FAC6 /* DVSBarButtonItem+Private.h in Headers */,
+				F9DC9CE86521B7361901468C /* DVSConfiguration.h in Headers */,
+				5C1E892D75372A7E75E1CEA7 /* DVSFacebookAccountStore.h in Headers */,
+				316C7F379F0E4BE92DF09DDA /* DVSFacebookAuthenticator.h in Headers */,
+				037085E3DBB0A75EB6E6E17B /* DVSFieldsUtils+Private.h in Headers */,
+				E3EA2F225A3168A7595F03AA /* DVSGooglePlusAuthenticator.h in Headers */,
+				3B3819248132A4C49EE7E3C0 /* DVSHTTPClient+User.h in Headers */,
+				A11963390951A53A8C2BBB84 /* DVSHTTPClient.h in Headers */,
+				6362830B512C274BA6DAA696 /* DVSLoginSignUpFields.h in Headers */,
+				46FBA026DE65EC17232B0951 /* DVSLoginSignUpFormViewController+Private.h in Headers */,
+				8A3EA1B4E27F7D89681A7DCF /* DVSMacros.h in Headers */,
+				D78621FBF3D7DFCE61AA1A47 /* DVSOAuthJSONParameters.h in Headers */,
+				2299CBCC2D22DE96B3AAAAC3 /* DVSPasswordReminderFormViewController+Private.h in Headers */,
+				8C9C3299A604B844FBAF84B0 /* DVSTemplatesViewsUserDelegate+Private.h in Headers */,
+				BCB58ADC8F8E0608DC181CF4 /* DVSTypedefs.h in Headers */,
+				A5B9C8ACC7F7DBA89311A2C1 /* DVSUser+Persistence.h in Headers */,
+				34DD8D996062DDE3D88D95A2 /* DVSUser.h in Headers */,
+				731357C33CD23CA8F527E8B8 /* DVSUserJSONSerializer+Serialize.h in Headers */,
+				F62B9DC8FE2589FD47324F4D /* DVSUserJSONSerializer.h in Headers */,
+				5BCE63596FD3245ABDE054B0 /* DVSUserManager.h in Headers */,
+				C57F628167422BC999462FB7 /* DVSUserPersistenceStore.h in Headers */,
+				7E961756CD8AD23BEDDCD5BC /* Devise.h in Headers */,
+				29F57634CF007A06B927FC51 /* NSDictionary+Devise+Private.h in Headers */,
+				95407692B09D3DA4D30AD03D /* NSError+Devise+Private.h in Headers */,
+				568FDB4B6EEA6901F46CA1C2 /* NSObject+Devise+Private.h in Headers */,
+				FE5FC5E497EAAFE617EDD9BF /* NSURL+Devise+Private.h in Headers */,
+				F72198666DC14F1B3FDB0671 /* UIViewController+Devise.h in Headers */,
+				0360C6B965A59D376AB02C3A /* XLFormRowDescriptor+Devise+Private.h in Headers */,
+				B8B6BF041A94141509660F77 /* XLFormSectionDescriptor+Devise+Private.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		011F01245D520B79FC24DE5A /* Pods-Vault_ClientFacingApp-Devise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFCE88B00029BB6A0E65A2F0 /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-Devise" */;
+			buildPhases = (
+				BF748444524C8DBCE5BB5CB6 /* Sources */,
+				626FFC2E7CA35F321CABDFB5 /* Frameworks */,
+				BBC1439474BD89CCCC0D8E99 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A1F570F37A3168B3E30E4EB /* PBXTargetDependency */,
+				E5924E628584AEBA93D72AD7 /* PBXTargetDependency */,
+				AB7C210EECBFE07E0AE25DEF /* PBXTargetDependency */,
+				DCB9ACD323318E2D3D8B15B9 /* PBXTargetDependency */,
+			);
+			name = "Pods-Vault_ClientFacingApp-Devise";
+			productName = "Pods-Vault_ClientFacingApp-Devise";
+			productReference = 96BEAB8954EC275F1D368A8C /* libPods-Vault_ClientFacingApp-Devise.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		55BC7C5BFB8243448158C526 /* Pods-Vault_ClientFacingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B05740DEA133F8CE56DEFD0E /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp" */;
+			buildPhases = (
+				2787DC14F1E23291904B51D8 /* Sources */,
+				0340F38886371BF086B25F3C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BF178F33C282178F47A3E6F /* PBXTargetDependency */,
+				347A1B9D386E1B11E4239388 /* PBXTargetDependency */,
+				36B002D53758C6469522CA7D /* PBXTargetDependency */,
+				3B1C7D952E9B79B0761C2105 /* PBXTargetDependency */,
+				DA1C1D26F1EC1ACD7A7CAC5F /* PBXTargetDependency */,
+			);
+			name = "Pods-Vault_ClientFacingApp";
+			productName = "Pods-Vault_ClientFacingApp";
+			productReference = BD12EACDBE4FD157B1F819FA /* libPods-Vault_ClientFacingApp.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		74F9946860078C48D7D00A2A /* Pods-Vault_ClientFacingApp-AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE97A778ABE6E18ABEA344E2 /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-AFNetworking" */;
+			buildPhases = (
+				62F621B47B3BF2B3BD500963 /* Sources */,
+				DBE507C9F6CA233ACF8CA6A2 /* Frameworks */,
+				1D05286934084D6F06D83A56 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Vault_ClientFacingApp-AFNetworking";
+			productName = "Pods-Vault_ClientFacingApp-AFNetworking";
+			productReference = 4A57653C7D132DA1C39183CA /* libPods-Vault_ClientFacingApp-AFNetworking.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B90A5325D8E83A07CCC573FC /* Pods-Vault_ClientFacingApp-UICKeyChainStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3177A3114ADAB3E73479ED6F /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-UICKeyChainStore" */;
+			buildPhases = (
+				60B3FB2D4F3A7F02BEE7816C /* Sources */,
+				57E28F01D4985B13E30190A7 /* Frameworks */,
+				63946BD6744877DEAF2D2E8A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Vault_ClientFacingApp-UICKeyChainStore";
+			productName = "Pods-Vault_ClientFacingApp-UICKeyChainStore";
+			productReference = 1152F41D760AF8C823E74A37 /* libPods-Vault_ClientFacingApp-UICKeyChainStore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EB9770FFEAE0B0F3E3911812 /* Pods-Vault_ClientFacingApp-ngrvalidator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 258EE5B2097F5AAEBD80811E /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-ngrvalidator" */;
+			buildPhases = (
+				CD81A0CA5DDA6E2CFE532332 /* Sources */,
+				AB9CB115884E4F27381BCA1C /* Frameworks */,
+				3CFCB6D08B4200632DD595AB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Vault_ClientFacingApp-ngrvalidator";
+			productName = "Pods-Vault_ClientFacingApp-ngrvalidator";
+			productReference = A794A3C37DF8252F81F0641D /* libPods-Vault_ClientFacingApp-ngrvalidator.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EEF69BE9C974617A7D71FAF9 /* Pods-Vault_ClientFacingApp-XLForm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F99F94A1BF4C3A519EC350E3 /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-XLForm" */;
+			buildPhases = (
+				C91249F4EE0983416225925B /* Sources */,
+				D40A3085FAECA0913087B601 /* Frameworks */,
+				97DB635CAC89533C084BDF33 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Vault_ClientFacingApp-XLForm";
+			productName = "Pods-Vault_ClientFacingApp-XLForm";
+			productReference = 52116327C584B99DFC2580B9 /* libPods-Vault_ClientFacingApp-XLForm.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98E9DCD49409DE0B77A81FF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 91F4F08992D61F4C2582158F /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D19CAC61BF8052E0B1D0EB96;
+			productRefGroup = 8870D9818D433AE8D9B3BFED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55BC7C5BFB8243448158C526 /* Pods-Vault_ClientFacingApp */,
+				74F9946860078C48D7D00A2A /* Pods-Vault_ClientFacingApp-AFNetworking */,
+				011F01245D520B79FC24DE5A /* Pods-Vault_ClientFacingApp-Devise */,
+				B90A5325D8E83A07CCC573FC /* Pods-Vault_ClientFacingApp-UICKeyChainStore */,
+				EEF69BE9C974617A7D71FAF9 /* Pods-Vault_ClientFacingApp-XLForm */,
+				EB9770FFEAE0B0F3E3911812 /* Pods-Vault_ClientFacingApp-ngrvalidator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2787DC14F1E23291904B51D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7543AC93A4E1BF6BCBF42F46 /* Pods-Vault_ClientFacingApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60B3FB2D4F3A7F02BEE7816C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E67DED0DCF4F60F77CC440AE /* Pods-Vault_ClientFacingApp-UICKeyChainStore-dummy.m in Sources */,
+				12B19DB9C3370EA9DCDF1A67 /* UICKeyChainStore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62F621B47B3BF2B3BD500963 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3E8AD48B5C4E89AE73637B3 /* AFHTTPRequestOperation.m in Sources */,
+				7761201D75AF60F4AC8862E3 /* AFHTTPRequestOperationManager.m in Sources */,
+				15E0140130E78C3E15C5FAF7 /* AFHTTPSessionManager.m in Sources */,
+				B58EA8B73B1822A3F94BA279 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				495C5204CEB0F09226CC7CC3 /* AFNetworkReachabilityManager.m in Sources */,
+				F9F882A1FEE2EA4FDA8C07F1 /* AFSecurityPolicy.m in Sources */,
+				ECB4EC476863DDC5244E0A60 /* AFURLConnectionOperation.m in Sources */,
+				E22F4004A67F5C564A585F42 /* AFURLRequestSerialization.m in Sources */,
+				C7288CF51CC8D9C9BE2A9ADE /* AFURLResponseSerialization.m in Sources */,
+				47BB96BA49175626AE4C2960 /* AFURLSessionManager.m in Sources */,
+				7A8B1D61F79DB969D4940BE0 /* Pods-Vault_ClientFacingApp-AFNetworking-dummy.m in Sources */,
+				BF986DA43AE2EA286E5785C4 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				8A826094597A3E170D83A957 /* UIAlertView+AFNetworking.m in Sources */,
+				47B8295092DAB9F3BE0FA4A6 /* UIButton+AFNetworking.m in Sources */,
+				3AEDD74156B30D9D43C63598 /* UIImageView+AFNetworking.m in Sources */,
+				9A698401544F48B1C2E85D9D /* UIProgressView+AFNetworking.m in Sources */,
+				757C2E1B3DBD8339EC048041 /* UIRefreshControl+AFNetworking.m in Sources */,
+				7564004E3520B9F6940A1D65 /* UIWebView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF748444524C8DBCE5BB5CB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75E7857E9A59EA1AFC545BE4 /* DVSAccessibilityLabels.m in Sources */,
+				B9DBC09D8D3A9714B4770831 /* DVSAccountRetrieverViewController.m in Sources */,
+				626F3929E4DB4CC758AC011C /* DVSBarButtonItem+Private.m in Sources */,
+				873239312852F29B4ECCB557 /* DVSConfiguration.m in Sources */,
+				3AD9CD4D305AF75257F76706 /* DVSFacebookAccountStore.m in Sources */,
+				D053B58E95BE47B6D1E5AEB3 /* DVSFacebookAuthenticator.m in Sources */,
+				E703F13FF0C57C0364D74BCE /* DVSFieldsUtils+Private.m in Sources */,
+				F61A0C75FD1A08F36393DCBD /* DVSGooglePlusAuthenticator.m in Sources */,
+				C650E6EDA4CD380FAEBDE92A /* DVSHTTPClient+User.m in Sources */,
+				65D22CC0A73513F2B81A061C /* DVSHTTPClient.m in Sources */,
+				06C453FED8EB1164C6B10E9A /* DVSLoginSignUpFormViewController+Private.m in Sources */,
+				67D48AAD57544DE243EA7758 /* DVSOAuthJSONParameters.m in Sources */,
+				6475F3472F395E029520E3EF /* DVSPasswordReminderFormViewController+Private.m in Sources */,
+				6A1800A8FE4AC7EC1B4B4E69 /* DVSTemplatesViewsUserDelegate+Private.m in Sources */,
+				6D5E4D67952E3DB7EFD62FDA /* DVSUser+Persistence.m in Sources */,
+				F71A3D2154C4C31BED4E0D11 /* DVSUser.m in Sources */,
+				A4F37F8B046E5860D1D112C0 /* DVSUserJSONSerializer+Serialize.m in Sources */,
+				93C59554EA6A9EBFD9EB0DB7 /* DVSUserJSONSerializer.m in Sources */,
+				CFF067C1BE5D20FF456513F2 /* DVSUserManager.m in Sources */,
+				42D8ED15D2805CCFE642D5F2 /* DVSUserPersistenceStore.m in Sources */,
+				56AB11F63887C661C31C4376 /* NSDictionary+Devise+Private.m in Sources */,
+				1772EEA3176D545978383070 /* NSError+Devise+Private.m in Sources */,
+				40C56C48C8455C9EA8BC9E13 /* NSObject+Devise+Private.m in Sources */,
+				9C458F8E254F345C6568E132 /* NSURL+Devise+Private.m in Sources */,
+				4BD75947E4567264239CFFC2 /* Pods-Vault_ClientFacingApp-Devise-dummy.m in Sources */,
+				2195462CC250475BC6D51576 /* UIViewController+Devise.m in Sources */,
+				3E5ADC9CBB3D5FA224F0BFBB /* XLFormRowDescriptor+Devise+Private.m in Sources */,
+				D42A9717C7CC7A2059985B23 /* XLFormSectionDescriptor+Devise+Private.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C91249F4EE0983416225925B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A06318F974CF2974FAC6B5E /* NSArray+XLFormAdditions.m in Sources */,
+				1A4652C2FDB082C4015537F1 /* NSObject+XLFormAdditions.m in Sources */,
+				B02674389D95A3ADDDAFD9F8 /* Pods-Vault_ClientFacingApp-XLForm-dummy.m in Sources */,
+				C5481AE7CB457D7F8DC9FFF9 /* UIView+XLFormAdditions.m in Sources */,
+				EE9C0C7C628441C0DDC95077 /* XLForm.m in Sources */,
+				7F60867A8EBCE41F9656F7FA /* XLFormBaseCell.m in Sources */,
+				0F89D4F250EF53BD493935FD /* XLFormButtonCell.m in Sources */,
+				4051426AF680575B4C62BF46 /* XLFormCheckCell.m in Sources */,
+				CD86B673152588549C4ABE29 /* XLFormDateCell.m in Sources */,
+				08C0E48ED592001E17CC6BA1 /* XLFormDatePickerCell.m in Sources */,
+				6D9959E1E22DD7AF293A9037 /* XLFormDescriptor.m in Sources */,
+				CF0A4B5EE16692319FF46EDD /* XLFormInlineSelectorCell.m in Sources */,
+				BBA0614A3CE1884212ADDB2D /* XLFormLeftRightSelectorCell.m in Sources */,
+				6E0146A0DFB9AF96FC0E57DE /* XLFormOptionsObject.m in Sources */,
+				A8B7A5477ECC9617A1F2A416 /* XLFormOptionsViewController.m in Sources */,
+				E3639361802729BB7C9375E8 /* XLFormPickerCell.m in Sources */,
+				0FDF8B40482ACCC1905542B8 /* XLFormRegexValidator.m in Sources */,
+				84153D9E414BE31ACF70D5A5 /* XLFormRightDetailCell.m in Sources */,
+				4FDCF5E055CC68491346C668 /* XLFormRightImageButton.m in Sources */,
+				E6EAFB17883ABB0B3A81C06F /* XLFormRowDescriptor.m in Sources */,
+				2305101E0192804AD8E25176 /* XLFormRowNavigationAccessoryView.m in Sources */,
+				2F3B14682498D6228D7038E6 /* XLFormSectionDescriptor.m in Sources */,
+				CD637C0D6BEFEEE65D00BC79 /* XLFormSegmentedCell.m in Sources */,
+				AD1A59F5C14D0C1553E90EB4 /* XLFormSelectorCell.m in Sources */,
+				C4D473CDCFDC652240BA9541 /* XLFormSliderCell.m in Sources */,
+				5A4246A367B5E8FE353BAEF0 /* XLFormStepCounterCell.m in Sources */,
+				2E082F463D3F2D8571C89FD9 /* XLFormSwitchCell.m in Sources */,
+				EABF3B53391E8F3FEF7D937C /* XLFormTextFieldCell.m in Sources */,
+				091A65252351470ECA5CC62C /* XLFormTextView.m in Sources */,
+				10D8DBC83FA9D75A179D1CBA /* XLFormTextViewCell.m in Sources */,
+				95F13506AB53303CBE89B31F /* XLFormValidationStatus.m in Sources */,
+				D2FAE207C00BD33169E418D0 /* XLFormValidator.m in Sources */,
+				03081B8F2A5006D385C37570 /* XLFormViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD81A0CA5DDA6E2CFE532332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496318E35ED03362E6E1F167 /* NGRMessages.m in Sources */,
+				B8C0ABFD30DD00C9294CD00F /* NGRPropertyValidator+NSDate.m in Sources */,
+				B6547861908429B6B4553769 /* NGRPropertyValidator+NSNumber.m in Sources */,
+				B455983C5672E5D1BD82A479 /* NGRPropertyValidator+NSObject.m in Sources */,
+				68BF6533AB3037CD6934BF58 /* NGRPropertyValidator+NSString.m in Sources */,
+				A0F320D10F0477365DFC0B51 /* NGRPropertyValidator+Syntax.m in Sources */,
+				83EB306B2679611D3BD80C61 /* NGRPropertyValidator.m in Sources */,
+				8AF9734E45C2DE5135A550EA /* NGRValidationRule.m in Sources */,
+				AEDAEE92A679E57814120925 /* NGRValidator.m in Sources */,
+				3025BA0781E4901C8092C903 /* NSArray+NGRValidator.m in Sources */,
+				34CD73E9FBFBDB4DE6D7FC83 /* NSDate+NGRValidator.m in Sources */,
+				260FD2003B036DBEA9D13118 /* NSObject+NGRRuntime.m in Sources */,
+				CD06E326539E6888DC92BF45 /* NSObject+NGRValidator.m in Sources */,
+				9B76357D26BB80A2C01FDE34 /* NSString+NGRValidator.m in Sources */,
+				1930201DC0CD466E62F88B95 /* Pods-Vault_ClientFacingApp-ngrvalidator-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2BF178F33C282178F47A3E6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-AFNetworking";
+			target = 74F9946860078C48D7D00A2A /* Pods-Vault_ClientFacingApp-AFNetworking */;
+			targetProxy = 22ACDC87B92FD4F152B9F4AA /* PBXContainerItemProxy */;
+		};
+		347A1B9D386E1B11E4239388 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-Devise";
+			target = 011F01245D520B79FC24DE5A /* Pods-Vault_ClientFacingApp-Devise */;
+			targetProxy = A8C6A5C636052137058EF3C9 /* PBXContainerItemProxy */;
+		};
+		36B002D53758C6469522CA7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-UICKeyChainStore";
+			target = B90A5325D8E83A07CCC573FC /* Pods-Vault_ClientFacingApp-UICKeyChainStore */;
+			targetProxy = 52F48762D91F73CCB03863AC /* PBXContainerItemProxy */;
+		};
+		3B1C7D952E9B79B0761C2105 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-XLForm";
+			target = EEF69BE9C974617A7D71FAF9 /* Pods-Vault_ClientFacingApp-XLForm */;
+			targetProxy = FFD12157C3C1159A1D53736F /* PBXContainerItemProxy */;
+		};
+		7A1F570F37A3168B3E30E4EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-AFNetworking";
+			target = 74F9946860078C48D7D00A2A /* Pods-Vault_ClientFacingApp-AFNetworking */;
+			targetProxy = BB909D0A8506EFCE5555DE6D /* PBXContainerItemProxy */;
+		};
+		AB7C210EECBFE07E0AE25DEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-XLForm";
+			target = EEF69BE9C974617A7D71FAF9 /* Pods-Vault_ClientFacingApp-XLForm */;
+			targetProxy = 4CA9B79A3E0684C87E5761F5 /* PBXContainerItemProxy */;
+		};
+		DA1C1D26F1EC1ACD7A7CAC5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-ngrvalidator";
+			target = EB9770FFEAE0B0F3E3911812 /* Pods-Vault_ClientFacingApp-ngrvalidator */;
+			targetProxy = D38148AA4C16594016781879 /* PBXContainerItemProxy */;
+		};
+		DCB9ACD323318E2D3D8B15B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-ngrvalidator";
+			target = EB9770FFEAE0B0F3E3911812 /* Pods-Vault_ClientFacingApp-ngrvalidator */;
+			targetProxy = D45F77343EB380F7091B4F92 /* PBXContainerItemProxy */;
+		};
+		E5924E628584AEBA93D72AD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Vault_ClientFacingApp-UICKeyChainStore";
+			target = B90A5325D8E83A07CCC573FC /* Pods-Vault_ClientFacingApp-UICKeyChainStore */;
+			targetProxy = DD7503137CB93D6BF3221DD6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C0C1B9D1FCC1F64E44464D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 945A0AE710E0402731661452 /* Pods-Vault_ClientFacingApp-Devise-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-Devise/Pods-Vault_ClientFacingApp-Devise-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1275A3AC06C0B11C87736740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 308700CA5C4CCA9E50F506E8 /* Pods-Vault_ClientFacingApp-UICKeyChainStore-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-UICKeyChainStore/Pods-Vault_ClientFacingApp-UICKeyChainStore-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		154EAFEAF85CE5AA21C82274 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DC9D15A76C36C3F5FEB16DB /* Pods-Vault_ClientFacingApp-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-AFNetworking/Pods-Vault_ClientFacingApp-AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		211FC0A377918FEE0D71E0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 432AE84BBB45BD6A90602255 /* Pods-Vault_ClientFacingApp-XLForm-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-XLForm/Pods-Vault_ClientFacingApp-XLForm-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		39703AFBE290D31EAE6CB6DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C97707CEA7FEA392A6805EDA /* Pods-Vault_ClientFacingApp-ngrvalidator-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-ngrvalidator/Pods-Vault_ClientFacingApp-ngrvalidator-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5B42F456062F0321F93DF9C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 945A0AE710E0402731661452 /* Pods-Vault_ClientFacingApp-Devise-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-Devise/Pods-Vault_ClientFacingApp-Devise-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AC273770E847F741814E0D0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 432AE84BBB45BD6A90602255 /* Pods-Vault_ClientFacingApp-XLForm-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-XLForm/Pods-Vault_ClientFacingApp-XLForm-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B2F3BF9DB38C72C2090BA491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C39A6AD076CA17617244FB91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CE9CD4BEE4782A10C202601B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B26520F8BF8321F9459FFA70 /* Pods-Vault_ClientFacingApp.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D220CDCD9F5EE44664544FDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 308700CA5C4CCA9E50F506E8 /* Pods-Vault_ClientFacingApp-UICKeyChainStore-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-UICKeyChainStore/Pods-Vault_ClientFacingApp-UICKeyChainStore-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D95B5E01CEDD8EB8DD64F490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DC9D15A76C36C3F5FEB16DB /* Pods-Vault_ClientFacingApp-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-AFNetworking/Pods-Vault_ClientFacingApp-AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E6CE4491DC14DAF557B01A15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF73CE254068FF030830CBBC /* Pods-Vault_ClientFacingApp.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F4B168EF7323C0240F3E978A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C97707CEA7FEA392A6805EDA /* Pods-Vault_ClientFacingApp-ngrvalidator-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Vault_ClientFacingApp-ngrvalidator/Pods-Vault_ClientFacingApp-ngrvalidator-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		258EE5B2097F5AAEBD80811E /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-ngrvalidator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4B168EF7323C0240F3E978A /* Debug */,
+				39703AFBE290D31EAE6CB6DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3177A3114ADAB3E73479ED6F /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-UICKeyChainStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D220CDCD9F5EE44664544FDB /* Debug */,
+				1275A3AC06C0B11C87736740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91F4F08992D61F4C2582158F /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39A6AD076CA17617244FB91 /* Debug */,
+				B2F3BF9DB38C72C2090BA491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B05740DEA133F8CE56DEFD0E /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE9CD4BEE4782A10C202601B /* Debug */,
+				E6CE4491DC14DAF557B01A15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE97A778ABE6E18ABEA344E2 /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95B5E01CEDD8EB8DD64F490 /* Debug */,
+				154EAFEAF85CE5AA21C82274 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F99F94A1BF4C3A519EC350E3 /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-XLForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC273770E847F741814E0D0F /* Debug */,
+				211FC0A377918FEE0D71E0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFCE88B00029BB6A0E65A2F0 /* Build configuration list for PBXNativeTarget "Pods-Vault_ClientFacingApp-Devise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C0C1B9D1FCC1F64E44464D3 /* Debug */,
+				5B42F456062F0321F93DF9C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98E9DCD49409DE0B77A81FF5 /* Project object */;
+}

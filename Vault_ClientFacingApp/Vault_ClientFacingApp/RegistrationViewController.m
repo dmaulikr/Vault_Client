@@ -7,23 +7,28 @@
 //
 
 #import "RegistrationViewController.h"
+#import "Helpers.h"
+#import "CustomColors.h"
+#import "RegistrationCollectionViewCell.h"
 
-@interface RegistrationViewController () <UIImagePickerControllerDelegate, UINavigationBarDelegate>
+@interface RegistrationViewController () <UIImagePickerControllerDelegate, UINavigationBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *registrationLogoHeader;
 @property (weak, nonatomic) IBOutlet UITextField *registrationFullnameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *registrationUsernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *registrationPasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *registrationEmailTextField;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *registrationTrackSegmentControl;
+@property (weak, nonatomic) IBOutlet UITextField *registrationPasswordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *registrationCompleteButton;
-@property (weak, nonatomic) IBOutlet UIButton *registrationBackButton;
-@property (weak, nonatomic) IBOutlet UILabel *registrationBottomMoto;
-
-@property UIImage *profileImage;
-//@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @property UIColor *customGrey;
+
+@property NSDictionary *registrationCredentials;
+@property NSInteger responseStatusCode;
+
+@property NSMutableData *responseData;
+
+@property NSInteger trackSelectionIndex;
+@property NSArray *trackArray;
 
 @end
 
@@ -33,18 +38,12 @@
 {
     [super viewDidLoad];
     
-#pragma mark - Convenience Stuff
-    self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
+    //Initializing 
+    self.trackSelectionIndex = 1;
+    self.trackArray = @[@"SELECT ONE", @"MOBILE MAKERS", @"DEV BOOTCAMP", @"DESIGNATION", @"GENERAL ASSEMBLY", @"STARTUP INSTITUTE"];
     
-#pragma mark - UI
-    self.view.backgroundColor = self.customGrey;
-    self.registrationFullnameTextField.backgroundColor = self.customGrey;
-    self.registrationUsernameTextField.backgroundColor = self.customGrey;
-    self.registrationPasswordTextField.backgroundColor = self.customGrey;
-    self.registrationEmailTextField.backgroundColor = self.customGrey;
-    
-#pragma mark - Instantiate Auto Layout
-    [self addAutoLayoutConstraints];
+    [self customUI];
+    [self checkIfUserLoggedIn];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -52,86 +51,66 @@
     return YES;
 }
 
--(void)addAutoLayoutConstraints
+- (IBAction)selectDevelopmentTrack:(UISegmentedControl *)sender
 {
-    [self.view removeConstraints:self.view.constraints];
-    
-    UIImageView *header = self.registrationLogoHeader;
-    UITextField *fullName = self.registrationFullnameTextField;
-    UITextField *username = self.registrationUsernameTextField;
-    UITextField *password = self.registrationPasswordTextField;
-    UITextField *email = self.registrationEmailTextField;
-    UISegmentedControl *track = self.registrationTrackSegmentControl;
-    UIButton *submit = self.registrationCompleteButton;
-    UIButton *back = self.registrationBackButton;
-    UILabel *moto = self.registrationBottomMoto;
-    
-    self.registrationFullnameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"FULL NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
-    self.registrationUsernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"USER NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
-    self.registrationPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
-    self.registrationEmailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
-    
-    NSDictionary *layoutViews = NSDictionaryOfVariableBindings(header, fullName, username, password, email, track, submit, back, moto);
-    NSDictionary *layoutMetrics = @{@"textfieldWidth":[NSNumber numberWithInt:self.view.frame.size.width/2],
-                                    @"assetHeight":@30,
-                                    @"assetWidth":[NSNumber numberWithInt:self.view.frame.size.width/2.5],
-                                    @"imageHeight":[NSNumber numberWithInt:self.view.frame.size.height/15],
-                                    @"imageWidth":[NSNumber numberWithInt:self.view.frame.size.width/4],
-                                    @"imagePadding":[NSNumber numberWithInt:self.view.frame.size.width/2.7],
-                                    @"largePadding":[NSNumber numberWithInt:username.frame.size.height*3],
-                                    @"smallPadding":@10,
-                                    @"frameTopPadding":[NSNumber numberWithInt:self.view.frame.size.width/3],
-                                    @"frameSidePadding":[NSNumber numberWithInt:self.view.frame.size.width/5]
-                                    };
-    
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-imagePadding-[header(imageWidth)]-imagePadding-|" options:0 metrics:layoutMetrics views:layoutViews];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[fullName]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[username]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[password]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[email]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[track]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[submit]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[back]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
-    
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[moto]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
-    
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[header(<=imageHeight)]-largePadding-[fullName(assetHeight)]-smallPadding-[username(assetHeight)]-smallPadding-[password(assetHeight)]-smallPadding-[email(assetHeight)]-smallPadding-[track(assetHeight)]-largePadding-[submit(assetHeight)]-smallPadding-[back(assetHeight)]-smallPadding-[moto]-smallPadding-|" options:NSLayoutFormatAlignAllCenterX metrics:layoutMetrics views:layoutViews];
-    
-    [self.view addConstraints:horizontalConstraints];
-    [self.view addConstraints:verticalConstraints];
+    self.trackSelectionIndex = sender.selectedSegmentIndex;
 }
-
-//- (IBAction)takeProfilePicture:(UIButton *)sender
-//{
-//    UIImagePickerController *imagePicker = [UIImagePickerController new];
-//    imagePicker.delegate = self;
-//    [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-//    [self presentViewController:imagePicker animated:YES completion:nil];
-//}
-//
-//-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-//{
-//    self.profileImage = info[UIImagePickerControllerOriginalImage];
-//    [self.profileImageView setImage:self.profileImage];
-//    
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-//
-//-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-//{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
 
 - (IBAction)completeRegistrationOnButtonPressed:(UIButton *)sender
 {
-    [self checkRegistrationFieldCompletion];
+    [self createUserRegistrationDictionary];
+}
+
+
+-(void)createUserRegistrationDictionary
+{
+    //NSString *fullName = self.registrationFullnameTextField.text;
+    //NSString *username = self.registrationUsernameTextField.text;
+    NSString *password = self.registrationPasswordTextField.text;
+    NSString *email = self.registrationEmailTextField.text;
+    //NSString *class = [self.registrationTrackSegmentControl titleForSegmentAtIndex:self.trackSelectionIndex];
+    
+    NSDictionary *user = @{@"user":@{@"email":email, @"password":password}};
+    
+    [self checkWithServer:user];
+}
+
+-(void)checkWithServer: (NSDictionary*)userCredentials
+{
+    NSData *jsonData;
+    NSError *error;
+    
+    NSLog(@"%@", userCredentials);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://coderexp.herokuapp.com/users"]];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    jsonData = [NSJSONSerialization dataWithJSONObject:userCredentials options:NSJSONWritingPrettyPrinted error:&error];
+    request.HTTPBody = jsonData;
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (!connection)
+    {
+        UIAlertView *registrationFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Server connection failed." delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
+        [registrationFailed show];
+    }
+}
+
+#pragma mark - URL Connection Delegate Methods
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    _responseData = [[NSMutableData alloc] init];
+    
+    if([Helpers handleLoginErrors:response])
+    {
+        [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
+    }
+    else
+    {
+        UIAlertView *registrationFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 202" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
+        [registrationFailed show];
+    }
 }
 
 -(void)checkRegistrationFieldCompletion
@@ -142,6 +121,54 @@
 -(void)registerNewUser
 {
     
+}
+
+-(void)checkIfUserLoggedIn
+{
+    //if new user - submit button text @"Submit", show "Back to Main Menu" button
+    
+    //else if editing profile info submit button text @"Finish Editing", hide "Back to Main Menu" button
+}
+
+#pragma mark - UICollectionView Delegate Methods
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.trackArray.count;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    RegistrationCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"trackSelectionCellID" forIndexPath:indexPath];
+    cell.backgroundColor = UIColorFromRGB(DARK_GREY_HEX);
+    collectionView.backgroundColor = UIColorFromRGB(DARK_GREY_HEX);
+    cell.cellLabel.text = [self.trackArray objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize cellSize = CGSizeMake(collectionView.bounds.size.width, collectionView.bounds.size.height);
+    return cellSize;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+-(void)customUI
+{
+    self.view.backgroundColor = UIColorFromRGB(DARK_GREY_HEX);
+    self.registrationFullnameTextField.backgroundColor = self.customGrey;
+    self.registrationUsernameTextField.backgroundColor = self.customGrey;
+    self.registrationPasswordTextField.backgroundColor = self.customGrey;
+    self.registrationEmailTextField.backgroundColor = self.customGrey;
+    
+    self.registrationFullnameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    self.registrationUsernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"USER NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    self.registrationPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    self.registrationEmailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
