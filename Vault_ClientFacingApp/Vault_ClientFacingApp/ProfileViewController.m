@@ -10,8 +10,9 @@
 #import "CustomColors.h"
 #import "SettingsViewController.h"
 #import "Helpers.h"
+#import "UserAchievementsCollectionViewCell.h"
 
-@interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileHeader;
 
@@ -35,6 +36,9 @@
 
 @property int expToNextLevel;
 
+@property NSArray *userAchievements;
+@property (weak, nonatomic) IBOutlet UIScrollView *profileScrollView;
+
 @end
 
 @implementation ProfileViewController
@@ -46,9 +50,21 @@
     self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"exp_headerlogo"]];
-    //self.navigationController.navigationBar.barTintColor = UIColorFromRGB(DARK_GREY_HEX);
-    //self.tabBarController.tabBar.barTintColor = UIColorFromRGB(DARK_GREY_HEX);
-    
+
+    self.userAchievements = @[[UIImage imageNamed:@"acorn.png"],
+                              [UIImage imageNamed:@"adduser.png"],
+                              [UIImage imageNamed:@"badge.png"],
+                              [UIImage imageNamed:@"bronze.png"],
+                              [UIImage imageNamed:@"cloud.png"],
+                              [UIImage imageNamed:@"crosshair.png"],
+                              [UIImage imageNamed:@"cut.png"],
+                              [UIImage imageNamed:@"coffee.png"],
+                              [UIImage imageNamed:@"barchart.png"],
+                              [UIImage imageNamed:@"arrow.png"],
+                              [UIImage imageNamed:@"adduser.png"],
+                              [UIImage imageNamed:@"arrow.png"],
+                              ];
+    //[self setUpCustomViews];
     [self setDeveloperInfo];
     [self setDeveloperPhoto];
     [self configureExpToNextLevel:1 exp:720];
@@ -152,19 +168,21 @@
 #pragma mark - UICollectionView Delegate Methods
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return self.userAchievements.count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"achievementsCellID" forIndexPath:indexPath];
+    UserAchievementsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"achievementsCellID" forIndexPath:indexPath];
+    
+    cell.userAchievementsImage.image = [self.userAchievements objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(collectionView.bounds.size.width/5, collectionView.bounds.size.width/5);
+    return CGSizeMake(collectionView.bounds.size.width/5.7, collectionView.bounds.size.width/5.7);
     
 }
 

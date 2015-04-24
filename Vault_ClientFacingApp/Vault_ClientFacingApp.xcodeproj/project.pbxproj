@@ -45,6 +45,8 @@
 		4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */; };
 		4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E482D1AD7185100A17762 /* ProfileViewController.m */; };
 		4AAF2A4C1AE03ADD0068BC27 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2A4B1AE03ADD0068BC27 /* Users.m */; };
+		4AB3DC601AEA9C56009ED67D /* AchievementListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */; };
+		4AB3DD2F1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3DD2E1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m */; };
 		4AB99C961AE1AAEE007F95A2 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB99C951AE1AAEE007F95A2 /* Helpers.m */; };
 		4AE8D1521AD72221009C3DEB /* SkillTreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8D1511AD72221009C3DEB /* SkillTreeViewController.m */; };
 		59D73210AF41C9DEC84FBCED /* libPods-Vault_ClientFacingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C078148325B646D8DF5C89 /* libPods-Vault_ClientFacingApp.a */; };
@@ -122,6 +124,10 @@
 		4A9E482D1AD7185100A17762 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4AAF2A4A1AE03ADD0068BC27 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		4AAF2A4B1AE03ADD0068BC27 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		4AB3DC5E1AEA9C56009ED67D /* AchievementListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementListCollectionViewCell.h; sourceTree = "<group>"; };
+		4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementListCollectionViewCell.m; sourceTree = "<group>"; };
+		4AB3DD2D1AEAA158009ED67D /* UserAchievementsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAchievementsCollectionViewCell.h; sourceTree = "<group>"; };
+		4AB3DD2E1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAchievementsCollectionViewCell.m; sourceTree = "<group>"; };
 		4AB99C941AE1AAEE007F95A2 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		4AB99C951AE1AAEE007F95A2 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		4AE8D1501AD72221009C3DEB /* SkillTreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTreeViewController.h; sourceTree = "<group>"; };
@@ -327,6 +333,10 @@
 				4A2C3F6F1AE806AC001A7A4B /* TaskTableViewCell.m */,
 				4A2C3F711AE848BE001A7A4B /* LogTableViewCell.h */,
 				4A2C3F721AE848BE001A7A4B /* LogTableViewCell.m */,
+				4AB3DD2D1AEAA158009ED67D /* UserAchievementsCollectionViewCell.h */,
+				4AB3DD2E1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m */,
+				4AB3DC5E1AEA9C56009ED67D /* AchievementListCollectionViewCell.h */,
+				4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -487,6 +497,7 @@
 				4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */,
 				4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */,
 				4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */,
+				4AB3DD2F1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m in Sources */,
 				4A4BF4FD1AE5A455001FB109 /* PasswordRecoveryViewController.m in Sources */,
 				4A8454341AD467DA00E5AB02 /* LoginViewController.m in Sources */,
 				4AB99C961AE1AAEE007F95A2 /* Helpers.m in Sources */,
@@ -496,6 +507,7 @@
 				4AAF2A4C1AE03ADD0068BC27 /* Users.m in Sources */,
 				4A2E7FA31AE6DFC1003CC1D3 /* AchievementsDetailViewController.m in Sources */,
 				4A2E7FA91AE6E006003CC1D3 /* LogViewController.m in Sources */,
+				4AB3DC601AEA9C56009ED67D /* AchievementListCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

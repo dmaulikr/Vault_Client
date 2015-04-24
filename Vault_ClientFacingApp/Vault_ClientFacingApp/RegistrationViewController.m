@@ -10,6 +10,7 @@
 #import "Helpers.h"
 #import "CustomColors.h"
 #import "RegistrationCollectionViewCell.h"
+#import <Devise/Devise.h>
 
 @interface RegistrationViewController () <UIImagePickerControllerDelegate, UINavigationBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -51,16 +52,10 @@
     return YES;
 }
 
-- (IBAction)selectDevelopmentTrack:(UISegmentedControl *)sender
-{
-    self.trackSelectionIndex = sender.selectedSegmentIndex;
-}
-
 - (IBAction)completeRegistrationOnButtonPressed:(UIButton *)sender
 {
     [self createUserRegistrationDictionary];
 }
-
 
 -(void)createUserRegistrationDictionary
 {
@@ -70,7 +65,7 @@
     NSString *email = self.registrationEmailTextField.text;
     //NSString *class = [self.registrationTrackSegmentControl titleForSegmentAtIndex:self.trackSelectionIndex];
     
-    NSDictionary *user = @{@"user":@{@"email":email, @"password":password}};
+    NSDictionary *user = @{@"email":@"hferrone@gmail.com", @"password":@"test", @"password confirmation":@"test"};
     
     [self checkWithServer:user];
 }
@@ -82,7 +77,7 @@
     
     NSLog(@"%@", userCredentials);
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://coderexp.herokuapp.com/users"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://coderexp.herokuapp.com/auth"]];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
@@ -105,11 +100,13 @@
     if([Helpers handleLoginErrors:response])
     {
         [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
+        NSLog(@"Success Response:%@",response);
     }
     else
     {
-        UIAlertView *registrationFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 202" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
+        UIAlertView *registrationFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 200" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
         [registrationFailed show];
+        NSLog(@"Failure Response:%@",response);
     }
 }
 

@@ -8,11 +8,10 @@
 
 #import "SkillTreeViewController.h"
 
-@interface SkillTreeViewController ()
+@interface SkillTreeViewController () <UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *skillTreeHeader;
-@property (weak, nonatomic) IBOutlet UIButton *skillTreeToggleButton;
-@property UIColor *customGrey;
+@property (weak, nonatomic) IBOutlet UIScrollView *skillTreeScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *skillTreeImageView;
 
 @end
 
@@ -22,13 +21,23 @@
 {
     [super viewDidLoad];
     
-    self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
     self.view.backgroundColor = [UIColor blackColor];
+    
+    self.skillTreeScrollView.delegate = self;
+    self.skillTreeScrollView.minimumZoomScale = 1.0;
+    self.skillTreeScrollView.maximumZoomScale = 4.0;
+    self.skillTreeScrollView.contentSize = self.skillTreeImageView.frame.size;
 }
 
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+#pragma mark - UIScrollView Delegate Methods
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.skillTreeImageView;
 }
 
 @end
