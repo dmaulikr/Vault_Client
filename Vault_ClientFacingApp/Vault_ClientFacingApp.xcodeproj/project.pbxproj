@@ -44,6 +44,10 @@
 		4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */; };
 		4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */; };
 		4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E482D1AD7185100A17762 /* ProfileViewController.m */; };
+		4AAE57611AEE8C7400A90DEF /* HubAchievementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE57601AEE8C7400A90DEF /* HubAchievementViewController.m */; };
+		4AAE57641AEE8C7E00A90DEF /* HubVelocityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE57631AEE8C7E00A90DEF /* HubVelocityViewController.m */; };
+		4AAE576D1AEEBC2700A90DEF /* HubAchievementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE576C1AEEBC2700A90DEF /* HubAchievementTableViewCell.m */; };
+		4AAE57701AEEC09C00A90DEF /* CustomVelocityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE576F1AEEC09C00A90DEF /* CustomVelocityView.m */; };
 		4AAF2A4C1AE03ADD0068BC27 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2A4B1AE03ADD0068BC27 /* Users.m */; };
 		4AB3DC601AEA9C56009ED67D /* AchievementListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */; };
 		4AB3DD2F1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3DD2E1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m */; };
@@ -122,6 +126,14 @@
 		4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		4A9E482C1AD7185100A17762 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		4A9E482D1AD7185100A17762 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		4AAE575F1AEE8C7400A90DEF /* HubAchievementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HubAchievementViewController.h; sourceTree = "<group>"; };
+		4AAE57601AEE8C7400A90DEF /* HubAchievementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HubAchievementViewController.m; sourceTree = "<group>"; };
+		4AAE57621AEE8C7E00A90DEF /* HubVelocityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HubVelocityViewController.h; sourceTree = "<group>"; };
+		4AAE57631AEE8C7E00A90DEF /* HubVelocityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HubVelocityViewController.m; sourceTree = "<group>"; };
+		4AAE576B1AEEBC2700A90DEF /* HubAchievementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HubAchievementTableViewCell.h; sourceTree = "<group>"; };
+		4AAE576C1AEEBC2700A90DEF /* HubAchievementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HubAchievementTableViewCell.m; sourceTree = "<group>"; };
+		4AAE576E1AEEC09C00A90DEF /* CustomVelocityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomVelocityView.h; sourceTree = "<group>"; };
+		4AAE576F1AEEC09C00A90DEF /* CustomVelocityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomVelocityView.m; sourceTree = "<group>"; };
 		4AAF2A4A1AE03ADD0068BC27 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		4AAF2A4B1AE03ADD0068BC27 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		4AB3DC5E1AEA9C56009ED67D /* AchievementListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementListCollectionViewCell.h; sourceTree = "<group>"; };
@@ -284,6 +296,10 @@
 				4A4BF4FC1AE5A455001FB109 /* PasswordRecoveryViewController.m */,
 				4A9E482C1AD7185100A17762 /* ProfileViewController.h */,
 				4A9E482D1AD7185100A17762 /* ProfileViewController.m */,
+				4AAE57621AEE8C7E00A90DEF /* HubVelocityViewController.h */,
+				4AAE57631AEE8C7E00A90DEF /* HubVelocityViewController.m */,
+				4AAE575F1AEE8C7400A90DEF /* HubAchievementViewController.h */,
+				4AAE57601AEE8C7400A90DEF /* HubAchievementViewController.m */,
 				4AE8D1501AD72221009C3DEB /* SkillTreeViewController.h */,
 				4AE8D1511AD72221009C3DEB /* SkillTreeViewController.m */,
 				4A2E7F9B1AE6CE4B003CC1D3 /* TasksViewController.h */,
@@ -333,10 +349,14 @@
 				4A2C3F6F1AE806AC001A7A4B /* TaskTableViewCell.m */,
 				4A2C3F711AE848BE001A7A4B /* LogTableViewCell.h */,
 				4A2C3F721AE848BE001A7A4B /* LogTableViewCell.m */,
+				4AAE576B1AEEBC2700A90DEF /* HubAchievementTableViewCell.h */,
+				4AAE576C1AEEBC2700A90DEF /* HubAchievementTableViewCell.m */,
 				4AB3DD2D1AEAA158009ED67D /* UserAchievementsCollectionViewCell.h */,
 				4AB3DD2E1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m */,
 				4AB3DC5E1AEA9C56009ED67D /* AchievementListCollectionViewCell.h */,
 				4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */,
+				4AAE576E1AEEC09C00A90DEF /* CustomVelocityView.h */,
+				4AAE576F1AEEC09C00A90DEF /* CustomVelocityView.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -493,9 +513,12 @@
 				4AE8D1521AD72221009C3DEB /* SkillTreeViewController.m in Sources */,
 				4A2E7F9D1AE6CE4B003CC1D3 /* TasksViewController.m in Sources */,
 				4A75413A1ADF052A00EB1A15 /* SettingsViewController.m in Sources */,
+				4AAE57611AEE8C7400A90DEF /* HubAchievementViewController.m in Sources */,
+				4AAE576D1AEEBC2700A90DEF /* HubAchievementTableViewCell.m in Sources */,
 				4A2C97121AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.m in Sources */,
 				4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */,
 				4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */,
+				4AAE57641AEE8C7E00A90DEF /* HubVelocityViewController.m in Sources */,
 				4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */,
 				4AB3DD2F1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m in Sources */,
 				4A4BF4FD1AE5A455001FB109 /* PasswordRecoveryViewController.m in Sources */,
@@ -507,6 +530,7 @@
 				4AAF2A4C1AE03ADD0068BC27 /* Users.m in Sources */,
 				4A2E7FA31AE6DFC1003CC1D3 /* AchievementsDetailViewController.m in Sources */,
 				4A2E7FA91AE6E006003CC1D3 /* LogViewController.m in Sources */,
+				4AAE57701AEEC09C00A90DEF /* CustomVelocityView.m in Sources */,
 				4AB3DC601AEA9C56009ED67D /* AchievementListCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

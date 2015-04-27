@@ -35,6 +35,10 @@
     
     [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"EXP_BackArrow@3.png"]];
     [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"EXP_BackArrow@3.png"]];
+    
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = UIColorFromRGB(PINK_HEX);
 
     return YES;
 }

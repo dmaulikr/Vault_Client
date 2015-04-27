@@ -12,7 +12,7 @@
 #import "RegistrationCollectionViewCell.h"
 #import <Devise/Devise.h>
 
-@interface RegistrationViewController () <UIImagePickerControllerDelegate, UINavigationBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface RegistrationViewController () <UIImagePickerControllerDelegate, UINavigationBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, NSURLConnectionDataDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *registrationLogoHeader;
 @property (weak, nonatomic) IBOutlet UITextField *registrationFullnameTextField;
@@ -65,7 +65,7 @@
     NSString *email = self.registrationEmailTextField.text;
     //NSString *class = [self.registrationTrackSegmentControl titleForSegmentAtIndex:self.trackSelectionIndex];
     
-    NSDictionary *user = @{@"email":@"hferrone@gmail.com", @"password":@"test", @"password confirmation":@"test"};
+    NSDictionary *user = @{@"user": @{@"email":@"harrison@coderexp.com", @"password":@"test1234", @"password_confirmation":@"test1234"}};
     
     [self checkWithServer:user];
 }
@@ -77,11 +77,12 @@
     
     NSLog(@"%@", userCredentials);
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://coderexp.herokuapp.com/auth"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://coderexp.herokuapp.com/api/v1/users"]];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     jsonData = [NSJSONSerialization dataWithJSONObject:userCredentials options:NSJSONWritingPrettyPrinted error:&error];
+    NSLog(@"JSON:%@", jsonData);
     request.HTTPBody = jsonData;
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -95,11 +96,11 @@
 #pragma mark - URL Connection Delegate Methods
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    _responseData = [[NSMutableData alloc] init];
+    //[_responseData setLength:0];
     
-    if([Helpers handleLoginErrors:response])
+    if([Helpers handleServerErrors:response])
     {
-        [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
+        [self performSegueWithIdentifier:@"registrationSuccessSegueID" sender:self];
         NSLog(@"Success Response:%@",response);
     }
     else
@@ -108,6 +109,22 @@
         [registrationFailed show];
         NSLog(@"Failure Response:%@",response);
     }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [_responseData appendData:data];
+    NSLog(@"String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"Connection:%@", connection);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"Error: %@", error);
 }
 
 -(void)checkRegistrationFieldCompletion

@@ -10,10 +10,13 @@
 
 @implementation Helpers
 
-+ (BOOL)handleLoginErrors:(NSURLResponse *)response
++ (BOOL)handleServerErrors:(NSURLResponse *)response
 {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
     NSInteger responseStatusCode = [httpResponse statusCode];
+    
+    NSLog(@"Full Response:%@", response);
+    
     BOOL login = false;
     
     if (responseStatusCode == 200)

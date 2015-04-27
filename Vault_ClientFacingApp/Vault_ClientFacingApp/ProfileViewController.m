@@ -11,13 +11,17 @@
 #import "SettingsViewController.h"
 #import "Helpers.h"
 #import "UserAchievementsCollectionViewCell.h"
+#import "HubVelocityViewController.h"
+#import "HubAchievementViewController.h"
 
-@interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UIScrollViewDelegate>
+@interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UIScrollViewDelegate, UIPageViewControllerDataSource>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileHeader;
 
 @property (weak, nonatomic) IBOutlet UIButton *profileSkillTreeToggleButton;
 @property (weak, nonatomic) IBOutlet UIButton *profileImageButton;
+
+@property (strong, nonatomic) UIPageViewController *pageController;
 
 @property UIColor *customGrey;
 
@@ -36,6 +40,8 @@
 
 @property int expToNextLevel;
 
+@property NSArray *viewControllersArray;
+
 @property NSArray *userAchievements;
 @property (weak, nonatomic) IBOutlet UIScrollView *profileScrollView;
 
@@ -46,6 +52,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initializePageController];
             
     self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
     
@@ -191,6 +198,86 @@
     [self performSegueWithIdentifier:@"achievementsSegueID" sender:self];
 }
 
+#pragma mark - UIPageController Datasource Methods
+-(void)initializePageController
+{
+    self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.pageController.dataSource = self;
+    
+    [[self.pageController view] setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.size.height/3, self.view.frame.size.width, self.view.frame.size.height/1.5)];
+    
+    HubVelocityViewController *velocity = [self viewControllerAtIndex:0];
+    
+    self.viewControllersArray = [NSArray arrayWithObject:velocity];
+    
+    [self.pageController setViewControllers:self.viewControllersArray direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    
+    [self addChildViewController:self.pageController];
+    [[self view] addSubview:[self.pageController view]];
+    [self.pageController didMoveToParentViewController:self];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    
+    NSUInteger index = [(HubVelocityViewController *)viewController index];
+    
+    if (index == 0) {
+        return nil;
+    }
+    
+    index--;
+    
+    return [self viewControllerAtIndex:index];
+    
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    
+    NSUInteger index = [(HubAchievementViewController *)viewController index];
+    
+    index++;
+    
+    if (index == 2)
+    {
+        return nil;
+    }
+    
+    return [self viewControllerAtIndex:index];
+    
+}
+
+- (UIViewController *)viewControllerAtIndex:(NSUInteger)index
+{
+    UIViewController *vc;
+    
+    if (index == 0)
+    {
+        HubVelocityViewController *velocity = [self.storyboard instantiateViewControllerWithIdentifier:@"velocityViewController"];
+        velocity.index = index;
+        vc = velocity;
+    }else if (index == 1)
+    {
+        HubAchievementViewController *achievements = [self.storyboard instantiateViewControllerWithIdentifier:@"achievementViewController"];
+        achievements.index = index;
+        vc = achievements;
+    }
+    
+    return vc;
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+    // The number of items reflected in the page indicator.
+    return 2;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+    // The selected item reflected in the page indicator.
+    return 0;
+}
+
+#pragma mark - Prepare for Segue 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"settingSegueID"])

@@ -80,7 +80,7 @@
 {
     _responseData = [[NSMutableData alloc] init];
     
-    if([Helpers handleLoginErrors:response])
+    if([Helpers handleServerErrors:response])
     {
         [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
     }

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UserAchievementsCollectionViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *userAchievementsImage;
 
 @end
