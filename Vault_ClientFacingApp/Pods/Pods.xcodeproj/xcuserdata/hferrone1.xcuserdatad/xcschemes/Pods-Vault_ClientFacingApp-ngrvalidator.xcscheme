@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB9770FFEAE0B0F3E3911812"
+               BlueprintIdentifier = "31673118E680BBFC610A874F"
                BuildableName = "libPods-Vault_ClientFacingApp-ngrvalidator.a"
                BlueprintName = "Pods-Vault_ClientFacingApp-ngrvalidator"
                ReferencedContainer = "container:Pods.xcodeproj">

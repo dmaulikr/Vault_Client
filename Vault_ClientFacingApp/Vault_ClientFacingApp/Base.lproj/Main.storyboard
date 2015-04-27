@@ -540,15 +540,41 @@
                                 <color key="textColor" red="0.92156862750000001" green="0.0" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxI-2n-ign" customClass="KAProgressLabel">
+                                <rect key="frame" x="240" y="55" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Esd-EV-bLi"/>
+                                    <constraint firstAttribute="height" constant="120" id="W7M-BS-qU0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20A-qR-FHL">
+                                <rect key="frame" x="271" y="87" width="58" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="gUf-AV-Wxa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.34901960780000002" green="0.75686274509999996" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="e3I-Fh-TTa" firstAttribute="top" secondItem="mBg-Bj-w7Z" secondAttribute="bottom" id="Aqk-cz-cIA"/>
+                            <constraint firstItem="20A-qR-FHL" firstAttribute="top" secondItem="e3I-Fh-TTa" secondAttribute="bottom" constant="49" id="BWh-Gw-L3Q"/>
+                            <constraint firstItem="20A-qR-FHL" firstAttribute="centerX" secondItem="DxI-2n-ign" secondAttribute="centerX" id="Efx-vW-OJP"/>
                             <constraint firstItem="e3I-Fh-TTa" firstAttribute="centerX" secondItem="Mxw-Lh-ser" secondAttribute="centerX" id="TTD-nn-5B7"/>
+                            <constraint firstItem="DxI-2n-ign" firstAttribute="centerX" secondItem="e3I-Fh-TTa" secondAttribute="centerX" id="Wup-H4-YVJ"/>
+                            <constraint firstItem="20A-qR-FHL" firstAttribute="centerY" secondItem="DxI-2n-ign" secondAttribute="centerY" id="tcE-x8-Hrh"/>
+                            <constraint firstItem="DxI-2n-ign" firstAttribute="top" secondItem="e3I-Fh-TTa" secondAttribute="bottom" constant="17" id="wJY-Sh-jqP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressLabel" destination="DxI-2n-ign" id="9sX-Lj-xrc"/>
                         <outlet property="titleLabel" destination="e3I-Fh-TTa" id="2nG-iR-J81"/>
+                        <outlet property="velocityLabel" destination="20A-qR-FHL" id="1MN-ja-J8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p14-xX-ZOm" userLabel="First Responder" sceneMemberID="firstResponder"/>

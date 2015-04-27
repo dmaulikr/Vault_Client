@@ -48,11 +48,23 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 3
 
+// CorePlot
+#define COCOAPODS_POD_AVAILABLE_CorePlot
+#define COCOAPODS_VERSION_MAJOR_CorePlot 1
+#define COCOAPODS_VERSION_MINOR_CorePlot 5
+#define COCOAPODS_VERSION_PATCH_CorePlot 1
+
 // Devise
 #define COCOAPODS_POD_AVAILABLE_Devise
 #define COCOAPODS_VERSION_MAJOR_Devise 1
 #define COCOAPODS_VERSION_MINOR_Devise 0
 #define COCOAPODS_VERSION_PATCH_Devise 0
+
+// KAProgressLabel
+#define COCOAPODS_POD_AVAILABLE_KAProgressLabel
+#define COCOAPODS_VERSION_MAJOR_KAProgressLabel 3
+#define COCOAPODS_VERSION_MINOR_KAProgressLabel 2
+#define COCOAPODS_VERSION_PATCH_KAProgressLabel 0
 
 // UICKeyChainStore
 #define COCOAPODS_POD_AVAILABLE_UICKeyChainStore
