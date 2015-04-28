@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CustomColors.h"
 
 @interface LoginViewController : UIViewController
 

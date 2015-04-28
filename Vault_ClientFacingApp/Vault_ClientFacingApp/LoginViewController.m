@@ -7,19 +7,20 @@
 //
 
 #import "LoginViewController.h"
-#import "Helpers.h"
 
 @interface LoginViewController () <NSURLConnectionDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *loginLogoImage;
-@property (weak, nonatomic) IBOutlet UITextField *loginEmailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *loginUsernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *loginPasswordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginRegisterButton;
 @property (weak, nonatomic) IBOutlet UILabel *loginMotoLabel;
+
 @property NSMutableData *responseData;
+@property NSDictionary *loginCredentials;
+
 @property UIColor *customGrey;
-@property NSInteger responseStatusCode;
 
 @end
 
@@ -28,7 +29,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self customUI];
+
+//Convenience Stuff
+    self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
+    
+//UI
+    self.view.backgroundColor = self.customGrey;
+    self.loginUsernameTextField.backgroundColor = self.customGrey;
+    self.loginPasswordTextField.backgroundColor = self.customGrey;
+
+    [self addAutoLayoutConstraints];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -39,23 +49,17 @@
 #pragma mark - Login Methods
 - (IBAction)loginOnButtonPressed:(UIButton *)sender
 {
-    if ([self.loginEmailTextField.text isEqualToString:@""] ||
-        [self.loginPasswordTextField.text isEqualToString:@""])
-    {
-        UIAlertView *fieldCompletionFailed = [[UIAlertView alloc] initWithTitle:@"Hold Up" message:@"All fields must be completed" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [fieldCompletionFailed show];
-    }else{
-        [self createUserInfoDictionary];
-    }
+    [self createUserInfoDictionary];
 }
 
 -(void)createUserInfoDictionary
 {
-    NSString *email = self.loginEmailTextField.text;
+    NSString *username = self.loginUsernameTextField.text;
     NSString *password = self.loginPasswordTextField.text;
-    NSDictionary *user = @{@"login":email, @"password":password};
     
-    [self checkWithServer:user];
+    self.loginCredentials = [[NSDictionary alloc]initWithObjectsAndKeys:@"username", username, @"password", password, nil];
+    
+    [self checkWithServer:self.loginCredentials];
 }
 
 #pragma mark - URL Post Request
@@ -64,65 +68,105 @@
     NSData *jsonData;
     NSError *error;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"coderexp.herokuapp.com/api/v1/users/sign_in"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@""]];
     request.HTTPMethod = @"POST";
-    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     jsonData = [NSJSONSerialization dataWithJSONObject:userCredentials options:NSJSONWritingPrettyPrinted error:&error];
     request.HTTPBody = jsonData;
     
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (!connection)
+    [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueuePriorityNormal completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
     {
-        UIAlertView *loginFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Server connection failed." delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
-        [loginFailed show];
-    }
+        [self performSegueWithIdentifier:@"" sender:self];
+        
+        if (connectionError)
+        {
+            UIAlertView *loginFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Your username and/or password is incorrect, please re-enter." delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
+            [loginFailed show];
+        }
+    }];
 }
 
 #pragma mark - URL Connection Delegate Methods
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    if([Helpers handleServerErrors:response]){
-        [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
-    }
-    else{
-        UIAlertView *loginFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 202" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
-        [loginFailed show];
-    }
+    _responseData = [[NSMutableData alloc] init];
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    // Append the new data to the instance variable you declared
     [_responseData appendData:data];
-    NSLog(@"String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSLog(@"Connection:%@", connection);
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse*)cachedResponse {
+    // Return nil to indicate not necessary to store a cached response for this connection
+    return nil;
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    NSLog(@"Error: %@", error);
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    // The request is complete and data has been received
+    // You can parse the stuff in your instance variable now
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    // The request has failed for some reason!
+    // Check the error var
 }
 
 #pragma mark - Resign Responders
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.loginEmailTextField resignFirstResponder];
+    [self.loginUsernameTextField resignFirstResponder];
     [self.loginPasswordTextField resignFirstResponder];
 }
 
 #pragma mark - Auto Layout
--(void)customUI
+-(void)addAutoLayoutConstraints
 {
-    self.view.backgroundColor = UIColorFromRGB(DARK_GREY_HEX);
-    self.loginRegisterButton.layer.borderColor = UIColorFromRGB(PINK_HEX).CGColor;
-    self.loginRegisterButton.layer.borderWidth = 1.0;
+    [self.view removeConstraints:self.view.constraints];
     
-    self.loginEmailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    UIImageView *logo = self.loginLogoImage;
+    UITextField *username = self.loginUsernameTextField;
+    UITextField *password = self.loginPasswordTextField;
+    UIButton *loginButton = self.loginButton;
+    UIButton *registerButton = self.loginRegisterButton;
+    UILabel *moto = self.loginMotoLabel;
+    
+    self.loginUsernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"USER NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     self.loginPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    
+    
+    NSDictionary *layoutViews = NSDictionaryOfVariableBindings(logo, username, password, loginButton, registerButton, moto);
+    NSDictionary *layoutMetrics = @{@"textfieldWidth":[NSNumber numberWithInt:self.view.frame.size.width/2],
+                                    @"assetHeight":@30,
+                                    @"assetWidth":[NSNumber numberWithInt:logo.frame.size.width],
+                                    @"imageHeight":[NSNumber numberWithInt:self.view.frame.size.height/6],
+                                    @"imageWidth":[NSNumber numberWithInt:self.view.frame.size.width/2.5],
+                                    @"imagePadding":[NSNumber numberWithInt:self.view.frame.size.width/3.2],
+                                    @"largePadding":[NSNumber numberWithInt:username.frame.size.height*3],
+                                    @"smallPadding":@10,
+                                    @"frameTopPadding":[NSNumber numberWithInt:self.view.frame.size.width/3],
+                                    @"frameSidePadding":[NSNumber numberWithInt:self.view.frame.size.width/5]
+                                    };
+    
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-imagePadding-[logo(imageWidth)]-imagePadding-|" options:0 metrics:layoutMetrics views:layoutViews];
+    
+    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[username]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
+    
+    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[password]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
+    
+    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[loginButton]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
+    
+    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[registerButton]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
+    
+    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-frameSidePadding-[moto]-frameSidePadding-|" options:0 metrics:layoutMetrics views:layoutViews]];
+    
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-frameTopPadding-[logo(<=imageHeight)]-50-[username(assetHeight)]-smallPadding-[password(assetHeight)]-smallPadding-[loginButton(assetHeight)]-smallPadding-[registerButton(assetHeight)]-largePadding-[moto]-smallPadding-|" options:0 metrics:layoutMetrics views:layoutViews];
+    
+    [self.view addConstraints:horizontalConstraints];
+    [self.view addConstraints:verticalConstraints];
 }
 
 @end
