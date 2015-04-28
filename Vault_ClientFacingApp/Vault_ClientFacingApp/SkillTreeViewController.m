@@ -7,12 +7,15 @@
 //
 
 #import "SkillTreeViewController.h"
+#import "Helpers.h"
 
-@interface SkillTreeViewController ()
+@interface SkillTreeViewController () <UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *skillTreeHeader;
-@property (weak, nonatomic) IBOutlet UIButton *skillTreeToggleButton;
-@property UIColor *customGrey;
+@property (weak, nonatomic) IBOutlet UIScrollView *skillTreeScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *skillTreeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *mainTrackToken;
+@property (weak, nonatomic) IBOutlet UIImageView *leftTrackToken;
+@property (weak, nonatomic) IBOutlet UIImageView *rightTrackToken;
 
 @end
 
@@ -21,15 +24,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-#pragma mark - Convenience Stuff
-    self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
-    
-#pragma mark - UI
-    self.view.backgroundColor = self.customGrey;
-    
-#pragma mark - Instantiate Auto Layout
-    [self addAutoLayoutConstraints];
+    [self skillTreeNodeSystem];
+    [self setAllTrackTokens];
+    [self initializeScrollView];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -37,27 +34,92 @@
     return YES;
 }
 
--(void)addAutoLayoutConstraints
+#pragma mark - UIScrollView Delegate Methods
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.skillTreeImageView;
+}
+
+-(void)initializeScrollView
+{
+    self.skillTreeScrollView.delegate = self;
+    self.skillTreeScrollView.minimumZoomScale = 1.0;
+    self.skillTreeScrollView.maximumZoomScale = 4.0;
+    self.skillTreeScrollView.contentSize = self.skillTreeImageView.frame.size;
+}
+
+-(void)skillTreeNodeSystem
+{
+    [self initializeTokenUI];
+}
+
+-(void)initializeTokenUI
+{
+    self.mainTrackToken.image = [Helpers getProfilePicFromDefault];
+    self.mainTrackToken.layer.cornerRadius = self.mainTrackToken.frame.size.width/2;
+    self.mainTrackToken.clipsToBounds = YES;
+    self.mainTrackToken.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.mainTrackToken.layer.borderWidth = 5.0f;
+}
+
+-(void)setAllTrackTokens
+{
+    [self SetMainToken:2];
+    [self SetLeftToken:1];
+    [self SetRightToken:1];
+}
+
+-(void)SetMainToken:(int)mainTrack
 {
     [self.view removeConstraints:self.view.constraints];
     
-    UIImageView *header = self.skillTreeHeader;
-    UIButton *infoToggle = self.skillTreeToggleButton;
+    UIImageView *mainTrackToken = self.mainTrackToken;
+    UIImageView *leftTrackToken = self.leftTrackToken;
+    UIImageView *rightTrackToken = self.rightTrackToken;
+    UIImageView *skillTree = self.skillTreeImageView;
+    UIScrollView *scroll = self.skillTreeScrollView;
     
-    NSDictionary *layoutViews = NSDictionaryOfVariableBindings(header, infoToggle);
-    NSDictionary *layoutMetrics = @{@"imageWidth":[NSNumber numberWithInt:self.view.frame.size.width/4],
-                                    @"imagePadding":[NSNumber numberWithInt:self.view.frame.size.width/2.7],
-                                    @"imageHeight":[NSNumber numberWithInt:self.view.frame.size.height/15],
-                                    @"smallPadding":@10};
+    double mainTokenYValue;
     
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-imagePadding-[header(imageWidth)]-50-[infoToggle]-|" options:0 metrics:layoutMetrics views:layoutViews];
+    switch (mainTrack) {
+        case 1:
+            mainTokenYValue = self.view.frame.size.height/5;
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        default:
+            break;
+    }
     
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-smallPadding-[header(<=imageHeight)]-|" options:0 metrics:layoutMetrics views:layoutViews];
+    NSDictionary *assets = NSDictionaryOfVariableBindings(mainTrackToken, leftTrackToken, rightTrackToken, skillTree, scroll);
+    NSDictionary *metrics = @{@"tokenWidth": @50,
+                              @"tokenHeight":@50,
+                              @"mainTokenYValue":@50,
+                              };
     
-    verticalConstraints = [verticalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-smallPadding-[infoToggle(<=imageHeight)]-|" options:0 metrics:layoutMetrics views:layoutViews]];
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[skillTree]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:assets];
+    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[scroll]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:assets]];
+    
+    NSArray *verticalCosntraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[scroll]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:assets];
     
     [self.view addConstraints:horizontalConstraints];
-    [self.view addConstraints:verticalConstraints];
+    [self.view addConstraints:verticalCosntraints];
+}
+
+-(void)SetLeftToken:(int)leftTrack
+{
+    
+}
+
+-(void)SetRightToken:(int)rightTrack
+{
+    
 }
 
 @end

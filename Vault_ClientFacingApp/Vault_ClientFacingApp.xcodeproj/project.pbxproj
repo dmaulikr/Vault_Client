@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		4A29FE5E1AA110E300776FE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A29FE5D1AA110E300776FE3 /* UIKit.framework */; };
 		4A29FE601AA110F200776FE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A29FE5F1AA110F200776FE3 /* Foundation.framework */; };
+		4A2B21481AE553F900F9E07C /* CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B21471AE553F900F9E07C /* CustomColors.m */; };
+		4A2C3F701AE806AC001A7A4B /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C3F6F1AE806AC001A7A4B /* TaskTableViewCell.m */; };
+		4A2C3F731AE848BE001A7A4B /* LogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C3F721AE848BE001A7A4B /* LogTableViewCell.m */; };
+		4A2C97121AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C97111AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.m */; };
+		4A2E7F9D1AE6CE4B003CC1D3 /* TasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E7F9C1AE6CE4B003CC1D3 /* TasksViewController.m */; };
+		4A2E7FA31AE6DFC1003CC1D3 /* AchievementsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E7FA21AE6DFC1003CC1D3 /* AchievementsDetailViewController.m */; };
+		4A2E7FA61AE6DFCD003CC1D3 /* AchievementsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E7FA51AE6DFCD003CC1D3 /* AchievementsListViewController.m */; };
+		4A2E7FA91AE6E006003CC1D3 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E7FA81AE6E006003CC1D3 /* LogViewController.m */; };
+		4A4BF4FD1AE5A455001FB109 /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF4FC1AE5A455001FB109 /* PasswordRecoveryViewController.m */; };
 		4A563A871AA008430081FF26 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A563A861AA008430081FF26 /* MessageUI.framework */; };
 		4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F23C61A9D3B5F00E7D366 /* main.m */; };
 		4A6F23CA1A9D3B5F00E7D366 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F23C91A9D3B5F00E7D366 /* AppDelegate.m */; };
@@ -29,12 +38,22 @@
 		4A6F24001A9D3D3100E7D366 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6F23FF1A9D3D3100E7D366 /* SystemConfiguration.framework */; };
 		4A6F24021A9D3D4100E7D366 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6F24011A9D3D4100E7D366 /* libz.1.1.3.dylib */; };
 		4A6F24041A9D3D4B00E7D366 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6F24031A9D3D4B00E7D366 /* libsqlite3.0.dylib */; };
+		4A75413A1ADF052A00EB1A15 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7541391ADF052A00EB1A15 /* SettingsViewController.m */; };
 		4A8454341AD467DA00E5AB02 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8454331AD467DA00E5AB02 /* LoginViewController.m */; };
 		4A84543A1AD4691700E5AB02 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8454391AD4691700E5AB02 /* RegistrationViewController.m */; };
 		4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */; };
 		4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */; };
 		4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E482D1AD7185100A17762 /* ProfileViewController.m */; };
+		4AAE57611AEE8C7400A90DEF /* HubAchievementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE57601AEE8C7400A90DEF /* HubAchievementViewController.m */; };
+		4AAE57641AEE8C7E00A90DEF /* HubVelocityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE57631AEE8C7E00A90DEF /* HubVelocityViewController.m */; };
+		4AAE576D1AEEBC2700A90DEF /* HubAchievementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE576C1AEEBC2700A90DEF /* HubAchievementTableViewCell.m */; };
+		4AAE57701AEEC09C00A90DEF /* CustomVelocityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE576F1AEEC09C00A90DEF /* CustomVelocityView.m */; };
+		4AAF2A4C1AE03ADD0068BC27 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2A4B1AE03ADD0068BC27 /* Users.m */; };
+		4AB3DC601AEA9C56009ED67D /* AchievementListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */; };
+		4AB3DD2F1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3DD2E1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m */; };
+		4AB99C961AE1AAEE007F95A2 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB99C951AE1AAEE007F95A2 /* Helpers.m */; };
 		4AE8D1521AD72221009C3DEB /* SkillTreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8D1511AD72221009C3DEB /* SkillTreeViewController.m */; };
+		59D73210AF41C9DEC84FBCED /* libPods-Vault_ClientFacingApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C078148325B646D8DF5C89 /* libPods-Vault_ClientFacingApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +67,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02C078148325B646D8DF5C89 /* libPods-Vault_ClientFacingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vault_ClientFacingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05BB3B2A788A087685DA6FC7 /* Pods-Vault_ClientFacingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vault_ClientFacingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vault_ClientFacingApp/Pods-Vault_ClientFacingApp.release.xcconfig"; sourceTree = "<group>"; };
 		4A29FE5D1AA110E300776FE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A29FE5F1AA110F200776FE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4A2B21461AE553F900F9E07C /* CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColors.h; sourceTree = "<group>"; };
+		4A2B21471AE553F900F9E07C /* CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomColors.m; sourceTree = "<group>"; };
+		4A2C3F6E1AE806AC001A7A4B /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
+		4A2C3F6F1AE806AC001A7A4B /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
+		4A2C3F711AE848BE001A7A4B /* LogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogTableViewCell.h; sourceTree = "<group>"; };
+		4A2C3F721AE848BE001A7A4B /* LogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogTableViewCell.m; sourceTree = "<group>"; };
+		4A2C97101AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationCollectionViewCell.h; sourceTree = "<group>"; };
+		4A2C97111AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationCollectionViewCell.m; sourceTree = "<group>"; };
+		4A2E7F9B1AE6CE4B003CC1D3 /* TasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksViewController.h; sourceTree = "<group>"; };
+		4A2E7F9C1AE6CE4B003CC1D3 /* TasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksViewController.m; sourceTree = "<group>"; };
+		4A2E7FA11AE6DFC1003CC1D3 /* AchievementsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementsDetailViewController.h; sourceTree = "<group>"; };
+		4A2E7FA21AE6DFC1003CC1D3 /* AchievementsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsDetailViewController.m; sourceTree = "<group>"; };
+		4A2E7FA41AE6DFCD003CC1D3 /* AchievementsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementsListViewController.h; sourceTree = "<group>"; };
+		4A2E7FA51AE6DFCD003CC1D3 /* AchievementsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsListViewController.m; sourceTree = "<group>"; };
+		4A2E7FA71AE6E006003CC1D3 /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		4A2E7FA81AE6E006003CC1D3 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
+		4A4BF4FB1AE5A455001FB109 /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
+		4A4BF4FC1AE5A455001FB109 /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
 		4A563A861AA008430081FF26 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4A6F23C11A9D3B5F00E7D366 /* Vault_ClientFacingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vault_ClientFacingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6F23C51A9D3B5F00E7D366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +114,8 @@
 		4A6F23FF1A9D3D3100E7D366 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A6F24011A9D3D4100E7D366 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		4A6F24031A9D3D4B00E7D366 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		4A7541381ADF052A00EB1A15 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		4A7541391ADF052A00EB1A15 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		4A8454321AD467DA00E5AB02 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4A8454331AD467DA00E5AB02 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4A8454381AD4691700E5AB02 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
@@ -85,8 +126,25 @@
 		4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		4A9E482C1AD7185100A17762 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		4A9E482D1AD7185100A17762 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		4AAE575F1AEE8C7400A90DEF /* HubAchievementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HubAchievementViewController.h; sourceTree = "<group>"; };
+		4AAE57601AEE8C7400A90DEF /* HubAchievementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HubAchievementViewController.m; sourceTree = "<group>"; };
+		4AAE57621AEE8C7E00A90DEF /* HubVelocityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HubVelocityViewController.h; sourceTree = "<group>"; };
+		4AAE57631AEE8C7E00A90DEF /* HubVelocityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HubVelocityViewController.m; sourceTree = "<group>"; };
+		4AAE576B1AEEBC2700A90DEF /* HubAchievementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HubAchievementTableViewCell.h; sourceTree = "<group>"; };
+		4AAE576C1AEEBC2700A90DEF /* HubAchievementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HubAchievementTableViewCell.m; sourceTree = "<group>"; };
+		4AAE576E1AEEC09C00A90DEF /* CustomVelocityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomVelocityView.h; sourceTree = "<group>"; };
+		4AAE576F1AEEC09C00A90DEF /* CustomVelocityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomVelocityView.m; sourceTree = "<group>"; };
+		4AAF2A4A1AE03ADD0068BC27 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
+		4AAF2A4B1AE03ADD0068BC27 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		4AB3DC5E1AEA9C56009ED67D /* AchievementListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementListCollectionViewCell.h; sourceTree = "<group>"; };
+		4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementListCollectionViewCell.m; sourceTree = "<group>"; };
+		4AB3DD2D1AEAA158009ED67D /* UserAchievementsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAchievementsCollectionViewCell.h; sourceTree = "<group>"; };
+		4AB3DD2E1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAchievementsCollectionViewCell.m; sourceTree = "<group>"; };
+		4AB99C941AE1AAEE007F95A2 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		4AB99C951AE1AAEE007F95A2 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		4AE8D1501AD72221009C3DEB /* SkillTreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillTreeViewController.h; sourceTree = "<group>"; };
 		4AE8D1511AD72221009C3DEB /* SkillTreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillTreeViewController.m; sourceTree = "<group>"; };
+		8BD6046AD433A7977579285A /* Pods-Vault_ClientFacingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vault_ClientFacingApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vault_ClientFacingApp/Pods-Vault_ClientFacingApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +168,7 @@
 				4A6F23F01A9D3CF800E7D366 /* AudioToolbox.framework in Frameworks */,
 				4A6F23ED1A9D3CDC00E7D366 /* Bolts.framework in Frameworks */,
 				4A6F23EE1A9D3CDC00E7D366 /* Parse.framework in Frameworks */,
+				59D73210AF41C9DEC84FBCED /* libPods-Vault_ClientFacingApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +189,7 @@
 				4A6F23DD1A9D3B5F00E7D366 /* Vault_ClientFacingAppTests */,
 				4A6F23C21A9D3B5F00E7D366 /* Products */,
 				4A6F23EA1A9D3CB800E7D366 /* Frameworks */,
+				65F9D26BCDD8DBB56DBF940B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +260,7 @@
 				4A6F23EF1A9D3CF800E7D366 /* AudioToolbox.framework */,
 				4A6F23EB1A9D3CDC00E7D366 /* Bolts.framework */,
 				4A6F23EC1A9D3CDC00E7D366 /* Parse.framework */,
+				02C078148325B646D8DF5C89 /* libPods-Vault_ClientFacingApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,10 +292,26 @@
 				4A8454331AD467DA00E5AB02 /* LoginViewController.m */,
 				4A8454381AD4691700E5AB02 /* RegistrationViewController.h */,
 				4A8454391AD4691700E5AB02 /* RegistrationViewController.m */,
+				4A4BF4FB1AE5A455001FB109 /* PasswordRecoveryViewController.h */,
+				4A4BF4FC1AE5A455001FB109 /* PasswordRecoveryViewController.m */,
 				4A9E482C1AD7185100A17762 /* ProfileViewController.h */,
 				4A9E482D1AD7185100A17762 /* ProfileViewController.m */,
+				4AAE57621AEE8C7E00A90DEF /* HubVelocityViewController.h */,
+				4AAE57631AEE8C7E00A90DEF /* HubVelocityViewController.m */,
+				4AAE575F1AEE8C7400A90DEF /* HubAchievementViewController.h */,
+				4AAE57601AEE8C7400A90DEF /* HubAchievementViewController.m */,
 				4AE8D1501AD72221009C3DEB /* SkillTreeViewController.h */,
 				4AE8D1511AD72221009C3DEB /* SkillTreeViewController.m */,
+				4A2E7F9B1AE6CE4B003CC1D3 /* TasksViewController.h */,
+				4A2E7F9C1AE6CE4B003CC1D3 /* TasksViewController.m */,
+				4A2E7FA11AE6DFC1003CC1D3 /* AchievementsDetailViewController.h */,
+				4A2E7FA21AE6DFC1003CC1D3 /* AchievementsDetailViewController.m */,
+				4A2E7FA41AE6DFCD003CC1D3 /* AchievementsListViewController.h */,
+				4A2E7FA51AE6DFCD003CC1D3 /* AchievementsListViewController.m */,
+				4A2E7FA71AE6E006003CC1D3 /* LogViewController.h */,
+				4A2E7FA81AE6E006003CC1D3 /* LogViewController.m */,
+				4A7541381ADF052A00EB1A15 /* SettingsViewController.h */,
+				4A7541391ADF052A00EB1A15 /* SettingsViewController.m */,
 			);
 			name = "EXP Controllers";
 			sourceTree = "<group>";
@@ -260,8 +337,37 @@
 		4A8454311AD467B500E5AB02 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4AAF2A4A1AE03ADD0068BC27 /* Users.h */,
+				4AAF2A4B1AE03ADD0068BC27 /* Users.m */,
+				4AB99C941AE1AAEE007F95A2 /* Helpers.h */,
+				4AB99C951AE1AAEE007F95A2 /* Helpers.m */,
+				4A2B21461AE553F900F9E07C /* CustomColors.h */,
+				4A2B21471AE553F900F9E07C /* CustomColors.m */,
+				4A2C97101AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.h */,
+				4A2C97111AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.m */,
+				4A2C3F6E1AE806AC001A7A4B /* TaskTableViewCell.h */,
+				4A2C3F6F1AE806AC001A7A4B /* TaskTableViewCell.m */,
+				4A2C3F711AE848BE001A7A4B /* LogTableViewCell.h */,
+				4A2C3F721AE848BE001A7A4B /* LogTableViewCell.m */,
+				4AAE576B1AEEBC2700A90DEF /* HubAchievementTableViewCell.h */,
+				4AAE576C1AEEBC2700A90DEF /* HubAchievementTableViewCell.m */,
+				4AB3DD2D1AEAA158009ED67D /* UserAchievementsCollectionViewCell.h */,
+				4AB3DD2E1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m */,
+				4AB3DC5E1AEA9C56009ED67D /* AchievementListCollectionViewCell.h */,
+				4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */,
+				4AAE576E1AEEC09C00A90DEF /* CustomVelocityView.h */,
+				4AAE576F1AEEC09C00A90DEF /* CustomVelocityView.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		65F9D26BCDD8DBB56DBF940B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BD6046AD433A7977579285A /* Pods-Vault_ClientFacingApp.debug.xcconfig */,
+				05BB3B2A788A087685DA6FC7 /* Pods-Vault_ClientFacingApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,9 +377,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A6F23E41A9D3B5F00E7D366 /* Build configuration list for PBXNativeTarget "Vault_ClientFacingApp" */;
 			buildPhases = (
+				05054DDE81B50AF7EF929A5F /* Check Pods Manifest.lock */,
 				4A6F23BD1A9D3B5F00E7D366 /* Sources */,
 				4A6F23BE1A9D3B5F00E7D366 /* Frameworks */,
 				4A6F23BF1A9D3B5F00E7D366 /* Resources */,
+				60883D96FC57C9FA9C088236 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,19 +468,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05054DDE81B50AF7EF929A5F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60883D96FC57C9FA9C088236 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vault_ClientFacingApp/Pods-Vault_ClientFacingApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A6F23BD1A9D3B5F00E7D366 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2B21481AE553F900F9E07C /* CustomColors.m in Sources */,
+				4A2E7FA61AE6DFCD003CC1D3 /* AchievementsListViewController.m in Sources */,
 				4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */,
 				4A6F23CA1A9D3B5F00E7D366 /* AppDelegate.m in Sources */,
 				4AE8D1521AD72221009C3DEB /* SkillTreeViewController.m in Sources */,
+				4A2E7F9D1AE6CE4B003CC1D3 /* TasksViewController.m in Sources */,
+				4A75413A1ADF052A00EB1A15 /* SettingsViewController.m in Sources */,
+				4AAE57611AEE8C7400A90DEF /* HubAchievementViewController.m in Sources */,
+				4AAE576D1AEEBC2700A90DEF /* HubAchievementTableViewCell.m in Sources */,
+				4A2C97121AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.m in Sources */,
 				4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */,
 				4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */,
+				4AAE57641AEE8C7E00A90DEF /* HubVelocityViewController.m in Sources */,
 				4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */,
+				4AB3DD2F1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m in Sources */,
+				4A4BF4FD1AE5A455001FB109 /* PasswordRecoveryViewController.m in Sources */,
 				4A8454341AD467DA00E5AB02 /* LoginViewController.m in Sources */,
+				4AB99C961AE1AAEE007F95A2 /* Helpers.m in Sources */,
+				4A2C3F731AE848BE001A7A4B /* LogTableViewCell.m in Sources */,
 				4A84543A1AD4691700E5AB02 /* RegistrationViewController.m in Sources */,
+				4A2C3F701AE806AC001A7A4B /* TaskTableViewCell.m in Sources */,
+				4AAF2A4C1AE03ADD0068BC27 /* Users.m in Sources */,
+				4A2E7FA31AE6DFC1003CC1D3 /* AchievementsDetailViewController.m in Sources */,
+				4A2E7FA91AE6E006003CC1D3 /* LogViewController.m in Sources */,
+				4AAE57701AEEC09C00A90DEF /* CustomVelocityView.m in Sources */,
+				4AB3DC601AEA9C56009ED67D /* AchievementListCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +653,7 @@
 		};
 		4A6F23E51A9D3B5F00E7D366 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BD6046AD433A7977579285A /* Pods-Vault_ClientFacingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -512,6 +672,7 @@
 		};
 		4A6F23E61A9D3B5F00E7D366 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05BB3B2A788A087685DA6FC7 /* Pods-Vault_ClientFacingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

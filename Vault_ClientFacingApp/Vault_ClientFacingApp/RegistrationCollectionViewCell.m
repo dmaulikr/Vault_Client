@@ -1,0 +1,13 @@
+//
+//  RegistrationCollectionViewCell.m
+//  Vault_ClientFacingApp
+//
+//  Created by Harrison Ferrone on 4/21/15.
+//  Copyright (c) 2015 Harrison Ferrone. All rights reserved.
+//
+
+#import "RegistrationCollectionViewCell.h"
+
+@implementation RegistrationCollectionViewCell
+
+@end

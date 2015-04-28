@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <Devise/Devise.h>
+#import "CustomColors.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +25,20 @@
     // Initialize Parse.
     [Parse setApplicationId:@"rCoeOEkuNr5yuhSNLyyAnvtjgiFgYkBaxLsoQ2IZ"
                   clientKey:@"cOwJCZEidaN8bEY0NKXYAYy1OLzorTmewwlOrvpU"];
+    
+    //Devise Pod setup
+    [[DVSConfiguration sharedConfiguration] setServerURL: [NSURL URLWithString:@"https://coderexp.herokuapp.com/users"]];
+    [[DVSConfiguration sharedConfiguration] setLoggingMode:DVSLoggingModeWarning];
+    
+    //UI
+    [[UITabBar appearance] setTintColor:UIColorFromRGB(PINK_HEX)];
+    
+    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"EXP_BackArrow@3.png"]];
+    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"EXP_BackArrow@3.png"]];
+    
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = UIColorFromRGB(PINK_HEX);
 
     return YES;
 }
