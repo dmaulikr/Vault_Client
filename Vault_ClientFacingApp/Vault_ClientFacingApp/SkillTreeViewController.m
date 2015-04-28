@@ -25,8 +25,8 @@
 {
     [super viewDidLoad];
     [self skillTreeNodeSystem];
-    [self setAllTrackTokens];
     [self initializeScrollView];
+    [self setAllTrackTokens];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -64,52 +64,29 @@
 
 -(void)setAllTrackTokens
 {
-    [self SetMainToken:2];
+    [self SetMainToken:1];
     [self SetLeftToken:1];
     [self SetRightToken:1];
 }
 
 -(void)SetMainToken:(int)mainTrack
 {
-    [self.view removeConstraints:self.view.constraints];
-    
-    UIImageView *mainTrackToken = self.mainTrackToken;
-    UIImageView *leftTrackToken = self.leftTrackToken;
-    UIImageView *rightTrackToken = self.rightTrackToken;
-    UIImageView *skillTree = self.skillTreeImageView;
-    UIScrollView *scroll = self.skillTreeScrollView;
-    
-    double mainTokenYValue;
-    
     switch (mainTrack) {
-        case 1:
-            mainTokenYValue = self.view.frame.size.height/5;
-            break;
         case 2:
+            self.mainTrackToken.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/5);
             break;
         case 3:
+            self.mainTrackToken.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/2.5);
             break;
         case 4:
+            self.mainTrackToken.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/1.67);
             break;
         case 5:
+            self.mainTrackToken.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/1.25);
             break;
         default:
             break;
     }
-    
-    NSDictionary *assets = NSDictionaryOfVariableBindings(mainTrackToken, leftTrackToken, rightTrackToken, skillTree, scroll);
-    NSDictionary *metrics = @{@"tokenWidth": @50,
-                              @"tokenHeight":@50,
-                              @"mainTokenYValue":@50,
-                              };
-    
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[skillTree]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:assets];
-    horizontalConstraints = [horizontalConstraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[scroll]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:assets]];
-    
-    NSArray *verticalCosntraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[scroll]-|" options:NSLayoutFormatAlignAllCenterX metrics:metrics views:assets];
-    
-    [self.view addConstraints:horizontalConstraints];
-    [self.view addConstraints:verticalCosntraints];
 }
 
 -(void)SetLeftToken:(int)leftTrack

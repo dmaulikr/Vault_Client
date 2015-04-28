@@ -809,35 +809,30 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EXP_SkillTree_iOS (1)" translatesAutoresizingMaskIntoConstraints="NO" id="BI7-ho-8hJ">
                                         <rect key="frame" x="8" y="8" width="584" height="520"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pyf-7U-sTy">
-                                        <rect key="frame" x="265" y="458" width="70" height="70"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jhr-ux-Cp4">
-                                        <rect key="frame" x="8" y="290" width="70" height="70"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jhr-ux-Cp4">
+                                        <rect key="frame" x="-57" y="67" width="72" height="80"/>
                                         <color key="backgroundColor" red="0.29803921570000003" green="0.6705882353" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="b96-RQ-hv2"/>
-                                        </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lrC-kG-iBQ">
-                                        <rect key="frame" x="522" y="290" width="70" height="70"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrC-kG-iBQ">
+                                        <rect key="frame" x="-37" y="-83" width="4" height="52"/>
                                         <color key="backgroundColor" red="0.5450980392" green="0.69803921570000005" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyf-7U-sTy">
+                                        <rect key="frame" x="265" y="458" width="70" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="3Ai-dm-USg"/>
-                                            <constraint firstAttribute="height" constant="70" id="ErD-DU-q0C"/>
+                                            <constraint firstAttribute="width" constant="70" id="3MZ-am-9ng"/>
+                                            <constraint firstAttribute="height" constant="70" id="EnT-UT-IFG"/>
+                                            <constraint firstAttribute="width" secondItem="pyf-7U-sTy" secondAttribute="height" multiplier="1:1" id="UCB-bC-hQE"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BI7-ho-8hJ" firstAttribute="top" secondItem="arX-46-Gdx" secondAttribute="top" constant="8" id="6Pi-5I-oZ1"/>
+                                    <constraint firstItem="pyf-7U-sTy" firstAttribute="bottom" secondItem="BI7-ho-8hJ" secondAttribute="bottom" id="HT8-Sf-hgL"/>
                                     <constraint firstItem="BI7-ho-8hJ" firstAttribute="centerY" secondItem="arX-46-Gdx" secondAttribute="centerY" id="VcO-nz-nHN"/>
                                     <constraint firstItem="BI7-ho-8hJ" firstAttribute="centerX" secondItem="arX-46-Gdx" secondAttribute="centerX" id="ZVi-5H-Pzm"/>
                                     <constraint firstAttribute="trailing" secondItem="BI7-ho-8hJ" secondAttribute="trailing" constant="8" id="bXI-Z9-oZc"/>
-                                    <constraint firstItem="Jhr-ux-Cp4" firstAttribute="bottom" secondItem="lrC-kG-iBQ" secondAttribute="bottom" id="cGJ-9Z-ywk"/>
-                                    <constraint firstItem="lrC-kG-iBQ" firstAttribute="trailing" secondItem="BI7-ho-8hJ" secondAttribute="trailing" id="iZm-mo-MKh"/>
-                                    <constraint firstItem="Jhr-ux-Cp4" firstAttribute="top" secondItem="lrC-kG-iBQ" secondAttribute="top" id="tno-l2-ckS"/>
-                                    <constraint firstItem="lrC-kG-iBQ" firstAttribute="top" secondItem="arX-46-Gdx" secondAttribute="top" constant="290" id="uyi-YD-TPc"/>
-                                    <constraint firstItem="Jhr-ux-Cp4" firstAttribute="leading" secondItem="BI7-ho-8hJ" secondAttribute="leading" id="yI7-bM-Uxv"/>
+                                    <constraint firstItem="pyf-7U-sTy" firstAttribute="centerX" secondItem="BI7-ho-8hJ" secondAttribute="centerX" id="s1d-d7-8rj"/>
                                     <constraint firstItem="BI7-ho-8hJ" firstAttribute="leading" secondItem="arX-46-Gdx" secondAttribute="leading" constant="8" id="zGn-lw-1CH"/>
                                     <constraint firstAttribute="bottom" secondItem="BI7-ho-8hJ" secondAttribute="bottom" constant="8" id="zjI-Cm-BfB"/>
                                 </constraints>
@@ -1778,8 +1773,8 @@
         <image name="exp_logo_eye" width="175" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gxZ-VT-xlE"/>
-        <segue reference="5hO-hg-4o0"/>
         <segue reference="CVp-0c-PR4"/>
+        <segue reference="RhX-Nw-Dzm"/>
+        <segue reference="5hO-hg-4o0"/>
     </inferredMetricsTieBreakers>
 </document>
