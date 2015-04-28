@@ -10,6 +10,7 @@
 #import "CustomColors.h"
 
 @interface PasswordRecoveryViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *passwordRecoveryEmailLabel;
 
 @end

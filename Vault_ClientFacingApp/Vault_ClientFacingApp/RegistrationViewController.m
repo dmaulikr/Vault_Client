@@ -20,14 +20,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *registrationEmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *registrationPasswordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *registrationCompleteButton;
-
 @property UIColor *customGrey;
-
 @property NSDictionary *registrationCredentials;
 @property NSInteger responseStatusCode;
-
 @property NSMutableData *responseData;
-
 @property NSInteger trackSelectionIndex;
 @property NSArray *trackArray;
 
@@ -38,13 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //Initializing 
-    self.trackSelectionIndex = 1;
-    self.trackArray = @[@"SELECT ONE", @"MOBILE MAKERS", @"DEV BOOTCAMP", @"DESIGNATION", @"GENERAL ASSEMBLY", @"STARTUP INSTITUTE"];
-    
+    [self initialSetup];
     [self customUI];
-    [self checkIfUserLoggedIn];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -52,17 +43,32 @@
     return YES;
 }
 
+-(void)initialSetup
+{
+    self.trackSelectionIndex = 1;
+    self.trackArray = @[@"SELECT ONE", @"MOBILE MAKERS", @"DEV BOOTCAMP", @"DESIGNATION", @"GENERAL ASSEMBLY", @"STARTUP INSTITUTE"];
+}
+
 - (IBAction)completeRegistrationOnButtonPressed:(UIButton *)sender
 {
-    [self createUserRegistrationDictionary];
+    if ([self.registrationFullnameTextField.text isEqualToString:@""] ||
+        [self.registrationUsernameTextField.text isEqualToString:@""] ||
+        [self.registrationEmailTextField.text isEqualToString:@""] ||
+        [self.registrationPasswordTextField.text isEqualToString:@""])
+    {
+        UIAlertView *fieldCompletionFailed = [[UIAlertView alloc] initWithTitle:@"Hold Up" message:@"All fields must be completed" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [fieldCompletionFailed show];
+    }else{
+        [self createUserRegistrationDictionary];
+    }
 }
 
 -(void)createUserRegistrationDictionary
 {
     //NSString *fullName = self.registrationFullnameTextField.text;
     //NSString *username = self.registrationUsernameTextField.text;
-    NSString *password = self.registrationPasswordTextField.text;
-    NSString *email = self.registrationEmailTextField.text;
+    //NSString *password = self.registrationPasswordTextField.text;
+    //NSString *email = self.registrationEmailTextField.text;
     //NSString *class = [self.registrationTrackSegmentControl titleForSegmentAtIndex:self.trackSelectionIndex];
     
     NSDictionary *user = @{@"user": @{@"email":@"harrison@coderexp.com", @"password":@"test1234", @"password_confirmation":@"test1234"}};
@@ -75,19 +81,14 @@
     NSData *jsonData;
     NSError *error;
     
-    NSLog(@"%@", userCredentials);
-    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://coderexp.herokuapp.com/api/v1/users"]];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    
     jsonData = [NSJSONSerialization dataWithJSONObject:userCredentials options:NSJSONWritingPrettyPrinted error:&error];
-    NSLog(@"JSON:%@", jsonData);
     request.HTTPBody = jsonData;
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (!connection)
-    {
+    if (!connection){
         UIAlertView *registrationFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Server connection failed." delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
         [registrationFailed show];
     }
@@ -96,15 +97,11 @@
 #pragma mark - URL Connection Delegate Methods
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    //[_responseData setLength:0];
-    
-    if([Helpers handleServerErrors:response])
-    {
+    if([Helpers handleServerErrors:response]){
         [self performSegueWithIdentifier:@"registrationSuccessSegueID" sender:self];
         NSLog(@"Success Response:%@",response);
     }
-    else
-    {
+    else{
         UIAlertView *registrationFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 200" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
         [registrationFailed show];
         NSLog(@"Failure Response:%@",response);
@@ -125,23 +122,6 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"Error: %@", error);
-}
-
--(void)checkRegistrationFieldCompletion
-{
-    [self registerNewUser];
-}
-
--(void)registerNewUser
-{
-    
-}
-
--(void)checkIfUserLoggedIn
-{
-    //if new user - submit button text @"Submit", show "Back to Main Menu" button
-    
-    //else if editing profile info submit button text @"Finish Editing", hide "Back to Main Menu" button
 }
 
 #pragma mark - UICollectionView Delegate Methods

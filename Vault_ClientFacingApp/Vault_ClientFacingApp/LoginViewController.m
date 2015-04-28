@@ -8,7 +8,6 @@
 
 #import "LoginViewController.h"
 #import "Helpers.h"
-#import <Devise/Devise.h>
 
 @interface LoginViewController () <NSURLConnectionDelegate>
 
@@ -29,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
     [self customUI];
 }
 
@@ -41,15 +39,21 @@
 #pragma mark - Login Methods
 - (IBAction)loginOnButtonPressed:(UIButton *)sender
 {
-    [self createUserInfoDictionary];
+    if ([self.loginEmailTextField.text isEqualToString:@""] ||
+        [self.loginPasswordTextField.text isEqualToString:@""])
+    {
+        UIAlertView *fieldCompletionFailed = [[UIAlertView alloc] initWithTitle:@"Hold Up" message:@"All fields must be completed" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [fieldCompletionFailed show];
+    }else{
+        [self createUserInfoDictionary];
+    }
 }
 
 -(void)createUserInfoDictionary
 {
     NSString *email = self.loginEmailTextField.text;
     NSString *password = self.loginPasswordTextField.text;
-    
-    NSDictionary *user = @{@"user":@{@"login":email, @"password":password}};
+    NSDictionary *user = @{@"login":email, @"password":password};
     
     [self checkWithServer:user];
 }
@@ -60,9 +64,9 @@
     NSData *jsonData;
     NSError *error;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"coderexp.herokuapp.com"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"coderexp.herokuapp.com/api/v1/users/sign_in"]];
     request.HTTPMethod = @"POST";
-    [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     jsonData = [NSJSONSerialization dataWithJSONObject:userCredentials options:NSJSONWritingPrettyPrinted error:&error];
     request.HTTPBody = jsonData;
@@ -78,17 +82,29 @@
 #pragma mark - URL Connection Delegate Methods
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    _responseData = [[NSMutableData alloc] init];
-    
-    if([Helpers handleServerErrors:response])
-    {
+    if([Helpers handleServerErrors:response]){
         [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
     }
-    else
-    {
+    else{
         UIAlertView *loginFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 202" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
         [loginFailed show];
     }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [_responseData appendData:data];
+    NSLog(@"String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"Connection:%@", connection);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"Error: %@", error);
 }
 
 #pragma mark - Resign Responders
