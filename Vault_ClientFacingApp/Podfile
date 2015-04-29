@@ -6,7 +6,8 @@ target 'Vault_ClientFacingApp' do
 pod 'Devise', '~> 1.0.0'
 pod 'AFNetworking', '~> 2.5'
 pod 'KAProgressLabel'
-pod 'CorePlot', '~>1.5.1'
+pod 'CorePlot', '~> 1.5.1'
+pod 'Mantle', '~> 2.0'
 
 end
 

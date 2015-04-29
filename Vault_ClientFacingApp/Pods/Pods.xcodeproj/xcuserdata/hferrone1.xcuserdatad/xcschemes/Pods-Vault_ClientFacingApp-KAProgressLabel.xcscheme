@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E956958727A6E04533E6EE85"
+               BlueprintIdentifier = "A9A3D567D3D7EE6991C19B87"
                BuildableName = "libPods-Vault_ClientFacingApp-KAProgressLabel.a"
                BlueprintName = "Pods-Vault_ClientFacingApp-KAProgressLabel"
                ReferencedContainer = "container:Pods.xcodeproj">

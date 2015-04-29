@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Vault_ClientFacingApp-Mantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Vault_ClientFacingApp-UICKeyChainStore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>227BDC5BF1E123C6F3EB767C</key>
+		<key>1FC7CCE4CEF47406715E7022</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>31673118E680BBFC610A874F</key>
+		<key>3B9D80EAB2D62E1FA44C016F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3873C679E11FFAC7A09F4DF7</key>
+		<key>3EA77B4EB19EA7399470C9CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62E394BCFBCA7E67C2114A90</key>
+		<key>76B445A477780F5FEA8C6830</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DB5282204A81E9B6CFAF82CC</key>
+		<key>A9A3D567D3D7EE6991C19B87</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E956958727A6E04533E6EE85</key>
+		<key>C5699F91241C9F1DE5354579</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB37B5780159C2B8E0AFA6B3</key>
+		<key>D877368325D10B79B6F8748F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FF75D4FD63B966A9368592BB</key>
+		<key>F1D6E7056D7A17F8E3754BD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD227A1A902E227E252F5E1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

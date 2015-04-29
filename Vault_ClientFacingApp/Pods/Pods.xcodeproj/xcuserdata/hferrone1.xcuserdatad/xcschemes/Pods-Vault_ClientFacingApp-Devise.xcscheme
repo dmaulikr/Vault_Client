@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DB5282204A81E9B6CFAF82CC"
+               BlueprintIdentifier = "F1D6E7056D7A17F8E3754BD5"
                BuildableName = "libPods-Vault_ClientFacingApp-Devise.a"
                BlueprintName = "Pods-Vault_ClientFacingApp-Devise"
                ReferencedContainer = "container:Pods.xcodeproj">
