@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.tabBarController setSelectedIndex:1];
 }
 
 -(BOOL)prefersStatusBarHidden

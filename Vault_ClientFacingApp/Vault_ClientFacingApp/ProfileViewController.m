@@ -12,7 +12,7 @@
 #import "Helpers.h"
 #import "UserAchievementsCollectionViewCell.h"
 #import "HubVelocityViewController.h"
-#import "HubAchievementViewController.h"
+#import "CorePlotViewController.h"
 
 @interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UIScrollViewDelegate, UIPageViewControllerDataSource>
 
@@ -235,7 +235,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     
-    NSUInteger index = [(HubAchievementViewController *)viewController index];
+    NSUInteger index = [(CorePlotViewController *)viewController index];
     
     index++;
     
@@ -259,7 +259,7 @@
         vc = velocity;
     }else if (index == 1)
     {
-        HubAchievementViewController *achievements = [self.storyboard instantiateViewControllerWithIdentifier:@"achievementViewController"];
+        CorePlotViewController *achievements = [self.storyboard instantiateViewControllerWithIdentifier:@"CorePlotViewController"];
         achievements.index = index;
         vc = achievements;
     }
