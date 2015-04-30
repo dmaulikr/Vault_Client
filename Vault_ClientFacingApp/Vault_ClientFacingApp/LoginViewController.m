@@ -53,7 +53,9 @@
 {
     NSString *email = self.loginEmailTextField.text;
     NSString *password = self.loginPasswordTextField.text;
-    NSDictionary *user = @{@"login":email, @"password":password};
+    
+    NSDictionary *user = @{@"user": @{@"email":email,
+                                      @"password":password}};
     
     [self checkWithServer:user];
 }
@@ -64,7 +66,7 @@
     NSData *jsonData;
     NSError *error;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"coderexp.herokuapp.com/api/v1/users/sign_in"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://coderexp.herokuapp.com/api/v1/users/sign_in"]];
     request.HTTPMethod = @"POST";
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
@@ -83,11 +85,8 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     if([Helpers handleServerErrors:response]){
+        NSLog(@"Awesome");
         [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
-    }
-    else{
-        UIAlertView *loginFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 202" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
-        [loginFailed show];
     }
 }
 

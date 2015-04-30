@@ -14,9 +14,9 @@
 {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
     NSInteger responseStatusCode = [httpResponse statusCode];
-    
-    NSLog(@"Full Response:%@", response);
-    
+    NSLog(@"CODE: %ld", (long)responseStatusCode);
+    NSLog(@"%@", httpResponse);
+        
     BOOL login = false;
     
     if (responseStatusCode == 200)
@@ -25,6 +25,12 @@
     }
     
     return login;
+}
+
++(NSString *)getAuthToken:(NSURLResponse *)response
+{
+    NSString *authToken;
+    return authToken;
 }
 
 +(UIImage *)getProfilePicFromDefault

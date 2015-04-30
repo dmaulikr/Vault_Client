@@ -51,6 +51,7 @@
     [self.skillTreeImageView addSubview:self.mainTrackToken];
     [self.skillTreeImageView addSubview:self.leftTrackToken];
     [self.skillTreeImageView addSubview:self.rightTrackToken];
+    [self.skillTreeImageView addSubview:self.mainTrackSubToken];
 }
 
 -(void)skillTreeNodeSystem
@@ -81,9 +82,9 @@
 
 -(void)setAllTrackTokens
 {
-    [self SetMainToken:4 sub:5];
-    [self SetLeftToken:3];
-    [self SetRightToken:1];
+    [self SetMainToken:1 sub:10];
+    [self SetLeftToken:1 sub:5];
+    [self SetRightToken:0 sub:1];
 }
 
 -(double)setSubLevelRange:(int)sub
@@ -124,7 +125,7 @@
     }
 }
 
--(void)SetLeftToken:(int)leftTrack
+-(void)SetLeftToken:(int)leftTrack sub:(int)leftTrackSub
 {
     switch (leftTrack) {
         case 0:
@@ -144,11 +145,11 @@
     }
 }
 
--(void)SetRightToken:(int)rightTrack
+-(void)SetRightToken:(int)rightTrack sub:(int)rightTrackSub
 {
     switch (rightTrack) {
         case 0:
-            self.leftTrackToken.transform = CGAffineTransformMakeTranslation(0, 500);
+            self.rightTrackToken.transform = CGAffineTransformMakeTranslation(0, 500);
             break;
         case 1:
             self.rightTrackToken.transform = CGAffineTransformMakeTranslation(0, 0);

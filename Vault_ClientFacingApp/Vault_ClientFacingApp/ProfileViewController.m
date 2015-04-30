@@ -59,7 +59,6 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"exp_headerlogo"]];
 
     self.userAchievements = @[[UIImage imageNamed:@"acorn.png"],
-                              [UIImage imageNamed:@"adduser.png"],
                               [UIImage imageNamed:@"badge.png"],
                               [UIImage imageNamed:@"bronze.png"],
                               [UIImage imageNamed:@"cloud.png"],
@@ -68,10 +67,9 @@
                               [UIImage imageNamed:@"coffee.png"],
                               [UIImage imageNamed:@"barchart.png"],
                               [UIImage imageNamed:@"arrow.png"],
-                              [UIImage imageNamed:@"adduser.png"],
                               [UIImage imageNamed:@"arrow.png"],
                               ];
-    //[self setUpCustomViews];
+    
     [self setDeveloperInfo];
     [self setDeveloperPhoto];
     [self configureExpToNextLevel:1 exp:720];

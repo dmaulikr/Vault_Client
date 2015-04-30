@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *registrationUsernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *registrationEmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *registrationPasswordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *registrationPasswordConfirmation;
+@property (weak, nonatomic) NSString *bootcampSelection;
+@property (weak, nonatomic) NSString *developmentTrackSelection;
 @property (weak, nonatomic) IBOutlet UIButton *registrationCompleteButton;
 @property UIColor *customGrey;
 @property NSDictionary *registrationCredentials;
@@ -26,6 +29,11 @@
 @property NSMutableData *responseData;
 @property NSInteger trackSelectionIndex;
 @property NSArray *trackArray;
+@property (weak, nonatomic) IBOutlet UIButton *iosButton;
+@property (weak, nonatomic) IBOutlet UIButton *rubyButton;
+@property (weak, nonatomic) IBOutlet UIButton *uiButton;
+@property NSString *defaultURL;
+@property NSString *loginURL;
 
 @end
 
@@ -45,8 +53,9 @@
 
 -(void)initialSetup
 {
-    self.trackSelectionIndex = 1;
     self.trackArray = @[@"SELECT ONE", @"MOBILE MAKERS", @"DEV BOOTCAMP", @"DESIGNATION", @"GENERAL ASSEMBLY", @"STARTUP INSTITUTE"];
+    self.defaultURL = @"http://coderexp.herokuapp.com/api/v1/users";
+    self.loginURL = @"coderexp.herokuapp.com/api/v1/users/sign_in";
 }
 
 - (IBAction)completeRegistrationOnButtonPressed:(UIButton *)sender
@@ -65,18 +74,23 @@
 
 -(void)createUserRegistrationDictionary
 {
-    //NSString *fullName = self.registrationFullnameTextField.text;
-    //NSString *username = self.registrationUsernameTextField.text;
-    //NSString *password = self.registrationPasswordTextField.text;
-    //NSString *email = self.registrationEmailTextField.text;
-    //NSString *class = [self.registrationTrackSegmentControl titleForSegmentAtIndex:self.trackSelectionIndex];
+    NSString *fullName = self.registrationFullnameTextField.text;
+    NSString *username = self.registrationUsernameTextField.text;
+    NSString *password = self.registrationPasswordTextField.text;
+    NSString *email = self.registrationEmailTextField.text;
+    NSString *confirmation = self.registrationPasswordConfirmation.text;
     
-    NSDictionary *user = @{@"user": @{@"email":@"harrison@coderexp.com", @"password":@"test1234", @"password_confirmation":@"test1234"}};
+    NSDictionary *user = @{@"user": @{@"fullname":fullName,
+                                      @"username":username,
+                                      @"password":password,
+                                      @"password_confirmation":confirmation,
+                                      @"email":email,
+                                     }};
     
-    [self checkWithServer:user];
+    [self checkWithServer:user url:self.defaultURL];
 }
 
--(void)checkWithServer: (NSDictionary*)userCredentials
+-(void)checkWithServer: (NSDictionary*)userCredentials url:(NSString *)url
 {
     NSData *jsonData;
     NSError *error;
@@ -97,9 +111,16 @@
 #pragma mark - URL Connection Delegate Methods
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    //NSString *authToken = [Helpers getAuthToken:response];
+    
     if([Helpers handleServerErrors:response]){
-        [self performSegueWithIdentifier:@"registrationSuccessSegueID" sender:self];
-        NSLog(@"Success Response:%@",response);
+//        NSDictionary *user = @{@"email":self.registrationEmailTextField.text,
+//                               @"password":self.registrationPasswordTextField.text,
+//                               @"auth_token":authToken
+//                               };
+//        
+//        [self checkWithServer:user url:self.loginURL];
+        NSLog(@"Awesome");
     }
     else{
         UIAlertView *registrationFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 200" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];
@@ -148,9 +169,10 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.bootcampSelection = [self.trackArray objectAtIndex:indexPath.row];
 }
 
+#pragma mark - UI
 -(void)customUI
 {
     self.view.backgroundColor = UIColorFromRGB(DARK_GREY_HEX);
@@ -162,15 +184,34 @@
     self.registrationFullnameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     self.registrationUsernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"USER NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     self.registrationPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    self.registrationPasswordConfirmation.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD CONFIRMATION" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     self.registrationEmailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+}
+
+-(IBAction)selectDevelopmentTrack:(UIButton *)sender
+{
+    self.developmentTrackSelection = sender.titleLabel.text;
+    
+    NSArray *devTrackButtons = @[self.iosButton, self.rubyButton, self.uiButton];
+    
+    for (UIButton *button in devTrackButtons) {
+        if (button != sender && sender.enabled) {
+            button.backgroundColor = [UIColor clearColor];
+            button.layer.borderWidth = 0;
+        }else{
+            button.layer.borderColor = [UIColor whiteColor].CGColor;
+            button.layer.borderWidth = 1.0;
+        }
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.registrationFullnameTextField resignFirstResponder];
-    [self.registrationUsernameTextField resignFirstResponder];
-    [self.registrationPasswordTextField resignFirstResponder];
-    [self.registrationEmailTextField resignFirstResponder];
+    NSArray *textFields = @[self.registrationFullnameTextField, self.registrationUsernameTextField, self.registrationPasswordTextField, self.registrationPasswordConfirmation, self.registrationEmailTextField];
+    
+    for (UITextField *field in textFields) {
+        [field resignFirstResponder];
+    }
 }
 
 @end
