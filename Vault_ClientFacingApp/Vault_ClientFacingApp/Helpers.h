@@ -12,7 +12,6 @@
 @interface Helpers : NSObject
 
 +(BOOL)handleServerErrors:(NSURLResponse *)response;
-+(NSString *)getAuthToken:(NSURLResponse *)response;
 +(UIImage *)getProfilePicFromDefault;
 +(void)setProfilePicFromDefault:(UIImage *)image;
 

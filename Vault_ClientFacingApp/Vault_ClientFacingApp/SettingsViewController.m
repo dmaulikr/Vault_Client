@@ -121,7 +121,7 @@
     NSData *jsonData;
     NSError *error;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://coderexp.herokuapp.com/api/v1/users"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://coderexp.herokuapp.com/api/v1/users/sign_out"]];
     request.HTTPMethod = @"DELETE";
     [request setValue:@"appplication/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
