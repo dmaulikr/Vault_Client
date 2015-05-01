@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Vault_ClientFacingApp-HFPicFormatter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Vault_ClientFacingApp-KAProgressLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -51,52 +56,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>1FC7CCE4CEF47406715E7022</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3B9D80EAB2D62E1FA44C016F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3EA77B4EB19EA7399470C9CE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>76B445A477780F5FEA8C6830</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A9A3D567D3D7EE6991C19B87</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5699F91241C9F1DE5354579</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D877368325D10B79B6F8748F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F1D6E7056D7A17F8E3754BD5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FD227A1A902E227E252F5E1F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

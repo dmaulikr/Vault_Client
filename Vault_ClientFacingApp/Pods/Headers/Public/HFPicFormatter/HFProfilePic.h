@@ -1,0 +1,1 @@
+../../../HFPicFormatter/HFProfilePic.h

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5699F91241C9F1DE5354579"
+               BlueprintIdentifier = "B289357B86A4CE1D2EE86DC1"
                BuildableName = "libPods-Vault_ClientFacingApp-CorePlot.a"
                BlueprintName = "Pods-Vault_ClientFacingApp-CorePlot"
                ReferencedContainer = "container:Pods.xcodeproj">

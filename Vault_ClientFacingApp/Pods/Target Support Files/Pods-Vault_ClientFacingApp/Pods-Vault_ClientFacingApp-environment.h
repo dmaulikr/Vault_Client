@@ -60,6 +60,12 @@
 #define COCOAPODS_VERSION_MINOR_Devise 0
 #define COCOAPODS_VERSION_PATCH_Devise 0
 
+// HFPicFormatter
+#define COCOAPODS_POD_AVAILABLE_HFPicFormatter
+#define COCOAPODS_VERSION_MAJOR_HFPicFormatter 0
+#define COCOAPODS_VERSION_MINOR_HFPicFormatter 0
+#define COCOAPODS_VERSION_PATCH_HFPicFormatter 1
+
 // KAProgressLabel
 #define COCOAPODS_POD_AVAILABLE_KAProgressLabel
 #define COCOAPODS_VERSION_MAJOR_KAProgressLabel 3
