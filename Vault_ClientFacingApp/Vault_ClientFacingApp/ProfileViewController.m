@@ -37,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *achievementsCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *userTrackingCollectionView;
 @property (weak, nonatomic) IBOutlet UIProgressView *toNextLevelProgressView;
+@property (weak, nonatomic) IBOutlet UILabel *toNextLevelLabel;
 
 @property int expToNextLevel;
 
@@ -52,12 +53,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initialSetup];
     [self initializePageController];
-            
+    [self setDeveloperInfo];
+    [self setDeveloperPhoto];
+    [self configureExpToNextLevel:1 exp:720];
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+-(void)initialSetup
+{
     self.customGrey = [UIColor colorWithRed:(34/255.0) green:(34/255.0) blue:(34/255.0) alpha:1.0];
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"exp_headerlogo"]];
-
+    
     self.userAchievements = @[[UIImage imageNamed:@"acorn.png"],
                               [UIImage imageNamed:@"badge.png"],
                               [UIImage imageNamed:@"bronze.png"],
@@ -69,15 +82,6 @@
                               [UIImage imageNamed:@"arrow.png"],
                               [UIImage imageNamed:@"arrow.png"],
                               ];
-    
-    [self setDeveloperInfo];
-    [self setDeveloperPhoto];
-    [self configureExpToNextLevel:1 exp:720];
-}
-
--(BOOL)prefersStatusBarHidden
-{
-    return YES;
 }
 
 #pragma mark - Get/Set Developer Info
@@ -115,6 +119,8 @@
     }
     
     self.toNextLevelProgressView.progress = (float)self.expToNextLevel/1000;
+    self.toNextLevelProgressView.transform = CGAffineTransformMakeScale(1, 8);
+    self.toNextLevelLabel.text = [NSString stringWithFormat:@"%d", (1000 - self.expToNextLevel)];
 }
 
 - (IBAction)takeProfilePicture:(UIButton *)sender

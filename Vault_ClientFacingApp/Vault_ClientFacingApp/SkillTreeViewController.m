@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftTrackToken;
 @property (weak, nonatomic) IBOutlet UIImageView *rightTrackToken;
 @property (weak, nonatomic) IBOutlet UIImageView *mainTrackSubToken;
+@property (weak, nonatomic) IBOutlet UIImageView *leftTrackSubToken;
+@property (weak, nonatomic) IBOutlet UIImageView *rightTrackSubToken;
 
 @end
 
@@ -52,6 +54,8 @@
     [self.skillTreeImageView addSubview:self.leftTrackToken];
     [self.skillTreeImageView addSubview:self.rightTrackToken];
     [self.skillTreeImageView addSubview:self.mainTrackSubToken];
+    [self.skillTreeImageView addSubview:self.leftTrackSubToken];
+    [self.skillTreeImageView addSubview:self.rightTrackSubToken];
 }
 
 -(void)skillTreeNodeSystem
@@ -83,8 +87,8 @@
 -(void)setAllTrackTokens
 {
     [self SetMainToken:1 sub:10];
-    [self SetLeftToken:1 sub:5];
-    [self SetRightToken:0 sub:1];
+    [self SetLeftToken:1 sub:2];
+    [self SetRightToken:0 sub:5];
 }
 
 -(double)setSubLevelRange:(int)sub
@@ -130,15 +134,19 @@
     switch (leftTrack) {
         case 0:
             self.leftTrackToken.transform = CGAffineTransformMakeTranslation(0, 500);
+            self.leftTrackSubToken.transform = CGAffineTransformMakeTranslation(0, 500);
             break;
         case 1:
             self.leftTrackToken.transform = CGAffineTransformMakeTranslation(0, 0);
+            self.leftTrackSubToken.transform = CGAffineTransformMakeTranslation(0, (-self.view.frame.size.height/4.95)/20 * leftTrackSub);
             break;
         case 2:
             self.leftTrackToken.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/5);
+            self.leftTrackSubToken.transform = CGAffineTransformMakeTranslation(0, [self setSubLevelRange:leftTrackSub]);
             break;
         case 3:
             self.leftTrackToken.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/2.5);
+            self.leftTrackSubToken.transform = CGAffineTransformMakeTranslation(0, 500);
             break;
         default:
             break;
@@ -150,15 +158,19 @@
     switch (rightTrack) {
         case 0:
             self.rightTrackToken.transform = CGAffineTransformMakeTranslation(0, 500);
+            self.rightTrackSubToken.transform = CGAffineTransformMakeTranslation(0, 500);
             break;
         case 1:
             self.rightTrackToken.transform = CGAffineTransformMakeTranslation(0, 0);
+            self.rightTrackSubToken.transform = CGAffineTransformMakeTranslation(0, (-self.view.frame.size.height/4.95)/20 * rightTrackSub);
             break;
         case 2:
             self.rightTrackToken.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/5);
+            self.rightTrackSubToken.transform = CGAffineTransformMakeTranslation(0, [self setSubLevelRange:rightTrackSub]);
             break;
         case 3:
             self.rightTrackToken.transform = CGAffineTransformMakeTranslation(0, -self.view.frame.size.height/2.5);
+            self.rightTrackSubToken.transform = CGAffineTransformMakeTranslation(0, 500);
             break;
         default:
             break;
