@@ -8,12 +8,13 @@
 
 #import "SkillTreeViewController.h"
 #import "Helpers.h"
+#import <HFPicFormatter/HFProfilePic.h>
 
 @interface SkillTreeViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *skillTreeScrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *skillTreeImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *mainTrackToken;
+@property (strong, nonatomic) IBOutlet HFProfilePic *mainTrackToken;
 @property (weak, nonatomic) IBOutlet UIImageView *leftTrackToken;
 @property (weak, nonatomic) IBOutlet UIImageView *rightTrackToken;
 @property (weak, nonatomic) IBOutlet UIImageView *mainTrackSubToken;
@@ -72,13 +73,13 @@
     self.mainTrackToken.layer.borderWidth = 5.0f;
     
     self.leftTrackToken.image = [Helpers getProfilePicFromDefault];
-    self.leftTrackToken.layer.cornerRadius = self.mainTrackToken.frame.size.width/2;
+    self.leftTrackToken.layer.cornerRadius = self.leftTrackToken.frame.size.width/2;
     self.leftTrackToken.clipsToBounds = YES;
     self.leftTrackToken.layer.borderColor = [UIColor whiteColor].CGColor;
     self.leftTrackToken.layer.borderWidth = 5.0f;
     
     self.rightTrackToken.image = [Helpers getProfilePicFromDefault];
-    self.rightTrackToken.layer.cornerRadius = self.mainTrackToken.frame.size.width/2;
+    self.rightTrackToken.layer.cornerRadius = self.rightTrackToken.frame.size.width/2;
     self.rightTrackToken.clipsToBounds = YES;
     self.rightTrackToken.layer.borderColor = [UIColor whiteColor].CGColor;
     self.rightTrackToken.layer.borderWidth = 5.0f;

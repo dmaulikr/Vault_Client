@@ -12,6 +12,8 @@
 	<dict>
 		<key>0E92058A8920BA1512FD5B5AEEA7C81E2A49B995</key>
 		<string>https://github.com/hferrone/Vault_Client.git</string>
+		<key>163835C5CCEA9F908B10F7E92B16096BEF762DFF</key>
+		<string>https://github.com/hferrone/HFPicFormatter.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Vault_ClientFacingApp/Vault_ClientFacingApp.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>0E92058A8920BA1512FD5B5AEEA7C81E2A49B995</key>
 		<string>../..</string>
+		<key>163835C5CCEA9F908B10F7E92B16096BEF762DFF</key>
+		<string>../../Vault_ClientFacingApp/Pods/HFPicFormatter</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/hferrone/Vault_Client.git</string>
@@ -28,6 +32,14 @@
 	<string>0E92058A8920BA1512FD5B5AEEA7C81E2A49B995</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>163835C5CCEA9F908B10F7E92B16096BEF762DFF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HFPicFormatter</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

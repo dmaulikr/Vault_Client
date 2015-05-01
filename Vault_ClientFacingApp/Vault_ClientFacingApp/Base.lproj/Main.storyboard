@@ -724,7 +724,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EXP_SkillTree_iOS (1)" translatesAutoresizingMaskIntoConstraints="NO" id="BI7-ho-8hJ">
                                         <rect key="frame" x="8" y="8" width="584" height="520"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyf-7U-sTy">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyf-7U-sTy" customClass="HFProfilePic">
                                         <rect key="frame" x="265" y="458" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="kUW-Ja-JB1"/>
@@ -1307,7 +1307,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KZd-nh-XM4" kind="show" id="CVp-0c-PR4"/>
+                                    <segue destination="KZd-nh-XM4" kind="show" identifier="registrationSuccessID" id="CVp-0c-PR4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE CHOOSE YOUR TRACK SELECTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-Ri-fag">
@@ -1593,9 +1593,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordRecoveryEmailLabel" destination="yJn-dw-9Jo" id="2Ys-hD-pd9"/>
-                        <outlet property="passwordRecoveryTextField" destination="yJn-dw-9Jo" id="iyA-aS-8GV"/>
-                        <outlet property="passwordSubmitEmail" destination="aVJ-NB-7SA" id="k2Q-rR-t12"/>
+                        <outlet property="passwordRecoveryEmailLabel" destination="yJn-dw-9Jo" id="Vsl-2b-QxD"/>
                         <segue destination="KZd-nh-XM4" kind="show" identifier="passwordRecoverySucessID" id="vlA-O4-UEP"/>
                     </connections>
                 </viewController>
@@ -1802,8 +1800,8 @@
         <image name="exp_logo_eye" width="175" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5hO-hg-4o0"/>
-        <segue reference="RhX-Nw-Dzm"/>
+        <segue reference="pDN-m1-jts"/>
         <segue reference="CVp-0c-PR4"/>
+        <segue reference="5hO-hg-4o0"/>
     </inferredMetricsTieBreakers>
 </document>

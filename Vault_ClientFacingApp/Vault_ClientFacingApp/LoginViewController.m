@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 #import "Helpers.h"
+#import "Users.h"
+#import "ProfileViewController.h"
+#import "SkillTreeViewController.h"
 
 @interface LoginViewController () <NSURLConnectionDelegate>
 
@@ -20,6 +23,8 @@
 @property NSMutableData *responseData;
 @property UIColor *customGrey;
 @property NSInteger responseStatusCode;
+@property Users *currentUser;
+@property BOOL success;
 
 @end
 
@@ -29,6 +34,7 @@
 {
     [super viewDidLoad];
     [self customUI];
+    _success = false;
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -86,14 +92,30 @@
 {
     if([Helpers handleServerErrors:response]){
         NSLog(@"Awesome");
-        [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
+        _success = true;
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    NSError *error;
+    
     [_responseData appendData:data];
     NSLog(@"String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    
+    //get json dictionary of user info, transfer it to currentUser object and pass to other vc's
+    NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+
+    _currentUser = [Users new];
+    _currentUser.authToken = [responseDict objectForKey:@"token"];
+    
+    if (![_currentUser.authToken isEqualToString:@""] && _success) {
+        [self performSegueWithIdentifier:@"loginSuccessSegueID" sender:self];
+    }else{
+        UIAlertView *loginFailed = [[UIAlertView alloc] initWithTitle:@"Halt!" message:@"Login failed" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+        [loginFailed show];
+    }
+    NSLog(@"Token Response:%@", _currentUser.authToken);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -122,6 +144,17 @@
     
     self.loginEmailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     self.loginPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PASSWORD" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"loginSuccessSegueID"]) {
+        UITabBarController *tab = (UITabBarController *)segue.destinationViewController;
+        UINavigationController *nav = [tab.viewControllers objectAtIndex:1];
+        ProfileViewController *profileVC = (ProfileViewController *)[nav.viewControllers objectAtIndex:0];
+        profileVC.currentUser = _currentUser;
+        NSLog(@"User Before:%@", _currentUser.authToken);
+    }
 }
 
 @end

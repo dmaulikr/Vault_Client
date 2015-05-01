@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Users.h"
 
 @interface ProfileViewController : UIViewController
+
+@property Users *currentUser;
 
 @end

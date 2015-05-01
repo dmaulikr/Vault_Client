@@ -10,7 +10,6 @@
 #import "Helpers.h"
 #import "CustomColors.h"
 #import "RegistrationCollectionViewCell.h"
-#import <Devise/Devise.h>
 
 @interface RegistrationViewController () <UIImagePickerControllerDelegate, UINavigationBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, NSURLConnectionDataDelegate>
 
@@ -55,7 +54,7 @@
 {
     self.trackArray = @[@"SELECT ONE", @"MOBILE MAKERS", @"DEV BOOTCAMP", @"DESIGNATION", @"GENERAL ASSEMBLY", @"STARTUP INSTITUTE"];
     self.defaultURL = @"http://coderexp.herokuapp.com/api/v1/users";
-    self.loginURL = @"coderexp.herokuapp.com/api/v1/users/sign_in";
+    self.loginURL = @"http://coderexp.herokuapp.com/api/v1/users/sign_in";
 }
 
 - (IBAction)completeRegistrationOnButtonPressed:(UIButton *)sender
@@ -111,16 +110,9 @@
 #pragma mark - URL Connection Delegate Methods
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    //NSString *authToken = [Helpers getAuthToken:response];
-    
     if([Helpers handleServerErrors:response]){
-//        NSDictionary *user = @{@"email":self.registrationEmailTextField.text,
-//                               @"password":self.registrationPasswordTextField.text,
-//                               @"auth_token":authToken
-//                               };
-//        
-//        [self checkWithServer:user url:self.loginURL];
         NSLog(@"Awesome");
+        [self performSegueWithIdentifier:@"registrationSuccessID" sender:self];
     }
     else{
         UIAlertView *registrationFailed = [[UIAlertView alloc] initWithTitle:@"Stop!" message:@"Status code != 200" delegate:self cancelButtonTitle:@"Dimiss" otherButtonTitles:nil];

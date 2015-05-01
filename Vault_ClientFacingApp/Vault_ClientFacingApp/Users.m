@@ -10,16 +10,4 @@
 
 @implementation Users
 
--(instancetype)initWithDictionary:(NSDictionary *)userFromServerDict;
-{
-    self = [super init];
-    
-    if (self)
-    {
-        
-    }
-    
-    return self;
-}
-
 @end

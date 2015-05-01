@@ -7,9 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
 @interface Users : NSObject
 
--(instancetype)initWithDictionary:(NSDictionary *)userFromServerDict;
+@property NSString *firstname;
+@property NSString *username;
+@property NSString *authToken;
+@property NSString *email;
+@property NSString *currentProject;
+@property NSString *devClass;
+
+@property int currentMainLv;
+@property int currentMainSubLv;
+@property int currentLeftLv;
+@property int currentLeftSubLv;
+@property int currentRightLv;
+@property int currentRightSubLv;
+@property int currentEXP;
+@property int expToNextLevel;
 
 @end

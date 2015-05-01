@@ -13,7 +13,6 @@
 @interface PasswordRecoveryViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordRecoveryEmailLabel;
-@property (weak, nonatomic) IBOutlet UITextField *passwordRecoveryTextField;
 @property NSMutableData *responseData;
 
 @end
@@ -41,12 +40,12 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.passwordRecoveryTextField resignFirstResponder];
+    [self.passwordRecoveryEmailLabel resignFirstResponder];
 }
 
 - (IBAction)submitEmailForPasswordRecovery:(UIButton *)sender
 {
-    [self checkWithServer:self.passwordRecoveryTextField.text];
+    [self checkWithServer:self.passwordRecoveryEmailLabel.text];
 }
 
 -(void)checkWithServer:(NSString *)email

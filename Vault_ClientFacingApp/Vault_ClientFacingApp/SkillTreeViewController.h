@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Users.h"
 
 @interface SkillTreeViewController : UIViewController
+
+@property Users *currentUser;
 
 @end

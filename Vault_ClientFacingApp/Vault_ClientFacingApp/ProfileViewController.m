@@ -17,32 +17,23 @@
 @interface ProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UIScrollViewDelegate, UIPageViewControllerDataSource>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileHeader;
-
 @property (weak, nonatomic) IBOutlet UIButton *profileSkillTreeToggleButton;
 @property (weak, nonatomic) IBOutlet UIButton *profileImageButton;
-
 @property (strong, nonatomic) UIPageViewController *pageController;
-
 @property UIColor *customGrey;
-
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *classLabel;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *missionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentExpLabel;
-
 @property UIImagePickerController *imagePickerController;
 @property UIImage *profileImage;
-
 @property (weak, nonatomic) IBOutlet UICollectionView *achievementsCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *userTrackingCollectionView;
 @property (weak, nonatomic) IBOutlet UIProgressView *toNextLevelProgressView;
 @property (weak, nonatomic) IBOutlet UILabel *toNextLevelLabel;
-
 @property int expToNextLevel;
-
 @property NSArray *viewControllersArray;
-
 @property NSArray *userAchievements;
 @property (weak, nonatomic) IBOutlet UIScrollView *profileScrollView;
 
@@ -52,6 +43,8 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"User After:%@", _currentUser.authToken);
+    
     [super viewDidLoad];
     [self initialSetup];
     [self initializePageController];
