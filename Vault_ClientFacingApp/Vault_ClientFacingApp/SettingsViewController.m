@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Settings User:%@", _currentUser.authToken);
     [self initializeUI];
 }
 
@@ -110,10 +111,22 @@
 }
 
 - (IBAction)accountLogout:(UIButton *)sender
-{    
+{
+    NSDictionary *authToken = @{@"auth_token":_currentUser.authToken};
+    [self checkWithServerForLogout:authToken];
+}
+
+-(void)checkWithServerForLogout:(NSDictionary *)authToken
+{
+    NSData *jsonData;
+    NSError *error;
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://coderexp.herokuapp.com/api/v1/users"]];
     request.HTTPMethod = @"DELETE";
     [request setValue:@"appplication/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    jsonData = [NSJSONSerialization dataWithJSONObject:authToken options:NSJSONWritingPrettyPrinted error:&error];
+    request.HTTPBody = jsonData;
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!connection) {

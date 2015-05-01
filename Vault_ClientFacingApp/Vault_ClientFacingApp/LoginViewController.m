@@ -10,7 +10,7 @@
 #import "Helpers.h"
 #import "Users.h"
 #import "ProfileViewController.h"
-#import "SkillTreeViewController.h"
+#import "SettingsViewController.h"
 
 @interface LoginViewController () <NSURLConnectionDelegate>
 

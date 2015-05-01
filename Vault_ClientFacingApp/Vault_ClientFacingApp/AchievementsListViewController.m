@@ -22,7 +22,6 @@
     [super viewDidLoad];
     
     self.achievementsArrayComplete = @[[UIImage imageNamed:@"acorn.png"],
-                                       [UIImage imageNamed:@"adduser.png"],
                                        [UIImage imageNamed:@"badge.png"],
                                        [UIImage imageNamed:@"bronze.png"],
                                        [UIImage imageNamed:@"cloud.png"],
@@ -31,10 +30,8 @@
                                        [UIImage imageNamed:@"coffee.png"],
                                        [UIImage imageNamed:@"barchart.png"],
                                        [UIImage imageNamed:@"arrow.png"],
-                                       [UIImage imageNamed:@"adduser.png"],
                                        [UIImage imageNamed:@"arrow.png"],
                                        [UIImage imageNamed:@"acorn.png"],
-                                       [UIImage imageNamed:@"adduser.png"],
                                        [UIImage imageNamed:@"badge.png"],
                                        [UIImage imageNamed:@"bronze.png"],
                                        [UIImage imageNamed:@"cloud.png"],
@@ -43,10 +40,8 @@
                                        [UIImage imageNamed:@"coffee.png"],
                                        [UIImage imageNamed:@"barchart.png"],
                                        [UIImage imageNamed:@"arrow.png"],
-                                       [UIImage imageNamed:@"adduser.png"],
                                        [UIImage imageNamed:@"arrow.png"],
                                        [UIImage imageNamed:@"acorn.png"],
-                                       [UIImage imageNamed:@"adduser.png"],
                                        [UIImage imageNamed:@"badge.png"],
                                        [UIImage imageNamed:@"bronze.png"],
                                        [UIImage imageNamed:@"cloud.png"],
@@ -55,7 +50,6 @@
                                        [UIImage imageNamed:@"coffee.png"],
                                        [UIImage imageNamed:@"barchart.png"],
                                        [UIImage imageNamed:@"arrow.png"],
-                                       [UIImage imageNamed:@"adduser.png"],
                                        [UIImage imageNamed:@"arrow.png"],
                                        ];
 }

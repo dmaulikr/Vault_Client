@@ -279,8 +279,10 @@
 {
     if ([segue.identifier isEqualToString:@"settingSegueID"])
     {
-        SettingsViewController *settingsVC = segue.destinationViewController;
+        UINavigationController *nav = segue.destinationViewController;
+        SettingsViewController *settingsVC = [nav.viewControllers objectAtIndex:0];
         settingsVC.hidesBottomBarWhenPushed = YES;
+        settingsVC.currentUser = _currentUser;
     }
 }
 

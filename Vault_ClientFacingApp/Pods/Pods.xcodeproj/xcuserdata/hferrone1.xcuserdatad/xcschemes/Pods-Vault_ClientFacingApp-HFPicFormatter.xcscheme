@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "613BC16AD8288D3D675BAE5F"
+               BlueprintIdentifier = "88F0E119437639F8B3100672"
                BuildableName = "libPods-Vault_ClientFacingApp-HFPicFormatter.a"
                BlueprintName = "Pods-Vault_ClientFacingApp-HFPicFormatter"
                ReferencedContainer = "container:Pods.xcodeproj">
