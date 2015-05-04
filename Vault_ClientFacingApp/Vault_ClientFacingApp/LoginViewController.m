@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self alreadyLoggedIn];
     [self customUI];
     _success = false;
 }
@@ -40,6 +41,18 @@
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+-(void)alreadyLoggedIn
+{
+    //Check if already logged in
+    BOOL loggedIn = false;
+    
+    //Send server saved loging info and current auth token
+    
+    if (loggedIn) {
+        [self performSegueWithIdentifier:@"" sender:self];
+    }
 }
 
 #pragma mark - Login Methods

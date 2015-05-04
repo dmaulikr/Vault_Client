@@ -31,6 +31,7 @@
 @property NSArray *meetingButtonArry;
 @property NSArray *meetingTimeArray;
 
+@property UIView *header1;
 @property UIView *view2;
 @property UIView *view3;
 @property UIView *view4;
@@ -54,6 +55,21 @@
 @property MFMailComposeViewController *mailVC;
 
 @property UIImageView *topImage;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+
+@property NSArray *viewArray;
+@property NSArray *topImagesArray;
+@property NSArray *originRectsArray;
+@property NSArray *headerArray;
+@property NSArray *imageToRemoveArray;
+@property int i;
+@property UIImageView *header2;
+@property UIImageView *header3;
+@property UIImageView *header4;
+@property UIImageView *header5;
+@property UIImageView *header6;
+
+@property UIImageView *image1;
 
 @end
 
@@ -78,6 +94,12 @@
     //Product Platform Overlay (#1)
     UIImageView *mainLogo = [[UIImageView alloc] initWithFrame:CGRectMake(25, 25, self.view.frame.size.width - 75, self.view.frame.size.height /7)];
     mainLogo.image = [UIImage imageNamed:@"MainLogo"];
+    
+    self.header1 = [UIImageView new];
+    self.header6 = [UIImageView new];
+    [self.view addSubview:self.header1];
+    
+    _i = 1;
     
     UILabel *productIdeaLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 55, self.view.frame.size.height/4, 150, 30)];
     productIdeaLabel.text = @"PRODUCT PLATFORM";
@@ -129,8 +151,8 @@
     self.view2.backgroundColor = self.customBlue;
     [self.view addSubview:self.view2];
     
-    UIImageView *view2Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
-    view2Image.image = [UIImage imageNamed:@"Product.png"];
+    self.header2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
+    self.header2.image = [UIImage imageNamed:@"Product.png"];
     
     UILabel *productNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(productIdeaLabel.frame.origin.x, productIdeaLabel.frame.origin.y, productIdeaLabel.frame.size.width, productIdeaLabel.frame.size.height)];
     productNeedLabel.text = @"PRODUCT SCOPE";
@@ -170,7 +192,7 @@
     [complex.layer setBorderWidth:1];
     complex.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
     
-    [self.view2 addSubview:view2Image];
+    [self.view2 addSubview:self.header2];
     [self.view2 addSubview:info2];
     [self.view2 addSubview:productNeedLabel];
     [self.view2 addSubview: mvp];
@@ -182,8 +204,8 @@
     self.view3.backgroundColor = self.customGreen;
     [self.view addSubview:self.view3];
     
-    UIImageView *view3Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
-    view3Image.image = [UIImage imageNamed:@"Team.png"];
+    self.header3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
+    self.header3.image = [UIImage imageNamed:@"Team.png"];
     
     UILabel *teamNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 35, self.view.frame.size.height/4, 150, 30)];
     teamNeedLabel.text = @"TEAM SCALE";
@@ -223,7 +245,7 @@
     [largeTeam.layer setBorderWidth:1];
     largeTeam.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
     
-    [self.view3 addSubview:view3Image];
+    [self.view3 addSubview:self.header3];
     [self.view3 addSubview:info3];
     [self.view3 addSubview:teamNeedLabel];
     [self.view3 addSubview: onePerson];
@@ -235,8 +257,8 @@
     self.view4.backgroundColor = self.customPink;
     [self.view addSubview:self.view4];
     
-    UIImageView *view4Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
-    view4Image.image = [UIImage imageNamed:@"Budget.png"];
+    self.header4 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
+    self.header4.image = [UIImage imageNamed:@"Budget.png"];
     
     UIButton *info4 = [UIButton buttonWithType:UIButtonTypeCustom];
     info4.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
@@ -276,7 +298,7 @@
     [large.layer setBorderWidth:1];
     large.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
     
-    [self.view4 addSubview:view4Image];
+    [self.view4 addSubview:self.header4];
     [self.view4 addSubview:info4];
     [self.view4 addSubview:budgetLabel];
     [self.view4 addSubview: small];
@@ -290,8 +312,8 @@
     
     [self registerForKeyboardNotifications];
     
-    UIImageView *view5Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
-    view5Image.image = [UIImage imageNamed:@"Idea.png"];
+    self.header5 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
+    self.header5.image = [UIImage imageNamed:@"Idea.png"];
     
     UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
     contactInfo.text = @"PRODUCT IDEA";
@@ -346,7 +368,7 @@
     [self.meetingTimes.layer setBackgroundColor:[UIColor whiteColor].CGColor];
     self.meetingTimes.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
     
-    [self.view5 addSubview:view5Image];
+    [self.view5 addSubview:self.header5];
     [self.view5 addSubview:contactInfo];
     [self.view5 addSubview:info5];
     [self.view5 addSubview:contactLabel];
@@ -456,6 +478,31 @@
     [self.view6 addSubview:time2];
     [self.view6 addSubview:time3];
     [self.view6 addSubview:submit];
+    
+    self.viewArray = @[self.view,
+                       self.view2,
+                       self.view3,
+                       self.view4,
+                       self.view5,
+                       self.view6];
+    
+    self.originRectsArray = @[NSStringFromCGRect(self.view.frame),
+                              NSStringFromCGRect(self.view2.frame),
+                              NSStringFromCGRect(self.view3.frame),
+                              NSStringFromCGRect(self.view4.frame),
+                              NSStringFromCGRect(self.view5.frame),
+                              NSStringFromCGRect(self.view6.frame)
+                              ];
+    
+    self.headerArray = @[self.header1,
+                         self.header2,
+                         self.header3,
+                         self.header4,
+                         self.header5,
+                         self.header6];
+    
+    self.image1 = [UIImageView new];
+    self.imageToRemoveArray = @[self.image1];
 }
 
 -(BOOL)prefersStatusBarHidden
@@ -548,13 +595,22 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customBlue;
         
+        UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
+        back.frame = CGRectMake(0, 10, 100, 30);
+        [back setTitle:@"BACK" forState:UIControlStateNormal];
+        back.titleLabel.textColor = [UIColor whiteColor];
+        [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
+        
         self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
         UIImageView *view2Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
         view2Image.image = [UIImage imageNamed:@"Product.png"];
         
+        _i += 1;
+        
         [self.view2 addSubview:topLabel];
+        [self.view2 addSubview:back];
         [self.view2 addSubview:view2Image];
         [self.view2 addSubview:self.topImage];
     }];
@@ -571,13 +627,22 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customGreen;
         
+        UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
+        back.frame = CGRectMake(0, 10, 100, 30);
+        [back setTitle:@"BACK" forState:UIControlStateNormal];
+        back.titleLabel.textColor = [UIColor whiteColor];
+        [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
+        
         self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
         UIImageView *view3Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
         view3Image.image = [UIImage imageNamed:@"Team.png"];
         
+        _i += 1;
+        
         [self.view3 addSubview:topLabel];
+        [self.view3 addSubview:back];
         [self.view3 addSubview:view3Image];
         [self.view3 addSubview:self.topImage];
     }];
@@ -594,13 +659,22 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customPink;
         
+        UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
+        back.frame = CGRectMake(0, 10, 100, 30);
+        [back setTitle:@"BACK" forState:UIControlStateNormal];
+        back.titleLabel.textColor = [UIColor whiteColor];
+        [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
+        
         self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
         UIImageView *view4Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
         view4Image.image = [UIImage imageNamed:@"Budget"];
         
+        _i += 1;
+        
         [self.view4 addSubview:topLabel];
+        [self.view4 addSubview:back];
         [self.view4 addSubview:view4Image];
         [self.view4 addSubview:self.topImage];
     }];
@@ -617,13 +691,22 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customDarkGrey;
         
+        UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
+        back.frame = CGRectMake(0, 10, 100, 30);
+        [back setTitle:@"BACK" forState:UIControlStateNormal];
+        back.titleLabel.textColor = [UIColor whiteColor];
+        [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
+        
         self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
         UIImageView *view5Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
         view5Image.image = [UIImage imageNamed:@"Idea"];
         
+        _i += 1;
+        
         [self.view5 addSubview:topLabel];
+        [self.view5 addSubview:back];
         [self.view5 addSubview:view5Image];
         [self.view5 addSubview:self.topImage];
     }];
@@ -654,13 +737,22 @@
             UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
             topLabel.backgroundColor = self.customDarkGrey;
             
+            UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
+            back.frame = CGRectMake(0, 10, 100, 30);
+            [back setTitle:@"BACK" forState:UIControlStateNormal];
+            back.titleLabel.textColor = [UIColor whiteColor];
+            [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
+            
             self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
             self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
             
             UIImageView *view6Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
             view6Image.image = [UIImage imageNamed:@"Calendar.png"];
             
+            _i += 1;
+            
             [self.view6 addSubview:topLabel];
+            [self.view6 addSubview:back];
             [self.view6 addSubview:view6Image];
             [self.view6 addSubview:self.topImage];
         }];
@@ -826,7 +918,21 @@
     [self.name resignFirstResponder];
     [self.email resignFirstResponder];
     [self.appDescription resignFirstResponder];
+}
 
+- (IBAction)backButton:(UIButton *)sender
+{
+    if (_i > 1) {
+        _i--;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            UIView *currentView = [self.viewArray objectAtIndex:_i];
+            CGRect origin = CGRectFromString([self.originRectsArray objectAtIndex:_i]);
+            currentView.frame = origin;
+            [currentView addSubview:[self.headerArray objectAtIndex:_i]];
+            [self.topImage removeFromSuperview];
+        }];
+    }
 }
 
 @end
