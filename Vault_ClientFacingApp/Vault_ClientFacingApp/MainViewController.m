@@ -733,9 +733,6 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customGreen;
         
-        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
-        self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
-        
         UIImageView *view3Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
         view3Image.image = [UIImage imageNamed:@"Team.png"];
         
@@ -760,9 +757,6 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customPink;
         
-        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
-        self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
-        
         UIImageView *view4Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
         view4Image.image = [UIImage imageNamed:@"Budget"];
         
@@ -786,9 +780,6 @@
         
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customDarkGrey;
-        
-        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
-        self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
         UIImageView *view5Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
         view5Image.image = [UIImage imageNamed:@"Idea"];
@@ -827,9 +818,6 @@
             
             UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
             topLabel.backgroundColor = self.customDarkGrey;
-            
-            self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
-            self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
             
             UIImageView *view6Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
             view6Image.image = [UIImage imageNamed:@"Calendar.png"];
@@ -1022,7 +1010,6 @@
             
             //Show/hide title images and back buttons
             [previousView addSubview:[self.headerArray objectAtIndex:_i]];
-            [self.topImage removeFromSuperview];
         }];
     }
 }
