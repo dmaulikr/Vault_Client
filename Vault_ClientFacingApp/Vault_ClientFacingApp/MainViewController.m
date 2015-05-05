@@ -73,6 +73,8 @@
 @property UIImageView *header5;
 @property UIImageView *header6;
 
+@property int fontSize;
+
 @end
 
 @implementation MainViewController
@@ -83,6 +85,7 @@
     
     [self getTime];
     
+    self.fontSize = 12;
     self.mailVC = [[MFMailComposeViewController alloc] init];
 
     [[self navigationController] setNavigationBarHidden:YES];
@@ -126,7 +129,7 @@
     [mobile setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [mobile.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [mobile.layer setBorderWidth:1];
-    mobile.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    mobile.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *web = [UIButton buttonWithType:UIButtonTypeCustom];
     web.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
@@ -135,7 +138,7 @@
     [web setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [web.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [web.layer setBorderWidth:1];
-    web.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    web.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *both = [UIButton buttonWithType:UIButtonTypeCustom];
     both.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
@@ -144,7 +147,7 @@
     [both setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [both.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [both.layer setBorderWidth:1];
-    both.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    both.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     [self.view addSubview:mainLogo];
     [self.view addSubview:productIdeaLabel];
@@ -189,7 +192,7 @@
     [mvp setTitleColor:self.customBlue forState:UIControlStateNormal];
     [mvp.layer setBorderColor:[self.customBlue CGColor]];
     [mvp.layer setBorderWidth:1];
-    mvp.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    mvp.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *basic = [UIButton buttonWithType:UIButtonTypeCustom];
     basic.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
@@ -198,7 +201,7 @@
     [basic setTitleColor:self.customBlue forState:UIControlStateNormal];
     [basic.layer setBorderColor:[self.customBlue CGColor]];
     [basic.layer setBorderWidth:1];
-    basic.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    basic.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *complex = [UIButton buttonWithType:UIButtonTypeCustom];
     complex.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
@@ -207,7 +210,7 @@
     [complex setTitleColor:self.customBlue forState:UIControlStateNormal];
     [complex.layer setBorderColor:[self.customBlue CGColor]];
     [complex.layer setBorderWidth:1];
-    complex.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    complex.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     [self.view2 addSubview:self.header2];
     [self.view2 addSubview:back2];
@@ -252,7 +255,7 @@
     [onePerson setTitleColor:self.customGreen forState:UIControlStateNormal];
     [onePerson.layer setBorderColor:[self.customGreen CGColor]];
     [onePerson.layer setBorderWidth:1];
-    onePerson.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    onePerson.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *smallTeam = [UIButton buttonWithType:UIButtonTypeCustom];
     smallTeam.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
@@ -261,7 +264,7 @@
     [smallTeam setTitleColor:self.customGreen forState:UIControlStateNormal];
     [smallTeam.layer setBorderColor:[self.customGreen CGColor]];
     [smallTeam.layer setBorderWidth:1];
-    smallTeam.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    smallTeam.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *largeTeam = [UIButton buttonWithType:UIButtonTypeCustom];
     largeTeam.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
@@ -270,7 +273,7 @@
     [largeTeam setTitleColor:self.customGreen forState:UIControlStateNormal];
     [largeTeam.layer setBorderColor:[self.customGreen CGColor]];
     [largeTeam.layer setBorderWidth:1];
-    largeTeam.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    largeTeam.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     [self.view3 addSubview:self.header3];
     [self.view3 addSubview:info3];
@@ -315,7 +318,7 @@
     [small setTitleColor:self.customPink forState:UIControlStateNormal];
     [small.layer setBorderColor:[self.customPink CGColor]];
     [small.layer setBorderWidth:1];
-    small.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    small.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *medium = [UIButton buttonWithType:UIButtonTypeCustom];
     medium.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
@@ -324,7 +327,7 @@
     [medium setTitleColor:self.customPink forState:UIControlStateNormal];
     [medium.layer setBorderColor:[self.customPink CGColor]];
     [medium.layer setBorderWidth:1];
-    medium.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    medium.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *large = [UIButton buttonWithType:UIButtonTypeCustom];
     large.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
@@ -333,7 +336,7 @@
     [large setTitleColor:self.customPink forState:UIControlStateNormal];
     [large.layer setBorderColor:[self.customPink CGColor]];
     [large.layer setBorderWidth:1];
-    large.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    large.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     [self.view4 addSubview:self.header4];
     [self.view4 addSubview:info4];
@@ -379,8 +382,9 @@
     self.appDescription.layer.borderWidth = 1;
     self.appDescription.textColor = [UIColor lightGrayColor];
     [self.appDescription setText:@"BRIEF DESCRIPTION"];
-    self.appDescription.font = [UIFont fontWithName:@"Avenir" size:11];
+    self.appDescription.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [self.appDescription setTag:1];
+    [self.appDescription setReturnKeyType:UIReturnKeyDone];
     self.appDescription.delegate = self;
     
     UILabel *contactLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.appDescription.frame.origin.y + 175, self.view.frame.size.width - 50, 30)];
@@ -393,27 +397,42 @@
     self.name.layer.borderWidth = 1;
     self.name.font = [UIFont fontWithName:@"Avenir" size:12];
     self.name.textColor = [UIColor whiteColor];
+    [self.name setReturnKeyType:UIReturnKeyDone];
     self.name.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"   NAME" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
-    self.name.font = [UIFont fontWithName:@"Avenir" size:11];
+    self.name.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     self.name.tag = 1;
     self.name.delegate = self;
+    self.name.leftViewMode = UITextFieldViewModeAlways;
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    self.name.leftView = paddingView;
     
     self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, self.name.frame.origin.y + 50, self.view.frame.size.width - 50, 35)];
     self.email.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.email.layer.borderWidth = 1;
+    [self.email setReturnKeyType:UIReturnKeyDone];
     self.email.textColor = [UIColor whiteColor];
     self.email.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"   EMAIL" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
-    self.email.font = [UIFont fontWithName:@"Avenir" size:11];
+    self.email.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     self.email.tag = 2;
     self.email.delegate = self;
+    self.email.leftViewMode = UITextFieldViewModeAlways;
+    UIView *paddingView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    self.email.leftView = paddingView2;
     
     self.meetingTimes = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 25, self.view.frame.size.height - 50, self.view.frame.size.width - 50, 30);
+    self.meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 25, self.view.frame.size.height - self.view5.frame.size.height/6, self.view.frame.size.width - 50, 30);
     [self.meetingTimes setTitle:@"SCHEDULE MEETING" forState:UIControlStateNormal];
     [self.meetingTimes addTarget:self action:@selector(pickMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [self.meetingTimes setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
     [self.meetingTimes.layer setBackgroundColor:[UIColor whiteColor].CGColor];
-    self.meetingTimes.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
+    self.meetingTimes.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
+    
+//    NSArray *textfieldsArray = @[self.appDescription, self.name, self.email];
+//    for (UITextField *field in textfieldsArray) {
+//        UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+//        field.leftView = paddingView;
+//        field.leftViewMode = UITextFieldViewModeAlways;
+//    }
     
     [self.view5 addSubview:self.header5];
     [self.view5 addSubview:contactInfo];
@@ -438,11 +457,20 @@
     UIImageView *headerLogo6 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
     headerLogo6.image = [UIImage imageNamed:@"LogoHeader.png"];
     
+    UIImageView *headerLogo7 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
+    headerLogo7.image = [UIImage imageNamed:@"LogoHeader.png"];
+    
     UIButton *back6 = [UIButton buttonWithType:UIButtonTypeCustom];
     back6.frame = CGRectMake(0, 10, 100, 30);
     [back6 setTitle:@"BACK" forState:UIControlStateNormal];
     back6.titleLabel.textColor = [UIColor whiteColor];
     [back6 addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *back7 = [UIButton buttonWithType:UIButtonTypeCustom];
+    back7.frame = CGRectMake(0, 10, 100, 30);
+    [back7 setTitle:@"BACK" forState:UIControlStateNormal];
+    back7.titleLabel.textColor = [UIColor whiteColor];
+    [back7 addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *info6 = [UIButton buttonWithType:UIButtonTypeCustom];
     info6.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
@@ -453,6 +481,7 @@
     UIButton *day1 = [UIButton buttonWithType:UIButtonTypeCustom];
     day1.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 35);
     [day1 setTitle:self.day1String forState:UIControlStateNormal];
+    day1.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [day1 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [day1 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [day1.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
@@ -461,6 +490,7 @@
     UIButton *day2 = [UIButton buttonWithType:UIButtonTypeCustom];
     day2.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
     [day2 setTitle:self.day2String forState:UIControlStateNormal];
+    day2.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [day2 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [day2 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [day2.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
@@ -469,6 +499,7 @@
     UIButton *day3 = [UIButton buttonWithType:UIButtonTypeCustom];
     day3.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
     [day3 setTitle:self.day3String forState:UIControlStateNormal];
+    day3.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [day3 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [day3 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [day3.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
@@ -477,6 +508,7 @@
     UIButton *day4 = [UIButton buttonWithType:UIButtonTypeCustom];
     day4.frame = CGRectMake(self.view.frame.origin.x + 25, day3.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
     [day4 setTitle:self.day4String forState:UIControlStateNormal];
+    day4.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [day4 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [day4 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [day4.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
@@ -485,6 +517,7 @@
     UIButton *day5 = [UIButton buttonWithType:UIButtonTypeCustom];
     day5.frame = CGRectMake(self.view.frame.origin.x + 25, day4.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
     [day5 setTitle:self.day5String forState:UIControlStateNormal];
+    day5.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [day5 addTarget:self action:@selector(scheduleMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [day5 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [day5.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
@@ -493,6 +526,7 @@
     UIButton *time1 = [UIButton buttonWithType:UIButtonTypeCustom];
     time1.frame = CGRectMake(self.view.frame.origin.x + 25, day5.frame.origin.y + 50, day5.frame.size.width/ 3 - 10, 35);
     [time1 setTitle:@"10:00AM" forState:UIControlStateNormal];
+    time1.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [time1 addTarget:self action:@selector(scheduleTime:) forControlEvents:UIControlEventTouchUpInside];
     [time1 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [time1.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
@@ -501,6 +535,7 @@
     UIButton *time2 = [UIButton buttonWithType:UIButtonTypeCustom];
     time2.frame = CGRectMake(time1.frame.origin.x + time1.frame.size.width + 15, time1.frame.origin.y, time1.frame.size.width, 35);
     [time2 setTitle:@"1:00PM" forState:UIControlStateNormal];
+    time2.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [time2 addTarget:self action:@selector(scheduleTime:) forControlEvents:UIControlEventTouchUpInside];
     [time2 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [time2.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
@@ -509,13 +544,14 @@
     UIButton *time3 = [UIButton buttonWithType:UIButtonTypeCustom];
     time3.frame = CGRectMake(time2.frame.origin.x + time1.frame.size.width + 15, time1.frame.origin.y, time1.frame.size.width, 35);
     [time3 setTitle:@"3:00PM" forState:UIControlStateNormal];
+    time3.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [time3 addTarget:self action:@selector(scheduleTime:) forControlEvents:UIControlEventTouchUpInside];
     [time3 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [time3.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [time3.layer setBorderWidth:1];
     
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
-    submit.frame = CGRectMake(self.view5.frame.origin.x + 25, self.view.frame.size.height - 50, self.view.frame.size.width - 50, 35);
+    submit.frame = CGRectMake(self.view5.frame.origin.x + 25, self.view.frame.size.height - self.view5.frame.size.height/6, self.view.frame.size.width - 50, 35);
     [submit setTitle:@"Submit" forState:UIControlStateNormal];
     [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
     [submit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -564,14 +600,16 @@
                               back3,
                               back4,
                               back5,
-                              back6];
+                              back6,
+                              back7];
     
     self.logoArray = @[headerLogo1,
                        headerLogo2,
                        headerLogo3,
                        headerLogo4,
                        headerLogo5,
-                       headerLogo6];
+                       headerLogo6,
+                       headerLogo7];
     
     [self hideAllBackButtons];
     [self hideAllLogos];
@@ -620,6 +658,7 @@
 -(UIImageView *)showLogoAtPageIndex
 {
     UIImageView *logo = [self.logoArray objectAtIndex:_i];
+    logo.frame = CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 17);
     [logo setHidden:NO];
     return logo;
 }
@@ -658,16 +697,26 @@
     }
 }
 
+#pragma mark - UITextView Delegate Methods
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
     textView.text = @"";
-    
     return YES;
 }
 
 - (void)textViewDidEndEditing:(UITextView *) textView
 {
     self.contactAppDescription = textView.text;
+    [textView resignFirstResponder];
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)registerForKeyboardNotifications
@@ -681,6 +730,7 @@
     self.keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
 }
 
+#pragma mark - UITextField Delegate Methods
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
@@ -691,11 +741,23 @@
     }];
 }
 
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     [UIView animateWithDuration:0.3 animations:^{
         self.view5.frame = self.view.frame;
     }];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return  YES;
 }
 
 -(IBAction)selectProjectIdea:(UIButton *)sender
@@ -850,7 +912,7 @@
         else
         {
             [button setBackgroundColor:self.customPurple];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             button.layer.borderColor = [UIColor clearColor].CGColor;
         }
     }
@@ -873,7 +935,7 @@
         else
         {
             [button setBackgroundColor:self.customPurple];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             button.layer.borderColor = [UIColor clearColor].CGColor;
         }
     }
@@ -911,11 +973,11 @@
     }
     
     //set button strings for selection
-    self.day1String = [dateArray objectAtIndex:0];
-    self.day2String = [dateArray objectAtIndex:1];
-    self.day3String = [dateArray objectAtIndex:2];
-    self.day4String = [dateArray objectAtIndex:3];
-    self.day5String = [dateArray objectAtIndex:4];
+    self.day1String = [[dateArray objectAtIndex:0] uppercaseString];
+    self.day2String = [[dateArray objectAtIndex:1] uppercaseString];
+    self.day3String = [[dateArray objectAtIndex:2] uppercaseString];
+    self.day4String = [[dateArray objectAtIndex:3] uppercaseString];
+    self.day5String = [[dateArray objectAtIndex:4] uppercaseString];
     
     self.meetingTime = @"";
     self.meetingDay = @"";
