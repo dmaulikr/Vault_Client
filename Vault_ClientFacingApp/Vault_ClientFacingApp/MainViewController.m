@@ -62,14 +62,16 @@
 @property NSArray *originRectsArray;
 @property NSArray *headerArray;
 @property NSArray *imageToRemoveArray;
+@property NSArray *backButtonsArray;
+@property NSArray *logoArray;
+
 @property int i;
+
 @property UIImageView *header2;
 @property UIImageView *header3;
 @property UIImageView *header4;
 @property UIImageView *header5;
 @property UIImageView *header6;
-
-@property UIImageView *image1;
 
 @end
 
@@ -95,6 +97,9 @@
     UIImageView *mainLogo = [[UIImageView alloc] initWithFrame:CGRectMake(25, 25, self.view.frame.size.width - 75, self.view.frame.size.height /7)];
     mainLogo.image = [UIImage imageNamed:@"MainLogo"];
     
+    UIImageView *headerLogo1 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
+    headerLogo1.image = [UIImage imageNamed:@"LogoHeader.png"];
+    
     self.header1 = [UIImageView new];
     self.header6 = [UIImageView new];
     [self.view addSubview:self.header1];
@@ -105,6 +110,8 @@
     productIdeaLabel.text = @"PRODUCT PLATFORM";
     productIdeaLabel.textColor = [UIColor whiteColor];
     productIdeaLabel.font = [UIFont fontWithName:@"Avenir" size:12];
+    
+    UIButton *back1 = [UIButton buttonWithType:UIButtonTypeCustom];
     
     UIButton *info1 = [UIButton buttonWithType:UIButtonTypeCustom];
     info1.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
@@ -141,6 +148,7 @@
     
     [self.view addSubview:mainLogo];
     [self.view addSubview:productIdeaLabel];
+    [self.view addSubview:back1];
     [self.view addSubview:info1];
     [self.view addSubview: mobile];
     [self.view addSubview:web];
@@ -154,10 +162,19 @@
     self.header2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
     self.header2.image = [UIImage imageNamed:@"Product.png"];
     
+    UIImageView *headerLogo2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
+    headerLogo2.image = [UIImage imageNamed:@"LogoHeader.png"];
+    
     UILabel *productNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(productIdeaLabel.frame.origin.x, productIdeaLabel.frame.origin.y, productIdeaLabel.frame.size.width, productIdeaLabel.frame.size.height)];
     productNeedLabel.text = @"PRODUCT SCOPE";
     productNeedLabel.textColor = [UIColor whiteColor];
     productNeedLabel.font = [UIFont fontWithName:@"Avenir" size:12];
+    
+    UIButton *back2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    back2.frame = CGRectMake(0, 10, 100, 30);
+    [back2 setTitle:@"BACK" forState:UIControlStateNormal];
+    back2.titleLabel.textColor = [UIColor whiteColor];
+    [back2 addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *info2 = [UIButton buttonWithType:UIButtonTypeCustom];
     info2.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
@@ -193,6 +210,7 @@
     complex.titleLabel.font = [UIFont fontWithName:@"Avenir" size:11];
     
     [self.view2 addSubview:self.header2];
+    [self.view2 addSubview:back2];
     [self.view2 addSubview:info2];
     [self.view2 addSubview:productNeedLabel];
     [self.view2 addSubview: mvp];
@@ -207,10 +225,19 @@
     self.header3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
     self.header3.image = [UIImage imageNamed:@"Team.png"];
     
+    UIImageView *headerLogo3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
+    headerLogo3.image = [UIImage imageNamed:@"LogoHeader.png"];
+    
     UILabel *teamNeedLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 35, self.view.frame.size.height/4, 150, 30)];
     teamNeedLabel.text = @"TEAM SCALE";
     teamNeedLabel.textColor = [UIColor whiteColor];
     teamNeedLabel.font = [UIFont fontWithName:@"Avenir" size:12];
+    
+    UIButton *back3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    back3.frame = CGRectMake(0, 10, 100, 30);
+    [back3 setTitle:@"BACK" forState:UIControlStateNormal];
+    back3.titleLabel.textColor = [UIColor whiteColor];
+    [back3 addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *info3 = [UIButton buttonWithType:UIButtonTypeCustom];
     info3.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
@@ -247,6 +274,7 @@
     
     [self.view3 addSubview:self.header3];
     [self.view3 addSubview:info3];
+    [self.view3 addSubview:back3];
     [self.view3 addSubview:teamNeedLabel];
     [self.view3 addSubview: onePerson];
     [self.view3 addSubview:smallTeam];
@@ -259,6 +287,15 @@
     
     self.header4 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
     self.header4.image = [UIImage imageNamed:@"Budget.png"];
+    
+    UIImageView *headerLogo4 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
+    headerLogo4.image = [UIImage imageNamed:@"LogoHeader.png"];
+    
+    UIButton *back4 = [UIButton buttonWithType:UIButtonTypeCustom];
+    back4.frame = CGRectMake(0, 10, 100, 30);
+    [back4 setTitle:@"BACK" forState:UIControlStateNormal];
+    back4.titleLabel.textColor = [UIColor whiteColor];
+    [back4 addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *info4 = [UIButton buttonWithType:UIButtonTypeCustom];
     info4.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
@@ -300,6 +337,7 @@
     
     [self.view4 addSubview:self.header4];
     [self.view4 addSubview:info4];
+    [self.view4 addSubview:back4];
     [self.view4 addSubview:budgetLabel];
     [self.view4 addSubview: small];
     [self.view4 addSubview:medium];
@@ -315,10 +353,19 @@
     self.header5 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
     self.header5.image = [UIImage imageNamed:@"Idea.png"];
     
+    UIImageView *headerLogo5 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
+    headerLogo5.image = [UIImage imageNamed:@"LogoHeader.png"];
+    
     UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/4, 150, 30)];
     contactInfo.text = @"PRODUCT IDEA";
     contactInfo.textColor = [UIColor whiteColor];
     contactInfo.font = [UIFont fontWithName:@"Avenir" size:12];
+    
+    UIButton *back5 = [UIButton buttonWithType:UIButtonTypeCustom];
+    back5.frame = CGRectMake(0, 10, 100, 30);
+    [back5 setTitle:@"BACK" forState:UIControlStateNormal];
+    back5.titleLabel.textColor = [UIColor whiteColor];
+    [back5 addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *info5 = [UIButton buttonWithType:UIButtonTypeCustom];
     info5.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
@@ -370,6 +417,7 @@
     
     [self.view5 addSubview:self.header5];
     [self.view5 addSubview:contactInfo];
+    [self.view5 addSubview:back5];
     [self.view5 addSubview:info5];
     [self.view5 addSubview:contactLabel];
     [self.view5 addSubview:self.name];
@@ -386,6 +434,15 @@
     selectMeetingTime.text = @"KICKOFF MEETING TIME";
     selectMeetingTime.textColor = [UIColor whiteColor];
     selectMeetingTime.font = [UIFont fontWithName:@"Avenir" size:12];
+    
+    UIImageView *headerLogo6 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
+    headerLogo6.image = [UIImage imageNamed:@"LogoHeader.png"];
+    
+    UIButton *back6 = [UIButton buttonWithType:UIButtonTypeCustom];
+    back6.frame = CGRectMake(0, 10, 100, 30);
+    [back6 setTitle:@"BACK" forState:UIControlStateNormal];
+    back6.titleLabel.textColor = [UIColor whiteColor];
+    [back6 addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *info6 = [UIButton buttonWithType:UIButtonTypeCustom];
     info6.frame = CGRectMake(self.view.frame.size.width - 55, self.view.frame.size.height/4, 30, 30);
@@ -468,6 +525,7 @@
     self.meetingTimeArray = @[time1, time2, time3];
 
     [self.view6 addSubview:selectMeetingTime];
+    [self.view6 addSubview:back6];
     [self.view6 addSubview:info6];
     [self.view6 addSubview: day1];
     [self.view6 addSubview:day2];
@@ -501,13 +559,69 @@
                          self.header5,
                          self.header6];
     
-    self.image1 = [UIImageView new];
-    self.imageToRemoveArray = @[self.image1];
+    self.backButtonsArray = @[back1,
+                              back2,
+                              back3,
+                              back4,
+                              back5,
+                              back6];
+    
+    self.logoArray = @[headerLogo1,
+                       headerLogo2,
+                       headerLogo3,
+                       headerLogo4,
+                       headerLogo5,
+                       headerLogo6];
+    
+    [self hideAllBackButtons];
+    [self hideAllLogos];
 }
 
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+-(void)hideAllBackButtons
+{
+    for (UIButton *button in self.backButtonsArray) {
+        [button setHidden:YES];
+        [button setEnabled:YES];
+    }
+}
+
+-(void)hideAllLogos
+{
+    for (UIImageView *logo in self.logoArray) {
+        [logo setHidden:YES];
+    }
+}
+
+-(UIButton *)hideBackButtonAtPageIndex
+{
+    UIButton *back = [self.backButtonsArray objectAtIndex:_i];
+    return back;
+}
+
+-(UIImageView *)hideLogoAtPageIndex
+{
+    UIImageView *logo = [self.logoArray objectAtIndex:_i];
+    return logo;
+}
+
+-(UIButton *)showButtonAtPageIndex
+{
+    UIButton *back = [self.backButtonsArray objectAtIndex:_i];
+    [back setHidden:NO];
+    [back setEnabled:YES];
+    return back;
+}
+
+-(UIImageView *)showLogoAtPageIndex
+{
+    UIImageView *logo = [self.logoArray objectAtIndex:_i];
+    [logo setHidden:NO];
+    return logo;
 }
 
 -(IBAction)infoCalloutOnButtonTapped:(UIButton *)sender
@@ -595,22 +709,14 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customBlue;
         
-        UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
-        back.frame = CGRectMake(0, 10, 100, 30);
-        [back setTitle:@"BACK" forState:UIControlStateNormal];
-        back.titleLabel.textColor = [UIColor whiteColor];
-        [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
-        
-        self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
-        self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
-        
         UIImageView *view2Image = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, self.view.frame.size.height / 6, 30, 30)];
         view2Image.image = [UIImage imageNamed:@"Product.png"];
         
         _i += 1;
         
         [self.view2 addSubview:topLabel];
-        [self.view2 addSubview:back];
+        [self.view2 addSubview:[self showLogoAtPageIndex]];
+        [self.view2 addSubview:[self showButtonAtPageIndex]];
         [self.view2 addSubview:view2Image];
         [self.view2 addSubview:self.topImage];
     }];
@@ -627,12 +733,6 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customGreen;
         
-        UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
-        back.frame = CGRectMake(0, 10, 100, 30);
-        [back setTitle:@"BACK" forState:UIControlStateNormal];
-        back.titleLabel.textColor = [UIColor whiteColor];
-        [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
-        
         self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
@@ -642,7 +742,8 @@
         _i += 1;
         
         [self.view3 addSubview:topLabel];
-        [self.view3 addSubview:back];
+        [self.view3 addSubview:[self showButtonAtPageIndex]];
+        [self.view3 addSubview:[self showLogoAtPageIndex]];
         [self.view3 addSubview:view3Image];
         [self.view3 addSubview:self.topImage];
     }];
@@ -659,12 +760,6 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customPink;
         
-        UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
-        back.frame = CGRectMake(0, 10, 100, 30);
-        [back setTitle:@"BACK" forState:UIControlStateNormal];
-        back.titleLabel.textColor = [UIColor whiteColor];
-        [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
-        
         self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
@@ -674,7 +769,8 @@
         _i += 1;
         
         [self.view4 addSubview:topLabel];
-        [self.view4 addSubview:back];
+        [self.view4 addSubview:[self showButtonAtPageIndex]];
+        [self.view4 addSubview:[self showLogoAtPageIndex]];
         [self.view4 addSubview:view4Image];
         [self.view4 addSubview:self.topImage];
     }];
@@ -691,12 +787,6 @@
         UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
         topLabel.backgroundColor = self.customDarkGrey;
         
-        UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
-        back.frame = CGRectMake(0, 10, 100, 30);
-        [back setTitle:@"BACK" forState:UIControlStateNormal];
-        back.titleLabel.textColor = [UIColor whiteColor];
-        [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
-        
         self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
         self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
         
@@ -706,7 +796,8 @@
         _i += 1;
         
         [self.view5 addSubview:topLabel];
-        [self.view5 addSubview:back];
+        [self.view5 addSubview:[self showButtonAtPageIndex]];
+        [self.view5 addSubview:[self showLogoAtPageIndex]];
         [self.view5 addSubview:view5Image];
         [self.view5 addSubview:self.topImage];
     }];
@@ -737,12 +828,6 @@
             UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height / 10)];
             topLabel.backgroundColor = self.customDarkGrey;
             
-            UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
-            back.frame = CGRectMake(0, 10, 100, 30);
-            [back setTitle:@"BACK" forState:UIControlStateNormal];
-            back.titleLabel.textColor = [UIColor whiteColor];
-            [back addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];
-            
             self.topImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
             self.topImage.image = [UIImage imageNamed:@"LogoHeader.png"];
             
@@ -752,7 +837,8 @@
             _i += 1;
             
             [self.view6 addSubview:topLabel];
-            [self.view6 addSubview:back];
+            [self.view6 addSubview:[self showButtonAtPageIndex]];
+            [self.view6 addSubview:[self showLogoAtPageIndex]];
             [self.view6 addSubview:view6Image];
             [self.view6 addSubview:self.topImage];
         }];
@@ -922,14 +1008,20 @@
 
 - (IBAction)backButton:(UIButton *)sender
 {
+    [[self hideBackButtonAtPageIndex] removeFromSuperview];
+    [[self hideLogoAtPageIndex] removeFromSuperview];
+
     if (_i > 1) {
         _i--;
         
         [UIView animateWithDuration:0.3 animations:^{
-            UIView *currentView = [self.viewArray objectAtIndex:_i];
-            CGRect origin = CGRectFromString([self.originRectsArray objectAtIndex:_i]);
-            currentView.frame = origin;
-            [currentView addSubview:[self.headerArray objectAtIndex:_i]];
+            //Paging navigation
+            UIView *previousView = [self.viewArray objectAtIndex:_i];
+            CGRect previousOrigin = CGRectFromString([self.originRectsArray objectAtIndex:_i]);
+            previousView.frame = previousOrigin;
+            
+            //Show/hide title images and back buttons
+            [previousView addSubview:[self.headerArray objectAtIndex:_i]];
             [self.topImage removeFromSuperview];
         }];
     }
