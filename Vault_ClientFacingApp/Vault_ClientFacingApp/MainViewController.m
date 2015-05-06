@@ -603,6 +603,12 @@
                               back6,
                               back7];
     
+    for (UIButton *back in self.backButtonsArray) {
+        [back setBackgroundImage:[UIImage imageNamed:@"IconsMaster_DownArrow"] forState:UIControlStateNormal];
+        [back setTitle:@"" forState:UIControlStateNormal];
+        back.frame = CGRectMake(self.view.frame.size.width/15, self.view.frame.size.width/75, self.view.frame.size.width/8, self.view.frame.size.width/8);
+    }
+    
     self.logoArray = @[headerLogo1,
                        headerLogo2,
                        headerLogo3,
