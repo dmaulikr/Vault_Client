@@ -17,6 +17,11 @@
 		4A2E7FA31AE6DFC1003CC1D3 /* AchievementsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E7FA21AE6DFC1003CC1D3 /* AchievementsDetailViewController.m */; };
 		4A2E7FA61AE6DFCD003CC1D3 /* AchievementsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E7FA51AE6DFCD003CC1D3 /* AchievementsListViewController.m */; };
 		4A2E7FA91AE6E006003CC1D3 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E7FA81AE6E006003CC1D3 /* LogViewController.m */; };
+		4A442AB31AFAA71400CC081F /* PortalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A442AB21AFAA71400CC081F /* PortalViewController.m */; };
+		4A442AB61AFAB24D00CC081F /* DevIntroParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A442AB51AFAB24D00CC081F /* DevIntroParentViewController.m */; };
+		4A442AB91AFAB28F00CC081F /* DevIntroChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A442AB81AFAB28F00CC081F /* DevIntroChildViewController.m */; };
+		4A442ABC1AFAB72300CC081F /* ClientIntroParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A442ABB1AFAB72300CC081F /* ClientIntroParentViewController.m */; };
+		4A442ABF1AFAB73700CC081F /* ClientIntroChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A442ABE1AFAB73700CC081F /* ClientIntroChildViewController.m */; };
 		4A4BF4FD1AE5A455001FB109 /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BF4FC1AE5A455001FB109 /* PasswordRecoveryViewController.m */; };
 		4A563A871AA008430081FF26 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A563A861AA008430081FF26 /* MessageUI.framework */; };
 		4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F23C61A9D3B5F00E7D366 /* main.m */; };
@@ -86,6 +91,16 @@
 		4A2E7FA51AE6DFCD003CC1D3 /* AchievementsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsListViewController.m; sourceTree = "<group>"; };
 		4A2E7FA71AE6E006003CC1D3 /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
 		4A2E7FA81AE6E006003CC1D3 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
+		4A442AB11AFAA71400CC081F /* PortalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortalViewController.h; sourceTree = "<group>"; };
+		4A442AB21AFAA71400CC081F /* PortalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortalViewController.m; sourceTree = "<group>"; };
+		4A442AB41AFAB24D00CC081F /* DevIntroParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevIntroParentViewController.h; sourceTree = "<group>"; };
+		4A442AB51AFAB24D00CC081F /* DevIntroParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevIntroParentViewController.m; sourceTree = "<group>"; };
+		4A442AB71AFAB28F00CC081F /* DevIntroChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevIntroChildViewController.h; sourceTree = "<group>"; };
+		4A442AB81AFAB28F00CC081F /* DevIntroChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevIntroChildViewController.m; sourceTree = "<group>"; };
+		4A442ABA1AFAB72300CC081F /* ClientIntroParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientIntroParentViewController.h; sourceTree = "<group>"; };
+		4A442ABB1AFAB72300CC081F /* ClientIntroParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientIntroParentViewController.m; sourceTree = "<group>"; };
+		4A442ABD1AFAB73700CC081F /* ClientIntroChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientIntroChildViewController.h; sourceTree = "<group>"; };
+		4A442ABE1AFAB73700CC081F /* ClientIntroChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientIntroChildViewController.m; sourceTree = "<group>"; };
 		4A4BF4FB1AE5A455001FB109 /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
 		4A4BF4FC1AE5A455001FB109 /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
 		4A563A861AA008430081FF26 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -182,6 +197,7 @@
 		4A3382481AF138C3007C1E60 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A442AB01AFAA6FE00CC081F /* Portal Controllers */,
 				4A84542E1AD4673300E5AB02 /* EXP Controllers */,
 				4A84542C1AD4671600E5AB02 /* Client Facing Controllers */,
 			);
@@ -212,6 +228,23 @@
 				4AB3DC5F1AEA9C56009ED67D /* AchievementListCollectionViewCell.m */,
 			);
 			name = "CollectionView Cells";
+			sourceTree = "<group>";
+		};
+		4A442AB01AFAA6FE00CC081F /* Portal Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A442AB11AFAA71400CC081F /* PortalViewController.h */,
+				4A442AB21AFAA71400CC081F /* PortalViewController.m */,
+				4A442AB41AFAB24D00CC081F /* DevIntroParentViewController.h */,
+				4A442AB51AFAB24D00CC081F /* DevIntroParentViewController.m */,
+				4A442AB71AFAB28F00CC081F /* DevIntroChildViewController.h */,
+				4A442AB81AFAB28F00CC081F /* DevIntroChildViewController.m */,
+				4A442ABA1AFAB72300CC081F /* ClientIntroParentViewController.h */,
+				4A442ABB1AFAB72300CC081F /* ClientIntroParentViewController.m */,
+				4A442ABD1AFAB73700CC081F /* ClientIntroChildViewController.h */,
+				4A442ABE1AFAB73700CC081F /* ClientIntroChildViewController.m */,
+			);
+			name = "Portal Controllers";
 			sourceTree = "<group>";
 		};
 		4A6F23B81A9D3B5F00E7D366 = {
@@ -527,21 +560,26 @@
 			files = (
 				4A2B21481AE553F900F9E07C /* CustomColors.m in Sources */,
 				4A2E7FA61AE6DFCD003CC1D3 /* AchievementsListViewController.m in Sources */,
+				4A442AB61AFAB24D00CC081F /* DevIntroParentViewController.m in Sources */,
 				4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */,
 				4A6F23CA1A9D3B5F00E7D366 /* AppDelegate.m in Sources */,
 				4AE8D1521AD72221009C3DEB /* SkillTreeViewController.m in Sources */,
+				4A442AB91AFAB28F00CC081F /* DevIntroChildViewController.m in Sources */,
 				4A2E7F9D1AE6CE4B003CC1D3 /* TasksViewController.m in Sources */,
 				4A75413A1ADF052A00EB1A15 /* SettingsViewController.m in Sources */,
 				4AAE576D1AEEBC2700A90DEF /* HubAchievementTableViewCell.m in Sources */,
 				4A2C97121AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.m in Sources */,
 				4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */,
+				4A442ABF1AFAB73700CC081F /* ClientIntroChildViewController.m in Sources */,
 				4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */,
 				4AAE57641AEE8C7E00A90DEF /* HubVelocityViewController.m in Sources */,
+				4A442AB31AFAA71400CC081F /* PortalViewController.m in Sources */,
 				4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */,
 				4AB3DD2F1AEAA158009ED67D /* UserAchievementsCollectionViewCell.m in Sources */,
 				4A4BF4FD1AE5A455001FB109 /* PasswordRecoveryViewController.m in Sources */,
 				4A8454341AD467DA00E5AB02 /* LoginViewController.m in Sources */,
 				4AB99C961AE1AAEE007F95A2 /* Helpers.m in Sources */,
+				4A442ABC1AFAB72300CC081F /* ClientIntroParentViewController.m in Sources */,
 				4A2C3F731AE848BE001A7A4B /* LogTableViewCell.m in Sources */,
 				4A84543A1AD4691700E5AB02 /* RegistrationViewController.m in Sources */,
 				4A2C3F701AE806AC001A7A4B /* TaskTableViewCell.m in Sources */,
