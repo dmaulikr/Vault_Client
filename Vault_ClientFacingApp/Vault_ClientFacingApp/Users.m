@@ -10,4 +10,22 @@
 
 @implementation Users
 
+-(instancetype)init
+{
+    if (self = [super init]) {
+        _username = [NSString new];
+    }
+    return self;
+}
+
++(id)sharedUser
+{
+    static id mySharedUser = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        mySharedUser = [[self alloc] init];
+    });
+    return mySharedUser;
+}
+
 @end
