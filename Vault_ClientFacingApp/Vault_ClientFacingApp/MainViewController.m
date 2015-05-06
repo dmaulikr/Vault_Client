@@ -158,11 +158,11 @@
     [self.view addSubview:both];
     
     //Product Need Overlay (#2)
-    self.view2 = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/1.5, 600, 600)];
+    self.view2 = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/1.52, self.view.frame.size.width, self.view.frame.size.height)];
     self.view2.backgroundColor = self.customBlue;
     [self.view addSubview:self.view2];
     
-    self.header2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
+    self.header2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - (self.view.frame.size.width/12 /2), self.view.frame.size.height/60, self.view.frame.size.width/12, self.view.frame.size.width/12)];
     self.header2.image = [UIImage imageNamed:@"Product.png"];
     
     UIImageView *headerLogo2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
@@ -225,7 +225,7 @@
     self.view3.backgroundColor = self.customGreen;
     [self.view addSubview:self.view3];
     
-    self.header3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
+    self.header3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - (self.view.frame.size.width/12 /2), self.view.frame.size.height/60, self.view.frame.size.width/12, self.view.frame.size.width/12)];
     self.header3.image = [UIImage imageNamed:@"Team.png"];
     
     UIImageView *headerLogo3 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
@@ -288,7 +288,7 @@
     self.view4.backgroundColor = self.customPink;
     [self.view addSubview:self.view4];
     
-    self.header4 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
+    self.header4 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - (self.view.frame.size.width/12 /2), self.view.frame.size.height/60, self.view.frame.size.width/12, self.view.frame.size.width/12)];
     self.header4.image = [UIImage imageNamed:@"Budget.png"];
     
     UIImageView *headerLogo4 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
@@ -353,7 +353,7 @@
     
     [self registerForKeyboardNotifications];
     
-    self.header5 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 15, 10, 30, 30)];
+    self.header5 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - (self.view.frame.size.width/12 /2), self.view.frame.size.height/60, self.view.frame.size.width/12, self.view.frame.size.width/12)];
     self.header5.image = [UIImage imageNamed:@"Idea.png"];
     
     UIImageView *headerLogo5 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
