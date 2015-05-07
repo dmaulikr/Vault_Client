@@ -35,8 +35,8 @@
 - (IBAction)clientButton:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:@"firstTimeClient"]) {
-        [defaults setBool:YES forKey:@"firstTimeClient"];
+    if (![defaults boolForKey:@"clientHasLaunchedBefore"]) {
+        [defaults setBool:YES forKey:@"clientHasLaunchedBefore"];
         [self performSegueWithIdentifier:@"firstTimeClientSegueID" sender:self];
     }else{
         [self performSegueWithIdentifier:@"returningClientSegueID" sender:self];
@@ -46,8 +46,8 @@
 - (IBAction)devButton:(id)sender
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:@"firstTimeDev"]) {
-        [defaults setBool:YES forKey:@"firstTimeDev"];
+    if (![defaults boolForKey:@"devHaslaunchedBefore"]) {
+        [defaults setBool:YES forKey:@"devHaslaunchedBefore"];
         [self performSegueWithIdentifier:@"firstTimeDevSegueID" sender:self];
     }else{
         [self performSegueWithIdentifier:@"returningDevSegueID" sender:self];

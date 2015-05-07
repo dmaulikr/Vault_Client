@@ -74,6 +74,11 @@
 @property UIImageView *header6;
 
 @property int fontSize;
+@property (weak, nonatomic) IBOutlet UIButton *loginBackButton;
+
+@property double buttonHeight;
+@property double buttonPadding;
+@property double topLabelPadding;
 
 @end
 
@@ -82,6 +87,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.loginBackButton setHidden:YES];
+    [self.loginBackButton setEnabled:NO];
     
     [self getTime];
     
@@ -122,8 +130,12 @@
     [info1 addTarget:self action:@selector(infoCalloutOnButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     info1.tag = 1;
     
+    self.buttonHeight = self.view.frame.size.width/10;
+    self.buttonPadding = self.view.frame.size.width/7;
+    self.topLabelPadding = self.view.frame.size.width/6;
+    
     UIButton *mobile = [UIButton buttonWithType:UIButtonTypeCustom];
-    mobile.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 35);
+    mobile.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + self.topLabelPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [mobile setTitle:@"MOBILE" forState:UIControlStateNormal];
     [mobile addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
     [mobile setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -132,7 +144,7 @@
     mobile.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *web = [UIButton buttonWithType:UIButtonTypeCustom];
-    web.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
+    web.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [web setTitle:@"WEB" forState:UIControlStateNormal];
     [web addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
     [web setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -141,7 +153,7 @@
     web.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *both = [UIButton buttonWithType:UIButtonTypeCustom];
-    both.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
+    both.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [both setTitle:@"BOTH" forState:UIControlStateNormal];
     [both addTarget:self action:@selector(selectProjectIdea:) forControlEvents:UIControlEventTouchUpInside];
     [both setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -186,7 +198,7 @@
     info2.tag = 2;
     
     UIButton *mvp = [UIButton buttonWithType:UIButtonTypeCustom];
-    mvp.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 35);
+    mvp.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + self.topLabelPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [mvp setTitle:@"MVP" forState:UIControlStateNormal];
     [mvp addTarget:self action:@selector(selectProductNeed:) forControlEvents:UIControlEventTouchUpInside];
     [mvp setTitleColor:self.customBlue forState:UIControlStateNormal];
@@ -195,7 +207,7 @@
     mvp.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *basic = [UIButton buttonWithType:UIButtonTypeCustom];
-    basic.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
+    basic.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [basic setTitle:@"BASIC" forState:UIControlStateNormal];
     [basic addTarget:self action:@selector(selectProductNeed:) forControlEvents:UIControlEventTouchUpInside];
     [basic setTitleColor:self.customBlue forState:UIControlStateNormal];
@@ -204,7 +216,7 @@
     basic.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *complex = [UIButton buttonWithType:UIButtonTypeCustom];
-    complex.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
+    complex.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [complex setTitle:@"COMPLEX" forState:UIControlStateNormal];
     [complex addTarget:self action:@selector(selectProductNeed:) forControlEvents:UIControlEventTouchUpInside];
     [complex setTitleColor:self.customBlue forState:UIControlStateNormal];
@@ -249,7 +261,7 @@
     info3.tag = 3;
     
     UIButton *onePerson = [UIButton buttonWithType:UIButtonTypeCustom];
-    onePerson.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 35);
+    onePerson.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + self.topLabelPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [onePerson setTitle:@"ONE PERSON" forState:UIControlStateNormal];
     [onePerson addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [onePerson setTitleColor:self.customGreen forState:UIControlStateNormal];
@@ -258,7 +270,7 @@
     onePerson.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *smallTeam = [UIButton buttonWithType:UIButtonTypeCustom];
-    smallTeam.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
+    smallTeam.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [smallTeam setTitle:@"SMALL TEAM" forState:UIControlStateNormal];
     [smallTeam addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [smallTeam setTitleColor:self.customGreen forState:UIControlStateNormal];
@@ -267,7 +279,7 @@
     smallTeam.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *largeTeam = [UIButton buttonWithType:UIButtonTypeCustom];
-    largeTeam.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
+    largeTeam.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [largeTeam setTitle:@"LARGE TEAM" forState:UIControlStateNormal];
     [largeTeam addTarget:self action:@selector(selectTeamNeeded:) forControlEvents:UIControlEventTouchUpInside];
     [largeTeam setTitleColor:self.customGreen forState:UIControlStateNormal];
@@ -312,7 +324,7 @@
     budgetLabel.font = [UIFont fontWithName:@"Avenir" size:12];
     
     UIButton *small = [UIButton buttonWithType:UIButtonTypeCustom];
-    small.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + 65, self.view.frame.size.width - 50, 35);
+    small.frame = CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + self.topLabelPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [small setTitle:@"SMALL" forState:UIControlStateNormal];
     [small addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [small setTitleColor:self.customPink forState:UIControlStateNormal];
@@ -321,7 +333,7 @@
     small.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *medium = [UIButton buttonWithType:UIButtonTypeCustom];
-    medium.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
+    medium.frame = CGRectMake(self.view.frame.origin.x + 25, mobile.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [medium setTitle:@"MEDIUM" forState:UIControlStateNormal];
     [medium addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [medium setTitleColor:self.customPink forState:UIControlStateNormal];
@@ -330,7 +342,7 @@
     medium.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     
     UIButton *large = [UIButton buttonWithType:UIButtonTypeCustom];
-    large.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + 50, self.view.frame.size.width - 50, 35);
+    large.frame = CGRectMake(self.view.frame.origin.x + 25, web.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [large setTitle:@"LARGE" forState:UIControlStateNormal];
     [large addTarget:self action:@selector(selectBudget:) forControlEvents:UIControlEventTouchUpInside];
     [large setTitleColor:self.customPink forState:UIControlStateNormal];
@@ -359,7 +371,7 @@
     UIImageView *headerLogo5 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/5, 5, self.view.frame.size.width/2.7, self.view.frame.size.height / 13.5)];
     headerLogo5.image = [UIImage imageNamed:@"LogoHeader.png"];
     
-    UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/8, self.view.frame.size.height/4, 150, 30)];
+    UILabel *contactInfo = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - self.view.frame.size.width/8, self.view.frame.size.height/4, 150, self.buttonHeight)];
     contactInfo.text = @"PRODUCT IDEA";
     contactInfo.textColor = [UIColor whiteColor];
     contactInfo.font = [UIFont fontWithName:@"Avenir" size:12];
@@ -376,7 +388,7 @@
     [info5 addTarget:self action:@selector(infoCalloutOnButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     info5.tag = 5;
     
-    self.appDescription = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + self.view.frame.size.width/7, self.view.frame.size.width - 50, self.view.frame.size.width/2.5)];
+    self.appDescription = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, productIdeaLabel.frame.origin.y + self.topLabelPadding, self.view.frame.size.width - 50, self.view.frame.size.width/2.5)];
     self.appDescription.backgroundColor = [UIColor clearColor];
     self.appDescription.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.appDescription.layer.borderWidth = 1;
@@ -387,12 +399,12 @@
     [self.appDescription setReturnKeyType:UIReturnKeyDone];
     self.appDescription.delegate = self;
     
-    UILabel *contactLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.appDescription.frame.origin.y + self.view.frame.size.width/2.3, self.view.frame.size.width - 50, 30)];
+    UILabel *contactLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50, self.appDescription.frame.origin.y + self.view.frame.size.width/2.4, self.view.frame.size.width - 50, 30)];
     contactLabel.text = @"CONTACT INFO";
     contactLabel.textColor = [UIColor whiteColor];
     contactLabel.font = [UIFont fontWithName:@"Avenir" size:12];
     
-    self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, contactLabel.frame.origin.y + self.view.frame.size.width/8, self.view.frame.size.width - 50, 35)];
+    self.name = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, contactLabel.frame.origin.y + self.view.frame.size.width/10, self.view.frame.size.width - 50, self.buttonHeight)];
     self.name.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.name.layer.borderWidth = 1;
     self.name.font = [UIFont fontWithName:@"Avenir" size:12];
@@ -406,7 +418,7 @@
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     self.name.leftView = paddingView;
     
-    self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, self.name.frame.origin.y + 50, self.view.frame.size.width - 50, 35)];
+    self.email = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 25, self.name.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight)];
     self.email.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.email.layer.borderWidth = 1;
     [self.email setReturnKeyType:UIReturnKeyDone];
@@ -420,7 +432,7 @@
     self.email.leftView = paddingView2;
     
     self.meetingTimes = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 25, self.email.frame.origin.y + self.view5.frame.size.width/8, self.view.frame.size.width - 50, 30);
+    self.meetingTimes.frame = CGRectMake(self.view5.frame.origin.x + 25, self.email.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, self.buttonHeight);
     [self.meetingTimes setTitle:@"SCHEDULE MEETING" forState:UIControlStateNormal];
     [self.meetingTimes addTarget:self action:@selector(pickMeeting:) forControlEvents:UIControlEventTouchUpInside];
     [self.meetingTimes setTitleColor:self.customDarkGrey forState:UIControlStateNormal];
@@ -551,7 +563,7 @@
     [time3.layer setBorderWidth:1];
     
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
-    submit.frame = CGRectMake(self.view5.frame.origin.x + 25, time1.frame.origin.y + self.view.frame.size.width/5, self.view.frame.size.width - 50, 35);
+    submit.frame = CGRectMake(self.view5.frame.origin.x + 25, time1.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, 35);
     [submit setTitle:@"Submit" forState:UIControlStateNormal];
     [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
     [submit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
