@@ -14,14 +14,10 @@
 
 @interface LoginViewController () <NSURLConnectionDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *loginLogoImage;
 @property (weak, nonatomic) IBOutlet UITextField *loginEmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *loginPasswordTextField;
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginRegisterButton;
-@property (weak, nonatomic) IBOutlet UILabel *loginMotoLabel;
 @property NSMutableData *responseData;
-@property UIColor *customGrey;
 @property NSInteger responseStatusCode;
 @property Users *currentUser;
 @property BOOL success;
@@ -33,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self alreadyLoggedIn];
     [self customUI];
     _success = false;
 }
@@ -41,18 +36,6 @@
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
-}
-
--(void)alreadyLoggedIn
-{
-    //Check if already logged in
-    BOOL loggedIn = false;
-    
-    //Send server saved loging info and current auth token
-    
-    if (loggedIn) {
-        [self performSegueWithIdentifier:@"" sender:self];
-    }
 }
 
 #pragma mark - Login Methods
