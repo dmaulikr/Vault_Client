@@ -51,7 +51,7 @@
 
 -(IBAction)continueToAppSegue:(UIButton *)sender
 {
-    [self performSegueWithIdentifier:@"enterAppSegueID" sender:self];
+    [self performSegueWithIdentifier:@"enterDevAppSegueID" sender:self];
 }
 
 -(void)initializePageController

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0FE4A21AFBDF0E0040626A /* ClientTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FE4A11AFBDF0E0040626A /* ClientTaskViewController.m */; };
 		4A29FE5E1AA110E300776FE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A29FE5D1AA110E300776FE3 /* UIKit.framework */; };
 		4A29FE601AA110F200776FE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A29FE5F1AA110F200776FE3 /* Foundation.framework */; };
 		4A2B21481AE553F900F9E07C /* CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B21471AE553F900F9E07C /* CustomColors.m */; };
@@ -47,7 +48,6 @@
 		4A8454341AD467DA00E5AB02 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8454331AD467DA00E5AB02 /* LoginViewController.m */; };
 		4A84543A1AD4691700E5AB02 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8454391AD4691700E5AB02 /* RegistrationViewController.m */; };
 		4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */; };
-		4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */; };
 		4A9E482E1AD7185100A17762 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E482D1AD7185100A17762 /* ProfileViewController.m */; };
 		4AAE57641AEE8C7E00A90DEF /* HubVelocityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE57631AEE8C7E00A90DEF /* HubVelocityViewController.m */; };
 		4AAE576D1AEEBC2700A90DEF /* HubAchievementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE576C1AEEBC2700A90DEF /* HubAchievementTableViewCell.m */; };
@@ -73,6 +73,8 @@
 /* Begin PBXFileReference section */
 		02C078148325B646D8DF5C89 /* libPods-Vault_ClientFacingApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vault_ClientFacingApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BB3B2A788A087685DA6FC7 /* Pods-Vault_ClientFacingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vault_ClientFacingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vault_ClientFacingApp/Pods-Vault_ClientFacingApp.release.xcconfig"; sourceTree = "<group>"; };
+		4A0FE4A01AFBDF0E0040626A /* ClientTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientTaskViewController.h; sourceTree = "<group>"; };
+		4A0FE4A11AFBDF0E0040626A /* ClientTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientTaskViewController.m; sourceTree = "<group>"; };
 		4A29FE5D1AA110E300776FE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A29FE5F1AA110F200776FE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A2B21461AE553F900F9E07C /* CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColors.h; sourceTree = "<group>"; };
@@ -136,8 +138,6 @@
 		4A8454391AD4691700E5AB02 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		4A8CD7BA1A9D5E2C00C4E88F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		4A8CD7C01A9D5E6D00C4E88F /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
-		4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		4A9E482C1AD7185100A17762 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		4A9E482D1AD7185100A17762 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4AAE57621AEE8C7E00A90DEF /* HubVelocityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HubVelocityViewController.h; sourceTree = "<group>"; };
@@ -335,8 +335,8 @@
 			children = (
 				4A8CD7BA1A9D5E2C00C4E88F /* MainViewController.h */,
 				4A8CD7BB1A9D5E2C00C4E88F /* MainViewController.m */,
-				4A8CD7C01A9D5E6D00C4E88F /* FAQViewController.h */,
-				4A8CD7C11A9D5E6D00C4E88F /* FAQViewController.m */,
+				4A0FE4A01AFBDF0E0040626A /* ClientTaskViewController.h */,
+				4A0FE4A11AFBDF0E0040626A /* ClientTaskViewController.m */,
 			);
 			name = "Client Facing Controllers";
 			sourceTree = "<group>";
@@ -561,7 +561,6 @@
 				4A2B21481AE553F900F9E07C /* CustomColors.m in Sources */,
 				4A2E7FA61AE6DFCD003CC1D3 /* AchievementsListViewController.m in Sources */,
 				4A442AB61AFAB24D00CC081F /* DevIntroParentViewController.m in Sources */,
-				4A8CD7C21A9D5E6D00C4E88F /* FAQViewController.m in Sources */,
 				4A6F23CA1A9D3B5F00E7D366 /* AppDelegate.m in Sources */,
 				4AE8D1521AD72221009C3DEB /* SkillTreeViewController.m in Sources */,
 				4A442AB91AFAB28F00CC081F /* DevIntroChildViewController.m in Sources */,
@@ -569,6 +568,7 @@
 				4A75413A1ADF052A00EB1A15 /* SettingsViewController.m in Sources */,
 				4AAE576D1AEEBC2700A90DEF /* HubAchievementTableViewCell.m in Sources */,
 				4A2C97121AE6AB4C00E8BBD5 /* RegistrationCollectionViewCell.m in Sources */,
+				4A0FE4A21AFBDF0E0040626A /* ClientTaskViewController.m in Sources */,
 				4A8CD7BC1A9D5E2C00C4E88F /* MainViewController.m in Sources */,
 				4A442ABF1AFAB73700CC081F /* ClientIntroChildViewController.m in Sources */,
 				4A6F23C71A9D3B5F00E7D366 /* main.m in Sources */,

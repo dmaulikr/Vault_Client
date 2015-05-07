@@ -12,6 +12,7 @@
 @interface ClientIntroParentViewController () <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageController;
+@property UIButton *continueToApp;
 
 @end
 
@@ -21,11 +22,36 @@
 {
     [super viewDidLoad];
     [self initializePageController];
+    
+    _continueToApp = [UIButton buttonWithType:UIButtonTypeCustom];
+    _continueToApp.frame = CGRectMake(self.view.frame.size.width/2 - 50, self.view.frame.size.height/3, 100, 50);
+    [_continueToApp setTitle:@"CONTINUE" forState:UIControlStateNormal];
+    [_continueToApp setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_continueToApp addTarget:self action:@selector(continueToAppSegue:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_continueToApp];
+    [self hideContinueButton];
 }
 
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+-(void)showContinueButton
+{
+    [_continueToApp setHidden:NO];
+    [_continueToApp setEnabled:YES];
+}
+
+-(void)hideContinueButton
+{
+    [_continueToApp setHidden:YES];
+    [_continueToApp setEnabled:NO];
+}
+
+-(IBAction)continueToAppSegue:(UIButton *)sender
+{
+    [self performSegueWithIdentifier:@"enterClientAppSegueID" sender:self];
 }
 
 -(void)initializePageController
@@ -84,6 +110,12 @@
 {
     ClientIntroChildViewController *childViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"clientIntroChildViewController"];
     childViewController.pageIndex = index;
+    
+    if (index >= 3) {
+        [self showContinueButton];
+    }else{
+        [self hideContinueButton];
+    }
     
     return childViewController;
     
