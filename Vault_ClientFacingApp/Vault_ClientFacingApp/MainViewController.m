@@ -564,7 +564,8 @@
     
     UIButton *submit = [UIButton buttonWithType:UIButtonTypeCustom];
     submit.frame = CGRectMake(self.view5.frame.origin.x + 25, time1.frame.origin.y + self.buttonPadding, self.view.frame.size.width - 50, 35);
-    [submit setTitle:@"Submit" forState:UIControlStateNormal];
+    [submit setTitle:@"SUBMIT" forState:UIControlStateNormal];
+    submit.titleLabel.font = [UIFont fontWithName:@"Avenir" size:self.fontSize];
     [submit addTarget:self action:@selector(submitDetails:) forControlEvents:UIControlEventTouchUpInside];
     [submit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [submit.layer setBackgroundColor:self.customPurple.CGColor];
@@ -719,6 +720,7 @@
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
     textView.text = @"";
+    textView.textColor = [UIColor whiteColor];
     return YES;
 }
 

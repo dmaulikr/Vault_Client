@@ -473,7 +473,7 @@
 				TargetAttributes = {
 					4A6F23C01A9D3B5F00E7D366 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 7864Y9RXSY;
+						DevelopmentTeam = JDSBMDRW58;
 					};
 					4A6F23D91A9D3B5F00E7D366 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -721,7 +721,7 @@
 				INFOPLIST_FILE = Vault_ClientFacingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5f566f86-f38d-4958-81ff-845686ae6e5f";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -740,7 +740,7 @@
 				INFOPLIST_FILE = Vault_ClientFacingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5f566f86-f38d-4958-81ff-845686ae6e5f";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

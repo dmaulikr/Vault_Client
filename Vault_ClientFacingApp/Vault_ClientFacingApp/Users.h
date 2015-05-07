@@ -27,6 +27,6 @@
 @property int currentEXP;
 @property int expToNextLevel;
 
-+(id)sharedUser;
++(id)currentUser;
 
 @end
